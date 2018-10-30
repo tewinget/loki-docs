@@ -1641,22 +1641,13 @@
 <h2 id="configuring-the-loki-daemon-as-a-service-for-the-first-time">Configuring the Loki daemon as a service for the first time<a class="headerlink" href="#configuring-the-loki-daemon-as-a-service-for-the-first-time" title="Permanent link">&para;</a></h2>
 <p>Connect to your server via SSH (as is explained at <a href="https://loki-project.github.io/loki-docs/ServiceNodes/SNFullGuide/#step-2-prepare-your-server">Full Guide on Service Nodes - Step 2 - Prepare your Server</a>) and copy &amp; paste the following commands into the terminal window:</p>
 <ol>
-<li>
-<p>Create the lokid.service file: <code>sudo touch /etc/systemd/system/lokid.service</code></p>
-</li>
-<li>
-<p>Change the file permissions:
-<code>sudo chmod 664 /etc/systemd/system/lokid.service</code></p>
-</li>
-<li>
-<p>Start editing the created empty file: 
-<code>sudo nano /etc/systemd/system/lokid.service</code></p>
-</li>
-<li>
-<p>Copy the text below and paste it into your empty file.</p>
-</li>
+<li>Create the lokid.service file: <code>sudo touch /etc/systemd/system/lokid.service</code></li>
+<li>Change the file permissions: <code>sudo chmod 664 /etc/systemd/system/lokid.service</code></li>
+<li>Start editing the created empty file: <code>sudo nano /etc/systemd/system/lokid.service</code></li>
+<li>Copy the text below and paste it into your empty file.</li>
 </ol>
-<div class="codehilite"><pre><span></span>[Unit]
+
+<pre><code>[Unit]
 Description=lokid service
 After=network-online.target
 
@@ -1669,21 +1660,21 @@ RestartSec=30s
 
 [Install]
 WantedBy=multi-user.target
-</pre></div>
+</code></pre>
 
+<ol start="5">
+<li>Modify YOUR_USERNAME and YOUR_LOKI_FILES_FOLDER in the pasted text.</li>
+</ol>
 
-<ol>
-<li>
-<p>Modify YOUR_USERNAME and YOUR_LOKI_FILES_FOLDER in the pasted text.
-You must change YOUR_USERNAME on two different places and YOUR_LOKI_FILES_FOLDER in one. 
+<p>You must change YOUR_USERNAME on two different places and YOUR_LOKI_FILES_FOLDER in one.
 If you are running your Service Node as root, <code>/home</code> must be removed from ExecStart path: <code>ExecStart=/root/YOUR_LOKI_FILES_FOLDER/lokid --non-interactive --service-node</code></p>
+
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet, append the --testnet flag at the end of your modified ExecStart line.
-</pre></div>
-
-
+<pre><code>For Testnet, append the --testnet flag at the end of your modified ExecStart line. 
+</code></pre>
 </blockquote>
-</li>
+
+<ol start="6">
 <li>
 <p>Once completed, save the file and quit nano:
 CTRL+X -&gt; Y -&gt; ENTER</p>
@@ -1705,6 +1696,7 @@ CTRL+X -&gt; Y -&gt; ENTER</p>
 <code>sudo systemctl enable lokid.service</code></p>
 </li>
 </ol>
+
 <p>Now, everything should be working and your Loki daemon should start as a service on every reboot. We won't have a Loki daemon interactive screen but we can use RPC to communicate with the service. The following commands should let us know if everything went fine:</p>
 <ul>
 <li>Test 1. Check lokid.service status: <code>systemctl status lokid.service</code>. The output should show you that lokid.service is loaded and active:</li>
