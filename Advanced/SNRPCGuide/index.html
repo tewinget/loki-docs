@@ -2046,27 +2046,27 @@
 <h3 id="get95quorum95state">get_quorum_state<a class="headerlink" href="#get95quorum95state" title="Permanent link">&para;</a></h3>
 <p>Get the quorum state which is the list of public keys of the nodes who are voting, and the list of public keys of the nodes who are being tested.</p>
 <h4 id="testnet-example">Testnet Example<a class="headerlink" href="#testnet-example" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_quorum_state&quot;, &quot;params&quot;: {&quot;height&quot;: 200}}&#39; -H &#39;Content-Type: application/json&#39;
+<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_quorum_state&quot;, &quot;params&quot;: {&quot;height&quot;: 200}}&#39; -H &#39;Content-Type: application/json&#39;
 </pre></div>
 
 
 <h4 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-  &quot;id&quot;: &quot;0&quot;,
-  &quot;jsonrpc&quot;: &quot;2.0&quot;,
-  &quot;result&quot;: {
-    &quot;nodes_to_test&quot;:
-       [&quot;578e5ee53150a3276dd3c411cb6313324a63b530cf3651f5c15e3d0ca58ceddd&quot;,
-        …
-        &quot;c917034e9fcd0e9b0d423638664bbfc36eb8a2eeb68a1ff8bed8be5f699bc3c0&quot;],
-    &quot;quorum_nodes&quot;:
-       [&quot;fc86a737756b6ed9f81233d22da3baee32537f3087901c3e94384be85ca1a9ee&quot;,
-        …
-        &quot;ee597c5c7bbf1452e689a785f1133fc1355889b4111955d54cb5ed826cd35a32&quot;],
-    &quot;status&quot;: &quot;OK&quot;,
-    &quot;untrusted&quot;: false
-  }
-}
+<div class="codehilite"><pre><span></span>    {
+      &quot;id&quot;: &quot;0&quot;,
+      &quot;jsonrpc&quot;: &quot;2.0&quot;,
+      &quot;result&quot;: {
+        &quot;nodes_to_test&quot;:
+           [&quot;578e5ee53150a3276dd3c411cb6313324a63b530cf3651f5c15e3d0ca58ceddd&quot;,
+            …
+            &quot;c917034e9fcd0e9b0d423638664bbfc36eb8a2eeb68a1ff8bed8be5f699bc3c0&quot;],
+        &quot;quorum_nodes&quot;:
+           [&quot;fc86a737756b6ed9f81233d22da3baee32537f3087901c3e94384be85ca1a9ee&quot;,
+            …
+            &quot;ee597c5c7bbf1452e689a785f1133fc1355889b4111955d54cb5ed826cd35a32&quot;],
+        &quot;status&quot;: &quot;OK&quot;,
+        &quot;untrusted&quot;: false
+      }
+    }
 </pre></div>
 
 
@@ -2095,19 +2095,19 @@ height.</p>
 <h3 id="get95staking95requirement">get_staking_requirement<a class="headerlink" href="#get95staking95requirement" title="Permanent link">&para;</a></h3>
 <p>Get the required amount of Loki to become a Service Node at the queried height. For stagenet and testnet values, ensure the daemon is started with the --stagenet or --testnet flags respectively.</p>
 <h4 id="testnet-example_1">Testnet Example<a class="headerlink" href="#testnet-example_1" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_staking_requirement&quot;, &quot;params&quot;: {“height”: 111111}}&#39; -H &#39;Content-Type: application/json&#39;
+<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_staking_requirement&quot;, &quot;params&quot;: {“height”: 111111}}&#39; -H &#39;Content-Type: application/json&#39;  
 </pre></div>
 
 
 <h4 id="result_1">Result<a class="headerlink" href="#result_1" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-  &quot;id&quot;: &quot;0&quot;,
-  &quot;jsonrpc&quot;: &quot;2.0&quot;,
-  &quot;result&quot;: {
-    &quot;staking_requirement&quot;: 100000000000,
-    &quot;status&quot;: &quot;OK&quot;
-  }
-}
+<div class="codehilite"><pre><span></span>    {
+      &quot;id&quot;: &quot;0&quot;,
+      &quot;jsonrpc&quot;: &quot;2.0&quot;,
+      &quot;result&quot;: {
+        &quot;staking_requirement&quot;: 100000000000,
+        &quot;status&quot;: &quot;OK&quot;
+      }
+    }
 </pre></div>
 
 
@@ -2128,19 +2128,19 @@ height.</p>
 <h3 id="get95service95node95key">get_service_node_key<a class="headerlink" href="#get95service95node95key" title="Permanent link">&para;</a></h3>
 <p>Get the service node public key of the queried daemon. The daemon must be started in --service-node mode otherwise this RPC command will fail.</p>
 <h4 id="testnet-example_2">Testnet Example<a class="headerlink" href="#testnet-example_2" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_node_key&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_node_key&quot;}&#39; -H &#39;Content-Type: application/json&#39;  
 </pre></div>
 
 
 <h4 id="result_2">Result<a class="headerlink" href="#result_2" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-  &quot;id&quot;: &quot;0&quot;,
-  &quot;jsonrpc&quot;: &quot;2.0&quot;,
-  &quot;result&quot;: {
-    &quot;service_node_pubkey&quot;: &quot;8d56c1fa0304884e612ee2efe763b2c50991a66329418fd084a3f23c75399f34&quot;,
-    &quot;status&quot;: &quot;OK&quot;
-  }
-}
+<div class="codehilite"><pre><span></span>    {
+      &quot;id&quot;: &quot;0&quot;,
+      &quot;jsonrpc&quot;: &quot;2.0&quot;,
+      &quot;result&quot;: {
+        &quot;service_node_pubkey&quot;: &quot;8d56c1fa0304884e612ee2efe763b2c50991a66329418fd084a3f23c75399f34&quot;,
+        &quot;status&quot;: &quot;OK&quot;
+      }
+    }
 </pre></div>
 
 
@@ -2158,35 +2158,35 @@ height.</p>
 <h4 id="get95service95nodes">get_service_nodes<a class="headerlink" href="#get95service95nodes" title="Permanent link">&para;</a></h4>
 <p>Get the metadata currently associated with the queried service node public keys such as, registration height and contributors, etc. If no public key is specified, this returns all the metadata for every service node the queried daemon currently knows about.</p>
 <h4 id="testnet-example_3">Testnet Example<a class="headerlink" href="#testnet-example_3" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_nodes&quot;, “params”: “service_node_pubkeys”: []}&#39; -H &#39;Content-Type: application/json&#39;
+<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_nodes&quot;, “params”: “service_node_pubkeys”: []}&#39; -H &#39;Content-Type: application/json&#39;
 </pre></div>
 
 
 <h4 id="result_3">Result<a class="headerlink" href="#result_3" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>{
-  &quot;id&quot;: &quot;0&quot;,
-  &quot;jsonrpc&quot;: &quot;2.0&quot;,
-  &quot;result&quot;: {
-    &quot;service_node_states&quot;: [{
-      &quot;contributors&quot;: [{
-        &quot;address&quot;:    &quot;T6T6kZfTEf5JGw2SgLrGuxRNFxRTf51fvbbcCYW949RsKjX75JMA1B1d8CT4VbwfGR8uf3f3AJSTaBHGpN3QRG2N2LyiksWVg&quot;,
-        &quot;amount&quot;: 100000000000,
-        &quot;reserved&quot;: 100000000000
-      }],
-      &quot;last_reward_block_height&quot;: 2968,
-      &quot;last_reward_transaction_index&quot;: 4294967295,
-      &quot;last_uptime_proof&quot;: 0,
-      &quot;operator_address&quot;: &quot;T6T6kZfTEf5JGw2SgLrGuxRNFxRTf51fvbbcCYW949RsKjX75JMA1B1d8CT4VbwfGR8uf3f3AJSTaBHGpN3QRG2N2LyiksWVg&quot;,
-      &quot;portions_for_operator&quot;: 18446744073709551612,
-      &quot;registration_height&quot;: 1860,
-      &quot;service_node_pubkey&quot;: &quot;3afa36a4855a429f5eac1b2f8e7e77657a2e862999ab4d59e473826f9b15f2da&quot;,
-      &quot;staking_requirement&quot;: 100000000000,
-      &quot;total_contributed&quot;: 100000000000,
-      &quot;total_reserved&quot;: 100000000000
-    }],
-    &quot;status&quot;: &quot;OK&quot;
-  }
-}
+<div class="codehilite"><pre><span></span>    {
+      &quot;id&quot;: &quot;0&quot;,
+      &quot;jsonrpc&quot;: &quot;2.0&quot;,
+      &quot;result&quot;: {
+        &quot;service_node_states&quot;: [{
+          &quot;contributors&quot;: [{
+            &quot;address&quot;:    &quot;T6T6kZfTEf5JGw2SgLrGuxRNFxRTf51fvbbcCYW949RsKjX75JMA1B1d8CT4VbwfGR8uf3f3AJSTaBHGpN3QRG2N2LyiksWVg&quot;,
+            &quot;amount&quot;: 100000000000,
+            &quot;reserved&quot;: 100000000000
+          }],
+          &quot;last_reward_block_height&quot;: 2968,
+          &quot;last_reward_transaction_index&quot;: 4294967295,
+          &quot;last_uptime_proof&quot;: 0,
+          &quot;operator_address&quot;: &quot;T6T6kZfTEf5JGw2SgLrGuxRNFxRTf51fvbbcCYW949RsKjX75JMA1B1d8CT4VbwfGR8uf3f3AJSTaBHGpN3QRG2N2LyiksWVg&quot;,
+          &quot;portions_for_operator&quot;: 18446744073709551612,
+          &quot;registration_height&quot;: 1860,
+          &quot;service_node_pubkey&quot;: &quot;3afa36a4855a429f5eac1b2f8e7e77657a2e862999ab4d59e473826f9b15f2da&quot;,
+          &quot;staking_requirement&quot;: 100000000000,
+          &quot;total_contributed&quot;: 100000000000,
+          &quot;total_reserved&quot;: 100000000000
+        }],
+        &quot;status&quot;: &quot;OK&quot;
+      }
+    }
 </pre></div>
 
 
