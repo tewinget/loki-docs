@@ -542,8 +542,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../MobileWallet/placeholder/" title="to be added" class="md-nav__link">
-      to be added
+    <a href="../../MobileWallet/RestoreMobileWalletGuide/" title="Restore Mobile Wallet" class="md-nav__link">
+      Restore Mobile Wallet
     </a>
   </li>
 
@@ -760,8 +760,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-spend-proof" title="6 Spend Proof:" class="md-nav__link">
-    6 Spend Proof:
+  <a href="#6-spend-proof" title="6 Spend Proof" class="md-nav__link">
+    6 Spend Proof
   </a>
   
     <nav class="md-nav">
@@ -787,8 +787,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-tx-proof" title="7 TX Proof:" class="md-nav__link">
-    7 TX Proof:
+  <a href="#7-tx-proof" title="7 TX Proof" class="md-nav__link">
+    7 TX Proof
   </a>
   
     <nav class="md-nav">
@@ -814,8 +814,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-tx-key" title="8 TX key:" class="md-nav__link">
-    8 TX key:
+  <a href="#8-tx-key" title="8 TX key" class="md-nav__link">
+    8 TX key
   </a>
   
     <nav class="md-nav">
@@ -1220,6 +1220,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Lokinet/Guides/Install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
         
           
           
@@ -1811,8 +1823,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-spend-proof" title="6 Spend Proof:" class="md-nav__link">
-    6 Spend Proof:
+  <a href="#6-spend-proof" title="6 Spend Proof" class="md-nav__link">
+    6 Spend Proof
   </a>
   
     <nav class="md-nav">
@@ -1838,8 +1850,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-tx-proof" title="7 TX Proof:" class="md-nav__link">
-    7 TX Proof:
+  <a href="#7-tx-proof" title="7 TX Proof" class="md-nav__link">
+    7 TX Proof
   </a>
   
     <nav class="md-nav">
@@ -1865,8 +1877,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-tx-key" title="8 TX key:" class="md-nav__link">
-    8 TX key:
+  <a href="#8-tx-key" title="8 TX key" class="md-nav__link">
+    8 TX key
   </a>
   
     <nav class="md-nav">
@@ -1952,6 +1964,8 @@
                 
                 
                 <h1 id="commands">Commands:<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e6NwsJbm5wY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="displaying-commands">Displaying commands<a class="headerlink" href="#displaying-commands" title="Permanent link">&para;</a></h2>
 <p>The <code>loki-wallet-cli</code> has multiple commands to conduct different operations on the Loki Blockchain. By typing <code>help</code> and clicking enter after loading your wallet will bring up the commands that can be used.</p>
 <h2 id="1-accounts">1 Accounts<a class="headerlink" href="#1-accounts" title="Permanent link">&para;</a></h2>
@@ -2207,7 +2221,7 @@ signature file saved to: loki_reserve_proof
 
 
 <p>You may note that it shows a reserve proof which is greater than 1000, this is because the command is adding up all the transactions into the address specified until it is greater than the reserve proof set.</p>
-<h2 id="6-spend-proof">6 Spend Proof:<a class="headerlink" href="#6-spend-proof" title="Permanent link">&para;</a></h2>
+<h2 id="6-spend-proof">6 Spend Proof<a class="headerlink" href="#6-spend-proof" title="Permanent link">&para;</a></h2>
 <p>Spend Proofs are used to generate a signature proving that you generated a TXID, with the option to sign the spend proof with a key.</p>
 <p>For example let’s imagine you have bought a car from a dealership with loki and have sent 1000 loki to the seller. Unfortunately the dealer does not know which transaction is yours as he has received 5 transactions of 1000 loki in the same block for 5 different cars. He knows the txid’s but wants you to prove that you have generate one of the txid’s in his list. Luckily we can prove we generated the txid by using the get_spend_proof command.</p>
 <h3 id="61-generate-spend-proof">6.1 Generate Spend Proof<a class="headerlink" href="#61-generate-spend-proof" title="Permanent link">&para;</a></h3>
@@ -2269,7 +2283,7 @@ signature file saved to: loki_reserve_proof
 
 
 <p>If you receive a <code>Good signature</code> message that should be a good proof that the txid you are checking was generated from the sender. Keep in mind however that this can potentially not always be the case, considering someone could get access to someone else's computer thus having access to this file.</p>
-<h2 id="7-tx-proof">7 TX Proof:<a class="headerlink" href="#7-tx-proof" title="Permanent link">&para;</a></h2>
+<h2 id="7-tx-proof">7 TX Proof<a class="headerlink" href="#7-tx-proof" title="Permanent link">&para;</a></h2>
 <p>TX Proofs are used to generate a signature file proving that you generated a TXID, with the option to sign the spend proof with a key. TX proofs work similar to Reserve Proof’s and Spend Proofs however they show more detailed information.</p>
 <p>For example let’s imagine you have bought a car from a dealership with loki and have sent 1000 loki to the seller. Unfortunately the dealer does not know which transaction is yours as he has received 5 transactions of 1000 loki in the same block for 5 different cars. He knows the txid’s but wants you to prove that you have generate one of the txid’s in his list. Luckily we can prove we generated the txid by using the get_tx_proof command.</p>
 <h3 id="71-generate-spend-proof">7.1 Generate Spend Proof<a class="headerlink" href="#71-generate-spend-proof" title="Permanent link">&para;</a></h3>
@@ -2342,7 +2356,7 @@ This transaction has 1 confirmations
 
 
 <p>If you receive a <code>Good signature</code> message that should be a good proof that the txid you are checking was generated from the sender. Keep in mind however that this can potentially not always be the case, considering someone could get access to someone else's computer thus having access to this file.</p>
-<h2 id="8-tx-key">8 TX key:<a class="headerlink" href="#8-tx-key" title="Permanent link">&para;</a></h2>
+<h2 id="8-tx-key">8 TX key<a class="headerlink" href="#8-tx-key" title="Permanent link">&para;</a></h2>
 <p>A TX key is a private key associated with a TXid. Only the wallet that has sent the transaction can generate a TX key from the TXID that both parties can see. A TX key can be used to validate a transaction on a case by case basis. In essence, you can provide the tx key, txid and the receiver address to someone to prove you had generate that transaction.</p>
 <h3 id="81-view-tx-key">8.1 View TX key<a class="headerlink" href="#81-view-tx-key" title="Permanent link">&para;</a></h3>
 <p>To view the TX key of a specific transaction you have generate you will need to run the command:</p>
