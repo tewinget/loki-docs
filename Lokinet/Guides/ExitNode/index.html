@@ -1068,6 +1068,60 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#client" title="Client" class="md-nav__link">
+    Client
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-routes" title="Set up routes" class="md-nav__link">
+    Set up routes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-x" title="OS X" class="md-nav__link">
+    OS X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prequesites" title="Prequesites" class="md-nav__link">
     Prequesites
   </a>
@@ -1641,6 +1695,60 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#client" title="Client" class="md-nav__link">
+    Client
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-routes" title="Set up routes" class="md-nav__link">
+    Set up routes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-x" title="OS X" class="md-nav__link">
+    OS X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prequesites" title="Prequesites" class="md-nav__link">
     Prequesites
   </a>
@@ -1749,6 +1857,51 @@
                 
                 <h1 id="lokinet-exit-node-guide">LokiNET Exit Node Guide<a class="headerlink" href="#lokinet-exit-node-guide" title="Permanent link">&para;</a></h1>
 <p>Exit nodes allow users to make requests to the wider internet and return those requests through a mixnet. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
+<h2 id="client">Client<a class="headerlink" href="#client" title="Permanent link">&para;</a></h2>
+<p>Lokinet clients can use exit nodes without the need to host a service node.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>To use an exit node as a client, add the following option to the <code>[network]</code> section in <code>lokinet.ini</code> </p>
+<div class="codehilite"><pre><span></span> exit-node=exitnodehexpublickeygoeshere
+ strict-connect=firsthophexpublickeygoeshere
+</pre></div>
+
+
+<p>This sets to use an exit node by its public identity key and sets a strict first hop by its public identity key.
+We set a strict first hope so that we can easily set up the routing table.</p>
+<p>toynet exit public key list by region:</p>
+<p>Romania:</p>
+<ul>
+<li><code>b61df944b8547af56201c6c7528ed86289566dcf73358c5ef8e3b4e628671399</code></li>
+</ul>
+<p>toynet first hop public key list with IP</p>
+<ul>
+<li>
+<p><code>8df8ca1cc9d39d381f0efafdf58e2569457675a1e543189bea8279522aee6461</code> <code>167.114.185.46</code></p>
+</li>
+<li>
+<p><code>3dcb5a34d015a7bbb4636be83991e00cbeff13fe7834e0d5452ffe9a5af5a5be</code> <code>162.243.164.223</code></p>
+</li>
+</ul>
+<h3 id="set-up-routes">Set up routes<a class="headerlink" href="#set-up-routes" title="Permanent link">&para;</a></h3>
+<p>In this example your first hop is at <code>162.243.164.223</code> and your network's default gateway is <code>192.168.0.1</code></p>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<p>// TODO: document me</p>
+<h4 id="os-x">OS X<a class="headerlink" href="#os-x" title="Permanent link">&para;</a></h4>
+<p>// TODO: document me</p>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+<p>set the route that routes everything over lokinet do the following as root:</p>
+<div class="codehilite"><pre><span></span># ip route add 162.243.164.223 via 192.168.0.1
+# ip route del default
+# ip route add default dev lokitun0
+</pre></div>
+
+
+<p>To unset the route everything over lokinet route do the following as root:</p>
+<div class="codehilite"><pre><span></span># ip route del default
+# ip route add default via 192.168.0.1
+</pre></div>
+
+
 <h2 id="prequesites">Prequesites<a class="headerlink" href="#prequesites" title="Permanent link">&para;</a></h2>
 <p>// TODO: technical prequesites goes here</p>
 <h2 id="technical">Technical<a class="headerlink" href="#technical" title="Permanent link">&para;</a></h2>
