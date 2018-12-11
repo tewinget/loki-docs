@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://loki-project.github.io/loki-docs/Wallets/GuiWallet/placeholder/">
+        <link rel="canonical" href="https://loki-project.github.io/loki-docs/Wallets/GuiWallet/loki-gui-guide/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>to be added - Loki Docs</title>
+        <title>Loki Gui Setup - Loki Docs</title>
       
     
     
@@ -100,6 +100,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="../../../#setup-guide-on-the-loki-gui-wallet" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -122,7 +126,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                to be added
+                Loki Gui Setup
               </span>
             
           
@@ -475,9 +479,11 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
     
-    <a href="./" title="to be added" class="md-nav__link md-nav__link--active">
-      to be added
+    
+    <a href="./" title="Loki Gui Setup" class="md-nav__link md-nav__link--active">
+      Loki Gui Setup
     </a>
     
   </li>
@@ -1513,17 +1519,55 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/Wallets/GuiWallet/placeholder.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/Wallets/GuiWallet/loki-gui-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>to be added</h1>
-                
-                <p>placeholder file</p>
+                <h1 id="setup-guide-on-the-loki-gui-wallet">Setup Guide on the Loki GUI Wallet<a class="headerlink" href="#setup-guide-on-the-loki-gui-wallet" title="Permanent link">&para;</a></h1>
+<p>This document will tell you exactly how to set up and operate the Loki GUI wallet.
+The latest version of the wallet can be downloaded (here)[https://github.com/loki-project/loki-gui/releases].</p>
+<p><strong>Windows users:</strong> (<strong>Mac and Linux users skip to step 6</strong>)</p>
+<p>1) Make sure Windows Defender (or other anti-virus software) is not flagging it. Add 'loki-gui-win...'  folder (or saved name of download) to exclusions in Windows Defender</p>
+<p><img alt="windows-defender-guide1" src="http://u.cubeupload.com/dabeatisgood/AV1.png" /></p>
+<p><img alt="windows-defender-guide2" src="http://u.cubeupload.com/dabeatisgood/AV2.png" /></p>
+<p><img alt="windows-defender-guide3" src="http://u.cubeupload.com/dabeatisgood/AV3.png" /></p>
+<p>2) After exclusion is added, check if <code>lokid.exe</code> is still in the folder. If it's not, unzip archive file once again and put files in the previously created folder</p>
+<p><img alt="lokid-exe" src="http://u.cubeupload.com/meditations1/lokid.png" /></p>
+<p>3) Make sure that the path to your Loki folder doesn't contain non-latin characters.  </p>
+<p>4) Right click <code>loki-wallet-gui.exe</code> and select 'run as administrator'</p>
+<p><img alt="loki-wallet-gui" src="http://u.cubeupload.com/meditations1/lokiwalletgui.png" /></p>
+<p>5) If it crashes after steps above are performed, run file named <code>start-low-graphics-mode.bat</code> in the loki folder</p>
+<p><img alt="low-graphics-mode" src="http://u.cubeupload.com/meditations1/lowgraphicsmode.png" /></p>
+<p>6) Select your language.</p>
+<p><img alt="language-select" src="http://u.cubeupload.com/meditations1/languageselect.png" /></p>
+<p>7) Select 'create a new wallet'</p>
+<p><img alt="create-new-wallet" src="http://u.cubeupload.com/meditations1/createnewwallet.png" /></p>
+<p>8) <strong>This step is important! Please be careful to write down and save your seed exactly as you see on the screen and store it in a safe location.</strong></p>
+<p><img alt="wallet-seed" src="http://u.cubeupload.com/meditations1/walletsetupseed.png" /></p>
+<p>9) Enter a strong password.</p>
+<p><img alt="enter-pass" src="http://u.cubeupload.com/meditations1/enterpass.png" /></p>
+<p>10) If you have problems with syncing or connecting to the daemon, try to connect to a remote node (recommended):</p>
+<p>Go to settings &gt; go to node &gt; select a remote node and click 'load preset' &gt; scroll down and click 'connect'</p>
+<p><img alt="remote-node-pic" src="http://u.cubeupload.com/dabeatisgood/remotenode.png" /></p>
                 
                   
                 
