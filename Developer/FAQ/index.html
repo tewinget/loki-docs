@@ -1001,6 +1001,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Lokinet/Guides/PublicTestingGuide/" title="Lokinet Public Testing" class="md-nav__link">
+      Lokinet Public Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Lokinet/Guides/Install/" title="Installation" class="md-nav__link">
       Installation
     </a>
@@ -1025,8 +1037,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Lokinet/Guides/SNApps/" title="SNApps" class="md-nav__link">
-      SNApps
+    <a href="../../Lokinet/Guides/AccessingSNApps/" title="Accessing SNApps" class="md-nav__link">
+      Accessing SNApps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Lokinet/Guides/HostingSNApps/" title="Hosting SNApps" class="md-nav__link">
+      Hosting SNApps
     </a>
   </li>
 
@@ -1185,6 +1209,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_block_template-updates" title="get_block_template Updates" class="md-nav__link">
+    get_block_template Updates
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#extracting-reward-amounts-from-block-outputs" title="Extracting Reward Amounts from Block Outputs" class="md-nav__link">
@@ -1599,6 +1630,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#get_block_template-updates" title="get_block_template Updates" class="md-nav__link">
+    get_block_template Updates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#extracting-reward-amounts-from-block-outputs" title="Extracting Reward Amounts from Block Outputs" class="md-nav__link">
     Extracting Reward Amounts from Block Outputs
   </a>
@@ -1651,14 +1689,126 @@
                 
                 <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
 <h2 id="hardfork-version-10-bulletproofs">Hardfork Version 10: Bulletproofs<a class="headerlink" href="#hardfork-version-10-bulletproofs" title="Permanent link">&para;</a></h2>
+<h3 id="get_block_template-updates"><code>get_block_template</code> Updates<a class="headerlink" href="#get_block_template-updates" title="Permanent link">&para;</a></h3>
+<p>Due to batching of Governance rewards the calculation of rewards has been updated in Loki. As a side effect of this, in the <code>get_block_template</code> json response, <code>expected_reward</code> now returns only the miner reward instead of the entire block reward.</p>
+<p>For example, pre-hardfork 9, if the block reward was 100, <code>expected_reward</code> returned 100, even though ~50% of the reward was sent to the service node. Post Bulletproofs hardfork, <code>expected_reward</code> now returns 50, which is the exact amount the miner would receive.</p>
+<p>A real example of this is on the testnet, for block 63056.</p>
+<p>Calling <code>get_block_template</code> on block 63056</p>
+<div class="codehilite"><pre><span></span>curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_block_template&quot;,&quot;params&quot;:{&quot;wallet_address&quot;:&quot;T6TBLkrPd7KQubsczrfHCEi5T4prNEH5Sax9phVicLp9H5s2xAvnJaYWs26xL2s2wy838FXdmgds2TDX5f75wnLt1Zxmiq3rm&quot;,&quot;reserve_size&quot;:60}&#39; -H &#39;Content-Type: application/json&#39;
+{
+  &quot;id&quot;: &quot;0&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;blockhashing_blob&quot;: &quot;0a0ad9e3c6e0050e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708dd00000000add4d0b6d74e9d17d4e65a64e2f6f47959a3fa60cd92af0f9ac0a771a31920ec01&quot;,
+    &quot;blocktemplate_blob&quot;: &quot;0a0ad9e3c6e0050e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708dd000000000302eeec03eeec0300eeec0301ffd0ec0302fea381ab840102eea98077132617bdf7c78c211674e704a73a82b5e6fb2361e9f08c20403b301dd2d28f85930102cee0e4e9534167d66200577aa84b73c318ea494538b1a0af5521e90500835651a101019a58d937a55a6a7b6df6c42aba6d6790be8f5b1b2bfecdb8658ba0836e285912023c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101dda172e3c0d0da4381557e1d65319d0cfb0da9f6d83b716de5b8e127ddd7f572fcb147715be4f8f3cd5d25aae839e217bda00bb7bb02c21b00cdd5a18cd38aba0000&quot;,
+    &quot;difficulty&quot;: 11367,
+    &quot;expected_reward&quot;: 35523678718,
+    &quot;height&quot;: 63056,
+    &quot;prev_hash&quot;: &quot;0e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708dd&quot;,
+    &quot;reserved_offset&quot;: 176,
+    &quot;status&quot;: &quot;OK&quot;,
+    &quot;untrusted&quot;: false
+  }
+}
+</pre></div>
+
+
+<p>Calling <code>get_block</code> on block 63056</p>
+<div class="codehilite"><pre><span></span>{
+  &quot;id&quot;: &quot;0&quot;,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: {
+    &quot;blob&quot;: &quot;0a0ae7e3c6e0050e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708ddd43bd8000302eeec03eeec0300eeec0301ffd0ec0302fea381ab840102ee55cf39cb6f15d22454101cccf6b7d41f1fdb5588e463404eca4b56cbd5bbc3d2d28f85930102cee0e4e9534167d66200577aa84b73c318ea494538b1a0af5521e9050083565163014e8a0d6c156a927b0f10a790d4cacede2cb2cd3b6f3fc3ed98664c303c08b97b0101dda172e3c0d0da4381557e1d65319d0cfb0da9f6d83b716de5b8e127ddd7f572fcb147715be4f8f3cd5d25aae839e217bda00bb7bb02c21b00cdd5a18cd38aba0000&quot;,
+    &quot;block_header&quot;: {
+      &quot;block_size&quot;: 197,
+      &quot;block_weight&quot;: 197,
+      &quot;cumulative_difficulty&quot;: 607871777,
+      &quot;depth&quot;: 1,
+      &quot;difficulty&quot;: 11367,
+      &quot;hash&quot;: &quot;737da055d2fb78f07200a7f3ee0acbf9b00ec3536ab27920a656dd75a253fab6&quot;,
+      &quot;height&quot;: 63056,
+      &quot;major_version&quot;: 10,
+      &quot;minor_version&quot;: 10,
+      &quot;nonce&quot;: 14171092,
+      &quot;num_txes&quot;: 0,
+      &quot;orphan_status&quot;: false,
+      &quot;pow_hash&quot;: &quot;&quot;,
+      &quot;prev_hash&quot;: &quot;0e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708dd&quot;,
+      &quot;reward&quot;: 74994432848,
+      &quot;timestamp&quot;: 1544663527
+    },
+    &quot;json&quot;: {
+      &quot;major_version&quot;: 10,
+      &quot;minor_version&quot;: 10,
+      &quot;timestamp&quot;: 1544663527,
+      &quot;prev_id&quot;: &quot;0e34f22aeb5fc6ef48e99f9b7e87f3c72666a944c0e5e8c13659e09c934708dd&quot;,
+      &quot;nonce&quot;: 14171092,
+      &quot;miner_tx&quot;: {
+        &quot;version&quot;: 3,
+        &quot;output_unlock_times&quot;: [ 63086, 63086 ],
+        &quot;is_deregister&quot;: &quot;00&quot;,
+        &quot;unlock_time&quot;: 63086,
+        &quot;vin&quot;: [ { &quot;gen&quot;: { &quot;height&quot;: 63056 } } ],
+        &quot;vout&quot;: [
+          {
+            &quot;amount&quot;: 35523678718,
+            &quot;target&quot;: { &quot;key&quot;: &quot;ee55cf39cb6f15d22454101cccf6b7d41f1fdb5588e463404eca4b56cbd5bbc3&quot; }
+          },
+          {
+            &quot;amount&quot;: 39470754130,
+            &quot;target&quot;: { &quot;key&quot;: &quot;cee0e4e9534167d66200577aa84b73c318ea494538b1a0af5521e90500835651&quot; }
+          }
+        ],
+        &quot;extra&quot;: [ 1, 78, 138, 13, 108, 21, 106, 146, 123, 15, 16, 167, 144, 212, 202, 206, 222, 44,
+          178, 205, 59, 111, 63, 195, 237, 152, 102, 76, 48, 60, 8, 185, 123, 1, 1, 221, 161, 114,
+          227, 192, 208, 218, 67, 129, 85, 126, 29, 101, 49, 157, 12, 251, 13, 169, 246, 216, 59,
+          113, 109, 229, 184, 225, 39, 221, 215, 245, 114, 252, 177, 71, 113, 91, 228, 248, 243,
+          205, 93, 37, 170, 232, 57, 226, 23, 189, 160, 11, 183, 187, 2, 194, 27, 0, 205, 213, 161,
+          140, 211, 138, 186 ],
+        &quot;rct_signatures&quot;: { &quot;type&quot;: 0 }
+      },
+      &quot;tx_hashes&quot;: []
+    },
+    &quot;miner_tx_hash&quot;: &quot;6993f786d3bcf50a2ae242d245b4de519c38903c062d59f8a30ed2af1f80934b&quot;,
+    &quot;status&quot;: &quot;OK&quot;,
+    &quot;untrusted&quot;: false
+  }
+}
+</pre></div>
+
+
+<p>Of importance, from <code>get_block_template</code></p>
+<div class="codehilite"><pre><span></span>  ...
+  &quot;expected_reward&quot;: 35523678718,
+  ...
+</pre></div>
+
+
+<p>And <code>get_block</code></p>
+<div class="codehilite"><pre><span></span>  ...
+  &quot;vout&quot;: [
+    {
+      &quot;amount&quot;: 35523678718,
+      &quot;target&quot;: { &quot;key&quot;: &quot;ee55cf39cb6f15d22454101cccf6b7d41f1fdb5588e463404eca4b56cbd5bbc3&quot; }
+    },
+    {
+      &quot;amount&quot;: 39470754130,
+      &quot;target&quot;: { &quot;key&quot;: &quot;cee0e4e9534167d66200577aa84b73c318ea494538b1a0af5521e90500835651&quot; }
+    }
+  ],
+  ...
+</pre></div>
+
+
+<p>The <code>expected_reward</code> is the same amount as the 1st vout amount in <code>get_block</code> which is the miner output (the 2nd being the Service Node Output). In summary, the <code>expected_reward</code> returned by <code>get_block_template</code> is exactly the reward the miner will receive.</p>
 <h3 id="extracting-reward-amounts-from-block-outputs">Extracting Reward Amounts from Block Outputs<a class="headerlink" href="#extracting-reward-amounts-from-block-outputs" title="Permanent link">&para;</a></h3>
 <p>In the Bulletproofs hardfork, batching of Governance rewards was introduced and removes the governance output from most miner transactions. This means, for most blocks the outputs will only include the Miner reward and the Service Node reward.</p>
-<p>The Governance reward is paid out every <code>GOVERNANCE_REWARD_INTERVAL</code> number of blocks, in code this is checked as <code>(block\_height % GOVERNANCE_REWARD_INTERVAL == 0)</code>.</p>
+<p>The Governance reward is paid out every <code>GOVERNANCE_REWARD_INTERVAL</code> number of blocks, in code this is checked as <code>(block_height % GOVERNANCE_REWARD_INTERVAL == 0)</code>.</p>
 <div class="codehilite"><pre><span></span>Block Outputs
 [  0] Miner Reward
 [ ..] Service Node Reward
 [  N]
-[N+1] Governance Reward (Appears every N block intervals)
+[N+1] Governance Reward (Appears every GOVERNANCE_REWARD_INTERVAL blocks)
 </pre></div>
 
 
