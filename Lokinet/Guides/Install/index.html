@@ -1086,6 +1086,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#finish" title="Finish" class="md-nav__link">
+    Finish
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1679,6 +1686,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#finish" title="Finish" class="md-nav__link">
+    Finish
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1704,16 +1718,17 @@
                 
                 
                 <h1 id="lokinet-install-guide-linux">LokiNET install guide - Linux<a class="headerlink" href="#lokinet-install-guide-linux" title="Permanent link">&para;</a></h1>
-<p>To Compile Lokinet from the <a href="https://github.com/loki-project/loki-network/releases">lastest release</a> for your platform.</p>
+<p>To Compile, download the <a href="https://github.com/loki-project/loki-network/releases">lastest release</a> of Lokinet for your platform.</p>
 <p>There are no portable binary releases at this time.</p>
 <p>If you encounter a compiler error, report it <a href="https://github.com/loki-project/loki-network/issues">here</a> using the following template found <a href="../../../Contributing/Issue_template/">here</a></p>
 <h2 id="initial-setup-for-linux">Initial Setup for Linux<a class="headerlink" href="#initial-setup-for-linux" title="Permanent link">&para;</a></h2>
 <h3 id="1-set-up-non-root-user">1. Set up Non-root User<a class="headerlink" href="#1-set-up-non-root-user" title="Permanent link">&para;</a></h3>
-<p>Best practice when running a public server is to not run your software as the root user. We will create a non-root user to our VPS by running the following command.</p>
+<p>Best practice when running a public server is to not run your software as the root user. We will create a non-root user to our server by running the following command.</p>
 <p><code>sudo adduser &lt;username&gt;</code></p>
-<p>Replacing <code>&lt;username&gt;</code> with a name you will log-in with. For this user-guide we will use snode as our username.</p>
+<p>Replacing <code>&lt;username&gt;</code> with a name you will log-in with. For this user-guide we will use <code>lokitestnet</code> as our username.</p>
+<p>If you use the same username the command will look like:</p>
 <p><code>sudo adduser lokitestnet</code></p>
-<p>The terminal will prompt you for a new password for our newly created user. Use a different password to the root password.</p>
+<p>Once ran the terminal will prompt you for a new password for your newly created user. Use a different password to the root password.</p>
 <p>Once the password has been set, the terminal will prompt for a few details about the individual running the user. You can hit enter through each of the inputs as the details are not important for the purposes of accessing Lokinet.</p>
 <p>Once that’s done, run the following two commands to give our new account admin privileges and to change to such account.</p>
 <div class="codehilite"><pre><span></span>sudo usermod -aG sudo lokitestnet
@@ -1732,21 +1747,22 @@ su - lokitestnet
 <p>Note: If you are prompted at any time that a version of any file is available then click the up and down arrows until you are hovering over install the package maintainer’s version and click enter.</p>
 </blockquote>
 <h3 id="3-dependencies">3.  Dependencies<a class="headerlink" href="#3-dependencies" title="Permanent link">&para;</a></h3>
-<p>You will need to install some build dependencies:</p>
+<p>You will need to install some build dependencies, run the following command to install all the build dependencies required for Lokinet:</p>
 <p><code>sudo apt install build-essential cmake rapidjson-dev libcap-dev wget git resolvconf</code></p>
-<p>Once you’ve installed the dependencies we will now clone the loki-network github:</p>
+<p>Once you’ve installed the dependencies we will now clone the loki-network repository:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/loki-project/loki-network
 cd loki-network
 </pre></div>
 
 
 <h3 id="4-build-for-normal-operation">4. Build for normal operation<a class="headerlink" href="#4-build-for-normal-operation" title="Permanent link">&para;</a></h3>
-<p>Compile as such for initialisation.</p>
+<p>Run the following two commands to build for operation:</p>
 <div class="codehilite"><pre><span></span>sudo make
 sudo make install
 </pre></div>
 
 
+<hr />
 <h3 id="optional-building-a-debian-package">Optional: Building a debian package<a class="headerlink" href="#optional-building-a-debian-package" title="Permanent link">&para;</a></h3>
 <p>If you want a debian package install the debian maintainer packages needed</p>
 <div class="codehilite"><pre><span></span>$ sudo apt install debuild
@@ -1756,6 +1772,11 @@ sudo make install
 <p>...and then build one like so:</p>
 <div class="codehilite"><pre><span></span>$ debuild -us -b
 </pre></div>
+
+
+<hr />
+<h3 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h3>
+<p>Well done, you have finished the guide. Jump back into the <a href="../PublicTestingGuide/#1-lokinet-installation">Lokinet Public Testing Guide here</a>.</p>
                 
                   
                 

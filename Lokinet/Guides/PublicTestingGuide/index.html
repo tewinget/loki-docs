@@ -1032,8 +1032,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary-of-loki-service-node-requirements" title="Summary of Loki Service Node Requirements" class="md-nav__link">
-    Summary of Loki Service Node Requirements
+  <a href="#summary-of-lokinet-requirements" title="Summary of Lokinet Requirements" class="md-nav__link">
+    Summary of Lokinet Requirements
   </a>
   
 </li>
@@ -1081,8 +1081,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-lokinet-installion" title="1. Lokinet Installion" class="md-nav__link">
-    1. Lokinet Installion
+  <a href="#1-lokinet-installation" title="1. Lokinet Installation" class="md-nav__link">
+    1. Lokinet Installation
   </a>
   
 </li>
@@ -1671,8 +1671,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary-of-loki-service-node-requirements" title="Summary of Loki Service Node Requirements" class="md-nav__link">
-    Summary of Loki Service Node Requirements
+  <a href="#summary-of-lokinet-requirements" title="Summary of Lokinet Requirements" class="md-nav__link">
+    Summary of Lokinet Requirements
   </a>
   
 </li>
@@ -1720,8 +1720,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-lokinet-installion" title="1. Lokinet Installion" class="md-nav__link">
-    1. Lokinet Installion
+  <a href="#1-lokinet-installation" title="1. Lokinet Installation" class="md-nav__link">
+    1. Lokinet Installation
   </a>
   
 </li>
@@ -1772,11 +1772,11 @@
                 
                 
                 <h1 id="lokinet-public-testing-guide">Lokinet Public Testing Guide<a class="headerlink" href="#lokinet-public-testing-guide" title="Permanent link">&para;</a></h1>
-<p>Thanks for your interest in the public testing phase of the Lokinet alpha. It’s taken many months to get to this point, but we’re grateful to everyone who want to give this new type of mixnet a spin.</p>
+<p>Thanks for your interest in the public testing phase of the Lokinet alpha. It’s taken many months to get to this point, but we’re grateful to everyone who wants to give this new type of mixnet a spin.</p>
 <p>This guide will help you get Lokinet running on your machine, and give you some example tasks on things you can do to help put the software through its paces and help us find places where it needs to be fixed or can be improved. The more machines we get this running on, and the more traffic (and types of traffic) we can push through this alpha network, the better.</p>
 <p>You can of course run the Loki software on any operating system that you can get it to build on, but for the purposes of this document, the instructions apply to running Lokinet on a remote Ubuntu 16.04 server. If that isn’t what you want to do, syntax and server set up will of course differ according to whatever OS you choose to run the Lokinet from.</p>
-<h3 id="summary-of-loki-service-node-requirements">Summary of Loki Service Node Requirements<a class="headerlink" href="#summary-of-loki-service-node-requirements" title="Permanent link">&para;</a></h3>
-<p>Full summary of Loki Service Node Requirements. This may change depending on new updates, so you should check here regularly, or follow our <a href="https://t.me/LokiCommunity">telegram</a>/<a href="https://discord.gg/DN72VN">discord</a> announcements channel. </p>
+<h3 id="summary-of-lokinet-requirements">Summary of Lokinet Requirements<a class="headerlink" href="#summary-of-lokinet-requirements" title="Permanent link">&para;</a></h3>
+<p>This may change depending on new updates, so you should check here regularly, or follow our <a href="https://t.me/LokiCommunity">telegram</a>/<a href="https://discord.gg/DN72VN">discord</a> announcements channel. </p>
 <table>
 <thead>
 <tr>
@@ -1806,12 +1806,16 @@
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#Overview">Overview of Lokinet</a></li>
-<li><a href="#getting-help-and-reporting-bugs-guidelines">Getting Help and Reporting Bugs Guidelines</a></li>
+<li><a href="#getting-help-and-reporting-bugs-guidelines">Getting Help and Reporting Bugs Guidelines</a><ul>
+<li><a href="#getting-help">Getting Help</a></li>
+<li><a href="#reporting-bugs">Reporting Bugs</a></li>
+</ul>
+</li>
 <li><a href="#user-guide">User Guide</a><ul>
-<li>Step 1 <a href="#lokinet-installion">Lokinet Installion</a></li>
-<li>Step 2 <a href="#accessing-snapps">Accessing SNApps</a></li>
-<li>Step 3 <a href="#joining-the-lokinet-irc-chat">Joining the lokinet IRC Chat</a></li>
-<li>Step 4 <a href="#hosting-a-snapp">Hosting a SNApp</a></li>
+<li>Step 1 <a href="#1-lokinet-installion">Lokinet Installion</a></li>
+<li>Step 2 <a href="#2-accessing-snapps">Accessing SNApps</a></li>
+<li>Step 3 <a href="#3-joining-the-lokinet-irc-chat">Joining the lokinet IRC Chat</a></li>
+<li>Step 4 <a href="#4-hosting-a-snapp">Hosting a SNApp</a></li>
 </ul>
 </li>
 </ul>
@@ -1823,7 +1827,7 @@
 <p>After you have sought out for help through our communication channels and have not come to any solutions we recommend opening up a issue ticket on the <a href="https://github.com/loki-project/loki-network/issues">Loki-network</a> repository.</p>
 <p>Please use the following Github Issue Template for any github issues created: <a href="../../../Contributing/Issue_Template/">Github Issue Template Example</a>.</p>
 <h2 id="user-guide">User Guide<a class="headerlink" href="#user-guide" title="Permanent link">&para;</a></h2>
-<p>We have laid out a set of guides which will take you through the installion of Lokinet to hosting your own SNApp.</p>
+<p>We have laid out a set of guides which will take you through the installation of Lokinet to hosting your own SNApp.</p>
 <p>We suggest going through each guide in the following order:</p>
 <ol>
 <li>
@@ -1833,15 +1837,15 @@
 <p><a href="../AccessingSNApps/">Accessing SNApps</a> - Setting up your computer to access SNApps.</p>
 </li>
 <li>
-<p><a href="../../../Lokinet/Guides/AccessingSNApps/#test-services">Joining a lokinet IRC chat anonymously</a> - Start chatting with the community on lokinet.</p>
+<p><a href="../../../Lokinet/Guides/AccessingSNApps/#test-services">Joining a lokinet IRC chat anonymously</a> - Start chatting with the community on Lokinet.</p>
 </li>
 <li>
-<p><a href="../HostingSNApps/">Hosting a SNApp</a> - How to host a SNApp on lokinet.</p>
+<p><a href="../HostingSNApps/">Hosting a SNApp</a> - How to host a SNApp on Lokinet.</p>
 </li>
 </ol>
-<h3 id="1-lokinet-installion">1. Lokinet Installion<a class="headerlink" href="#1-lokinet-installion" title="Permanent link">&para;</a></h3>
+<h3 id="1-lokinet-installation">1. Lokinet Installation<a class="headerlink" href="#1-lokinet-installation" title="Permanent link">&para;</a></h3>
 <p>This guide will help prepare your computer to run Lokinet, to access the guide <a href="../Install/">click here</a>.</p>
-<p>The guide will run you through:</p>
+<p>The guide will cover:</p>
 <ul>
 <li>
 <p>Setting up a non root user and giving this user admin access.</p>
@@ -1850,22 +1854,22 @@
 <p>Updating your Package lists and installing required updates.</p>
 </li>
 <li>
-<p>Install build dependencies.</p>
+<p>Installing build dependencies.</p>
 </li>
 <li>
-<p>Build the Lokinet software from the repository.</p>
+<p>Build the Lokinet software from the Github repository.</p>
 </li>
 </ul>
 <p>Follow the guide and report to the moderators with any issues on the #lokinet-help channel on <a href="https://discord.gg/67GXfD6">discord</a>. Dont forget to report any build issues if you find them, especially if you solved the issue.</p>
 <h3 id="2-accessing-snapps">2. Accessing SNApps<a class="headerlink" href="#2-accessing-snapps" title="Permanent link">&para;</a></h3>
 <p>This guide will help you gain access to SNApps, to access the guide <a href="../AccessingSNApps/">click here</a>.</p>
-<p>The guide will run you through:</p>
+<p>The guide will cover:</p>
 <ul>
 <li>
 <p>Adding our DNS resolver.</p>
 </li>
 <li>
-<p>Initialising Loki-network for the first time.</p>
+<p>Initialising Lokinet for the first time.</p>
 </li>
 <li>
 <p>Running <code>./lokinet</code>.</p>
@@ -1877,11 +1881,11 @@
 <p>Follow the guide and report to the moderators with any issues on the #lokinet-help channel on <a href="https://discord.gg/67GXfD6">discord</a>. Dont forget to report your issues to the <a href="https://github.com/loki-project/loki-network/issues">Loki-network</a> repository if you find them, especially if you solved the issue.</p>
 <h3 id="3-joining-the-lokinet-irc-chat">3. Joining the Lokinet IRC Chat<a class="headerlink" href="#3-joining-the-lokinet-irc-chat" title="Permanent link">&para;</a></h3>
 <p>Once you can access a SNApp with a <code>.loki</code> suffix you can then join any IRC chat hosted on the Lokinet.</p>
-<p>We suggest reading through the <a href="../../../Lokinet/Guides/AccessingSNApps/#test-services">#test-services</a> section of the previous finished guide.</p>
-<p>Alternatively, all you need to do is download your favourite IRC client, connect to a server with the following address <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code> with port <code>6667</code> and join channel <code>#lokinet</code>. </p>
+<p>We suggest reading through the <a href="../../../Lokinet/Guides/AccessingSNApps/#test-services">#test-services</a> section of the previous guide.</p>
+<p>Alternatively, all you need to do is download your favourite IRC client, have <code>./lokinet</code> running and connect to a server with the following address <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code> with port <code>6667</code> and join channel <code>#lokinet</code>. </p>
 <h3 id="4-hosting-a-snapp">4. Hosting a SNApp<a class="headerlink" href="#4-hosting-a-snapp" title="Permanent link">&para;</a></h3>
 <p>This guide will help you host your own SNApp, to access the guide <a href="../HostingSNApps/">click here</a>.</p>
-<p>The guide will run you through:</p>
+<p>The guide will cover:</p>
 <ul>
 <li>
 <p>Finding your Lokinet pubkey.</p>
