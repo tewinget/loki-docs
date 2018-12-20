@@ -1075,15 +1075,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" title="Setup" class="md-nav__link">
-    Setup
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dns" title="DNS" class="md-nav__link">
-    DNS
+  <a href="#setup" title="Setup" class="md-nav__link">
+    Setup
   </a>
   
 </li>
@@ -1533,6 +1533,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Contributing/Issue_Template/" title="Github Issue Template Example" class="md-nav__link">
+      Github Issue Template Example
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1626,15 +1638,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" title="Setup" class="md-nav__link">
-    Setup
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dns" title="DNS" class="md-nav__link">
-    DNS
+  <a href="#setup" title="Setup" class="md-nav__link">
+    Setup
   </a>
   
 </li>
@@ -1684,12 +1696,22 @@
 <p>SNApp operators use the traditional server-client model with the key difference being that <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> will be intermediaries in a users connection through Lokinet. When a SNApp wishes to register on the network, it must update the DHT with its descriptor. This descriptor contains various introducers, which are specific Service Nodes that users can contact to form a path to the SNApp. When these paths are set up, users can connect to the SNApp without either party knowing where the other is located in the network.</p>
 <h2 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">&para;</a></h2>
 <p>To install lokinet, see the install guide <a href="../Install/">here</a>.</p>
+<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
+<p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
+<p>Run the following command: </p>
+<p><code>sudo nano /etc/resolvconf/resolv.conf.d/head</code></p>
+<p>Add the following at the bottom of this file:</p>
+<p><code>nameserver 127.3.2.1</code></p>
+<p>Once that line is added hold CTRL and click x. 
+Click enter to confirm the file changes.</p>
+<p>Next we need to update our /etc/resolv.conf file by running the command:</p>
+<p><code>sudo resolvconf -u</code></p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p><strong>DO NOT RUN LOKINET AS ROOT</strong></p>
 <p>For the first time setup, you need to generate a config and obtain bootstrap information.</p>
 <p>Run the following command in directory <code>~/loki-network/build</code>:</p>
 <p><code>sudo ./lokinet -r</code></p>
-<p>Change directory to ~/loki-network</p>
+<p>Change directory to <code>~/loki-network</code></p>
 <p><code>cd ~/loki-network</code></p>
 <p>Run the following command:
 <code>sudo ./lokinet-bootstrap</code></p>
@@ -1702,17 +1724,8 @@
 <p><code>sudo ./lokinet</code></p>
 <p>Now that you have <code>.lokinet</code> running you can access any SNApps being hosted on the network.</p>
 <p>For future reference, if you want to browse lokinet in the future you just need to run <code>.lokinet</code> and start browsing.</p>
-<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
-<p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
-<p>Run the following command: </p>
-<p><code>sudo nano /etc/resolvconf/resolv.conf.d/head</code></p>
-<p>Add the following at the bottom of this file:</p>
-<p><code>nameserver 127.3.2.1</code></p>
-<p>Once that line is added hold CTRL and click x. 
-Click enter to confirm the file changes.</p>
-<p>Next we need to update our /etc/resolv.conf file by running the command:</p>
-<p><code>sudo resolvconf -u</code></p>
 <h2 id="test-services">Test services<a class="headerlink" href="#test-services" title="Permanent link">&para;</a></h2>
+<p>Jump onto a browser such as google chrome or firefox and try and go to the url <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code>. If you see a youtube video you are in luck, congratulations, you now have access to the Lokinet.</p>
 <p>You can join the lokinet irc network at <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code> plaintext port <code>6667</code> with your irc client</p>
 <p>Active channels:</p>
 <ul>
