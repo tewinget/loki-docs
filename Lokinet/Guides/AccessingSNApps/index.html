@@ -1709,21 +1709,14 @@ Click enter to confirm the file changes.</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p><strong>DO NOT RUN LOKINET AS ROOT</strong></p>
 <p>For the first time setup, you need to generate a config and obtain bootstrap information.</p>
-<p>Run the following command in directory <code>~/loki-network/build</code>:</p>
-<p><code>sudo ./lokinet -r</code></p>
-<p>Change directory to <code>~/loki-network</code></p>
-<p><code>cd ~/loki-network</code></p>
-<p>Run the following command:
-<code>sudo ./lokinet-bootstrap</code></p>
+<p><code>lokinet -g &amp;&amp; lokinet-bootstrap</code></p>
 <blockquote>
 <p>The default configuration for lokinet is <code>lokinet.ini</code> located at <code>~/.lokinet/lokinet.ini</code> (<code>%APPDATA%\.lokinet\lokinet.ini</code> on windows).</p>
-<p>To enable a SNApps with a long term address, uncomment the line in the <code>[services]</code> section in <code>lokinet.ini</code> that starts with <code>example-snapp=</code>.</p>
+<p>To enable a SNApps with a long term address, add <code>keyfile=/path/to/keyfile.private</code> to <code>[network]</code> section in <code>lokinet.ini</code> .</p>
 </blockquote>
-<p>Please note that currently node long term SNApps are not currently recommended or supported on windows at this time.</p>
-<p>Then run lokinet:</p>
-<p><code>sudo ./lokinet</code></p>
-<p>Now that you have <code>.lokinet</code> running you can access any SNApps being hosted on the network.</p>
-<p>For future reference, if you want to browse lokinet in the future you just need to run <code>.lokinet</code> and start browsing.</p>
+<p>Then run lokinet in foreground:</p>
+<p><code>lokinet</code></p>
+<p>For future reference, after generating initial configuration you just need to run <code>lokinet</code> and start browsing.</p>
 <h2 id="test-services">Test services<a class="headerlink" href="#test-services" title="Permanent link">&para;</a></h2>
 <p>Jump onto a browser such as google chrome or firefox and try and go to the url <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code>. If you see a youtube video you are in luck, congratulations, you now have access to the Lokinet.</p>
 <p>You can join the lokinet irc network at <code>7okic5x5do3uh3usttnqz9ek3uuoemdrwzto1hciwim9f947or6y.loki</code> plaintext port <code>6667</code> with your irc client</p>

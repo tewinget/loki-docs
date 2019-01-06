@@ -1651,10 +1651,10 @@
                 
                 <h1 id="hosting-a-snapp">Hosting a SNApp<a class="headerlink" href="#hosting-a-snapp" title="Permanent link">&para;</a></h1>
 <h2 id="preparing-your-lokinet-address">Preparing your lokinet address<a class="headerlink" href="#preparing-your-lokinet-address" title="Permanent link">&para;</a></h2>
-<p>When you run the <code>./lokinet -r</code> your terminal will show a bunch of outputs. </p>
+<p>When you run <code>./lokinet</code> your terminal will show a bunch of outputs. </p>
 <p>You are looking for the line with <code>lokitun0</code> in it. The line should look like the following:</p>
 <p><code>[NFO] unnamed (868) Mon Dec 17 15:30:09 2018 AEDT llarp/handlers/tun.cpp:419    default:gtwemaxbfogy5absnjizmoafdngadknpagnoteoir7743ys4xbyo.loki set lokitun0 to have address 172.16.10.1:0</code></p>
-<p>This loki address shown within this output will be the url to your SNApp. You can share this to individuals who you want to access your SNApp.</p>
+<p>This loki address shown within this output will be the url to your SNApp and the local address to bind SNApps on. You can share the <code>.loki</code> address to individuals who you want to access your SNApp.</p>
 <h2 id="creating-your-snapp">Creating your SNApp<a class="headerlink" href="#creating-your-snapp" title="Permanent link">&para;</a></h2>
 <p>Create a new directory within your home folder by running the following command in a terminal:</p>
 <p><code>mkdir ~/snapp/</code></p>
@@ -1669,7 +1669,7 @@
 <p>Then type <code>:q</code> and click enter to quit editing the file, this will take you back to the directory you were in before <code>~/snapp/</code>.</p>
 <h2 id="serving-your-snapp">Serving your SNApp<a class="headerlink" href="#serving-your-snapp" title="Permanent link">&para;</a></h2>
 <p>Now we will serve our index.html file to the lokinet by running the following command within our snapp folder.</p>
-<p><code>sudo python3 -m http.server --bind 0.0.0.0 80</code></p>
+<p><code>sudo python3 -m http.server --bind 172.16.10.1 80</code></p>
 <p>Now if you go to the .loki address you saved before your message “hello lokinet” will be displayed. </p>
 <p>Jump onto the lokinet irc and see if others can access your SNApp.</p>
                 
