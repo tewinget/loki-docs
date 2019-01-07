@@ -171,17 +171,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/TestNetRelay/</loc>
-     <lastmod>2019-01-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/AccessingSNApps/</loc>
      <lastmod>2019-01-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/LokinetIRC/</loc>
+     <lastmod>2019-01-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/HostingSNApps/</loc>
+     <lastmod>2019-01-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/TestNetRelay/</loc>
      <lastmod>2019-01-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
