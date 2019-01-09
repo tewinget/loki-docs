@@ -948,6 +948,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../PublicTestingGuide/" title="Public Testing Overview" class="md-nav__link">
+      Public Testing Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../SNApps/" title="SNApps" class="md-nav__link">
       SNApps
     </a>
@@ -987,29 +999,17 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6" checked>
     
-    <label class="md-nav__link" for="nav-6-5">
+    <label class="md-nav__link" for="nav-6-6">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-5">
+      <label class="md-nav__title" for="nav-6-6">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PublicTestingGuide/" title="Lokinet Public Testing" class="md-nav__link">
-      Lokinet Public Testing
-    </a>
-  </li>
-
         
           
           
@@ -1055,6 +1055,18 @@
   <li class="md-nav__item">
     <a href="../HostingSNApps/" title="Hosting SNApps" class="md-nav__link">
       Hosting SNApps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../RouteThroughExitNode/" title="Route through Exit Node" class="md-nav__link">
+      Route through Exit Node
     </a>
   </li>
 
@@ -1115,6 +1127,26 @@
   <a href="#configuration" title="Configuration" class="md-nav__link">
     Configuration
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toynet-exit-public-key-list-by-region" title="Toynet exit public key list by region:" class="md-nav__link">
+    Toynet exit public key list by region:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toynet-first-hop-public-key-list-with-ip" title="Toynet first hop public key list with IP" class="md-nav__link">
+    Toynet first hop public key list with IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1755,6 +1787,26 @@
     Configuration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toynet-exit-public-key-list-by-region" title="Toynet exit public key list by region:" class="md-nav__link">
+    Toynet exit public key list by region:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toynet-first-hop-public-key-list-with-ip" title="Toynet first hop public key list with IP" class="md-nav__link">
+    Toynet first hop public key list with IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1916,12 +1968,12 @@
 
 <p>This sets to use an exit node by its public identity key and sets a strict first hop by its public identity key.
 We set a strict first hope so that we can easily set up the routing table.</p>
-<p>toynet exit public key list by region:</p>
+<h5 id="toynet-exit-public-key-list-by-region">Toynet exit public key list by region:<a class="headerlink" href="#toynet-exit-public-key-list-by-region" title="Permanent link">&para;</a></h5>
 <p>Romania:</p>
 <ul>
 <li><code>b61df944b8547af56201c6c7528ed86289566dcf73358c5ef8e3b4e628671399</code></li>
 </ul>
-<p>toynet first hop public key list with IP</p>
+<h5 id="toynet-first-hop-public-key-list-with-ip">Toynet first hop public key list with IP<a class="headerlink" href="#toynet-first-hop-public-key-list-with-ip" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
 <p><code>8df8ca1cc9d39d381f0efafdf58e2569457675a1e543189bea8279522aee6461</code> <code>167.114.185.46</code></p>
@@ -1937,7 +1989,7 @@ We set a strict first hope so that we can easily set up the routing table.</p>
 <h4 id="os-x">OS X<a class="headerlink" href="#os-x" title="Permanent link">&para;</a></h4>
 <p>// TODO: document me</p>
 <h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
-<p>set the route that routes everything over lokinet do the following as root:</p>
+<p>Set the route that routes everything over lokinet do the following as root:</p>
 <div class="codehilite"><pre><span></span># ip route add 162.243.164.223 via 192.168.0.1
 # ip route del default
 # ip route add default dev lokitun0

@@ -948,6 +948,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../PublicTestingGuide/" title="Public Testing Overview" class="md-nav__link">
+      Public Testing Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../SNApps/" title="SNApps" class="md-nav__link">
       SNApps
     </a>
@@ -987,29 +999,17 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6" checked>
     
-    <label class="md-nav__link" for="nav-6-5">
+    <label class="md-nav__link" for="nav-6-6">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-5">
+      <label class="md-nav__title" for="nav-6-6">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PublicTestingGuide/" title="Lokinet Public Testing" class="md-nav__link">
-      Lokinet Public Testing
-    </a>
-  </li>
-
         
           
           
@@ -1080,22 +1080,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preparing-your-lokinet-address" title="Preparing your lokinet address" class="md-nav__link">
-    Preparing your lokinet address
+  <a href="#1-preparing-your-lokinet-address" title="1. Preparing your lokinet address" class="md-nav__link">
+    1. Preparing your lokinet address
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-your-snapp" title="Creating your SNApp" class="md-nav__link">
-    Creating your SNApp
+  <a href="#2-creating-your-snapp" title="2. Creating your SNApp" class="md-nav__link">
+    2. Creating your SNApp
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#serving-your-snapp" title="Serving your SNApp" class="md-nav__link">
-    Serving your SNApp
+  <a href="#3-serving-your-snapp" title="3. Serving your SNApp" class="md-nav__link">
+    3. Serving your SNApp
   </a>
   
     <nav class="md-nav">
@@ -1121,6 +1121,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../RouteThroughExitNode/" title="Route through Exit Node" class="md-nav__link">
+      Route through Exit Node
+    </a>
   </li>
 
         
@@ -1635,22 +1647,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preparing-your-lokinet-address" title="Preparing your lokinet address" class="md-nav__link">
-    Preparing your lokinet address
+  <a href="#1-preparing-your-lokinet-address" title="1. Preparing your lokinet address" class="md-nav__link">
+    1. Preparing your lokinet address
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-your-snapp" title="Creating your SNApp" class="md-nav__link">
-    Creating your SNApp
+  <a href="#2-creating-your-snapp" title="2. Creating your SNApp" class="md-nav__link">
+    2. Creating your SNApp
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#serving-your-snapp" title="Serving your SNApp" class="md-nav__link">
-    Serving your SNApp
+  <a href="#3-serving-your-snapp" title="3. Serving your SNApp" class="md-nav__link">
+    3. Serving your SNApp
   </a>
   
     <nav class="md-nav">
@@ -1688,12 +1700,12 @@
                 
                 
                 <h1 id="hosting-a-snapp">Hosting a SNApp<a class="headerlink" href="#hosting-a-snapp" title="Permanent link">&para;</a></h1>
-<h2 id="preparing-your-lokinet-address">Preparing your lokinet address<a class="headerlink" href="#preparing-your-lokinet-address" title="Permanent link">&para;</a></h2>
+<h2 id="1-preparing-your-lokinet-address">1. Preparing your lokinet address<a class="headerlink" href="#1-preparing-your-lokinet-address" title="Permanent link">&para;</a></h2>
 <p>When you run <code>./lokinet</code> your terminal will show a bunch of outputs. </p>
 <p>You are looking for the line with <code>lokitun0</code> in it. The line should look like the following:</p>
 <p><code>[NFO] unnamed (868) Mon Dec 17 15:30:09 2018 AEDT llarp/handlers/tun.cpp:419    default:gtwemaxbfogy5absnjizmoafdngadknpagnoteoir7743ys4xbyo.loki set lokitun0 to have address 172.16.10.1:0</code></p>
 <p>This loki address shown within this output will be the url to your SNApp and the local address to bind SNApps on. You can share the <code>.loki</code> address to individuals who you want to access your SNApp.</p>
-<h2 id="creating-your-snapp">Creating your SNApp<a class="headerlink" href="#creating-your-snapp" title="Permanent link">&para;</a></h2>
+<h2 id="2-creating-your-snapp">2. Creating your SNApp<a class="headerlink" href="#2-creating-your-snapp" title="Permanent link">&para;</a></h2>
 <p>Create a new directory within your home folder by running the following command in a terminal:</p>
 <p><code>mkdir ~/snapp/</code></p>
 <p>Create an index file within your new folder.</p>
@@ -1705,13 +1717,13 @@
 <p>Once the escape button is clicked it will allow for commands to be inputed again.</p>
 <p>Now type <code>:w</code> and click enter to write to the file.</p>
 <p>Then type <code>:q</code> and click enter to quit editing the file, this will take you back to the directory you were in before <code>~/snapp/</code>.</p>
-<h2 id="serving-your-snapp">Serving your SNApp<a class="headerlink" href="#serving-your-snapp" title="Permanent link">&para;</a></h2>
+<h2 id="3-serving-your-snapp">3. Serving your SNApp<a class="headerlink" href="#3-serving-your-snapp" title="Permanent link">&para;</a></h2>
 <p>Now we will serve our index.html file to the lokinet by running the following command within our snapp folder.</p>
 <p><code>sudo python3 -m http.server --bind 172.16.10.1 80</code></p>
 <p>Now if you go to the .loki address you saved before your message “hello lokinet” will be displayed. </p>
 <p>Jump onto the lokinet irc and see if others can access your SNApp.</p>
 <h3 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h3>
-<p>Well done, you have finished the guide. Jump back into the <a href="../PublicTestingGuide/#1-lokinet-installation">Lokinet Public Testing Guide here</a>.</p>
+<p>Well done, you have finished the guide. Jump back into the <a href="../PublicTestingGuide/#5-route-through-an-exit-node">Lokinet Public Testing Guide here</a>.</p>
                 
                   
                 
@@ -1747,13 +1759,13 @@
           </a>
         
         
-          <a href="../TestNetRelay/" title="Test Network Relay" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../RouteThroughExitNode/" title="Route through Exit Node" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Test Network Relay
+                Route through Exit Node
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
