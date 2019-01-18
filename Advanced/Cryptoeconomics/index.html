@@ -1795,8 +1795,8 @@
 <p>Loki is a Blockchain network oriented toward the provision of privacy-preserving services over a network of <a href="../../ServiceNodes/SNOverview/">Service Nodes</a>. The salient cryptoeconomic problem is how to incentivise actors in the Loki network to operate Service Nodes in a manner compatible with the objectives of the Loki network, in particular decentralisation and privacy.</p>
 <p>To solve this problem the Loki Project team commissioned two Economic papers:</p>
 <ol>
-<li><a href="https://loki.network/wp-content/uploads/2018/08/CryptoEconomicsOfTheLokiNetworkHistoric.pdf">Cryptoeconomics of the Loki Network</a>: This Economic Report was commissioned to characterise the game theory behind incentivising Service Node operators. </li>
-<li><a href="https://loki.network/wp-content/uploads/2018/08/LokiCryptoeconomicHistoric.pdf">Loki Cryptoeconomics</a>: This Report was commissioned to apply the game theory specific to the Loki Networks economics.</li>
+<li><a href="https://loki.network/cryptoeconomics">Cryptoeconomics of the Loki Network</a>: This Economic Report was commissioned to characterise the game theory behind incentivising Service Node operators. </li>
+<li><a href="https://loki.network/proposal">Loki Cryptoeconomics</a>: This Report was commissioned to apply the game theory specific to the Loki Networks economics.</li>
 </ol>
 <p>These 2 papers analysed the <a href="#block-reward">Block Reward</a>, <a href="#block-reward-split">Block Reward Split</a>, <a href="#inflation">Inflation</a>, <a href="#circulating-supply">Circulating Supply</a> and the amount of potential Service Nodes on the network to develop a cryptoeconomic solution to incentivise Service Node Operators.</p>
 <h2 id="block-rewards">Block Rewards<a class="headerlink" href="#block-rewards" title="Permanent link">&para;</a></h2>
@@ -1804,8 +1804,8 @@
 <h3 id="loki-block-reward">Loki Block Reward<a class="headerlink" href="#loki-block-reward" title="Permanent link">&para;</a></h3>
 <p>The Loki Block Reward is generated in a similar manner to most proof-of-work cryptocurrencies. Miners use proof-of-work to generate a block and then a reward is released to the network. The reward is then distributed not only distributed to the Miner but to a Service Node Operator and the Governance pool.</p>
 <p>The amount of Loki rewarded <code>BR</code> to the network at each block height <code>h</code> follows the following equation:</p>
-<p><img src="https://latex.codecogs.com/svg.latex?\Large&space;BR = 28 + \frac{100}{2^{(\frac{h}{64800})}}" title="\Large BR = 28 + \frac{100}{2^{\frac{*h*}{64800}}}" /></p>
-<p>This block reward formula is a result of <a href="https://loki.network/wp-content/uploads/2018/08/LokiCryptoeconomicHistoric.pdf">Loki's Cryptoeconomic study</a>, on the 30th of July, 2018, at block 64324, the Loki block reward went from being calculated in terms of the circulating supply with an emission speed factor of 20, to be derived from the block height.</p>
+<p><center><img alt="Block Reward Formula" src="../../assets/blockreward.svg" /></center></p>
+<p>This block reward formula is a result of <a href="https://loki.network/proposal">Loki's Cryptoeconomic study</a>, on the 30th of July, 2018, at block 64324, the Loki block reward went from being calculated in terms of the circulating supply with an emission speed factor of 20, to be derived from the block height.</p>
 <h3 id="block-reward-split">Block Reward Split<a class="headerlink" href="#block-reward-split" title="Permanent link">&para;</a></h3>
 <p>As Service Node's went live on 20th of September, 2018, at block 101250, the addition of a Block Reward split was required to financially incentivise <a href="../../ServiceNodes/SNOverview/">Service Node</a> Operators to maintain and run Service Nodes. During the fork on the 30th of July, 2018, the Block Reward was hard coded to split the reward as follows:</p>
 <table>
