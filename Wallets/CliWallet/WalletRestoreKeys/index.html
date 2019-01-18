@@ -1729,14 +1729,18 @@
 <li>Download the latest release of wallet CLI software for your desired operating system: https://github.com/loki-project/loki/releases</li>
 <li>Unzip  <code>loki-[operating-system]-[platform]-[version].zip</code> file</li>
 </ul>
-<p><img alt="Wallet-Cli-Folder" src="http://u.cubeupload.com/cryptolokimax/cliwalletfolder.png" /></p>
+<p><center><img alt="Wallet-Cli-Folder" src="../../../assets/cliwalletfolder.png" /></center></p>
 <h2 id="step-2-run-wallet-in-restore-mode">Step 2: Run wallet in restore mode<a class="headerlink" href="#step-2-run-wallet-in-restore-mode" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Open a <a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (Windows) or <a href="https://en.wikipedia.org/wiki/Terminal_emulator">Terminal</a> (Linux / OSX) and navigate to the wallet folder</li>
-<li>Run wallet with <code>--generate-from-keys</code>  argument: </li>
+<li>
+<p>Open a <a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (Windows) or <a href="https://en.wikipedia.org/wiki/Terminal_emulator">Terminal</a> (Linux / OSX) and navigate to the wallet folder</p>
+</li>
+<li>
+<p>Run wallet with <code>--generate-from-keys</code>  argument: </p>
+</li>
 </ul>
 <p><code>./loki-wallet-cli --generate-from-keys [New Wallet Name]</code></p>
-<p>where <code>[New Wallet Name]</code> is a new wallet name. You can enter any name here, use something rememberable and meaningful. </p>
+<p>Where <code>[New Wallet Name]</code> is a new wallet name. You can enter any name here, use something rememberable and meaningful. </p>
 <h2 id="step-3-enter-wallet-address-view-and-spend-keys">Step 3: Enter wallet address, view and spend keys<a class="headerlink" href="#step-3-enter-wallet-address-view-and-spend-keys" title="Permanent link">&para;</a></h2>
 <p>On the next step, specify all 3 wallet keys, one by one:</p>
 <ul>
@@ -1744,18 +1748,25 @@
 <li>Enter <strong>Secret spend key</strong> and press [Enter]</li>
 <li>Enter <strong>Secret view key</strong> and press [Enter]</li>
 </ul>
-<p><img alt="Wallet-Restore-From-Keys" src="http://u.cubeupload.com/cryptolokimax/cliwalletrestorekeys.png" /></p>
+<p><center><img alt="Wallet-Restore-From-Keys" src="../../../assets/cliwalletrestorekeys.png" /></center></p>
 <h2 id="step-4-enter-wallet-password">Step 4: Enter wallet password<a class="headerlink" href="#step-4-enter-wallet-password" title="Permanent link">&para;</a></h2>
 <ul>
-<li>You will be prompted for a password. Enter a new password that follows the <a href="https://en.wikipedia.org/wiki/Password_policy">Password Policy</a> and press [Enter].</li>
-<li>Confirm password and press [Enter].</li>
+<li>
+<p>You will be prompted for a password. Enter a new password that follows the <a href="https://en.wikipedia.org/wiki/Password_policy">Password Policy</a> and press [Enter].</p>
+</li>
+<li>
+<p>Confirm password and press [Enter].</p>
+</li>
 </ul>
 <h2 id="step-5-specify-a-blockchain-height">Step 5: Specify a blockchain height<a class="headerlink" href="#step-5-specify-a-blockchain-height" title="Permanent link">&para;</a></h2>
 <p>If you know the block height at which wallet was created or a first transaction was made, you can enter it here. Specifying a blockchain height will help to scan the wallet faster.</p>
 <p>If you don't know a specific blockchain height, press [Enter] for scanning from block height 0.</p>
 <h2 id="step-6-wait-for-the-refresh-process-to-finish">Step 6: Wait for the refresh process to finish<a class="headerlink" href="#step-6-wait-for-the-refresh-process-to-finish" title="Permanent link">&para;</a></h2>
 <p>For refresh process to start, you need to have your daemon running. Another option would be to use a remote node. For that, use the following command, replacing <host> and <port> with the host and port number of the remote node you are connecting to:</p>
-<p><code>./loki-wallet-cli --daemon-address &lt;host&gt;:&lt;port&gt;</code></p>
+<div class="codehilite"><pre><span></span>./loki-wallet-cli --daemon-address &lt;host&gt;:&lt;port&gt;
+</pre></div>
+
+
 <p>Once refresh is done, you can use your full functioning restored wallet. Your public wallet address will remain the same.</p>
                 
                   

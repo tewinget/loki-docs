@@ -1735,19 +1735,27 @@
 <p>To fully restore your wallet and be able to view balance and make transactions, having your seed stored will be enough. You don't need your wallet password or other keys to restore the wallet once you have a seed phrase.</p>
 <h2 id="step-1-download-and-unzip-cli-wallet">Step 1: Download and unzip CLI wallet<a class="headerlink" href="#step-1-download-and-unzip-cli-wallet" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Download the latest release of wallet CLI software for your desired operating system: https://github.com/loki-project/loki/releases</li>
-<li>Unzip  <code>loki-[operating-system]-[platform]-[version].zip</code> file</li>
+<li>
+<p>Download the latest release of wallet CLI software for your desired operating system: <a href="https://github.com/loki-project/loki/releases">https://github.com/loki-project/loki/releases</a></p>
+</li>
+<li>
+<p>Unzip  <code>loki-[operating-system]-[platform]-[version].zip</code> file</p>
+</li>
 </ul>
-<p><img alt="Wallet-Cli-Folder" src="http://u.cubeupload.com/cryptolokimax/cliwalletfolder.png" /></p>
+<p><center><img alt="Wallet-Cli-Folder" src="../../../assets/cliwalletfolder.png" /></center></p>
 <h2 id="step-2-run-wallet-in-restore-mode">Step 2: Run wallet in restore mode<a class="headerlink" href="#step-2-run-wallet-in-restore-mode" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Open a <a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (Windows) or <a href="https://en.wikipedia.org/wiki/Terminal_emulator">Terminal</a> (Linux / OSX) and navigate to the wallet folder</li>
-<li>Run wallet with <code>--restore-deterministic-wallet</code>  argument: 
-  <code>./loki-wallet-cli --restore-deterministic-wallet</code></li>
+<li>
+<p>Open a <a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> (Windows) or <a href="https://en.wikipedia.org/wiki/Terminal_emulator">Terminal</a> (Linux / OSX) and navigate to the wallet folder</p>
+</li>
+<li>
+<p>Run wallet with <code>--restore-deterministic-wallet</code>  argument:
+<code>./loki-wallet-cli --restore-deterministic-wallet</code></p>
+</li>
 </ul>
 <h2 id="step-3-enter-wallet-name">Step 3: Enter wallet name<a class="headerlink" href="#step-3-enter-wallet-name" title="Permanent link">&para;</a></h2>
 <p>You will be prompted to enter a wallet name and click [Enter]. You can enter any name here, use something rememberable and meaningful.</p>
-<p><img alt="Enter-Wallet-Name" src="http://u.cubeupload.com/cryptolokimax/cliwalletrestore.png" /></p>
+<p><center><img alt="Enter-Wallet-Name" src="../../../assets/cliwalletrestore.png" /></center></p>
 <h2 id="step-4-enter-your-seed-phrase">Step 4: Enter your seed phrase<a class="headerlink" href="#step-4-enter-your-seed-phrase" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1759,15 +1767,22 @@
 </ul>
 <h2 id="step-5-enter-wallet-password">Step 5: Enter wallet password<a class="headerlink" href="#step-5-enter-wallet-password" title="Permanent link">&para;</a></h2>
 <ul>
-<li>You will be prompted for a password. Enter a new password that follows the <a href="https://en.wikipedia.org/wiki/Password_policy">Password Policy</a> and press [Enter].</li>
-<li>Confirm password and press [Enter].</li>
+<li>
+<p>You will be prompted for a password. Enter a new password that follows the <a href="https://en.wikipedia.org/wiki/Password_policy">Password Policy</a> and press [Enter].</p>
+</li>
+<li>
+<p>Confirm password and press [Enter].</p>
+</li>
 </ul>
 <h2 id="step-6-specify-a-blockchain-height">Step 6: Specify a blockchain height<a class="headerlink" href="#step-6-specify-a-blockchain-height" title="Permanent link">&para;</a></h2>
 <p>If you know the block height at which wallet was created or a first transaction was made, you can enter it here. Specifying a blockchain height will help to scan the wallet faster.</p>
 <p>If you don't know a specific blockchain height, press [Enter] for scanning from block height 0.</p>
 <h2 id="step-7-wait-for-the-refresh-process-to-finish">Step 7: Wait for the refresh process to finish<a class="headerlink" href="#step-7-wait-for-the-refresh-process-to-finish" title="Permanent link">&para;</a></h2>
 <p>For refresh process to start, you need to have your daemon running. Another option would be to use a remote node. For that, use the following command, replacing <host> and <port> with the host and port number of the remote node you are connecting to:</p>
-<p><code>./loki-wallet-cli --daemon-address &lt;host&gt;:&lt;port&gt;</code></p>
+<div class="codehilite"><pre><span></span>./loki-wallet-cli --daemon-address &lt;host&gt;:&lt;port&gt;
+</pre></div>
+
+
 <p>Once refresh is done, you can use your full functioning restored wallet. Your public wallet address will remain the same.</p>
                 
                   

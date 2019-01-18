@@ -969,19 +969,6 @@
     How to access Loki daemon in interactive mode when running daemon as a service
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#note" title="NOTE:" class="md-nav__link">
-    NOTE:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1719,19 +1706,6 @@
     How to access Loki daemon in interactive mode when running daemon as a service
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#note" title="NOTE:" class="md-nav__link">
-    NOTE:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1860,9 +1834,15 @@ CTRL+X -&gt; Y -&gt; ENTER</p>
 </li>
 </ul>
 <h2 id="how-to-update-loki-binaries-when-running-daemon-as-a-service">How to update Loki binaries when running daemon as a service<a class="headerlink" href="#how-to-update-loki-binaries-when-running-daemon-as-a-service" title="Permanent link">&para;</a></h2>
-<p>To update your Loki node, a process like the one found at <a href="https://github.com/loki-project/Meta/blob/master/SNFullGuide.md#updating-loki">Full Guide on Service Nodes - Updating loki</a> can be followed. The main inconvenience of this method is that lokid.service file has to be edited on every update as the Loki daemon file path is changed. So we are forced to run several additional steps that are  otherwise unnecessary. Because of this, two Loki daemon updating methods are described below:
-- <a href="#method-based-on-full-guide-on-service-nodes-updating-loki">Method based on "Full Guide on Service Nodes - Updating loki"</a>
-- <a href="#updating-loki-binaries-without-editing-lokidservice-file-method">Updating Loki binaries without editing lokid.service file method</a></p>
+<p>To update your Loki node, a process like the one found at <a href="https://github.com/loki-project/Meta/blob/master/SNFullGuide.md#updating-loki">Full Guide on Service Nodes - Updating loki</a> can be followed. The main inconvenience of this method is that lokid.service file has to be edited on every update as the Loki daemon file path is changed. So we are forced to run several additional steps that are  otherwise unnecessary. Because of this, two Loki daemon updating methods are described below:</p>
+<ul>
+<li>
+<p><a href="#method-based-on-full-guide-on-service-nodes-updating-loki">Method based on "Full Guide on Service Nodes - Updating loki"</a>.</p>
+</li>
+<li>
+<p><a href="#updating-loki-binaries-without-editing-lokidservice-file-method">Updating Loki binaries without editing lokid.service file method</a>.</p>
+</li>
+</ul>
 <h3 id="method-based-on-full-guide-on-service-nodes-updating-loki">Method based on "Full Guide on Service Nodes - Updating loki"<a class="headerlink" href="#method-based-on-full-guide-on-service-nodes-updating-loki" title="Permanent link">&para;</a></h3>
 <p>Connect to your server via SSH and:</p>
 <ol>
@@ -1894,10 +1874,7 @@ CTRL+X -&gt; Y -&gt; ENTER</p>
 <p>Test 2. Check the Service Node status:
 <code>~/loki-linux-x64-&lt;VERSION&gt;/./lokid print_sn_status</code> (replace <code>&lt;VERSION&gt;</code> with the one found on step 1, <code>1.0.4</code> in our example).</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet,  append the --testnet flag at the end of the command.
-</pre></div>
-
-
+<p>For Testnet,  append the --testnet flag at the end of the command.</p>
 </blockquote>
 </li>
 </ul>
@@ -1944,19 +1921,13 @@ CTRL+X -&gt; Y -&gt; ENTER</p>
 <p>Test 2. Check the Service Node status:
 <code>~/loki/./lokid print_sn_status</code> (<code>~</code> character replaces user's home directory full path, do not skip it!).</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet,  append the --testnet flag at the end of the command.
-</pre></div>
-
-
+<p>For Testnet,  append the --testnet flag at the end of the command.</p>
 </blockquote>
 </li>
 <li>
 <p>Test 3. Check what Loki daemon version is running now that this information is not in its folder's name: <code>~/loki/./lokid version</code>.</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet,  append the --testnet flag at the end of the command.
-</pre></div>
-
-
+<p>For Testnet,  append the --testnet flag at the end of the command. </p>
 </blockquote>
 </li>
 </ul>
@@ -1971,10 +1942,7 @@ you have to connect to your server via SSH and:</p>
 <li>
 <p>Start lokid from shell: <code>~/YOUR_LOKI_FILES_FOLDER/./lokid</code> (<code>~</code> character replaces user's home directory full path, do not skip it!).</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet,  append the --testnet flag at the end of the command.
-</pre></div>
-
-
+<p>For Testnet,  append the --testnet flag at the end of the command.</p>
 </blockquote>
 </li>
 <li>
@@ -1996,16 +1964,15 @@ you have to connect to your server via SSH and:</p>
 <p>Test 2. Check the Service Node status (remember to replace YOUR_LOKI_FILES_FOLDER with your own):
 <code>~/YOUR_LOKI_FILES_FOLDER/./lokid print_sn_status</code> (<code>~</code> character replaces user's home directory full path, do not skip it!).</p>
 <blockquote>
-<div class="codehilite"><pre><span></span>For Testnet,  append the --testnet flag at the end of the command.
-</pre></div>
-
-
+<p>For Testnet,  append the --testnet flag at the end of the command. </p>
 </blockquote>
 </li>
 </ul>
 <hr />
-<h3 id="note">NOTE:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
-<p>If you have not updated your Loki binary files to the latest version yet you are encouraged to, since 1.0.0 or 1.0.1 users can run into timing issues that lead to deregistration with multiple consecutive daemon restarts.</p>
+<blockquote>
+<p>NOTE: 
+If you have not updated your Loki binary files to the latest version yet you are encouraged to, since 1.0.0 or 1.0.1 users can run into timing issues that lead to deregistration with multiple consecutive daemon restarts.</p>
+</blockquote>
                 
                   
                 

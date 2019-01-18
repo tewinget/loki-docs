@@ -2091,7 +2091,10 @@
 <h2 id="1-accounts">1 Accounts<a class="headerlink" href="#1-accounts" title="Permanent link">&para;</a></h2>
 <h3 id="11-creating-new-account">1.1 Creating new account<a class="headerlink" href="#11-creating-new-account" title="Permanent link">&para;</a></h3>
 <p>When a wallet is generated it will automatically have an account labelled <code>Primary account</code> with index <code>0</code>. If at any time you wish to create an additional account use the command:</p>
-<p><code>account new &lt;label text with white spaces allowed&gt;</code></p>
+<div class="codehilite"><pre><span></span>account new &lt;label text with white spaces allowed&gt;
+</pre></div>
+
+
 <p>This command will create a subaddress which is labelled with a tag and index number. This subaddress will share the same seed as your Primary address. To ensure this new account is displayed you must type <code>exit</code> to save your session.</p>
 <p>You will note that there is now an asterisk to the left of index 1. The asterisks show us the account in which the commands we run will apply to.</p>
 <blockquote>
@@ -2120,8 +2123,11 @@
 </pre></div>
 
 
-<p>To switch between the accounts you have created run the command:
-<code>account switch &lt;index&gt;</code></p>
+<p>To switch between the accounts you have created run the command:</p>
+<div class="codehilite"><pre><span></span>account switch &lt;index&gt;
+</pre></div>
+
+
 <p>After running the command a similar output shown below will be on your terminal.</p>
 <div class="codehilite"><pre><span></span>[wallet L9LnR2]: account switch 0
 [wallet L9LnR2]: Currently selected account: [0] Primary account
@@ -2132,7 +2138,10 @@
 
 <h3 id="13-changing-account-labels">1.3 Changing account labels<a class="headerlink" href="#13-changing-account-labels" title="Permanent link">&para;</a></h3>
 <p>To change the label name connected to a specific Loki Primary or Sub-address use the command:</p>
-<p><code>account label &lt;index&gt; &lt;label text with white spaces allowed&gt;</code></p>
+<div class="codehilite"><pre><span></span>account label &lt;index&gt; &lt;label text with white spaces allowed&gt;
+</pre></div>
+
+
 <p>Replacing <code>&lt;index&gt;</code> with the index number associated with the account you wish to relabel, and replacing <code>&lt;label text with white spaces allowed&gt;</code> with the new label you would like to name the specified account.</p>
 <p>Below shows the current accounts and labels for a specific wallet.</p>
 <div class="codehilite"><pre><span></span>[wallet LCmjSH]: Untagged accounts:
@@ -2170,7 +2179,10 @@
 
 
 <p>We can tag a single account with the following command:</p>
-<p><code>account tag &lt;tag_name&gt; &lt;account_index&gt;</code></p>
+<div class="codehilite"><pre><span></span>account tag &lt;tag_name&gt; &lt;account_index&gt;
+</pre></div>
+
+
 <div class="codehilite"><pre><span></span>[wallet LVP3bv]: account tag Pets 1
 [wallet LVP3bv]: Accounts with tag: Pets
 [wallet LVP3bv]: Tag&#39;s description:
@@ -2182,7 +2194,10 @@
 
 
 <p>When needing to perform multiple tags we can do it through one command:</p>
-<p><code>account tag &lt;tag_name&gt; &lt;account_index_1&gt; [&lt;account_index_2&gt; ...]</code></p>
+<div class="codehilite"><pre><span></span>account tag &lt;tag_name&gt; &lt;account_index_1&gt; [&lt;account_index_2&gt; ...]
+</pre></div>
+
+
 <div class="codehilite"><pre><span></span>[wallet LVP3bv]: account tag Family 2 3
 [wallet LVP3bv]: Accounts with tag: Family
 [wallet LVP3bv]: Tag&#39;s description:
@@ -2195,7 +2210,10 @@
 
 
 <p>Similarly we can untag accounts by running the following command:</p>
-<p><code>account untag &lt;account_index_1&gt; [&lt;account_index_2&gt; ...]</code></p>
+<div class="codehilite"><pre><span></span>account untag &lt;account_index_1&gt; [&lt;account_index_2&gt; ...]
+</pre></div>
+
+
 <p>Using the above exampled wallet we will remove our “Dog” account from “Pets”.</p>
 <div class="codehilite"><pre><span></span>[wallet LVP3bv]: account untag 1
 [wallet LVP3bv]: Accounts with tag: Family
@@ -2217,7 +2235,10 @@
 
 <h3 id="15-adding-tag-descriptions">1.5 Adding Tag descriptions<a class="headerlink" href="#15-adding-tag-descriptions" title="Permanent link">&para;</a></h3>
 <p>If you require additional information attached to a specific tag you can add a description with the following command:</p>
-<p><code>account tag_description &lt;tag_name&gt; &lt;description&gt;</code></p>
+<div class="codehilite"><pre><span></span>account tag_description &lt;tag_name&gt; &lt;description&gt;
+</pre></div>
+
+
 <p>For example:</p>
 <div class="codehilite"><pre><span></span>[wallet LVP3bv]: account tag_description Family This is my family.
 [wallet LVP3bv]: Accounts with tag: Family
@@ -2232,8 +2253,7 @@
 
 <h2 id="2-balance">2 Balance<a class="headerlink" href="#2-balance" title="Permanent link">&para;</a></h2>
 <p>To check the balance of your wallet you can run one of two commands:</p>
-<p><code>balance</code></p>
-<p><code>balance detail</code></p>
+<p><code>balance</code> or <code>balance detail</code></p>
 <p>Running the command <code>balance</code> will generated a simple output showing your balance and unlocked balance of the specific account you are in. For example:</p>
 <div class="codehilite"><pre><span></span>[wallet T6TmZX]: balance
 Currently selected account: [0] Primary account
@@ -2256,20 +2276,29 @@ Address Balance Unlocked balance Outputs Label
 <p>There are other commands that will also output the balance which have been covered by this guide, such as the <code>account</code> command.</p>
 <h2 id="3-getting-the-block-height">3 Getting the Block Height<a class="headerlink" href="#3-getting-the-block-height" title="Permanent link">&para;</a></h2>
 <p>To show the blockchain height run the command:</p>
-<p><code>bc_height</code></p>
+<div class="codehilite"><pre><span></span>bc_height
+</pre></div>
+
+
 <h2 id="4-blackballing-transactions">4 Blackballing Transactions<a class="headerlink" href="#4-blackballing-transactions" title="Permanent link">&para;</a></h2>
 <p>Blackballing transactions allows you to ignore others' outputs (containers of money) that are known to be spent in a certain transaction.</p>
 <p>For example let’s imagine that txid: <code>4f4b371a0da8858bbeab8a40ff37de1f6ff33e64a616e5ced8239062570b7542</code> is known to be fake and if this txid is seen within a RingCT transaction the network can assume it is fake, therefore an actor has a better chance of deducing the real transaction within the RingCT.</p>
 <p>By blackballing the above txid we remove the chance of it being used within our RingCT.</p>
 <p>To do this we will use the following command:</p>
-<p><code>blackball &lt;output public key&gt; | &lt;filename&gt; [add]</code></p>
+<div class="codehilite"><pre><span></span>blackball &lt;output public key&gt; | &lt;filename&gt; [add]
+</pre></div>
+
+
 <p>For example:</p>
 <div class="codehilite"><pre><span></span>[wallet LAXk6e]: blackball 4f4b371a0da8858bbeab8a40ff37de1f6ff33e64a616e5ced8239062570b7542
 </pre></div>
 
 
 <p>To check if the txid was added to our list of txids not to use we can use the following command:</p>
-<p><code>blackballed &lt;output public key&gt;</code></p>
+<div class="codehilite"><pre><span></span>blackballed &lt;output public key&gt;
+</pre></div>
+
+
 <p>If the txid is on our list the following will output:</p>
 <div class="codehilite"><pre><span></span>[wallet LAXk6e]: blackballed 4f4b371a0da8858bbeab8a40ff37de1f6ff33e64a616e5ced8239062570b7542
 [wallet LAXk6e]: Blackballed: &lt;4f4b371a0da8858bbeab8a40ff37de1f6ff33e64a616e5ced8239062570b7542&gt;
@@ -2283,7 +2312,10 @@ Address Balance Unlocked balance Outputs Label
 
 
 <p>To unblackball a txid use the following command:</p>
-<p><code>unblackball &lt;output public key&gt;</code></p>
+<div class="codehilite"><pre><span></span>unblackball &lt;output public key&gt;
+</pre></div>
+
+
 <p>For example:</p>
 <div class="codehilite"><pre><span></span>[wallet LAXk6e]: unblackball 4f4b371a0da8858bbeab8a40ff37de1f6ff33e64a616e5ced8239062570b7542
 </pre></div>
@@ -2294,10 +2326,16 @@ Address Balance Unlocked balance Outputs Label
 <p>For example let’s imagine you see a car for sale but they will accept Loki as payment, however they have advised in their online listing that they are only interested in serious buyers and require you to prove you have the Loki within your initial contact. Luckily we can use the Reserve Proof commands for this proof.</p>
 <h3 id="51-generate-reserve-proof">5.1 Generate Reserve Proof<a class="headerlink" href="#51-generate-reserve-proof" title="Permanent link">&para;</a></h3>
 <p>To begin we will need to run the <code>get_reserve_proof</code> command to generate our proof.</p>
-<p><code>get_reserve_proof (all|&lt;amount&gt;) [&lt;message&gt;]</code></p>
+<div class="codehilite"><pre><span></span>get_reserve_proof (all|&lt;amount&gt;) [&lt;message&gt;]
+</pre></div>
+
+
 <p>If the individual you are sending this proof to requires you to prove you have 1000 Loki you will need to replace the section <code>(all|&lt;amount&gt;)</code> with a 1000, otherwise replace it with the amount you need to prove you have reserved. If you want to put an extra layer of encryption over the file replace <code>[&lt;message&gt;]</code> with a password.</p>
 <p>Your command will similar to the below command:</p>
-<p><code>get_reserve_proof 1000 Car</code></p>
+<div class="codehilite"><pre><span></span>get_reserve_proof 1000 Car
+</pre></div>
+
+
 <p>The Cli will request your wallet password and once your password is entered it will tell you it generated a signature file.</p>
 <div class="codehilite"><pre><span></span>[wallet T6TmZX]: get_reserve_proof 1000 Car
 Wallet password:
@@ -2307,9 +2345,15 @@ signature file saved to: loki_reserve_proof
 
 <p>This signature file <code>loki_reserve_proof</code> will be saved in your Loki folder, where your daemon and wallet keys are. Keep in mind every time you run the <code>get_reserve_proof</code> command it will overwrite your <code>loki_reserve_proof</code> file.</p>
 <p>You will want to send this file to the person who requires the proof. You can upload the <code>loki_reserve_proof</code> file through <a href="https://transfer.sh/">https://transfer.sh/</a> by running the command within the folder of your signature file:</p>
-<p><code>curl --upload-file ./loki_reserve_proof https://transfer.sh/loki_reserve_proof</code></p>
+<div class="codehilite"><pre><span></span>curl --upload-file ./loki_reserve_proof https://transfer.sh/loki_reserve_proof`
+</pre></div>
+
+
 <p>The terminal will then print out a link to your signature file which you can then provide to the individual performing the check.</p>
-<p><code>https://transfer.sh/QhoC7/loki_reserve_proof</code></p>
+<div class="codehilite"><pre><span></span>https://transfer.sh/QhoC7/loki_reserve_proof
+</pre></div>
+
+
 <p>Make sure you provide the following to the individual who will be checking your reserve proof:</p>
 <ul>
 <li>
@@ -2325,10 +2369,16 @@ signature file saved to: loki_reserve_proof
 <h3 id="52-checking-reserve-proof">5.2 Checking Reserve Proof<a class="headerlink" href="#52-checking-reserve-proof" title="Permanent link">&para;</a></h3>
 <p>To check a reserve proof we need to first have the <code>loki_reserve_proof</code> file in our Loki folder.</p>
 <p>If you do not have the <code>loki_reserve_proof</code> file in your loki folder request the individual sending the file to you to use <a href="https://transfer.sh/">https://transfer.sh/</a>, once they send you the link to their <code>loki_reserve_proof</code> you can use the following command to download it.</p>
-<p><code>curl &lt;link&gt; -o loki_reserve_proof</code></p>
+<div class="codehilite"><pre><span></span>curl &lt;link&gt; -o loki_reserve_proof
+</pre></div>
+
+
 <p>Replacing <code>&lt;link&gt;</code> with the link to download the <code>loki_reserve_proof</code>.</p>
 <p>Now that the <code>loki_reserve_proof</code> is in our folder we can run the following command:</p>
-<p><code>check_reserve_proof &lt;address&gt; &lt;signature_file&gt; [&lt;message&gt;]</code></p>
+<div class="codehilite"><pre><span></span>check_reserve_proof &lt;address&gt; &lt;signature_file&gt; [&lt;message&gt;]
+</pre></div>
+
+
 <p>Where <code>&lt;address&gt;</code> is the address of the wallet where the command get_reserve_proof was ran. <code>&lt;signiture_file&gt;</code> is the file that was received from the individual sending you the reserve proof, normally generated as <code>loki_reserve_proof</code> and <code>&lt;message&gt;</code> is the key set by the individual who sent you the reserve proof.</p>
 <p>Therefor for the previous example where we created a reserve proof for 1000 loki and signed with “car”, we would run the command:</p>
 <div class="codehilite"><pre><span></span>check_reserve_proof T6TmZX8EzZVjS9zNg7zAsrEQFDgcVC2qV2ZMyoWsbyK4SNB2SwMHZtMhPSsFyTmRBQUaGVF5k3qy5CMFM6Lvj7gi3AeszDag7 loki_reserve_proof Car
@@ -2343,13 +2393,19 @@ signature file saved to: loki_reserve_proof
 <p>You may note that it shows a reserve proof which is greater than 1000, this is because the command is adding up all the transactions into the address specified until it is greater than the reserve proof set.</p>
 <h2 id="6-spend-proof">6 Spend Proof<a class="headerlink" href="#6-spend-proof" title="Permanent link">&para;</a></h2>
 <p>Spend Proofs are used to generate a signature proving that you generated a TXID, with the option to sign the spend proof with a key.</p>
-<p>For example let’s imagine you have bought a car from a dealership with loki and have sent 1000 loki to the seller. Unfortunately the dealer does not know which transaction is yours as he has received 5 transactions of 1000 loki in the same block for 5 different cars. He knows the txid’s but wants you to prove that you have generate one of the txid’s in his list. Luckily we can prove we generated the txid by using the get_spend_proof command.</p>
+<p>For example let’s imagine you have bought a car from a dealership with loki and have sent 1000 loki to the seller. Unfortunately the dealer does not know which transaction is yours as he has received 5 transactions of 1000 loki in the same block for 5 different cars. He knows the txid’s but wants you to prove that you have generate one of the txid’s in his list. Luckily we can prove we generated the txid by using the <code>get_spend_proof</code> command.</p>
 <h3 id="61-generate-spend-proof">6.1 Generate Spend Proof<a class="headerlink" href="#61-generate-spend-proof" title="Permanent link">&para;</a></h3>
 <p>To begin we will first need to find the txid associated with our transaction. To do this run the following command in our wallet:</p>
-<p><code>show_transfers</code></p>
+<div class="codehilite"><pre><span></span>show_transfers
+</pre></div>
+
+
 <p>The terminal will output a list of transactions in and out of your address. You should have a transaction in your list with the amount you spent to the dealership. Copy the txid(by highlighting) associated with this transaction and save it in a notepad for later.</p>
 <p>We can now run the <code>get_spend_proof</code> command to generate our proof.</p>
-<p><code>get_spend_proof &lt;txid&gt; [&lt;message&gt;]</code></p>
+<div class="codehilite"><pre><span></span>get_spend_proof &lt;txid&gt; [&lt;message&gt;]
+</pre></div>
+
+
 <p>Replacing <code>&lt;txid&gt;</code> with the txid of our transfer out and replacing <code>&lt;message&gt;</code> if we want to add a password to the proof. If all went well the terminal will output the following text:</p>
 <div class="codehilite"><pre><span></span>signature file saved to: loki_spend_proof
 </pre></div>
