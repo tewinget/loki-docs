@@ -1444,6 +1444,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Developer/WalletRPCGuide/" title="Loki Wallet RPC Guide" class="md-nav__link">
+      Loki Wallet RPC Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Developer/FAQ/" title="FAQ" class="md-nav__link">
       FAQ
     </a>
@@ -2743,7 +2755,12 @@ If registering multiple nodes, please wait at least 10 blocks between Service No
 
 
 <p>Replacing <code>&lt;service_node_pubkey&gt;</code> with the Pubkey connected to the Service Node you wish to deregister.</p>
-<p>At this moment your Service Node will deregister in </p>
+<p>At this moment your Service Node will deregister in 10800 blocks. To keep updated on when your $Loki will unlock run the command:</p>
+<div class="codehilite"><pre><span></span>print_locked_stakes
+</pre></div>
+
+
+<p>This will show you the block height in which the funds will unlock.</p>
 <h2 id="additional-functions">Additional Functions<a class="headerlink" href="#additional-functions" title="Permanent link">&para;</a></h2>
 <h3 id="running-autostake-on-startup">Running Autostake on startup<a class="headerlink" href="#running-autostake-on-startup" title="Permanent link">&para;</a></h3>
 <p>If the host machine your VPS is running on shuts down or restarts unexpectedly then so to will your your autostaking wallet, you can use the following command to start the autostaking wallet again, you can also include these commands in your startup scripts, ensuring if your node goes down it automatically restarts the wallet process.</p>

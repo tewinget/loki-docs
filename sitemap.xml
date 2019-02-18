@@ -221,6 +221,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://loki-project.github.io/loki-docs/Developer/WalletRPCGuide/</loc>
+     <lastmod>2019-02-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://loki-project.github.io/loki-docs/Developer/FAQ/</loc>
      <lastmod>2019-02-18</lastmod>
      <changefreq>daily</changefreq>
