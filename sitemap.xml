@@ -26,37 +26,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/WebWallet/TroubleshootWebWallet/</loc>
-     <lastmod>2019-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/WebWallet/placeholder/</loc>
-     <lastmod>2019-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/GuiWallet/TroubleshootGui/</loc>
-     <lastmod>2019-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://loki-project.github.io/loki-docs/Wallets/GuiWallet/loki-gui-guide/</loc>
      <lastmod>2019-02-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/MobileWallet/TroubleshootMobileWallet/</loc>
-     <lastmod>2019-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://loki-project.github.io/loki-docs/Wallets/MobileWallet/RestoreMobileWalletGuide/</loc>
-     <lastmod>2019-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/TroubleshootCli/</loc>
      <lastmod>2019-02-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -191,7 +166,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/TestNetRelay/</loc>
+     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/LokinetConfig/</loc>
      <lastmod>2019-02-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
