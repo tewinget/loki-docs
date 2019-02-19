@@ -955,8 +955,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-setting-your-dns" title="2. Setting your DNS" class="md-nav__link">
-    2. Setting your DNS
+  <a href="#2-setting-your-dns-only-for-linux" title="2. Setting your DNS (Only for Linux)" class="md-nav__link">
+    2. Setting your DNS (Only for Linux)
   </a>
   
 </li>
@@ -1657,8 +1657,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-setting-your-dns" title="2. Setting your DNS" class="md-nav__link">
-    2. Setting your DNS
+  <a href="#2-setting-your-dns-only-for-linux" title="2. Setting your DNS (Only for Linux)" class="md-nav__link">
+    2. Setting your DNS (Only for Linux)
   </a>
   
 </li>
@@ -1722,7 +1722,10 @@
 <p>SNApp operators use the traditional server-client model with the key difference being that <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> will be intermediaries in a users connection through Lokinet. When a SNApp wishes to register on the network, it must update the DHT with its descriptor. This descriptor contains various introducers, which are specific Service Nodes that users can contact to form a path to the SNApp. When these paths are set up, users can connect to the SNApp without either party knowing where the other is located in the network.</p>
 <h2 id="1-installing">1. Installing<a class="headerlink" href="#1-installing" title="Permanent link">&para;</a></h2>
 <p>To install lokinet, see the install guide <a href="../Install/">here</a>.</p>
-<h2 id="2-setting-your-dns">2. Setting your DNS<a class="headerlink" href="#2-setting-your-dns" title="Permanent link">&para;</a></h2>
+<h2 id="2-setting-your-dns-only-for-linux">2. Setting your DNS (Only for Linux)<a class="headerlink" href="#2-setting-your-dns-only-for-linux" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Skip to <a href="#3-setup">step 3</a> if you are running on Windows or Mac.</p>
+</blockquote>
 <p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
 <p>Run the following command: </p>
 <p><code>sudo nano /etc/resolvconf/resolv.conf.d/head</code></p>
