@@ -1849,7 +1849,7 @@
 <h3 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h3>
 <p>Contributors will still use the following command when contributing to a Service Node:</p>
 <ul>
-<li>Stake <code>&lt;service node key&gt;</code> by contributors to contribute to the node. Auto staking is no longer an option.</li>
+<li><code>stake &lt;service node key&gt;</code> by contributors to contribute to the node. <strong>Auto staking</strong> is no longer an option.</li>
 </ul>
 <h3 id="operators-contributors-when-service-node-active">Operators &amp; Contributors (When Service Node Active)<a class="headerlink" href="#operators-contributors-when-service-node-active" title="Permanent link">&para;</a></h3>
 <p>Two new commands have been added to stop your Service Node from staking, both the contributor and operator can execute these commands:</p>
@@ -1890,64 +1890,27 @@
 <h2 id="developer-api-changes">Developer API Changes<a class="headerlink" href="#developer-api-changes" title="Permanent link">&para;</a></h2>
 <h3 id="get_service_nodes">get_service_nodes<a class="headerlink" href="#get_service_nodes" title="Permanent link">&para;</a></h3>
 <p>Updated/newly added fields:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>requested_unlock_height</code></td>
-<td>The height at which the stakes will unlock and the Service Node will expire.</td>
-</tr>
-<tr>
-<td><code>contributor</code></td>
-<td>Shows the contributors.</td>
-</tr>
-<tr>
-<td><code>locked_contributions</code></td>
-<td>An array of each contribution from the contributor that is locked.</td>
-</tr>
-<tr>
-<td><code>key_image</code></td>
-<td>A string representation of the locked key image (stake).</td>
-</tr>
-<tr>
-<td><code>key_image_pub_key</code></td>
-<td>A string representation of the public key component of a key image.</td>
-</tr>
-<tr>
-<td><code>amount</code></td>
-<td>The amount of Loki locked in this contribution.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>requested_unlock_height</code> - The height at which the stakes will unlock and the Service Node will expire. </li>
+<li><code>contributors</code><ul>
+<li><code>locked_contributions</code> - An array of each contribution from the contributor that is locked.<ul>
+<li><code>key_image</code> - A string representation of the locked key image (stake).</li>
+<li><code>key_image_pub_key</code> - A string representation of the public key component of a key image.</li>
+<li><code>amount</code> - The amount of Loki locked in this contribution.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="get_service_node_blacklisted_key_images">get_service_node_blacklisted_key_images<a class="headerlink" href="#get_service_node_blacklisted_key_images" title="Permanent link">&para;</a></h3>
 <p>Retrieve a list of blacklisted transactions from deregistered Service Nodes on the network.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>key_image</code></td>
-<td>A string representation of the locked key image (stake).</td>
-</tr>
-<tr>
-<td><code>blacklist</code></td>
-<td>An array of each blacklisted transaction from deregistered Service Nodes.</td>
-</tr>
-<tr>
-<td><code>unlock_height</code></td>
-<td>The height at which the stake can be spent again.</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><code>blacklist</code> - An array of each blacklisted transaction from deregistered Service Nodes<ul>
+<li><code>key_image</code> - A string representation of the blacklisted key image (stake).</li>
+<li><code>unlock_height</code> - The height at which the stake can be spent again.</li>
+</ul>
+</li>
+</ul>
                 
                   
                 
