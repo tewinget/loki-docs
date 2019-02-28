@@ -781,6 +781,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../MofNMultisig/" title="M/N Multsig" class="md-nav__link">
+      M/N Multsig
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1950,7 +1962,10 @@
 </li>
 </ul>
 <p><strong>Person A</strong> must run the command in their <code>loki-wallet-cli</code>:</p>
-<p><code>prepare_multisig</code></p>
+<div class="codehilite"><pre><span></span>prepare_multisig
+</pre></div>
+
+
 <p><strong>Person A</strong> will receive the output:</p>
 <div class="codehilite"><pre><span></span>MultisigV1cYuTGuf8FSiCYnMtLU4sZzeKZgeMy51qf4CcG2EQ2BPqKTii6YanpNLJDTM9rVRNfBPNFnJHoCWwGT9d8kB2UEDNHDxjgaAZX6DAWtj9VBFq9Q5qHjduozaYzgYpbVfHKHUQR2UrJjyX7tCSyd8gFEHUSocDRejRZBrFrKNifri5ozpN
 
@@ -1964,7 +1979,10 @@ This includes the PRIVATE view key, so needs to be disclosed only to that multis
 <p>Send this line to person B through a private communication channel.</p>
 <p><strong>Person B</strong> does the same and sends his output to person A.</p>
 <p><strong>Person B</strong> must run the command in their <code>loki-wallet-cli</code>:</p>
-<p><code>prepare_multisig</code></p>
+<div class="codehilite"><pre><span></span>prepare_multisig
+</pre></div>
+
+
 <p><strong>Person B</strong> will receive the output:</p>
 <div class="codehilite"><pre><span></span>MultisigV1BU9w9mysQMhNTYcNFQgD82VQiKFGpkwy8Jmu13iWWBmoeRbqyuYmEh22bJRk945ntuDeazTsYwUCYZcCL1cxuf4xDzwUJCLkiYhPCvF7gv3xrCGkAiozirNUG6CxRa53mHqp4Cvdj3yxcQcYbXNYC1ecybbQMW1gs5BBQiruVGeJi4FS
 
@@ -2005,7 +2023,10 @@ This includes the PRIVATE view key, so needs to be disclosed only to that multis
 <h3 id="step-2-check-multisig-account-balance">Step 2 Check Multisig Account Balance<a class="headerlink" href="#step-2-check-multisig-account-balance" title="Permanent link">&para;</a></h3>
 <p>Just open the wallet and command refresh. Once completed, both persons can verify that the funds arrived.</p>
 <p><strong>Person A</strong> commands:</p>
-<p><code>show_transfers</code></p>
+<div class="codehilite"><pre><span></span>show_transfers
+</pre></div>
+
+
 <p><strong>Person A</strong> outputs:</p>
 <div class="codehilite"><pre><span></span>1357156 in 07:50:35 PM 0.100000000000 88ba687dc79a0b39e6de6d0763eda8363d33d9f58ec9a096171bd9a7f1dae873 0000000000000000 -  
 1357161 in 08:00:18 PM 0.100000000000 d6ac845b9400759525519cdc5d514eb8f5b1d265b24d1c016e75b20ed3b4b7da 0000000000000000 -
@@ -2013,7 +2034,10 @@ This includes the PRIVATE view key, so needs to be disclosed only to that multis
 
 
 <p><strong>Person B</strong> can do the same:</p>
-<p><code>show_tranfers</code></p>
+<div class="codehilite"><pre><span></span>show_tranfers
+</pre></div>
+
+
 <p><strong>Person B</strong> has the same outputs:</p>
 <div class="codehilite"><pre><span></span>1357156 in 07:50:35 PM 0.100000000000 88ba687dc79a0b39e6de6d0763eda8363d33d9f58ec9a096171bd9a7f1dae873 0000000000000000 -  
 1357161 in 08:00:18 PM 0.100000000000 d6ac845b9400759525519cdc5d514eb8f5b1d265b24d1c016e75b20ed3b4b7da 0000000000000000 -
@@ -2025,18 +2049,33 @@ This includes the PRIVATE view key, so needs to be disclosed only to that multis
 <h4 id="11-exporting-multisig-info">1.1 Exporting Multisig Info<a class="headerlink" href="#11-exporting-multisig-info" title="Permanent link">&para;</a></h4>
 <p>Without this step, it will not be possible to create a spending transaction.</p>
 <p><strong>Both persons</strong> need to run the following command to sync their key images:</p>
-<p><code>export_multisig_info &lt;filename&gt;</code></p>
+<div class="codehilite"><pre><span></span>export_multisig_info &lt;filename&gt;
+</pre></div>
+
+
 <p>Where <code>&lt;filename&gt;</code> can be any filename.</p>
 <p><strong>Person A</strong> will run the command:</p>
-<p><code>export_multisig_info mi1</code></p>
+<div class="codehilite"><pre><span></span>export_multisig_info mi1
+</pre></div>
+
+
 <p><strong>Person A</strong> will receive the output:</p>
-<p><code>Multisig info exported to mi1</code></p>
+<div class="codehilite"><pre><span></span>Multisig info exported to mi1
+</pre></div>
+
+
 <p>The file <code>mi1</code> will be located in the shell working folder*</p>
 <p><strong>Person A</strong> sends that file to Person B. They can send the file in many ways, preferably through by handing a usb drive with the file on it, however If you would like to send the file through terminal use <a href="https://transfer.sh/">https://transfer.sh/</a>, an optional step has been added if you choose to use this method.</p>
 <p><strong>Person B</strong> does the same, but changing the filename and runs the command:</p>
-<p><code>export_multisig_info mi2</code></p>
+<div class="codehilite"><pre><span></span>export_multisig_info mi2
+</pre></div>
+
+
 <p><strong>Person B</strong> will receive the output:</p>
-<p><code>Multisig info exported to mi2</code></p>
+<div class="codehilite"><pre><span></span>Multisig info exported to mi2
+</pre></div>
+
+
 <p>The file <code>mi2</code> will be located in the shell working folder*</p>
 <p><strong>Person B</strong> sends that file to person A.</p>
 <p>Now, they must both import each other's file.</p>
@@ -2045,25 +2084,49 @@ This includes the PRIVATE view key, so needs to be disclosed only to that multis
 <h5 id="uploading-multisig-info-file">Uploading Multisig Info file<a class="headerlink" href="#uploading-multisig-info-file" title="Permanent link">&para;</a></h5>
 <p><strong>Person A</strong> will open up a new terminal and change to the directory “mi1” has been saved.*</p>
 <p><strong>Person A</strong> will run the following command:</p>
-<p><code>curl --upload-file ./mi1 https://transfer.sh/mi1</code></p>
+<div class="codehilite"><pre><span></span>curl --upload-file ./mi1 https://transfer.sh/mi1
+</pre></div>
+
+
 <p><strong>Person A</strong> will receive the link to the file as an output, looking similar to:</p>
-<p><code>https://transfer.sh/Ehl5q/mi1</code></p>
+<div class="codehilite"><pre><span></span>https://transfer.sh/Ehl5q/mi1
+</pre></div>
+
+
 <p><strong>Person A</strong> will need to send this link to Person B.</p>
 <p><strong>Person B</strong> will run a similar command:</p>
-<p><code>curl --upload-file ./mi1 https://transfer.sh/mi2</code></p>
+<div class="codehilite"><pre><span></span>curl --upload-file ./mi1 https://transfer.sh/mi2
+</pre></div>
+
+
 <p><em>Person B</em> will receive the link to the file as an output, looking similar to:</p>
-<p><code>https://transfer.sh/Iedv9/mi2</code></p>
+<div class="codehilite"><pre><span></span>https://transfer.sh/Iedv9/mi2
+</pre></div>
+
+
 <p><em>Person B</em> will need to send this link to Person A.</p>
 <h6 id="downloading-multisig-info-file">Downloading Multisig Info file<a class="headerlink" href="#downloading-multisig-info-file" title="Permanent link">&para;</a></h6>
 <p><strong>Person A</strong> should change to the directory of their <code>loki-wallet-cli</code> and use Person B’s download link to run the command:</p>
-<p><code>curl &lt;Person B link&gt; -o &lt;filename&gt;</code></p>
+<div class="codehilite"><pre><span></span>curl &lt;Person B link&gt; -o &lt;filename&gt;
+</pre></div>
+
+
 <p>Replacing <code>&lt;Person B link&gt;</code> with the link Person B shared with Person A and <code>&lt;filename&gt;</code> with the filename of the Multisig info file that Person A generated, for example <strong>Person A</strong> will run the command:</p>
-<p><code>curl https://transfer.sh/Iedv9/mi2 -o mi2</code></p>
+<div class="codehilite"><pre><span></span>curl https://transfer.sh/Iedv9/mi2 -o mi2
+</pre></div>
+
+
 <p>Likewise, <strong>Person B</strong> should do the same, changing directories to their <code>loki-wallet-cli</code> and downloading with Person A’s download link, and filename.</p>
-<p><code>curl https://transfer.sh/Ehl5q/mi1 -o mi1</code></p>
+<div class="codehilite"><pre><span></span>curl https://transfer.sh/Ehl5q/mi1 -o mi1
+</pre></div>
+
+
 <h4 id="step-13-importing-multisig-info">Step 1.3 Importing Multisig Info<a class="headerlink" href="#step-13-importing-multisig-info" title="Permanent link">&para;</a></h4>
 <p><strong>Person A</strong> will run the command:</p>
-<p><code>import_multisig_info mi2</code></p>
+<div class="codehilite"><pre><span></span>import_multisig_info mi2
+</pre></div>
+
+
 <p>Depending on the transactions made in to the multsig wallet the output will look similar to:</p>
 <div class="codehilite"><pre><span></span>2 outputs found in mi2  
 Height 1357156, transaction &lt;88ba687dc79a0b39e6de6d0763eda8363d33d9f58ec9a096171bd9a7f1dae873&gt;, received 0.100000000000  
@@ -2072,7 +2135,10 @@ Height 1357161, transaction &lt;d6ac845b9400759525519cdc5d514eb8f5b1d265b24d1c01
 
 
 <p><strong>Person B</strong> will run a similar command:</p>
-<p><code>import_multisig_info mi1</code></p>
+<div class="codehilite"><pre><span></span>import_multisig_info mi1
+</pre></div>
+
+
 <p>and the output will look like:</p>
 <div class="codehilite"><pre><span></span>2 outputs found in mi1  
 Height 1357156, transaction &lt;88ba687dc79a0b39e6de6d0763eda8363d33d9f58ec9a096171bd9a7f1dae873&gt;, received 0.100000000000  
@@ -2087,21 +2153,30 @@ Height 1357161, transaction &lt;d6ac845b9400759525519cdc5d514eb8f5b1d265b24d1c01
 </pre></div>
 
 
-<p>The output will look like*:</p>
+<p>The output will look like:</p>
 <div class="codehilite"><pre><span></span>Unsigned transaction(s) successfully written to file: multisig_loki_tx
 </pre></div>
 
 
-<p>Check in the folder where you started <code>loki-wallet-cli</code> from*. There should be a file named <code>multisig_loki_tx</code>.</p>
+<p>Check in the folder where you started <code>loki-wallet-cli</code> from. There should be a file named <code>multisig_loki_tx</code>.</p>
 <p><strong>Person A</strong> will send the file <code>multisig_loki_tx</code> to the Person B. <strong>Person A</strong> can send this file through email or alternatively use the transfer.sh commands outside of the wallet:</p>
-<p><code>curl --upload-file ./multisig_loki_tx https://transfer.sh/multisig_loki_tx</code></p>
+<div class="codehilite"><pre><span></span>curl --upload-file ./multisig_loki_tx https://transfer.sh/multisig_loki_tx
+</pre></div>
+
+
 <p>If Person A chooses to use transfer.sh command to send the file to Person B they will receive a <code>&lt;link&gt;</code> to pass to Person B.</p>
-<p><strong>Person B</strong> must finish the signature. <strong>Person B</strong> copies/downloads the file to the same folder from where he started (or will start) <code>loki-wallet-cli</code>*.</p>
+<p><strong>Person B</strong> must finish the signature. <strong>Person B</strong> copies/downloads the file to the same folder from where he started (or will start) <code>loki-wallet-cli</code>.</p>
 <p><strong>Person B</strong> can run the command to download the file to the <code>loki-wallet-cli</code> directory.</p>
-<p><code>curl https://transfer.sh/CJqnM/multisig_loki_tx -o multisig_loki_tx</code></p>
+<div class="codehilite"><pre><span></span>curl https://transfer.sh/CJqnM/multisig_loki_tx -o multisig_loki_tx
+</pre></div>
+
+
 <p>Replacing <code>https://transfer.sh/CJqnM/multisig_loki_tx</code> with the link provided by Person A.</p>
 <p>Then, <strong>Person B</strong> runs the command:</p>
-<p><code>sign_multisig multisig_loki_tx</code></p>
+<div class="codehilite"><pre><span></span>sign_multisig multisig_loki_tx
+</pre></div>
+
+
 <p>A prompt will be displayed to allow person B to check the transaction before signing:</p>
 <div class="codehilite"><pre><span></span>Loaded 1 transactions, for 108.082287779, fee 0.061108880, sending 50.000000000 to T6TmZX8EzZVjS9zNg7zAsrEQFDgcVC2qV2ZMyoWsbyK4SNB2SwMHZtMhPSsFyTmRBQUaGVF5k3qy5CMFM6Lvj7gi3AeszDag7, 58.021178899 change to T6ScXhWpAG2aUHmFemwvn4HddHA5GQ4u6MvYsW2hVteJSwLJXCEhk2aVp4XzyqGmvyUqc3w8fwWwg6szGEytUSx51C6WQ3er8, with min ring size 10, no payment ID. Is this okay? (Y/Yes/N/No):
 </pre></div>
@@ -2115,7 +2190,10 @@ It may be relayed to the network with submit_multisig
 
 
 <p>Finally, <strong>person B</strong> submits the transaction to the network by commanding:</p>
-<p><code>submit_multisig multisig_loki_tx</code></p>
+<div class="codehilite"><pre><span></span>submit_multisig multisig_loki_tx
+</pre></div>
+
+
 <p>There will be a confirmation prompt:</p>
 <div class="codehilite"><pre><span></span>Loaded 1 transactions, for 108.082287779, fee 0.061108880, sending 50.000000000 to T6TmZX8EzZVjS9zNg7zAsrEQFDgcVC2qV2ZMyoWsbyK4SNB2SwMHZtMhPSsFyTmRBQUaGVF5k3qy5CMFM6Lvj7gi3AeszDag7, 58.021178899 change to T6ScXhWpAG2aUHmFemwvn4HddHA5GQ4u6MvYsW2hVteJSwLJXCEhk2aVp4XzyqGmvyUqc3w8fwWwg6szGEytUSx51C6WQ3er8, with min ring size 10, no payment ID. Is this okay? (Y/Yes/N/No):
 </pre></div>
@@ -2128,10 +2206,12 @@ It may be relayed to the network with submit_multisig
 
 <p>The <strong>person B</strong> could also send the signed TX to person A, who could then submit it to the network himself.</p>
 <p>If you want to make another one, you have to go back to step 1 of spending (sync the key images again).</p>
-<p>*Note on folders and file locations, as it could create some confusions. The wallet will look for the files and export them to the folder from where it was started, ie where your command prompt / shell was when you called <code>loki-wallet-cli</code>. It may or may not be the same folder as your actual wallet files or <code>loki-wallet-cli</code>, depending on how you go about it.</p>
+<blockquote>
+<p>Note on folders and file locations, as it could create some confusions. The wallet will look for the files and export them to the folder from where it was started, ie where your command prompt / shell was when you called <code>loki-wallet-cli</code>. It may or may not be the same folder as your actual wallet files or <code>loki-wallet-cli</code>, depending on how you go about it.</p>
 <p>For example, your wallet could be on some USB drive like <code>f:\temp\</code>, and your wallet software on <code>c:\loki-windows-x64\</code> and your shell working folder could be <code>c:\</code>.</p>
 <p>If you remain in <code>c:\</code> with the shell, you could start the wallet by its full path and specify the wallet file location: <code>c:\loki-windows-x64\loki-wallet-cli.exe --wallet-file f:\temp\mywallet</code>. In this case, all the import/export stuff would be read/written to <code>c:\</code> because that's still your shell's working folder.</p>
 <p>It would be probably feel more natural to cd into the wallet folder. Do <code>f:</code> to change drive and then <code>cd f:\temp\</code>. Then, simply start the wallet from that location by its full path again: <code>c:\loki-windows-x64\loki-wallet-cli.exe --wallet-file mywallet</code>. Notice how you don't have to write the full wallet path now as you're already there with your shell. In this case, all the files mentioned above would be written or read from the same folder as the wallet files.</p>
+</blockquote>
 <p>Source:</p>
 <p><a href="https://monero.stackexchange.com/questions/5646/how-to-use-monero-multisignature-wallets-2-2-2-3">Monero Stackexchange: How to use Monero Multisigniture Wallets</a></p>
                 
