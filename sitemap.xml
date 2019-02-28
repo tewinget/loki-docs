@@ -111,6 +111,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/InfiniteStakingPrimer/</loc>
+     <lastmod>2019-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://loki-project.github.io/loki-docs/ServiceNodes/SNFullGuide/</loc>
      <lastmod>2019-02-28</lastmod>
      <changefreq>daily</changefreq>
