@@ -1834,22 +1834,22 @@
                 <h1 id="infinite-staking-primer">Infinite Staking Primer<a class="headerlink" href="#infinite-staking-primer" title="Permanent link">&para;</a></h1>
 <h2 id="outline-for-existing-service-node-participants-and-operators">Outline For Existing Service Node Participants and Operators<a class="headerlink" href="#outline-for-existing-service-node-participants-and-operators" title="Permanent link">&para;</a></h2>
 <p>Infinite Staking is an incremental upgrade on the existing staking process that is currently available on the Loki network (currently active in Hardfork 10: Bulletproofs, introduced in Hardfork 9: Service Nodes). With Infinite Staking, Service Nodes do not expire and funds remain locked until a contributor or operator explicitly requests the Service Node to unlock the funds.</p>
-<p>Since Infinite Staking is an incremental upgrade, most of the steps necessary to register and participate in a Service Node remains the same. A quick overview for the new staking process is summarised for quick grokking.</p>
+<p>Since Infinite Staking is an incremental upgrade, most of the steps necessary to register and participate in a Service Node remain the same. A quick overview for the new staking process is summarised for quick grokking.</p>
 <h2 id="updated-staking-process-and-commands">Updated Staking Process and Commands<a class="headerlink" href="#updated-staking-process-and-commands" title="Permanent link">&para;</a></h2>
 <h3 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h3>
 <p>Operators will still use the following commands when setting up a Service Node. The commands are as follows:</p>
 <ul>
 <li>
-<p><code>prepare_registration</code> in the daemon that is running in <code>--service-node</code> mode</p>
+<p><code>prepare_registration</code> in the daemon that is running in <code>--service-node</code> mode.</p>
 </li>
 <li>
 <p><code>register_service_node</code> with the command returned by the daemon. <strong>Auto staking</strong> is no longer an option.</p>
 </li>
 </ul>
 <h3 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h3>
-<p>Contributors will still use the following command when contributing to a Service Node:</p>
+<p>Two new commands have been added to stop your Service Node from staking, and both the contributor and operator can execute these commands:</p>
 <ul>
-<li><code>stake &lt;service node key&gt;</code> by contributors to contribute to the node. <strong>Auto staking</strong> is no longer an option.</li>
+<li><code>stake &lt;service node key&gt;</code> to contribute to the node. <strong>Auto staking</strong> is no longer an option.</li>
 </ul>
 <h3 id="operators-contributors-when-service-node-active">Operators &amp; Contributors (When Service Node Active)<a class="headerlink" href="#operators-contributors-when-service-node-active" title="Permanent link">&para;</a></h3>
 <p>Two new commands have been added to stop your Service Node from staking, both the contributor and operator can execute these commands:</p>
@@ -1864,24 +1864,24 @@
 <h2 id="unlocking-stakes-deregistration">Unlocking Stakes &amp; Deregistration<a class="headerlink" href="#unlocking-stakes-deregistration" title="Permanent link">&para;</a></h2>
 <p>Service Nodes will continually receive block rewards indefinitely until a stake is unlocked or the Service Node becomes deregistered. Unlocking is available via the <code>request_stake_unlock &lt;service node key&gt;</code> in the command line wallet. Once the unlock is requested and the request is included in a block in the blockchain, the Service Node will then expire in 15 days (10800 blocks) and the funds will become unlocked after expiry.</p>
 <p>In pooled nodes, any contributor that requests the stake to unlock will schedule the Service Node for expiration. All locked stakes in that Service Node will be unlocked in 15 days (10800 blocks). Once the unlock is requested, this process can not be undone or prolonged. Service Node participants will continue receiving rewards until expiration.</p>
-<p>Under the new system, deregistrations can continue to be issued at any point in the active lifecycle of the Service Node. This is inclusive of the time period during which the Service Node is scheduled for expiry. Getting deregistered removes your Service Node from the network and your stakes are placed into a list of blacklisted transactions. Blacklisted transactions are locked and unspendable for 30 days (21600 blocks) from the block that the Service Node was deregistered.</p>
-<p>Receiving a deregistration whilst participants have already requested the stake to unlock overrides the 15 day (10800 blocks) unlock time, and resets the unlock time to 30 days (21600 blocks).</p>
+<p>Under the new system, deregistrations can be issued at any point during the active lifecycle of the Service Node. This is inclusive of the time period during which the Service Node is scheduled for expiry. Getting deregistered removes your Service Node from the network and your stakes are placed into a list of blacklisted transactions. Blacklisted transactions are locked and unspendable for 30 days (21600 blocks) from the block in which the Service Node was deregistered.</p>
+<p>Receiving a deregistration after participants have already requested the stake to unlock overrides the 15 day (10800 blocks) unlock time, and resets the unlock time to 30 days (21600 blocks).</p>
 <h2 id="minimum-contribution-rules">Minimum Contribution Rules<a class="headerlink" href="#minimum-contribution-rules" title="Permanent link">&para;</a></h2>
 <p>Infinite Staking introduces new limitations on the number of transactions that can be contributed to a Service Node, changing the minimum contribution rules for participating in the Service Node. </p>
 <p>Service Nodes accept at most 4 contributions, meaning the minimum contribution to a Service Node becomes:</p>
 <p><center><img alt="Contribution" src="../../assets/contribution.svg" /></center></p>
-<p>In a pooled Service Node with reserved spots, the minimum contribution must be the maximum of the 2 values, their reserved amount, or the minimum contribution,</p>
+<p>In a pooled Service Node with reserved spots, the Minimum Contribution must be either the Reserved Amount or the Contribution determined by the above equation, whichever is larger.</p>
 <p><center><img alt="Min Contribution" src="../../assets/mincontribution.svg" /></center></p>
 <p>A simplistic example being, if the staking requirement is 24,000 Loki then if,</p>
 <ul>
 <li>
-<p>Operator contributes 50% of the requirement 12,000 Loki</p>
+<p>Operator contributes 50% of the requirement (12,000 Loki)</p>
 </li>
 <li>
 <p>The next contributor must contribute at least (⅓ * 12,000) Loki i.e. 4000 Loki to become a participant.</p>
 </li>
 <li>
-<p>If this contributor had reserved a spot for more than 4000 Loki, their minimum contribution amount is that amount.</p>
+<p>If this contributor had reserved a spot for more than 4000 Loki, their Minimum Contribution would be that amount.</p>
 </li>
 </ul>
 <p>There are rules in the client software in place to stop users from irreversibly funding a Service Node into an invalid state.</p>
