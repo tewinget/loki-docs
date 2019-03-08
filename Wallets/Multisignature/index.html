@@ -1614,14 +1614,42 @@
                 
                 <h1 id="multisignature">Multisignature<a class="headerlink" href="#multisignature" title="Permanent link">&para;</a></h1>
 <p>In cryptocurrencies, multisig feature allows you to sign a transaction with more than one private key. Funds protected with multisig can only be spent by signing with M-of-N keys.</p>
-<p>Use cases:</p>
-<ul>
-<li>Shared account (1-of-2; both husband and wife individually have full access to their funds)</li>
-<li><a href="../CliWallet/2of2Multisig/">Consensus account</a> (2-of-2; both husband and wife must agree to spend their funds)</li>
-<li><a href="../CliWallet/2of3Multisig/">Threshold account</a> (2-of-3; an escrow service is involved as an independent 3rd party, to co-sign with either the seller, or with the buyer, if seller and buyer do not agree)</li>
-<li><a href="../CliWallet/2of3Multisig/">Secure account</a> (2-of-3; a single owner controlls all 3 keys but secures them via a different means to diversify risks)</li>
-<li><a href="../CliWallet/MofNMultisig/">Arbitrary threshold account</a> (M-of-N; some cryptocurrencies provide full flexibility on the number of signers)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Use Case</strong></th>
+<th><strong>Scheme</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shared Account</td>
+<td>(1-of-2)</td>
+<td>Both husband and wife individually have full access to their funds.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/2of2Multisig/">Consensus Account</a></td>
+<td>(2-of-2)</td>
+<td>Both husband and wife must agree to spend their funds.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/2of3Multisig/">Threshold account</a></td>
+<td>(2-of-3)</td>
+<td>An escrow service is involved as an independent 3rd party, to co-sign with either the seller, or with the buyer, if seller and buyer do not agree.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/2of3Multisig/">Secure account</a></td>
+<td>(2-of-3)</td>
+<td>A single owner controls all 3 keys but secures them via a different means to diversify risks.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/MofNMultisig/">Arbitrary threshold account</a></td>
+<td>(M-of-N)</td>
+<td>Some cryptocurrencies provide full flexibility on the number of signers.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="loki-multisignature">Loki Multisignature<a class="headerlink" href="#loki-multisignature" title="Permanent link">&para;</a></h2>
 <p>Loki doesn't directly implement multisignatures (at least not in a classical sense). Monero emulates the feature by secret splitting and Loki has brought this code from Moneros code base.</p>
 <p>Transactions are still signed with a single spend key. The spend key is a sum of all N private keys. The rationale for such design is to decouple multisig from ring signatures.</p>
@@ -1631,17 +1659,28 @@
 <p>In Loki, multisignature is supported for M of N participants making any combination of signers possible.</p>
 <p>After multisig wallet setup every participant ends up knowing the public address and private view key. This is necessary for participants to recognize and decipher transactions they are supposed to co-sign.</p>
 <h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><a href="../CliWallet/2of2Multisig/">2-of-2 Multisigniture Wallet Setup</a> - Setup Guide for a 2 of 2 Multsig Wallet.</p>
-</li>
-<li>
-<p><a href="../CliWallet/2of3Multisig/">2-of-3 Multisigniture Wallet Setup</a> - Setup Guide for a 2 of 3 Multsig Wallet.</p>
-</li>
-<li>
-<p><a href="../CliWallet/MofNMultisig/">M/N Multisig Setup Guide</a> - Setup Guide for a M of N Multisig Wallet.</p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Guide</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../CliWallet/2of2Multisig/">2-of-2 Multisigniture Wallet Setup</a></td>
+<td>Setup Guide for a 2 of 2 Multsig Wallet.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/2of3Multisig/">2-of-3 Multisigniture Wallet Setup</a></td>
+<td>Setup Guide for a 2 of 3 Multsig Wallet.</td>
+</tr>
+<tr>
+<td><a href="../CliWallet/MofNMultisig/">M-of-N Multisig Setup Guide</a></td>
+<td>Setup Guide for a M of N Multisig Wallet.</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
