@@ -111,6 +111,26 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://loki-project.github.io/loki-docs/Mining/XMR-StakGuide/</loc>
+     <lastmod>2019-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://loki-project.github.io/loki-docs/Mining/XMR-Stak-Linux-Guide/</loc>
+     <lastmod>2019-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://loki-project.github.io/loki-docs/Mining/XMRig-Guide/</loc>
+     <lastmod>2019-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://loki-project.github.io/loki-docs/Mining/Mining-With-SBC/</loc>
+     <lastmod>2019-03-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://loki-project.github.io/loki-docs/ServiceNodes/SNOverview/</loc>
      <lastmod>2019-03-18</lastmod>
      <changefreq>daily</changefreq>
