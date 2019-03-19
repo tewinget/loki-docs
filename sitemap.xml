@@ -1,352 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>https://loki-project.github.io/loki-docs/</loc>
+     <loc>https://lokidocs.com/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Introduction/LokiNetwork/</loc>
+     <loc>https://lokidocs.com/Introduction/LokiNetwork/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Introduction/GettingStarted/</loc>
+     <loc>https://lokidocs.com/Introduction/GettingStarted/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/FAQ/</loc>
+     <loc>https://lokidocs.com/FAQ/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/WalletsOverview/</loc>
+     <loc>https://lokidocs.com/Wallets/WalletsOverview/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/WhatWalletToUse/</loc>
+     <loc>https://lokidocs.com/Wallets/WhatWalletToUse/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/Addresses/MainAddress/</loc>
+     <loc>https://lokidocs.com/Wallets/Addresses/MainAddress/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/Addresses/SubAddress/</loc>
+     <loc>https://lokidocs.com/Wallets/Addresses/SubAddress/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/Addresses/IntegratedAddress/</loc>
+     <loc>https://lokidocs.com/Wallets/Addresses/IntegratedAddress/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/Multisignature/</loc>
+     <loc>https://lokidocs.com/Wallets/Multisignature/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/GuiWallet/loki-gui-guide/</loc>
+     <loc>https://lokidocs.com/Wallets/GuiWallet/loki-gui-guide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/GUIStakingGuide/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/GUIStakingGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/MobileWallet/RestoreMobileWalletGuide/</loc>
+     <loc>https://lokidocs.com/Wallets/MobileWallet/RestoreMobileWalletGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/loki-wallet-cliMacSetup/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/loki-wallet-cliMacSetup/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/WalletCommands/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/WalletCommands/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/WalletRestoreSeed/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/WalletRestoreSeed/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/WalletRestoreKeys/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/WalletRestoreKeys/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/2of2Multisig/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/2of2Multisig/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/2of3Multisig/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/2of3Multisig/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Wallets/CliWallet/MofNMultisig/</loc>
+     <loc>https://lokidocs.com/Wallets/CliWallet/MofNMultisig/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/MiningOverview/</loc>
+     <loc>https://lokidocs.com/Mining/MiningOverview/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/ASICResistance/</loc>
+     <loc>https://lokidocs.com/Mining/ASICResistance/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/XMR-StakGuide/</loc>
+     <loc>https://lokidocs.com/Mining/XMR-StakGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/XMR-Stak-Linux-Guide/</loc>
+     <loc>https://lokidocs.com/Mining/XMR-Stak-Linux-Guide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/XMRig-Guide/</loc>
+     <loc>https://lokidocs.com/Mining/XMRig-Guide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Mining/Mining-With-SBC/</loc>
+     <loc>https://lokidocs.com/Mining/Mining-With-SBC/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/SNOverview/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/SNOverview/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/ServiceNodeFunctions/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/ServiceNodeFunctions/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/StakingRequirement/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/StakingRequirement/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/InfiniteStakingPrimer/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/InfiniteStakingPrimer/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/SNFullGuide/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/SNFullGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Developer/SNRPCGuide/</loc>
+     <loc>https://lokidocs.com/Developer/SNRPCGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/ServiceNodes/GUIStakingGuide/</loc>
+     <loc>https://lokidocs.com/ServiceNodes/GUIStakingGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/LokinetOverview/</loc>
+     <loc>https://lokidocs.com/Lokinet/LokinetOverview/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/PublicTestingGuide/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/PublicTestingGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/SNApps/</loc>
+     <loc>https://lokidocs.com/Lokinet/SNApps/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/LLARP/</loc>
+     <loc>https://lokidocs.com/Lokinet/LLARP/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/DeveloperInfo/</loc>
+     <loc>https://lokidocs.com/Lokinet/DeveloperInfo/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/Install/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/Install/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/AccessingSNApps/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/AccessingSNApps/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/LokinetIRC/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/LokinetIRC/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/HostingSNApps/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/HostingSNApps/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/RouteThroughExitNode/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/RouteThroughExitNode/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/LokinetConfig/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/LokinetConfig/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Lokinet/Guides/ExitNode/</loc>
+     <loc>https://lokidocs.com/Lokinet/Guides/ExitNode/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Developer/SNRPCGuide/</loc>
+     <loc>https://lokidocs.com/Developer/SNRPCGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Developer/DaemonRPCGuide/</loc>
+     <loc>https://lokidocs.com/Developer/DaemonRPCGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Developer/WalletRPCGuide/</loc>
+     <loc>https://lokidocs.com/Developer/WalletRPCGuide/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Developer/FAQ/</loc>
+     <loc>https://lokidocs.com/Developer/FAQ/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/LokiServices/LokiServicesOverview/</loc>
+     <loc>https://lokidocs.com/LokiServices/LokiServicesOverview/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/LokiServices/Messenger/</loc>
+     <loc>https://lokidocs.com/LokiServices/Messenger/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/LokiServices/Blink/</loc>
+     <loc>https://lokidocs.com/LokiServices/Blink/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/DenialofServiceAttacks/</loc>
+     <loc>https://lokidocs.com/Advanced/DenialofServiceAttacks/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/IPandPacketBlocking/</loc>
+     <loc>https://lokidocs.com/Advanced/IPandPacketBlocking/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/SwarmFlagging/</loc>
+     <loc>https://lokidocs.com/Advanced/SwarmFlagging/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Contributing/HowToContributeToLokiDocs/</loc>
+     <loc>https://lokidocs.com/Contributing/HowToContributeToLokiDocs/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Contributing/VULNERABILITY_RESPONSE_LOKI/</loc>
+     <loc>https://lokidocs.com/Contributing/VULNERABILITY_RESPONSE_LOKI/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Contributing/Issue_Template/</loc>
+     <loc>https://lokidocs.com/Contributing/Issue_Template/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Governance/Governance/</loc>
+     <loc>https://lokidocs.com/Governance/Governance/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Governance/TheLokiFoundation/</loc>
+     <loc>https://lokidocs.com/Governance/TheLokiFoundation/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Governance/LokiFundingSystem/</loc>
+     <loc>https://lokidocs.com/Governance/LokiFundingSystem/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/TechnicalSpecs/</loc>
+     <loc>https://lokidocs.com/Advanced/TechnicalSpecs/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/Cryptoeconomics/</loc>
+     <loc>https://lokidocs.com/Advanced/Cryptoeconomics/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/SybilResistance/</loc>
+     <loc>https://lokidocs.com/Advanced/SybilResistance/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/DynamicBlockSize/</loc>
+     <loc>https://lokidocs.com/Advanced/DynamicBlockSize/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/CryptoNoteElements/</loc>
+     <loc>https://lokidocs.com/Advanced/CryptoNoteElements/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/lokid/</loc>
+     <loc>https://lokidocs.com/Advanced/lokid/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/UsingTor/</loc>
+     <loc>https://lokidocs.com/Advanced/UsingTor/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/Debugging/</loc>
+     <loc>https://lokidocs.com/Advanced/Debugging/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://loki-project.github.io/loki-docs/Advanced/AcceptingLoki/</loc>
+     <loc>https://lokidocs.com/Advanced/AcceptingLoki/</loc>
      <lastmod>2019-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
