@@ -1079,33 +1079,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-functions" title="Additional Functions" class="md-nav__link">
-    Additional Functions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#autostaking-checkingstopping-autostake-command" title="Autostaking - Checking/stopping autostake command" class="md-nav__link">
-    Autostaking - Checking/stopping autostake command
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-autostake-on-startup" title="Running Autostake on startup" class="md-nav__link">
-    Running Autostake on startup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#express-setup-guide" title="Express Setup Guide" class="md-nav__link">
     Express Setup Guide
   </a>
@@ -2021,33 +1994,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-functions" title="Additional Functions" class="md-nav__link">
-    Additional Functions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#autostaking-checkingstopping-autostake-command" title="Autostaking - Checking/stopping autostake command" class="md-nav__link">
-    Autostaking - Checking/stopping autostake command
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-autostake-on-startup" title="Running Autostake on startup" class="md-nav__link">
-    Running Autostake on startup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#express-setup-guide" title="Express Setup Guide" class="md-nav__link">
     Express Setup Guide
   </a>
@@ -2128,7 +2074,6 @@
 </ul>
 </li>
 <li><a href="#express-setup-guide">Express Setup Guide</a></li>
-<li><a href="#additional-functions">Additional Functions</a></li>
 </ul>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>To understand what a <a href="../SNOverview/">Service Node</a> is, you can refer to the <a href="https://loki.network/whitepaper">whitepaper</a> to get an in depth understanding. For now, all you need to know is that:</p>
@@ -2349,46 +2294,46 @@ installed:</p>
 
 <p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
 <p>Your command should look something like:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v2.0.4/loki-linux-x64-v2.0.4.zip
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.2/loki-linux-x64-v3.0.2.zip
 </pre></div>
 
 
 <p>To unzip the downloaded zip file run the following command (changing 2.0.4 to whatever version you
 downloaded above):</p>
-<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v2.0.4.zip
+<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.2.zip
 </pre></div>
 
 
 <p>You will see something like this:</p>
-<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v2.0.4.zip
-   creating: loki-linux-x64-v2.0.4/
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-ancestry  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-depth  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-export  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-import  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-mark-spent-outputs  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-stats  
-  inflating: loki-linux-x64-v2.0.4/loki-blockchain-usage  
-  inflating: loki-linux-x64-v2.0.4/loki-gen-trusted-multisig  
-  inflating: loki-linux-x64-v2.0.4/loki-wallet-cli  
-  inflating: loki-linux-x64-v2.0.4/loki-wallet-rpc  
-  inflating: loki-linux-x64-v2.0.4/lokid  
+<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.2.zip
+   creating: loki-linux-x64-v3.0.2/
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-ancestry  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-depth  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-export  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-import  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-mark-spent-outputs  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-stats  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-usage  
+  inflating: loki-linux-x64-v3.0.2/loki-gen-trusted-multisig  
+  inflating: loki-linux-x64-v3.0.2/loki-wallet-cli  
+  inflating: loki-linux-x64-v3.0.2/loki-wallet-rpc  
+  inflating: loki-linux-x64-v3.0.2/lokid  
 </pre></div>
 
 
-<p>Note that they are unzipped into the <code>loki-linux-x64-v2.0.4</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
-<div class="codehilite"><pre><span></span>cd loki-linux-x64-v2.0.4
+<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.2</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
+<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.2
 ls
 </pre></div>
 
 
-<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v2.0.4</code> folder:</p>
+<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v3.0.2</code> folder:</p>
 <div class="codehilite"><pre><span></span>cd
-ln -snf loki-linux-x64-v2.0.4 loki
+ln -snf loki-linux-x64-v3.0.2 loki
 </pre></div>
 
 
-<p>This creates a virtual <code>loki</code> folder that points to the <code>loki-linux-x64-v2.0.4</code> folder.  This isn't
+<p>This creates a virtual <code>loki</code> folder that points to the <code>loki-linux-x64-v3.0.2</code> folder.  This isn't
 strictly necessary, but will help with upgrades in the future: when you want to upgrade (for
 example, to a future 3.0.0 release) you can just repeat everything in this step again and the <code>loki</code>
 symlink will be updated to the new folder containing the 3.0.0 binaries.</p>
@@ -2739,36 +2684,12 @@ button.</p>
 <p>To check this information directly with the service node itself, first get the current block height by running <code>~/loki/lokid status</code> into the terminal: it will output this information. Once we have the block height we can then check the current Service Nodes on the network at our specified block height.</p>
 <p>Run the command <code>~/loki/lokid print_quorum_state &lt;block height&gt;</code> replacing <code>&lt;block height&gt;</code> with the number minus 1 that was outputted when running <code>status</code> command.</p>
 <p>If your <code>&lt;Service Node Pubkey&gt;</code> is sitting in the list you know you are now staking.</p>
-<h2 id="additional-functions">Additional Functions<a class="headerlink" href="#additional-functions" title="Permanent link">&para;</a></h2>
-<h3 id="autostaking-checkingstopping-autostake-command">Autostaking - Checking/stopping autostake command<a class="headerlink" href="#autostaking-checkingstopping-autostake-command" title="Permanent link">&para;</a></h3>
-<p>To check the processes running in the background, run the command:</p>
-<div class="codehilite"><pre><span></span>top -u &lt;username&gt;
-</pre></div>
-
-
-<p>Under the <code>COMMAND</code> column we should see a process called <code>loki-wallet-cli</code>. If you do not see this process you are either looking at the wrong <code>&lt;username&gt;</code> or your autostake command is not running. </p>
-<p>If you want to stop the autostake then run the following command while logged on to the specific <code>&lt;username&gt;</code> which has <code>loki-wallet-cli</code> running in the background:</p>
-<div class="codehilite"><pre><span></span>pkill loki-wallet-cli
-</pre></div>
-
-
-<h3 id="running-autostake-on-startup">Running Autostake on startup<a class="headerlink" href="#running-autostake-on-startup" title="Permanent link">&para;</a></h3>
-<p>If the host machine your VPS is running on shuts down or restarts unexpectedly then so to will your your autostaking wallet, you can use the following command to start the autostaking wallet again, you can also include these commands in your startup scripts, ensuring if your node goes down it automatically restarts the wallet process.</p>
-<div class="codehilite"><pre><span></span>loki-wallet-cli --testnet --wallet-file &lt;PATH TO WALLET FILE&gt; --password &lt;WALLET PASSWORD&gt; set ask-password 0
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>register_service_node auto ...
-</pre></div>
-
-
-<p>Running this command if you have already staked will not stake over the top of an already staked node </p>
 <h2 id="express-setup-guide">Express Setup Guide<a class="headerlink" href="#express-setup-guide" title="Permanent link">&para;</a></h2>
 <p>This section is for power users who are more familiar with servers and the CLI interface. There's a couple of things your going to want to do before you commence.</p>
 <p><strong>1. Get a Server that meets requirements</strong></p>
 <p><strong>2. Run the Daemon on a server from a non-root user account, then stake from a local wallet (or a wallet on a separate server).</strong></p>
 <blockquote>
-<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the <a href="https://github.com/loki-project/loki/releases/latest">latest version</a>, example <code>v2.0.4</code></p>
+<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the <a href="https://github.com/loki-project/loki/releases/latest">latest version</a>, example <code>v3.0.2</code></p>
 </blockquote>
 <p><strong>3. Connect via SSH to your server</strong></p>
 <p><strong>4. add new user</strong></p>
@@ -3014,8 +2935,6 @@ Windows - <code>loki-wallet-cli</code></p>
       
     
     
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>

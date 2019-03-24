@@ -934,8 +934,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-download-the-new-loki-binaries" title="Step 2 - Download the new Loki Binaries" class="md-nav__link">
-    Step 2 - Download the new Loki Binaries
+  <a href="#step-2-download-the-new-loki-binaries" title="Step 2: Download the new Loki Binaries" class="md-nav__link">
+    Step 2: Download the new Loki Binaries
   </a>
   
 </li>
@@ -1673,8 +1673,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-download-the-new-loki-binaries" title="Step 2 - Download the new Loki Binaries" class="md-nav__link">
-    Step 2 - Download the new Loki Binaries
+  <a href="#step-2-download-the-new-loki-binaries" title="Step 2: Download the new Loki Binaries" class="md-nav__link">
+    Step 2: Download the new Loki Binaries
   </a>
   
 </li>
@@ -1720,7 +1720,7 @@
 <p>If you are prompted during the upgrade that a new version of any file is available then click the up and down arrows until you are hovering over <code>install the package maintainer’s version</code> and click enter.</p>
 <p><center><img alt="Terminal window" src="../../assets/snode2.JPG" /></center></p>
 <p>Alright, good to go. Our server is now up to date. On to the fun part!</p>
-<h2 id="step-2-download-the-new-loki-binaries">Step 2 - Download the new Loki Binaries<a class="headerlink" href="#step-2-download-the-new-loki-binaries" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-download-the-new-loki-binaries">Step 2: Download the new Loki Binaries<a class="headerlink" href="#step-2-download-the-new-loki-binaries" title="Permanent link">&para;</a></h2>
 <p>To download the Linux binaries use the following command:</p>
 <div class="codehilite"><pre><span></span>wget &lt;link&gt;
 </pre></div>
@@ -1728,53 +1728,53 @@
 
 <p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
 <p>Your command should look something like:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.0/loki-linux-x64-v3.0.0.zip
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.2/loki-linux-x64-v3.0.2.zip
 </pre></div>
 
 
-<p>To unzip the downloaded zip file run the following command (changing 3.0.0 to whatever version you
+<p>To unzip the downloaded zip file run the following command (changing 3.0.2 to whatever version you
 downloaded above):</p>
-<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.0.zip
+<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.2.zip
 </pre></div>
 
 
 <p>You will see something like this:</p>
-<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.0.zip
-   creating: loki-linux-x64-v3.0.0/
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-ancestry  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-depth  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-export  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-import  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-mark-spent-outputs  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-stats  
-  inflating: loki-linux-x64-v3.0.0/loki-blockchain-usage  
-  inflating: loki-linux-x64-v3.0.0/loki-gen-trusted-multisig  
-  inflating: loki-linux-x64-v3.0.0/loki-wallet-cli  
-  inflating: loki-linux-x64-v3.0.0/loki-wallet-rpc  
-  inflating: loki-linux-x64-v3.0.0/lokid  
+<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.2.zip
+   creating: loki-linux-x64-v3.0.2/
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-ancestry  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-depth  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-export  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-import  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-mark-spent-outputs  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-stats  
+  inflating: loki-linux-x64-v3.0.2/loki-blockchain-usage  
+  inflating: loki-linux-x64-v3.0.2/loki-gen-trusted-multisig  
+  inflating: loki-linux-x64-v3.0.2/loki-wallet-cli  
+  inflating: loki-linux-x64-v3.0.2/loki-wallet-rpc  
+  inflating: loki-linux-x64-v3.0.2/lokid  
 </pre></div>
 
 
-<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.0</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
-<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.0
+<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.2</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
+<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.2
 ls
 </pre></div>
 
 
-<p>We now want to replace our "symlink" to the new extracted <code>loki-linux-x64-v3.0.0</code> folder. If you are unfamiliar with what the "symlink" was doing previously have a look at the <a href="../SNFullGuide/#step-3-download-the-loki-binaries">Service Node Full Guide</a> where you first set it up.</p>
+<p>We now want to replace our "symlink" to the new extracted <code>loki-linux-x64-v3.0.2</code> folder. If you are unfamiliar with what the "symlink" was doing previously have a look at the <a href="../SNFullGuide/#step-3-download-the-loki-binaries">Service Node Full Guide</a> where you first set it up.</p>
 <p>Otherwise, run the following command.:</p>
 <div class="codehilite"><pre><span></span>cd
 ln -snf &lt;folder_name&gt; loki
 </pre></div>
 
 
-<p>Where <code>&lt;folder_name&gt;</code> is the new folder we created when unziping the release. In this case if we were to update to <code>v3.0.0</code> the commands we would use would be:</p>
+<p>Where <code>&lt;folder_name&gt;</code> is the new folder we created when unziping the release. In this case if we were to update to <code>v3.0.2</code> the commands we would use would be:</p>
 <div class="codehilite"><pre><span></span>cd
-ln -snf loki-linux-x64-v3.0.0 loki
+ln -snf loki-linux-x64-v3.0.2 loki
 </pre></div>
 
 
-<p>This replaces our virtual <code>loki</code> folder that pointed to an old folder to the <code>loki-linux-x64-v3.0.0</code> folder we created.</p>
+<p>This replaces our virtual <code>loki</code> folder that pointed to an old folder to the <code>loki-linux-x64-v3.0.2</code> folder we created.</p>
 <p>At this point it is wise to restart your system with the following command:</p>
 <div class="codehilite"><pre><span></span>sudo reboot
 </pre></div>
@@ -1888,8 +1888,6 @@ ln -snf loki-linux-x64-v3.0.0 loki
       
     
     
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-XXXXXXXX-X","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
