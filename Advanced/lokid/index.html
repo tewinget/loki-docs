@@ -2276,6 +2276,22 @@ This is for node-to-node communication. The following options do <strong>not</st
 <td>TCP port to listen for p2p network connections. Defaults to <code>22022</code> for mainnet, <code>38156</code> for testnet, and <code>38153</code> for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private Loki p2p network (likely using private Testnet). Example: <br/><code>./lokid --p2p-bind-port=48080</code></td>
 </tr>
 <tr>
+<td><code>--p2p-bind-port-ipv6</code></td>
+<td>TCP port to listen for p2p network connections. Defaults to <code>22022</code> for mainnet, <code>38156</code> for testnet, and <code>38153</code> for stagenet.</td>
+</tr>
+<tr>
+<td><code>--p2p-bind-ipv6-address</code></td>
+<td>Interface for p2p network protocol.</td>
+</tr>
+<tr>
+<td><code>--p2p-use-ipv6</code></td>
+<td>Enable IPv6 for p2p.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td><code>--p2p-external-port</code></td>
 <td>TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let <code>lokid</code> know what to advertise on the network. Default is <code>0</code>.</td>
 </tr>
@@ -2377,6 +2393,14 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--rpc-access-control-origins</code></td>
 <td>Specify a comma separated list of origins to allow cross origin resource sharing. This is useful if you want to use <code>lokid</code> API directly from a web browser via JavaScript (say in a pure-fronted web appp scenario). With this option <code>lokid</code> will put proper HTTP CORS headers to its responses. You will also need to set <code>--rpc-login</code> if you use this option. Normally though, the API is used by backend app and this option isn't necessary.</td>
+</tr>
+<tr>
+<td><code>--rpc-bind-ipv6-address</code></td>
+<td>Specify IPv6 address to bind RPC server</td>
+</tr>
+<tr>
+<td><code>--rpc-use-ipv6</code></td>
+<td>Allow IPv6 for RPC</td>
 </tr>
 </tbody>
 </table>
