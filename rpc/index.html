@@ -1,0 +1,3345 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://lokidocs.com/rpc/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../Loki_favicon32x32.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Introduction - Loki Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../CSS/style.css">
+    
+      <link rel="stylesheet" href="../CSS/font.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://lokidocs.com" title="Loki Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Loki Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Introduction
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/loki-project/loki-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      lokidocs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Wallets/WalletsOverview/" title="Wallets" class="md-tabs__link">
+          Wallets
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Mining/MiningOverview/" title="Mining" class="md-tabs__link">
+          Mining
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ServiceNodes/SNOverview/" title="Service Nodes" class="md-tabs__link">
+          Service Nodes
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Lokinet/LokinetOverview/" title="Lokinet" class="md-tabs__link">
+          Lokinet
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Developer/SNRPCGuide/" title="Advanced" class="md-tabs__link">
+          Advanced
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://lokidocs.com" title="Loki Docs" class="md-nav__button md-logo">
+      
+        <img src="../logo.svg" width="48" height="48">
+      
+    </a>
+    Loki Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/loki-project/loki-docs/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      lokidocs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/LokiNetwork/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Introduction/GettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Wallets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Wallets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/WalletsOverview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/WhatWalletToUse/" title="What wallet to use?" class="md-nav__link">
+      What wallet to use?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Addresses
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Addresses
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/Addresses/MainAddress/" title="Main Address" class="md-nav__link">
+      Main Address
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/Addresses/SubAddress/" title="Sub Address" class="md-nav__link">
+      Sub Address
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/Addresses/IntegratedAddress/" title="Integrated Address" class="md-nav__link">
+      Integrated Address
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/Multisignature/" title="Multsignature" class="md-nav__link">
+      Multsignature
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/GuiWallet/loki-gui-guide/" title="Gui Setup" class="md-nav__link">
+      Gui Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/GUIStakingGuide/" title="Gui Staking Guide" class="md-nav__link">
+      Gui Staking Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/MobileWallet/RestoreMobileWalletGuide/" title="Mobile Wallet Restore" class="md-nav__link">
+      Mobile Wallet Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/loki-wallet-cliMacSetup/" title="CLI Mac Setup" class="md-nav__link">
+      CLI Mac Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/WalletCommands/" title="CLI Wallet Commands" class="md-nav__link">
+      CLI Wallet Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/WalletRestoreSeed/" title="CLI Restoring Wallet from Seed" class="md-nav__link">
+      CLI Restoring Wallet from Seed
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/WalletRestoreKeys/" title="CLI Restoring Wallet from Keys" class="md-nav__link">
+      CLI Restoring Wallet from Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5-8" type="checkbox" id="nav-5-5-8">
+    
+    <label class="md-nav__link" for="nav-5-5-8">
+      Multisig
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-5-8">
+        Multisig
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/2of2Multisig/" title="2/2 Multisig" class="md-nav__link">
+      2/2 Multisig
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/2of3Multisig/" title="2/3 Multisig" class="md-nav__link">
+      2/3 Multisig
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wallets/CliWallet/MofNMultisig/" title="M/N Multsig" class="md-nav__link">
+      M/N Multsig
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Mining
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Mining
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/MiningOverview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/ASICResistance/" title="ASIC Resistance" class="md-nav__link">
+      ASIC Resistance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/XMR-StakGuide/" title="XMR-Stak Mining" class="md-nav__link">
+      XMR-Stak Mining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/XMR-Stak-Linux-Guide/" title="XMR-Stak Linux Mining" class="md-nav__link">
+      XMR-Stak Linux Mining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/XMRig-Guide/" title="XMRig Mining" class="md-nav__link">
+      XMRig Mining
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/Mining-With-SBC/" title="Mining With a SBC" class="md-nav__link">
+      Mining With a SBC
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/SNOverview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/ServiceNodeFunctions/" title="Service Node Functions" class="md-nav__link">
+      Service Node Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/StakingRequirement/" title="Staking Requirement" class="md-nav__link">
+      Staking Requirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/InfiniteStakingPrimer/" title="Infinite Staking Primer" class="md-nav__link">
+      Infinite Staking Primer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
+    
+    <label class="md-nav__link" for="nav-7-5">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-5">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/SNFullGuide/" title="Service Node Full Guide" class="md-nav__link">
+      Service Node Full Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/UpdateGuide/" title="Service Node Update Guide" class="md-nav__link">
+      Service Node Update Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Developer/SNRPCGuide/" title="Service Node RPC Guide" class="md-nav__link">
+      Service Node RPC Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ServiceNodes/GUIStakingGuide/" title="Gui Staking Guide" class="md-nav__link">
+      Gui Staking Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Lokinet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Lokinet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/LokinetOverview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/PublicTestingGuide/" title="Public Testing Overview" class="md-nav__link">
+      Public Testing Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/SNApps/" title="SNApps" class="md-nav__link">
+      SNApps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/LLARP/" title="LLARP" class="md-nav__link">
+      LLARP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/DeveloperInfo/" title="Developers" class="md-nav__link">
+      Developers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-6" type="checkbox" id="nav-8-6">
+    
+    <label class="md-nav__link" for="nav-8-6">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-8-6">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/Install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/AccessingSNApps/" title="Accessing SNApps" class="md-nav__link">
+      Accessing SNApps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/LokinetIRC/" title="Joining a Lokinet IRC Chat" class="md-nav__link">
+      Joining a Lokinet IRC Chat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/HostingSNApps/" title="Hosting SNApps" class="md-nav__link">
+      Hosting SNApps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/RouteThroughExitNode/" title="Route through Exit Node" class="md-nav__link">
+      Route through Exit Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/LokinetConfig/" title="Lokinet config files" class="md-nav__link">
+      Lokinet config files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lokinet/Guides/ExitNode/" title="Exit Nodes" class="md-nav__link">
+      Exit Nodes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1">
+    
+    <label class="md-nav__link" for="nav-9-1">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-1">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Developer/SNRPCGuide/" title="Service Node RPC Guide" class="md-nav__link">
+      Service Node RPC Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Developer/DaemonRPCGuide/" title="Daemon RPC Guide" class="md-nav__link">
+      Daemon RPC Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Developer/WalletRPCGuide/" title="Loki Wallet RPC Guide" class="md-nav__link">
+      Loki Wallet RPC Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Developer/FAQ/" title="Developer FAQ" class="md-nav__link">
+      Developer FAQ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2">
+    
+    <label class="md-nav__link" for="nav-9-2">
+      Loki Services
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-2">
+        Loki Services
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LokiServices/LokiServicesOverview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LokiServices/Messenger/" title="Messenger" class="md-nav__link">
+      Messenger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LokiServices/Blink/" title="Blink" class="md-nav__link">
+      Blink
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
+    
+    <label class="md-nav__link" for="nav-9-3">
+      Attack Prevention
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-3">
+        Attack Prevention
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/DenialofServiceAttacks/" title="Denial of Service Attacks" class="md-nav__link">
+      Denial of Service Attacks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/IPandPacketBlocking/" title="IP and Packet Blocking" class="md-nav__link">
+      IP and Packet Blocking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/SwarmFlagging/" title="Swarm Flagging" class="md-nav__link">
+      Swarm Flagging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-4" type="checkbox" id="nav-9-4">
+    
+    <label class="md-nav__link" for="nav-9-4">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-4">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Contributing/HowToContributeToLokiDocs/" title="How to Contribute to LokiDocs" class="md-nav__link">
+      How to Contribute to LokiDocs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Contributing/VULNERABILITY_RESPONSE_LOKI/" title="Vulnerability Response" class="md-nav__link">
+      Vulnerability Response
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Contributing/Issue_Template/" title="Github Issue Template Example" class="md-nav__link">
+      Github Issue Template Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
+    
+    <label class="md-nav__link" for="nav-9-5">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-5">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Governance/Governance/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Governance/TheLokiFoundation/" title="The Loki Foundation" class="md-nav__link">
+      The Loki Foundation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Governance/LokiFundingSystem/" title="Loki Funding System" class="md-nav__link">
+      Loki Funding System
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/TechnicalSpecs/" title="Technical Specs" class="md-nav__link">
+      Technical Specs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/Cryptoeconomics/" title="Cryptoeconomics" class="md-nav__link">
+      Cryptoeconomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/SybilResistance/" title="Sybil Resistance" class="md-nav__link">
+      Sybil Resistance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/DynamicBlockSize/" title="Dynamic Block Size" class="md-nav__link">
+      Dynamic Block Size
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/CryptoNoteElements/" title="CryptoNote Elements" class="md-nav__link">
+      CryptoNote Elements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/lokid/" title="lokid" class="md-nav__link">
+      lokid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-12" type="checkbox" id="nav-9-12">
+    
+    <label class="md-nav__link" for="nav-9-12">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-12">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/UsingTor/" title="Using Tor" class="md-nav__link">
+      Using Tor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/Debugging/" title="Debugging" class="md-nav__link">
+      Debugging
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Advanced/AcceptingLoki/" title="Accepting Loki for Merchants and Exchanges" class="md-nav__link">
+      Accepting Loki for Merchants and Exchanges
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rpc-methods" title="RPC Methods" class="md-nav__link">
+    RPC Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_height" title="COMMAND_RPC_GET_HEIGHT" class="md-nav__link">
+    COMMAND_RPC_GET_HEIGHT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_blocks_fast" title="COMMAND_RPC_GET_BLOCKS_FAST" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCKS_FAST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_blocks_by_height" title="COMMAND_RPC_GET_BLOCKS_BY_HEIGHT" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCKS_BY_HEIGHT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_alt_blocks_hashes" title="COMMAND_RPC_GET_ALT_BLOCKS_HASHES" class="md-nav__link">
+    COMMAND_RPC_GET_ALT_BLOCKS_HASHES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_hashes_fast" title="COMMAND_RPC_GET_HASHES_FAST" class="md-nav__link">
+    COMMAND_RPC_GET_HASHES_FAST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_transactions" title="COMMAND_RPC_GET_TRANSACTIONS" class="md-nav__link">
+    COMMAND_RPC_GET_TRANSACTIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_is_key_image_spent" title="COMMAND_RPC_IS_KEY_IMAGE_SPENT" class="md-nav__link">
+    COMMAND_RPC_IS_KEY_IMAGE_SPENT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_tx_global_outputs_indexes" title="COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES" class="md-nav__link">
+    COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_outputs_bin" title="COMMAND_RPC_GET_OUTPUTS_BIN" class="md-nav__link">
+    COMMAND_RPC_GET_OUTPUTS_BIN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_outputs" title="COMMAND_RPC_GET_OUTPUTS" class="md-nav__link">
+    COMMAND_RPC_GET_OUTPUTS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_send_raw_tx" title="COMMAND_RPC_SEND_RAW_TX" class="md-nav__link">
+    COMMAND_RPC_SEND_RAW_TX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_start_mining" title="COMMAND_RPC_START_MINING" class="md-nav__link">
+    COMMAND_RPC_START_MINING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_info" title="COMMAND_RPC_GET_INFO" class="md-nav__link">
+    COMMAND_RPC_GET_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_all_service_nodes_keys" title="COMMAND_RPC_GET_ALL_SERVICE_NODES_KEYS" class="md-nav__link">
+    COMMAND_RPC_GET_ALL_SERVICE_NODES_KEYS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_stop_mining" title="COMMAND_RPC_STOP_MINING" class="md-nav__link">
+    COMMAND_RPC_STOP_MINING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_mining_status" title="COMMAND_RPC_MINING_STATUS" class="md-nav__link">
+    COMMAND_RPC_MINING_STATUS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_save_bc" title="COMMAND_RPC_SAVE_BC" class="md-nav__link">
+    COMMAND_RPC_SAVE_BC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_getblockcount" title="COMMAND_RPC_GETBLOCKCOUNT" class="md-nav__link">
+    COMMAND_RPC_GETBLOCKCOUNT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_getblockhash" title="COMMAND_RPC_GETBLOCKHASH" class="md-nav__link">
+    COMMAND_RPC_GETBLOCKHASH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_getblocktemplate" title="COMMAND_RPC_GETBLOCKTEMPLATE" class="md-nav__link">
+    COMMAND_RPC_GETBLOCKTEMPLATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_submitblock" title="COMMAND_RPC_SUBMITBLOCK" class="md-nav__link">
+    COMMAND_RPC_SUBMITBLOCK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_generateblocks" title="COMMAND_RPC_GENERATEBLOCKS" class="md-nav__link">
+    COMMAND_RPC_GENERATEBLOCKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_last_block_header" title="COMMAND_RPC_GET_LAST_BLOCK_HEADER" class="md-nav__link">
+    COMMAND_RPC_GET_LAST_BLOCK_HEADER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_block_header_by_hash" title="COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_block_header_by_height" title="COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_block" title="COMMAND_RPC_GET_BLOCK" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_set_log_hash_rate" title="COMMAND_RPC_SET_LOG_HASH_RATE" class="md-nav__link">
+    COMMAND_RPC_SET_LOG_HASH_RATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_set_log_level" title="COMMAND_RPC_SET_LOG_LEVEL" class="md-nav__link">
+    COMMAND_RPC_SET_LOG_LEVEL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_set_log_categories" title="COMMAND_RPC_SET_LOG_CATEGORIES" class="md-nav__link">
+    COMMAND_RPC_SET_LOG_CATEGORIES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_transaction_pool" title="COMMAND_RPC_GET_TRANSACTION_POOL" class="md-nav__link">
+    COMMAND_RPC_GET_TRANSACTION_POOL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_transaction_pool_hashes_bin" title="COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN" class="md-nav__link">
+    COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_transaction_pool_hashes" title="COMMAND_RPC_GET_TRANSACTION_POOL_HASHES" class="md-nav__link">
+    COMMAND_RPC_GET_TRANSACTION_POOL_HASHES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_transaction_pool_backlog" title="COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG" class="md-nav__link">
+    COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_connections" title="COMMAND_RPC_GET_CONNECTIONS" class="md-nav__link">
+    COMMAND_RPC_GET_CONNECTIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_block_headers_range" title="COMMAND_RPC_GET_BLOCK_HEADERS_RANGE" class="md-nav__link">
+    COMMAND_RPC_GET_BLOCK_HEADERS_RANGE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_stop_daemon" title="COMMAND_RPC_STOP_DAEMON" class="md-nav__link">
+    COMMAND_RPC_STOP_DAEMON
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_limit" title="COMMAND_RPC_GET_LIMIT" class="md-nav__link">
+    COMMAND_RPC_GET_LIMIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_set_limit" title="COMMAND_RPC_SET_LIMIT" class="md-nav__link">
+    COMMAND_RPC_SET_LIMIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_out_peers" title="COMMAND_RPC_OUT_PEERS" class="md-nav__link">
+    COMMAND_RPC_OUT_PEERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_in_peers" title="COMMAND_RPC_IN_PEERS" class="md-nav__link">
+    COMMAND_RPC_IN_PEERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_start_save_graph" title="COMMAND_RPC_START_SAVE_GRAPH" class="md-nav__link">
+    COMMAND_RPC_START_SAVE_GRAPH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_stop_save_graph" title="COMMAND_RPC_STOP_SAVE_GRAPH" class="md-nav__link">
+    COMMAND_RPC_STOP_SAVE_GRAPH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_hard_fork_info" title="COMMAND_RPC_HARD_FORK_INFO" class="md-nav__link">
+    COMMAND_RPC_HARD_FORK_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_getbans" title="COMMAND_RPC_GETBANS" class="md-nav__link">
+    COMMAND_RPC_GETBANS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_setbans" title="COMMAND_RPC_SETBANS" class="md-nav__link">
+    COMMAND_RPC_SETBANS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_flush_transaction_pool" title="COMMAND_RPC_FLUSH_TRANSACTION_POOL" class="md-nav__link">
+    COMMAND_RPC_FLUSH_TRANSACTION_POOL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_output_histogram" title="COMMAND_RPC_GET_OUTPUT_HISTOGRAM" class="md-nav__link">
+    COMMAND_RPC_GET_OUTPUT_HISTOGRAM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_version" title="COMMAND_RPC_GET_VERSION" class="md-nav__link">
+    COMMAND_RPC_GET_VERSION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_coinbase_tx_sum" title="COMMAND_RPC_GET_COINBASE_TX_SUM" class="md-nav__link">
+    COMMAND_RPC_GET_COINBASE_TX_SUM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_base_fee_estimate" title="COMMAND_RPC_GET_BASE_FEE_ESTIMATE" class="md-nav__link">
+    COMMAND_RPC_GET_BASE_FEE_ESTIMATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_alternate_chains" title="COMMAND_RPC_GET_ALTERNATE_CHAINS" class="md-nav__link">
+    COMMAND_RPC_GET_ALTERNATE_CHAINS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_update" title="COMMAND_RPC_UPDATE" class="md-nav__link">
+    COMMAND_RPC_UPDATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_relay_tx" title="COMMAND_RPC_RELAY_TX" class="md-nav__link">
+    COMMAND_RPC_RELAY_TX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_sync_info" title="COMMAND_RPC_SYNC_INFO" class="md-nav__link">
+    COMMAND_RPC_SYNC_INFO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_output_distribution" title="COMMAND_RPC_GET_OUTPUT_DISTRIBUTION" class="md-nav__link">
+    COMMAND_RPC_GET_OUTPUT_DISTRIBUTION
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_pop_blocks" title="COMMAND_RPC_POP_BLOCKS" class="md-nav__link">
+    COMMAND_RPC_POP_BLOCKS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_prune_blockchain" title="COMMAND_RPC_PRUNE_BLOCKCHAIN" class="md-nav__link">
+    COMMAND_RPC_PRUNE_BLOCKCHAIN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_quorum_state" title="COMMAND_RPC_GET_QUORUM_STATE" class="md-nav__link">
+    COMMAND_RPC_GET_QUORUM_STATE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_quorum_state_batched" title="COMMAND_RPC_GET_QUORUM_STATE_BATCHED" class="md-nav__link">
+    COMMAND_RPC_GET_QUORUM_STATE_BATCHED
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_service_node_registration_cmd_raw" title="COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD_RAW" class="md-nav__link">
+    COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD_RAW
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_service_node_registration_cmd" title="COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD" class="md-nav__link">
+    COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_service_node_key" title="COMMAND_RPC_GET_SERVICE_NODE_KEY" class="md-nav__link">
+    COMMAND_RPC_GET_SERVICE_NODE_KEY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_service_nodes" title="COMMAND_RPC_GET_SERVICE_NODES" class="md-nav__link">
+    COMMAND_RPC_GET_SERVICE_NODES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_staking_requirement" title="COMMAND_RPC_GET_STAKING_REQUIREMENT" class="md-nav__link">
+    COMMAND_RPC_GET_STAKING_REQUIREMENT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_service_node_blacklisted_key_images" title="COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES" class="md-nav__link">
+    COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command_rpc_get_output_blacklist" title="COMMAND_RPC_GET_OUTPUT_BLACKLIST" class="md-nav__link">
+    COMMAND_RPC_GET_OUTPUT_BLACKLIST
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/rpc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>This is a list of the lokid daemon RPC calls, their inputs and outputs, and examples of each.</p>
+<p>Many RPC calls use the daemon's JSON RPC interface while others use their own interfaces, as demonstrated below.</p>
+<p>Note: "atomic units" refer to the smallest fraction of 1 LOKI according to the lokid implementation. 1 LOKI = 1e12 atomic units.</p>
+<h2 id="rpc-methods">RPC Methods<a class="headerlink" href="#rpc-methods" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#command_rpc_get_height">COMMAND_RPC_GET_HEIGHT</a></li>
+<li><a href="#command_rpc_get_blocks_fast">COMMAND_RPC_GET_BLOCKS_FAST</a></li>
+<li><a href="#command_rpc_get_blocks_by_height">COMMAND_RPC_GET_BLOCKS_BY_HEIGHT</a></li>
+<li><a href="#command_rpc_get_alt_blocks_hashes">COMMAND_RPC_GET_ALT_BLOCKS_HASHES</a></li>
+<li><a href="#command_rpc_get_hashes_fast">COMMAND_RPC_GET_HASHES_FAST</a></li>
+<li><a href="#command_rpc_get_transactions">COMMAND_RPC_GET_TRANSACTIONS</a></li>
+<li><a href="#command_rpc_is_key_image_spent">COMMAND_RPC_IS_KEY_IMAGE_SPENT</a></li>
+<li><a href="#command_rpc_get_tx_global_outputs_indexes">COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES</a></li>
+<li><a href="#command_rpc_get_outputs_bin">COMMAND_RPC_GET_OUTPUTS_BIN</a></li>
+<li><a href="#command_rpc_get_outputs">COMMAND_RPC_GET_OUTPUTS</a></li>
+<li><a href="#command_rpc_send_raw_tx">COMMAND_RPC_SEND_RAW_TX</a></li>
+<li><a href="#command_rpc_start_mining">COMMAND_RPC_START_MINING</a></li>
+<li><a href="#command_rpc_get_info">COMMAND_RPC_GET_INFO</a></li>
+<li><a href="#command_rpc_get_all_service_nodes_keys">COMMAND_RPC_GET_ALL_SERVICE_NODES_KEYS</a></li>
+<li><a href="#command_rpc_stop_mining">COMMAND_RPC_STOP_MINING</a></li>
+<li><a href="#command_rpc_mining_status">COMMAND_RPC_MINING_STATUS</a></li>
+<li><a href="#command_rpc_save_bc">COMMAND_RPC_SAVE_BC</a></li>
+<li><a href="#command_rpc_getblockcount">COMMAND_RPC_GETBLOCKCOUNT</a></li>
+<li><a href="#command_rpc_getblockhash">COMMAND_RPC_GETBLOCKHASH</a></li>
+<li><a href="#command_rpc_getblocktemplate">COMMAND_RPC_GETBLOCKTEMPLATE</a></li>
+<li><a href="#command_rpc_submitblock">COMMAND_RPC_SUBMITBLOCK</a></li>
+<li><a href="#command_rpc_generateblocks">COMMAND_RPC_GENERATEBLOCKS</a></li>
+<li><a href="#command_rpc_get_last_block_header">COMMAND_RPC_GET_LAST_BLOCK_HEADER</a></li>
+<li><a href="#command_rpc_get_block_header_by_hash">COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH</a></li>
+<li><a href="#command_rpc_get_block_header_by_height">COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT</a></li>
+<li><a href="#command_rpc_get_block">COMMAND_RPC_GET_BLOCK</a></li>
+<li><a href="#command_rpc_set_log_hash_rate">COMMAND_RPC_SET_LOG_HASH_RATE</a></li>
+<li><a href="#command_rpc_set_log_level">COMMAND_RPC_SET_LOG_LEVEL</a></li>
+<li><a href="#command_rpc_set_log_categories">COMMAND_RPC_SET_LOG_CATEGORIES</a></li>
+<li><a href="#command_rpc_get_transaction_pool">COMMAND_RPC_GET_TRANSACTION_POOL</a></li>
+<li><a href="#command_rpc_get_transaction_pool_hashes_bin">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN</a></li>
+<li><a href="#command_rpc_get_transaction_pool_hashes">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES</a></li>
+<li><a href="#command_rpc_get_transaction_pool_backlog">COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG</a></li>
+<li><a href="#command_rpc_get_connections">COMMAND_RPC_GET_CONNECTIONS</a></li>
+<li><a href="#command_rpc_get_block_headers_range">COMMAND_RPC_GET_BLOCK_HEADERS_RANGE</a></li>
+<li><a href="#command_rpc_stop_daemon">COMMAND_RPC_STOP_DAEMON</a></li>
+<li><a href="#command_rpc_get_limit">COMMAND_RPC_GET_LIMIT</a></li>
+<li><a href="#command_rpc_set_limit">COMMAND_RPC_SET_LIMIT</a></li>
+<li><a href="#command_rpc_out_peers">COMMAND_RPC_OUT_PEERS</a></li>
+<li><a href="#command_rpc_in_peers">COMMAND_RPC_IN_PEERS</a></li>
+<li><a href="#command_rpc_start_save_graph">COMMAND_RPC_START_SAVE_GRAPH</a></li>
+<li><a href="#command_rpc_stop_save_graph">COMMAND_RPC_STOP_SAVE_GRAPH</a></li>
+<li><a href="#command_rpc_hard_fork_info">COMMAND_RPC_HARD_FORK_INFO</a></li>
+<li><a href="#command_rpc_getbans">COMMAND_RPC_GETBANS</a></li>
+<li><a href="#command_rpc_setbans">COMMAND_RPC_SETBANS</a></li>
+<li><a href="#command_rpc_flush_transaction_pool">COMMAND_RPC_FLUSH_TRANSACTION_POOL</a></li>
+<li><a href="#command_rpc_get_output_histogram">COMMAND_RPC_GET_OUTPUT_HISTOGRAM</a></li>
+<li><a href="#command_rpc_get_version">COMMAND_RPC_GET_VERSION</a></li>
+<li><a href="#command_rpc_get_coinbase_tx_sum">COMMAND_RPC_GET_COINBASE_TX_SUM</a></li>
+<li><a href="#command_rpc_get_base_fee_estimate">COMMAND_RPC_GET_BASE_FEE_ESTIMATE</a></li>
+<li><a href="#command_rpc_get_alternate_chains">COMMAND_RPC_GET_ALTERNATE_CHAINS</a></li>
+<li><a href="#command_rpc_update">COMMAND_RPC_UPDATE</a></li>
+<li><a href="#command_rpc_relay_tx">COMMAND_RPC_RELAY_TX</a></li>
+<li><a href="#command_rpc_sync_info">COMMAND_RPC_SYNC_INFO</a></li>
+<li><a href="#command_rpc_get_output_distribution">COMMAND_RPC_GET_OUTPUT_DISTRIBUTION</a></li>
+<li><a href="#command_rpc_pop_blocks">COMMAND_RPC_POP_BLOCKS</a></li>
+<li><a href="#command_rpc_prune_blockchain">COMMAND_RPC_PRUNE_BLOCKCHAIN</a></li>
+<li><a href="#command_rpc_get_quorum_state">COMMAND_RPC_GET_QUORUM_STATE</a></li>
+<li><a href="#command_rpc_get_quorum_state_batched">COMMAND_RPC_GET_QUORUM_STATE_BATCHED</a></li>
+<li><a href="#command_rpc_get_service_node_registration_cmd_raw">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD_RAW</a></li>
+<li><a href="#command_rpc_get_service_node_registration_cmd">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD</a></li>
+<li><a href="#command_rpc_get_service_node_key">COMMAND_RPC_GET_SERVICE_NODE_KEY</a></li>
+<li><a href="#command_rpc_get_service_nodes">COMMAND_RPC_GET_SERVICE_NODES</a></li>
+<li><a href="#command_rpc_get_staking_requirement">COMMAND_RPC_GET_STAKING_REQUIREMENT</a></li>
+<li><a href="#command_rpc_get_service_node_blacklisted_key_images">COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES</a></li>
+<li><a href="#command_rpc_get_output_blacklist">COMMAND_RPC_GET_OUTPUT_BLACKLIST</a></li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_height">COMMAND_RPC_GET_HEIGHT<a class="headerlink" href="#command_rpc_get_height" title="Permanent link">&para;</a></h3>
+<p>Get the node's current height.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>height - uint64</code>: The current blockchain height according to the queried daemon.</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_blocks_fast">COMMAND_RPC_GET_BLOCKS_FAST<a class="headerlink" href="#command_rpc_get_blocks_fast" title="Permanent link">&para;</a></h3>
+<p>Get all blocks info. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>block_ids - string[64][]</code>: First 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block</li>
+<li><code>start_height - uint64</code>: The starting block's height.</li>
+<li><code>prune - bool</code>: Prunes the blockchain, drops off 7/8 off the block iirc.</li>
+<li><code>no_miner_tx - bool</code>: Optional (false by default).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>blocks - block_complete_entry[]</code>: Array of block complete entries</li>
+<li><code>start_height - uint64</code>: The starting block's height.</li>
+<li><code>current_height - uint64</code>: The current block height.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>output_indices - block_output_indices[]</code>: Array of indices.<ul>
+<li><code>indices - tx_output_indices[]</code>: Array of TX output indices:<ul>
+<li><code>indices - uint64[]</code>: Array of unsigned int.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_blocks_by_height">COMMAND_RPC_GET_BLOCKS_BY_HEIGHT<a class="headerlink" href="#command_rpc_get_blocks_by_height" title="Permanent link">&para;</a></h3>
+<p>Get blocks by height. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>heights - uint64[]</code>: List of block heights</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>blocks - block_complete_entry[]</code>: Array of block complete entries</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_alt_blocks_hashes">COMMAND_RPC_GET_ALT_BLOCKS_HASHES<a class="headerlink" href="#command_rpc_get_alt_blocks_hashes" title="Permanent link">&para;</a></h3>
+<p>Get the known blocks hashes which are not on the main chain.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>blks_hashes - string[]</code>: List of alternative blocks hashes to main chain.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_hashes_fast">COMMAND_RPC_GET_HASHES_FAST<a class="headerlink" href="#command_rpc_get_hashes_fast" title="Permanent link">&para;</a></h3>
+<p>Get hashes. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>block_ids - string[64][]</code>: First 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block */</li>
+<li><code>start_height - uint64</code>: The starting block's height.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>m_block_ids - string[64][]</code>: Binary array of hashes, See block_ids above.</li>
+<li><code>start_height - uint64</code>: The starting block's height.</li>
+<li><code>current_height - uint64</code>: The current block height.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_transactions">COMMAND_RPC_GET_TRANSACTIONS<a class="headerlink" href="#command_rpc_get_transactions" title="Permanent link">&para;</a></h3>
+<p>Look up one or more transactions by hash.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>txs_hashes - string[]</code>: List of transaction hashes to look up.</li>
+<li><code>decode_as_json - bool</code>: Optional (<code>false</code> by default). If set true, the returned transaction information will be decoded rather than binary.</li>
+<li><code>prune - bool</code>: Prunes the blockchain, drops off 7/8 off the block iirc. Optional (<code>False</code> by default).</li>
+<li><code>split - bool</code>: Optional (<code>false</code> by default).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>txs_as_hex - string[]</code>: Full transaction information as a hex string (old compatibility parameter)</li>
+<li><code>txs_as_json - string[]</code>: Transactions decoded as json (old compat)</li>
+<li><code>missed_tx - string[]</code>: (Optional - returned if not empty) Transaction hashes that could not be found.</li>
+<li><code>txs - entry[]</code>: Array of structure entry as follows:<ul>
+<li><code>tx_hash - string</code>: Transaction hash.</li>
+<li><code>as_hex - string</code>: Full transaction information as a hex string.</li>
+<li><code>pruned_as_hex - string</code></li>
+<li><code>prunable_as_hex - string</code></li>
+<li><code>prunable_hash - string</code></li>
+<li><code>as_json - string</code>: List of transaction info.</li>
+<li><code>in_pool - bool</code>: States if the transaction is in pool (<code>true</code>) or included in a block (<code>false</code>).</li>
+<li><code>double_spend_seen - bool</code>: States if the transaction is a double-spend (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>block_height - uint64</code>: Block height including the transaction.</li>
+<li><code>block_timestamp - uint64</code>: Unix time at chich the block has been added to the blockchain.</li>
+<li><code>output_indices - uint64[]</code>: List of transaction indexes.</li>
+</ul>
+</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_is_key_image_spent">COMMAND_RPC_IS_KEY_IMAGE_SPENT<a class="headerlink" href="#command_rpc_is_key_image_spent" title="Permanent link">&para;</a></h3>
+<p>Check if outputs have been spent using the key image associated with the output.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>key_images - string[]</code>: List of key image hex strings to check.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>spent_status - int[]</code>: List of statuses for each image checked. Statuses are follows: 0 = unspent, 1 = spent in blockchain, 2 = spent in transaction pool</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_tx_global_outputs_indexes">COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES<a class="headerlink" href="#command_rpc_get_tx_global_outputs_indexes" title="Permanent link">&para;</a></h3>
+<p>Get global outputs of transactions. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>txid - string[64]</code>: Binary txid.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>o_indexes - uint64[]</code>: List of output indexes</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_outputs_bin">COMMAND_RPC_GET_OUTPUTS_BIN<a class="headerlink" href="#command_rpc_get_outputs_bin" title="Permanent link">&para;</a></h3>
+<p>Get outputs. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.<ul>
+<li><code>amount - uint64</code>: Amount of Loki in TXID.</li>
+<li><code>index - uint64</code></li>
+</ul>
+</li>
+<li><code>get_txid - bool</code>: TXID</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>outs - outkey[]</code>: List of outkey information.<ul>
+<li><code>key - crypto::public_key</code>: The public key of the output.</li>
+<li><code>mask - rct::key</code></li>
+<li><code>unlocked - bool</code>: States if output is locked (<code>false</code>) or not (<code>true</code>).</li>
+<li><code>height - uint64</code>: Block height of the output.</li>
+<li><code>txid - string[64]</code>: Transaction id.</li>
+</ul>
+</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_outputs">COMMAND_RPC_GET_OUTPUTS<a class="headerlink" href="#command_rpc_get_outputs" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.<ul>
+<li><code>amount - uint64</code>: Amount of Loki in TXID.</li>
+<li><code>index - uint64</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>outs - outkey[]</code>: List of outkey information.<ul>
+<li><code>key - string</code>: The public key of the output.</li>
+<li><code>mask - string</code></li>
+<li><code>unlocked - bool</code>: States if output is locked (<code>false</code>) or not (<code>true</code>).</li>
+<li><code>height - uint64</code>: Block height of the output.</li>
+<li><code>txid - string</code>: Transaction id.</li>
+</ul>
+</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_send_raw_tx">COMMAND_RPC_SEND_RAW_TX<a class="headerlink" href="#command_rpc_send_raw_tx" title="Permanent link">&para;</a></h3>
+<p>Broadcast a raw transaction to the network.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>tx_as_hex - string</code>: Full transaction information as hexidecimal string.</li>
+<li><code>do_not_relay - bool</code>: Stop relaying transaction to other nodes (default is <code>false</code>).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+<li><code>reason - string</code>: Additional information. Currently empty or "Not relayed" if transaction was accepted but not relayed.</li>
+<li><code>not_relayed - bool</code>: Transaction was not relayed (true) or relayed (false).</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+<li><code>tvc - tx_verification_context</code></li>
+</ul>
+<hr />
+<h3 id="command_rpc_start_mining">COMMAND_RPC_START_MINING<a class="headerlink" href="#command_rpc_start_mining" title="Permanent link">&para;</a></h3>
+<p>Start mining on the daemon.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>miner_address - string</code>: Account address to mine to.</li>
+<li><code>threads_count - uint64</code>: Number of mining thread to run.</li>
+<li><code>do_background_mining - bool</code>: States if the mining should run in background (<code>true</code>) or foreground (<code>false</code>).</li>
+<li><code>ignore_battery - bool</code>: States if battery state (on laptop) should be ignored (<code>true</code>) or not (<code>false</code>).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_info">COMMAND_RPC_GET_INFO<a class="headerlink" href="#command_rpc_get_info" title="Permanent link">&para;</a></h3>
+<p>Retrieve general information about the state of your node and the network.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>height - uint64</code>: Current length of longest chain known to daemon.</li>
+<li><code>target_height - uint64</code>: The height of the next block in the chain.</li>
+<li><code>difficulty - uint64</code>: Network difficulty (analogous to the strength of the network).</li>
+<li><code>target - uint64</code>: Current target for next proof of work.</li>
+<li><code>tx_count - uint64</code>: Total number of non-coinbase transaction in the chain.</li>
+<li><code>tx_pool_size - uint64</code>: Number of transactions that have been broadcast but not included in a block.</li>
+<li><code>alt_blocks_count - uint64</code>: Number of alternative blocks to main chain.</li>
+<li><code>outgoing_connections_count - uint64</code>: Number of peers that you are connected to and getting information from.</li>
+<li><code>incoming_connections_count - uint64</code>: Number of peers connected to and pulling from your node.</li>
+<li><code>rpc_connections_count - uint64</code>: Number of RPC client connected to the daemon (Including this RPC request).</li>
+<li><code>white_peerlist_size - uint64</code>: White Peerlist Size</li>
+<li><code>grey_peerlist_size - uint64</code>: Grey Peerlist Size</li>
+<li><code>mainnet - bool</code>: States if the node is on the mainnet (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>testnet - bool</code>: States if the node is on the testnet (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>stagenet - bool</code>: States if the node is on the stagenet (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>nettype - string</code>: Nettype value used.</li>
+<li><code>top_block_hash - string</code>: Hash of the highest block in the chain.</li>
+<li><code>cumulative_difficulty - uint64</code>: Cumulative difficulty of all blocks in the blockchain.</li>
+<li><code>block_size_limit - uint64</code>: Maximum allowed block size.</li>
+<li><code>block_weight_limit - uint64</code>: Maximum allowed block weight.</li>
+<li><code>block_size_median - uint64</code>: Median block size of latest 100 blocks.</li>
+<li><code>block_weight_median - uint64</code>: Median block weight of latest 100 blocks.</li>
+<li><code>start_time - uint64</code>: Start time of the daemon, as UNIX time.</li>
+<li><code>free_space - uint64</code>: Available disk space on the node.</li>
+<li><code>offline - bool</code>: States if the node is offline (<code>true</code>) or online (<code>false</code>).</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+<li><code>bootstrap_daemon_address - string</code>: Bootstrap node to give immediate usability to wallets while syncing by proxying RPC to it. (Note: the replies may be untrustworthy).</li>
+<li><code>height_without_bootstrap - uint64</code>: Current length of the local chain of the daemon.</li>
+<li><code>was_bootstrap_ever_used - bool</code>: States if a bootstrap node has ever been used since the daemon started.</li>
+<li><code>database_size - uint64</code>: Current size of Blockchain data.</li>
+<li><code>update_available - bool</code>: States if a update is available ('true') and if one is not available ('false').</li>
+<li><code>version - string</code>: Current version of software running.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_all_service_nodes_keys">COMMAND_RPC_GET_ALL_SERVICE_NODES_KEYS<a class="headerlink" href="#command_rpc_get_all_service_nodes_keys" title="Permanent link">&para;</a></h3>
+<p>Retrieve all Service Node Keys.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>fully_funded_nodes_only - bool</code>: Return keys for service nodes if they are funded and working on the network</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>keys - string[]</code>: Returns as base32z of the hex key, for Lokinet internal usage</li>
+</ul>
+<hr />
+<h3 id="command_rpc_stop_mining">COMMAND_RPC_STOP_MINING<a class="headerlink" href="#command_rpc_stop_mining" title="Permanent link">&para;</a></h3>
+<p>Stop mining on the daemon.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_mining_status">COMMAND_RPC_MINING_STATUS<a class="headerlink" href="#command_rpc_mining_status" title="Permanent link">&para;</a></h3>
+<p>Get the mining status of the daemon.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+<li><code>active - bool</code>: States if mining is enabled (<code>true</code>) or disabled (<code>false</code>).</li>
+<li><code>speed - uint64</code>: Mining power in hashes per seconds.</li>
+<li><code>threads_count - uint32</code>: Number of running mining threads.</li>
+<li><code>address - string</code>: Account address daemon is mining to. Empty if not mining.</li>
+<li><code>is_background_mining_enabled - bool</code>: States if the mining is running in background (<code>true</code>) or foreground (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_save_bc">COMMAND_RPC_SAVE_BC<a class="headerlink" href="#command_rpc_save_bc" title="Permanent link">&para;</a></h3>
+<p>Save the blockchain. The blockchain does not need saving and is always saved when modified, 
+however it does a sync to flush the filesystem cache onto the disk for safety purposes against Operating System or Hardware crashes.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_getblockcount">COMMAND_RPC_GETBLOCKCOUNT<a class="headerlink" href="#command_rpc_getblockcount" title="Permanent link">&para;</a></h3>
+<p>Look up how many blocks are in the longest chain known to the node.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>request - string[]</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>count - uint64</code>: Number of blocks in longest chain seen by the node.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_getblockhash">COMMAND_RPC_GETBLOCKHASH<a class="headerlink" href="#command_rpc_getblockhash" title="Permanent link">&para;</a></h3>
+<p>Look up a block's hash by its height.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>request - uint64[]</code>: Block height (int array of length 1).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>response - string</code>: Block hash (string).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_getblocktemplate">COMMAND_RPC_GETBLOCKTEMPLATE<a class="headerlink" href="#command_rpc_getblocktemplate" title="Permanent link">&para;</a></h3>
+<p>Get a block template on which mining a new block.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>reserve_size - uint64</code>: Max 255 bytes</li>
+<li><code>wallet_address - string</code>: Address of wallet to receive coinbase transactions if block is successfully mined.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>difficulty - uint64</code>: Difficulty of next block.</li>
+<li><code>height - uint64</code>: Height on which to mine.</li>
+<li><code>reserved_offset - uint64</code>: Reserved offset.</li>
+<li><code>expected_reward - uint64</code>: Coinbase reward expected to be received if block is successfully mined.</li>
+<li><code>prev_hash - string</code>: Hash of the most recent block on which to mine the next block.</li>
+<li><code>blocktemplate_blob - string</code>: Blob on which to try to mine a new block.</li>
+<li><code>blockhashing_blob - string</code>: Blob on which to try to find a valid nonce.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_submitblock">COMMAND_RPC_SUBMITBLOCK<a class="headerlink" href="#command_rpc_submitblock" title="Permanent link">&para;</a></h3>
+<p>Submit a mined block to the network.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>request - string[]</code>: Block blob data - array of strings; list of block blobs which have been mined. See get_block_template to get a blob on which to mine.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: Block submit status.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_generateblocks">COMMAND_RPC_GENERATEBLOCKS<a class="headerlink" href="#command_rpc_generateblocks" title="Permanent link">&para;</a></h3>
+<p>Developer only.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>amount_of_blocks - uint64</code></li>
+<li><code>wallet_address - string</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>height - uint64</code></li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_last_block_header">COMMAND_RPC_GET_LAST_BLOCK_HEADER<a class="headerlink" href="#command_rpc_get_last_block_header" title="Permanent link">&para;</a></h3>
+<p>Block header information for the most recent block is easily retrieved with this method. No inputs are needed.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
+<li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
+<li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
+<li><code>prev_hash - string</code>: The hash of the block immediately preceding this block in the chain.</li>
+<li><code>nonce - uint32</code>: A cryptographic random one-time number used in mining a Loki block.</li>
+<li><code>orphan_status - bool</code>: Usually <code>false</code>. If <code>true</code>, this block is not part of the longest chain.</li>
+<li><code>height - uint64</code>: The number of blocks preceding this block on the blockchain.</li>
+<li><code>depth - uint64</code>: The number of blocks succeeding this block on the blockchain. A larger number means an older block.</li>
+<li><code>hash - string</code>: The hash of this block.</li>
+<li><code>difficulty - uint64</code>: The strength of the Loki network based on mining power.</li>
+<li><code>cumulative_difficulty - uint64</code>: The cumulative strength of the Loki network based on mining power.</li>
+<li><code>reward - uint64</code>: The amount of new generated in this block and rewarded to the miner, foundation and service Nodes. Note: 1 LOKI = 1e12 atomic units.</li>
+<li><code>miner_reward - uint64</code>: The amount of new generated in this block and rewarded to the miner. Note: 1 LOKI = 1e12 atomic units. </li>
+<li><code>block_size - uint64</code>: The block size in bytes.</li>
+<li><code>block_weight - uint64</code>: The block weight in bytes.</li>
+<li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
+<li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
+<li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_block_header_by_hash">COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH<a class="headerlink" href="#command_rpc_get_block_header_by_hash" title="Permanent link">&para;</a></h3>
+<p>Block header information can be retrieved using either a block's hash or height. This method includes a block's hash as an input parameter to retrieve basic information about the block.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>hash - string</code>: The block's SHA256 hash.</li>
+<li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
+<li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
+<li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
+<li><code>prev_hash - string</code>: The hash of the block immediately preceding this block in the chain.</li>
+<li><code>nonce - uint32</code>: A cryptographic random one-time number used in mining a Loki block.</li>
+<li><code>orphan_status - bool</code>: Usually <code>false</code>. If <code>true</code>, this block is not part of the longest chain.</li>
+<li><code>height - uint64</code>: The number of blocks preceding this block on the blockchain.</li>
+<li><code>depth - uint64</code>: The number of blocks succeeding this block on the blockchain. A larger number means an older block.</li>
+<li><code>hash - string</code>: The hash of this block.</li>
+<li><code>difficulty - uint64</code>: The strength of the Loki network based on mining power.</li>
+<li><code>cumulative_difficulty - uint64</code>: The cumulative strength of the Loki network based on mining power.</li>
+<li><code>reward - uint64</code>: The amount of new generated in this block and rewarded to the miner, foundation and service Nodes. Note: 1 LOKI = 1e12 atomic units.</li>
+<li><code>miner_reward - uint64</code>: The amount of new generated in this block and rewarded to the miner. Note: 1 LOKI = 1e12 atomic units. </li>
+<li><code>block_size - uint64</code>: The block size in bytes.</li>
+<li><code>block_weight - uint64</code>: The block weight in bytes.</li>
+<li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
+<li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
+<li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_block_header_by_height">COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT<a class="headerlink" href="#command_rpc_get_block_header_by_height" title="Permanent link">&para;</a></h3>
+<p>Similar to get_block_header_by_hash above, this method includes a block's height as an input parameter to retrieve basic information about the block.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>height - uint64</code>: The block's height.</li>
+<li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
+<li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
+<li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
+<li><code>prev_hash - string</code>: The hash of the block immediately preceding this block in the chain.</li>
+<li><code>nonce - uint32</code>: A cryptographic random one-time number used in mining a Loki block.</li>
+<li><code>orphan_status - bool</code>: Usually <code>false</code>. If <code>true</code>, this block is not part of the longest chain.</li>
+<li><code>height - uint64</code>: The number of blocks preceding this block on the blockchain.</li>
+<li><code>depth - uint64</code>: The number of blocks succeeding this block on the blockchain. A larger number means an older block.</li>
+<li><code>hash - string</code>: The hash of this block.</li>
+<li><code>difficulty - uint64</code>: The strength of the Loki network based on mining power.</li>
+<li><code>cumulative_difficulty - uint64</code>: The cumulative strength of the Loki network based on mining power.</li>
+<li><code>reward - uint64</code>: The amount of new generated in this block and rewarded to the miner, foundation and service Nodes. Note: 1 LOKI = 1e12 atomic units.</li>
+<li><code>miner_reward - uint64</code>: The amount of new generated in this block and rewarded to the miner. Note: 1 LOKI = 1e12 atomic units. </li>
+<li><code>block_size - uint64</code>: The block size in bytes.</li>
+<li><code>block_weight - uint64</code>: The block weight in bytes.</li>
+<li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
+<li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
+<li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_block">COMMAND_RPC_GET_BLOCK<a class="headerlink" href="#command_rpc_get_block" title="Permanent link">&para;</a></h3>
+<p>Full block information can be retrieved by either block height or hash, like with the above block header calls. 
+For full block information, both lookups use the same method, but with different input parameters.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>hash - string</code>: The block's hash.</li>
+<li><code>height - uint64</code>: The block's height.</li>
+<li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>block_header - block_header_response</code>: A structure containing block header information. See get_last_block_header.<ul>
+<li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
+<li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
+<li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
+<li><code>prev_hash - string</code>: The hash of the block immediately preceding this block in the chain.</li>
+<li><code>nonce - uint32</code>: A cryptographic random one-time number used in mining a Loki block.</li>
+<li><code>orphan_status - bool</code>: Usually <code>false</code>. If <code>true</code>, this block is not part of the longest chain.</li>
+<li><code>height - uint64</code>: The number of blocks preceding this block on the blockchain.</li>
+<li><code>depth - uint64</code>: The number of blocks succeeding this block on the blockchain. A larger number means an older block.</li>
+<li><code>hash - string</code>: The hash of this block.</li>
+<li><code>difficulty - uint64</code>: The strength of the Loki network based on mining power.</li>
+<li><code>cumulative_difficulty - uint64</code>: The cumulative strength of the Loki network based on mining power.</li>
+<li><code>reward - uint64</code>: The amount of new generated in this block and rewarded to the miner, foundation and service Nodes. Note: 1 LOKI = 1e12 atomic units.</li>
+<li><code>miner_reward - uint64</code>: The amount of new generated in this block and rewarded to the miner. Note: 1 LOKI = 1e12 atomic units. </li>
+<li><code>block_size - uint64</code>: The block size in bytes.</li>
+<li><code>block_weight - uint64</code>: The block weight in bytes.</li>
+<li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
+<li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
+<li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
+</ul>
+</li>
+<li><code>miner_tx_hash - string</code>: Miner transaction information</li>
+<li><code>tx_hashes - string[]</code>: List of hashes of non-coinbase transactions in the block. If there are no other transactions, this will be an empty list.</li>
+<li><code>blob - string</code>: Hexadecimal blob of block information.</li>
+<li><code>json - string</code>: JSON formatted block details.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_set_log_hash_rate">COMMAND_RPC_SET_LOG_HASH_RATE<a class="headerlink" href="#command_rpc_set_log_hash_rate" title="Permanent link">&para;</a></h3>
+<p>Set the log hash rate display mode.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>visible - bool</code>: States if hash rate logs should be visible (true) or hidden (false)</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_set_log_level">COMMAND_RPC_SET_LOG_LEVEL<a class="headerlink" href="#command_rpc_set_log_level" title="Permanent link">&para;</a></h3>
+<p>Set the daemon log level. By default, log level is set to <code>0</code>.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>level - int8_t</code>: Daemon log level to set from <code>0</code> (less verbose) to <code>4</code> (most verbose)</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_set_log_categories">COMMAND_RPC_SET_LOG_CATEGORIES<a class="headerlink" href="#command_rpc_set_log_categories" title="Permanent link">&para;</a></h3>
+<p>Set the daemon log categories. Categories are represented as a comma separated list of <code>&lt;Category&gt;:&lt;level&gt;</code> (similarly to syslog standard <code>&lt;Facility&gt;:&lt;Severity-level&gt;</code>), where:
+Category is one of the following: * (all facilities), default, net, net.http, net.p2p, logging, net.trottle, blockchain.db, blockchain.db.lmdb, bcutil, checkpoints, net.dns, net.dl,
+i18n, perf,stacktrace, updates, account, cn ,difficulty, hardfork, miner, blockchain, txpool, cn.block_queue, net.cn, daemon, debugtools.deserialize, debugtools.objectsizes, device.ledger, 
+wallet.gen_multisig, multisig, bulletproofs, ringct, daemon.rpc, wallet.simplewallet, WalletAPI, wallet.ringdb, wallet.wallet2, wallet.rpc, tests.core.
+Level is one of the following: FATAL - higher level, ERROR, WARNING, INFO, DEBUG, TRACE.
+Lower level A level automatically includes higher level. By default, categories are set to:
+<code>*:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO,msgwriter:INFO</code>
+Setting the categories to "" prevent any logs to be outputed.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>categories - string</code>: Optional, daemon log categories to enable</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+<li><code>categories - string</code>: Daemon log enabled categories</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_transaction_pool">COMMAND_RPC_GET_TRANSACTION_POOL<a class="headerlink" href="#command_rpc_get_transaction_pool" title="Permanent link">&para;</a></h3>
+<p>Show information about valid transactions seen by the node but not yet mined into a block, 
+as well as spent key image information for the txpool in the node's memory.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>transactions - tx_info[]</code>: List of transactions in the mempool are not in a block on the main chain at the moment:<ul>
+<li><code>id_hash - string</code>: The transaction ID hash.</li>
+<li><code>tx_json - string</code>: JSON structure of all information in the transaction</li>
+<li><code>blob_size - uint64</code>: The size of the full transaction blob.</li>
+<li><code>weight - uint64</code>: The weight of the transaction.</li>
+<li><code>fee - uint64</code>: The amount of the mining fee included in the transaction, in atomic units.</li>
+<li><code>max_used_block_id_hash - string</code>: Tells the hash of the most recent block with an output used in this transaction.</li>
+<li><code>max_used_block_height - uint64</code>: Tells the height of the most recent block with an output used in this transaction.</li>
+<li><code>kept_by_block - bool</code>: States if the tx was included in a block at least once (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>last_failed_height - uint64</code>: If the transaction validation has previously failed, this tells at what height that occured.</li>
+<li><code>last_failed_id_hash - string</code>: Like the previous, this tells the previous transaction ID hash.</li>
+<li><code>receive_time - uint64</code>: The Unix time that the transaction was first seen on the network by the node.</li>
+<li><code>relayed - bool</code>: States if this transaction has been relayed</li>
+<li><code>last_relayed_time - uint64</code>: Last unix time at which the transaction has been relayed.</li>
+<li><code>do_not_relay - bool</code>: States if this transaction should not be relayed.</li>
+<li><code>double_spend_seen - bool</code>: States if this transaction has been seen as double spend.</li>
+<li><code>tx_blob - string</code>: Hexadecimal blob represnting the transaction.</li>
+</ul>
+</li>
+<li><code>spent_key_images - spent_key_image_info[]</code>: List of spent output key images:<ul>
+<li><code>id_hash - string</code>: Key image.</li>
+<li><code>txs_hashes - string[]</code>: List of tx hashes of the txes (usually one) spending that key image.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_transaction_pool_hashes_bin">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN<a class="headerlink" href="#command_rpc_get_transaction_pool_hashes_bin" title="Permanent link">&para;</a></h3>
+<p>Get hashes from transaction pool. Binary request.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>tx_hashes - string[64][]</code>: List of transaction hashes,</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_transaction_pool_hashes">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES<a class="headerlink" href="#command_rpc_get_transaction_pool_hashes" title="Permanent link">&para;</a></h3>
+<p>Get hashes from transaction pool.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>tx_hashes - string[]</code>: List of transaction hashes,</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_transaction_pool_backlog">COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG<a class="headerlink" href="#command_rpc_get_transaction_pool_backlog" title="Permanent link">&para;</a></h3>
+<p>Get all transaction pool backlog.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>backlog - tx_backlog_entry[]</code>: Array of structures tx_backlog_entry (in binary form):<ul>
+<li><code>weight - uint64</code></li>
+<li><code>fee - uint64</code>: Fee in Loki measured in atomic units.</li>
+<li><code>time_in_pool - uint64</code></li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_connections">COMMAND_RPC_GET_CONNECTIONS<a class="headerlink" href="#command_rpc_get_connections" title="Permanent link">&para;</a></h3>
+<p>Retrieve information about incoming and outgoing connections to your node.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>connections - connection_info[]</code>: List of all connections and their info:</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_block_headers_range">COMMAND_RPC_GET_BLOCK_HEADERS_RANGE<a class="headerlink" href="#command_rpc_get_block_headers_range" title="Permanent link">&para;</a></h3>
+<p>Similar to get_block_header_by_height above, but for a range of blocks. 
+This method includes a starting block height and an ending block height as 
+parameters to retrieve basic information about the range of blocks.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>start_height - uint64</code>: The starting block's height.</li>
+<li><code>end_height - uint64</code>: The ending block's height.</li>
+<li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>headers - block_header_response[]</code>: Array of block_header (a structure containing block header information. See get_last_block_header).<ul>
+<li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
+<li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
+<li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
+<li><code>prev_hash - string</code>: The hash of the block immediately preceding this block in the chain.</li>
+<li><code>nonce - uint32</code>: A cryptographic random one-time number used in mining a Loki block.</li>
+<li><code>orphan_status - bool</code>: Usually <code>false</code>. If <code>true</code>, this block is not part of the longest chain.</li>
+<li><code>height - uint64</code>: The number of blocks preceding this block on the blockchain.</li>
+<li><code>depth - uint64</code>: The number of blocks succeeding this block on the blockchain. A larger number means an older block.</li>
+<li><code>hash - string</code>: The hash of this block.</li>
+<li><code>difficulty - uint64</code>: The strength of the Loki network based on mining power.</li>
+<li><code>cumulative_difficulty - uint64</code>: The cumulative strength of the Loki network based on mining power.</li>
+<li><code>reward - uint64</code>: The amount of new generated in this block and rewarded to the miner, foundation and service Nodes. Note: 1 LOKI = 1e12 atomic units.</li>
+<li><code>miner_reward - uint64</code>: The amount of new generated in this block and rewarded to the miner. Note: 1 LOKI = 1e12 atomic units. </li>
+<li><code>block_size - uint64</code>: The block size in bytes.</li>
+<li><code>block_weight - uint64</code>: The block weight in bytes.</li>
+<li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
+<li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
+<li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_stop_daemon">COMMAND_RPC_STOP_DAEMON<a class="headerlink" href="#command_rpc_stop_daemon" title="Permanent link">&para;</a></h3>
+<p>Send a command to the daemon to safely disconnect and shut down.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_limit">COMMAND_RPC_GET_LIMIT<a class="headerlink" href="#command_rpc_get_limit" title="Permanent link">&para;</a></h3>
+<p>Get daemon bandwidth limits.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>limit_up - uint64</code>: Upload limit in kBytes per second.</li>
+<li><code>limit_down - uint64</code>: Download limit in kBytes per second.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_set_limit">COMMAND_RPC_SET_LIMIT<a class="headerlink" href="#command_rpc_set_limit" title="Permanent link">&para;</a></h3>
+<p>Set daemon bandwidth limits.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>limit_down - int64</code>: Download limit in kBytes per second (-1 reset to default, 0 don't change the current limit)</li>
+<li><code>limit_up - int64</code>: Upload limit in kBytes per second (-1 reset to default, 0 don't change the current limit)</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>limit_up - int64</code>: Upload limit in kBytes per second.</li>
+<li><code>limit_down - int64</code>: Download limit in kBytes per second.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_out_peers">COMMAND_RPC_OUT_PEERS<a class="headerlink" href="#command_rpc_out_peers" title="Permanent link">&para;</a></h3>
+<p>Limit number of Outgoing peers.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>out_peers - uint64</code>: Max number of outgoing peers</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_in_peers">COMMAND_RPC_IN_PEERS<a class="headerlink" href="#command_rpc_in_peers" title="Permanent link">&para;</a></h3>
+<p>Limit number of Incoming peers.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>in_peers - uint64</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_start_save_graph">COMMAND_RPC_START_SAVE_GRAPH<a class="headerlink" href="#command_rpc_start_save_graph" title="Permanent link">&para;</a></h3>
+<p>Obsolete. Conserved here for reference.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_stop_save_graph">COMMAND_RPC_STOP_SAVE_GRAPH<a class="headerlink" href="#command_rpc_stop_save_graph" title="Permanent link">&para;</a></h3>
+<p>Obsolete. Conserved here for reference.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_hard_fork_info">COMMAND_RPC_HARD_FORK_INFO<a class="headerlink" href="#command_rpc_hard_fork_info" title="Permanent link">&para;</a></h3>
+<p>Look up information regarding hard fork voting and readiness.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>version - uint8</code>: The major block version for the fork.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>version - uint8</code>: The major block version for the fork.</li>
+<li><code>enabled - bool</code>: Tells if hard fork is enforced.</li>
+<li><code>window - uint32</code>: Number of blocks over which current votes are cast. Default is 10080 blocks.</li>
+<li><code>votes - uint32</code>: Number of votes towards hard fork.</li>
+<li><code>threshold - uint32</code>: Minimum percent of votes to trigger hard fork. Default is 80.</li>
+<li><code>voting - uint8</code>: Hard fork voting status.</li>
+<li><code>state - uint32</code>: Current hard fork state: 0 (There is likely a hard fork), 1 (An update is needed to fork properly), or 2 (Everything looks good).</li>
+<li><code>earliest_height - uint64</code>: Block height at which hard fork would be enabled if voted in.</li>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_getbans">COMMAND_RPC_GETBANS<a class="headerlink" href="#command_rpc_getbans" title="Permanent link">&para;</a></h3>
+<p>Get list of banned IPs.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>bans - ban[]</code>: List of banned nodes:<ul>
+<li><code>host - string</code>: Banned host (IP in A.B.C.D form).</li>
+<li><code>ip - uint32</code>: Banned IP address, in Int format.</li>
+<li><code>seconds - uint32</code>: Local Unix time that IP is banned until.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="command_rpc_setbans">COMMAND_RPC_SETBANS<a class="headerlink" href="#command_rpc_setbans" title="Permanent link">&para;</a></h3>
+<p>Ban another node by IP.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>bans - ban[]</code>: List of nodes to ban.<ul>
+<li><code>host - string</code>: Host to ban (IP in A.B.C.D form - will support I2P address in the future).</li>
+<li><code>ip - uint32</code>: IP address to ban, in Int format.</li>
+<li><code>ban - bool</code>: Set true to ban.</li>
+<li><code>seconds - uint32</code>: Number of seconds to ban node.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_flush_transaction_pool">COMMAND_RPC_FLUSH_TRANSACTION_POOL<a class="headerlink" href="#command_rpc_flush_transaction_pool" title="Permanent link">&para;</a></h3>
+<p>Flush tx ids from transaction pool..</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>txids - string[]</code>: Optional, list of transactions IDs to flush from pool (all tx ids flushed if empty).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_output_histogram">COMMAND_RPC_GET_OUTPUT_HISTOGRAM<a class="headerlink" href="#command_rpc_get_output_histogram" title="Permanent link">&para;</a></h3>
+<p>Get a histogram of output amounts. For all amounts (possibly filtered by parameters), 
+gives the number of outputs on the chain for that amount. RingCT outputs counts as 0 amount.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>amounts - uint64[]</code>: list of amounts in Atomic Units.</li>
+<li><code>min_count - uint64</code>: The minimum amounts you are requesting.</li>
+<li><code>max_count - uint64</code>: The maximum amounts you are requesting.</li>
+<li><code>unlocked - bool</code>: Look for locked only.</li>
+<li><code>recent_cutoff - uint64</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>histogram - entry[]</code>: List of histogram entries:<ul>
+<li><code>amount - uint64</code>: Output amount in atomic units.</li>
+<li><code>total_instances - uint64</code></li>
+<li><code>unlocked_instances - uint64</code></li>
+<li><code>recent_instances - uint64</code></li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_version">COMMAND_RPC_GET_VERSION<a class="headerlink" href="#command_rpc_get_version" title="Permanent link">&para;</a></h3>
+<p>Get node current version.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>version - uint32</code>: Node current version.</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_coinbase_tx_sum">COMMAND_RPC_GET_COINBASE_TX_SUM<a class="headerlink" href="#command_rpc_get_coinbase_tx_sum" title="Permanent link">&para;</a></h3>
+<p>Get the coinbase ammount and the fees ammount for n last blocks starting at particular height.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>height - uint64</code>: Block height from which getting the amounts.</li>
+<li><code>count - uint64</code>: Number of blocks to include in the sum.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>emission_amount - uint64</code>: Amount of coinbase reward in atomic units.</li>
+<li><code>fee_amount - uint64</code>: Amount of fees in atomic units.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_base_fee_estimate">COMMAND_RPC_GET_BASE_FEE_ESTIMATE<a class="headerlink" href="#command_rpc_get_base_fee_estimate" title="Permanent link">&para;</a></h3>
+<p>Gives an estimation on fees per kB.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>grace_blocks - uint64</code>: Optional</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>fee - uint64</code>: Amount of fees estimated per kB in atomic units</li>
+<li><code>quantization_mask - uint64</code></li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_alternate_chains">COMMAND_RPC_GET_ALTERNATE_CHAINS<a class="headerlink" href="#command_rpc_get_alternate_chains" title="Permanent link">&para;</a></h3>
+<p>Display alternative chains seen by the node.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>chains - chain_info[]</code>: Array of Chains.<ul>
+<li><code>block_hash - string</code>: The block hash of the first diverging block of this alternative chain.</li>
+<li><code>height - uint64</code>: The block height of the first diverging block of this alternative chain.</li>
+<li><code>length - uint64</code>: The length in blocks of this alternative chain, after divergence.</li>
+<li><code>difficulty - uint64</code>: The cumulative difficulty of all blocks in the alternative chain.</li>
+<li><code>block_hashes - string[]</code></li>
+<li><code>main_chain_parent_block - string</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="command_rpc_update">COMMAND_RPC_UPDATE<a class="headerlink" href="#command_rpc_update" title="Permanent link">&para;</a></h3>
+<p>Update daemon.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>command - string</code>: Command to use, either check or download.</li>
+<li><code>path - string</code>: Optional, path where to download the update.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>update - bool</code>: States if an update is available to download (<code>true</code>) or not (<code>false</code>).</li>
+<li><code>version - string</code>: Version available for download.</li>
+<li><code>user_uri - string</code></li>
+<li><code>auto_uri - string</code></li>
+<li><code>hash - string</code></li>
+<li><code>path - string</code>: Path to download the update.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_relay_tx">COMMAND_RPC_RELAY_TX<a class="headerlink" href="#command_rpc_relay_tx" title="Permanent link">&para;</a></h3>
+<p>Relay a list of transaction IDs.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>txids - string[]</code>: Optional, list of transactions IDs to flush from pool (all tx ids flushed if empty).</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_sync_info">COMMAND_RPC_SYNC_INFO<a class="headerlink" href="#command_rpc_sync_info" title="Permanent link">&para;</a></h3>
+<p>Get synchronisation information.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
+<li><code>height - uint64</code>: Block height.</li>
+<li><code>target_height - uint64</code>: Target height the node is syncing from (optional, absent if node is fully synced).</li>
+<li><code>next_needed_pruning_seed - uint32</code></li>
+<li><code>peers - peer[]</code>: Array of Peer structure<ul>
+<li><code>id - uint64</code>: Peer id.</li>
+<li><code>host - string</code>: IP address in string format.</li>
+<li><code>ip - uint32</code>: IP address in integer format.</li>
+<li><code>port - uint16</code>: TCP port the peer is using to connect to loki network.</li>
+<li><code>last_seen - uint64</code>: Unix time at which the peer has been seen for the last time</li>
+<li><code>pruning_seed - uint32</code></li>
+</ul>
+</li>
+<li><code>spans - span[]</code>: Array of Span Structure.<ul>
+<li><code>start_block_height - uint64</code>: Block height of the first block in that span.</li>
+<li><code>nblocks - uint64</code>: Number of blocks in that span.</li>
+<li><code>connection_id - string</code>: Id of connection.</li>
+<li><code>rate - uint32</code>: Connection rate.</li>
+<li><code>speed - uint32</code>: Connection speed.</li>
+<li><code>size - uint64</code>: Total number of bytes in that span's blocks (including txes).</li>
+<li><code>remote_address - string</code>: Peer address the node is downloading (or has downloaded) than span from.</li>
+</ul>
+</li>
+<li><code>overview - string</code></li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_output_distribution">COMMAND_RPC_GET_OUTPUT_DISTRIBUTION<a class="headerlink" href="#command_rpc_get_output_distribution" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>amounts - uint64[]</code>: Amounts to look for in atomic units.</li>
+<li><code>from_height - uint64</code>: (optional, default is 0) starting height to check from.</li>
+<li><code>to_height - uint64</code>: (optional, default is 0) ending height to check up to.</li>
+<li><code>cumulative - bool</code>: (optional, default is false) States if the result should be cumulative (true) or not (false).</li>
+<li><code>binary - bool</code></li>
+<li><code>compress - bool</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>distributions - distribution[]</code><ul>
+<li><code>data - rpc::output_distribution_data</code></li>
+<li><code>amount - uint64</code></li>
+<li><code>compressed_data - string</code></li>
+<li><code>binary - bool</code></li>
+<li><code>compress - bool</code></li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
+</ul>
+<hr />
+<h3 id="command_rpc_pop_blocks">COMMAND_RPC_POP_BLOCKS<a class="headerlink" href="#command_rpc_pop_blocks" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>nblocks - uint64</code>: Number of blocks in that span.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
+<li><code>height - uint64</code></li>
+</ul>
+<hr />
+<h3 id="command_rpc_prune_blockchain">COMMAND_RPC_PRUNE_BLOCKCHAIN<a class="headerlink" href="#command_rpc_prune_blockchain" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>check - bool</code></li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>pruning_seed - uint32</code></li>
+<li><code>status - string</code></li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_quorum_state">COMMAND_RPC_GET_QUORUM_STATE<a class="headerlink" href="#command_rpc_get_quorum_state" title="Permanent link">&para;</a></h3>
+<p>Get the quorum state which is the list of public keys of the nodes 
+who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>height - uint64</code>: The height to query the quorum state for.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>quorum_nodes - string[]</code>: Array of public keys identifying service nodes which are being tested for the queried height.</li>
+<li><code>nodes_to_test - string[]</code>: Array of public keys identifying service nodes which are responsible for voting on the queried height.</li>
+<li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_quorum_state_batched">COMMAND_RPC_GET_QUORUM_STATE_BATCHED<a class="headerlink" href="#command_rpc_get_quorum_state_batched" title="Permanent link">&para;</a></h3>
+<p>Get the quorum state which is the list of public keys of the nodes 
+who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>height_begin - uint64</code>: The starting height (inclusive) to query the quorum state for.</li>
+<li><code>height_end - uint64</code>: The ending height (inclusive) to query the quorum state for.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>quorum_entries - response_entry[]</code>: Array of quorums that was requested.<ul>
+<li><code>height - uint64</code>: The height of this quorum state that was queried.</li>
+<li><code>quorum_nodes - string[]</code>: Array of public keys identifying service nodes which are being tested for the queried height.</li>
+<li><code>nodes_to_test - string[]</code>: Array of public keys identifying service nodes which are responsible for voting on the queried height.</li>
+</ul>
+</li>
+<li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_service_node_registration_cmd_raw">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD_RAW<a class="headerlink" href="#command_rpc_get_service_node_registration_cmd_raw" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>args - string[]</code>: (Developer) The arguments used in raw registration, i.e. portions</li>
+<li><code>make_friendly - bool</code>: Provide information about how to use the command in the result.</li>
+<li><code>staking_requirement - uint64</code>: The staking requirement to become a Service Node the registration command will be generated upon</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>registration_cmd - string</code>: The command to execute in the wallet CLI to register the queried daemon as a Service Node.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_service_node_registration_cmd">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD<a class="headerlink" href="#command_rpc_get_service_node_registration_cmd" title="Permanent link">&para;</a></h3>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>operator_cut - string</code>: The percentage of cut per reward the operator receives expressed as a string, i.e. "1.1%"</li>
+<li><code>contributions - contribution_t[]</code>: Array of contributors for this Service Node<ul>
+<li><code>address - string</code>: The wallet address for the contributor</li>
+<li><code>amount - uint64</code>: The amount that the contributor will reserve in Loki atomic units towards the staking requirement</li>
+</ul>
+</li>
+<li><code>staking_requirement - uint64</code>: The staking requirement to become a Service Node the registration command will be generated upon</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>registration_cmd - string</code>: The command to execute in the wallet CLI to register the queried daemon as a Service Node.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_service_node_key">COMMAND_RPC_GET_SERVICE_NODE_KEY<a class="headerlink" href="#command_rpc_get_service_node_key" title="Permanent link">&para;</a></h3>
+<p>Get the service node public key of the queried daemon. 
+The daemon must be started in --service-node mode otherwise this RPC command will fail.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>service_node_pubkey - string</code>: The queried daemon's service node key.</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_service_nodes">COMMAND_RPC_GET_SERVICE_NODES<a class="headerlink" href="#command_rpc_get_service_nodes" title="Permanent link">&para;</a></h3>
+<p>Get information on Service Nodes.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>service_node_pubkeys - string[]</code>: Array of public keys of active Service Nodes to get information about. Pass the empty array to query all Service Nodes.</li>
+<li><code>include_json - bool</code>: When set, the response's as_json member is filled out.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>service_node_states - entry[]</code>: Array of service node registration information</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>as_json - string</code>: If <code>include_json</code> is set in the request, this contains the json representation of the <code>entry</code> data structure</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_staking_requirement">COMMAND_RPC_GET_STAKING_REQUIREMENT<a class="headerlink" href="#command_rpc_get_staking_requirement" title="Permanent link">&para;</a></h3>
+<p>Get the required amount of Loki to become a Service Node at the queried height. 
+For stagenet and testnet values, ensure the daemon is started with the 
+<code>--stagenet</code> or <code>--testnet</code> flags respectively.</p>
+<p><strong>Inputs:</strong></p>
+<ul>
+<li><code>height - uint64</code>: The height to query the staking requirement for.</li>
+</ul>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>staking_requirement - uint64</code>: The staking requirement in Loki, in atomic units.</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_service_node_blacklisted_key_images">COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES<a class="headerlink" href="#command_rpc_get_service_node_blacklisted_key_images" title="Permanent link">&para;</a></h3>
+<p>Get information on blacklisted Service Node key images.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>blacklist - entry[]</code>: Array of blacklisted key images, i.e. unspendable transactions<ul>
+<li><code>key_image - string</code>: The key image of the transaction that is blacklisted on the network.</li>
+<li><code>unlock_height - uint64</code>: The height at which the key image is removed from the blacklist and becomes spendable.</li>
+</ul>
+</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+</ul>
+<hr />
+<h3 id="command_rpc_get_output_blacklist">COMMAND_RPC_GET_OUTPUT_BLACKLIST<a class="headerlink" href="#command_rpc_get_output_blacklist" title="Permanent link">&para;</a></h3>
+<p>Get information on output blacklist.</p>
+<p><strong>Inputs:</strong></p>
+<p><strong>Outputs:</strong></p>
+<ul>
+<li><code>blacklist - uint64[]</code>: (Developer): Array of indexes from the global output list, corresponding to blacklisted key images.</li>
+<li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
+<li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/loki-project" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/loki_project" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://t.me/LokiCommunity" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://www.reddit.com/r/LokiProject" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/lokinetwork" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.facebook.com/LokiNetwork/" class="md-footer-social__link fa fa-facebook"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../JAVASCRIPT/links.js"></script>
+      
+        <script src="../JAVASCRIPT/style.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
