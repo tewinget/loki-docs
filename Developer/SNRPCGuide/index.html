@@ -2325,7 +2325,7 @@ height.</p>
 <h4 id="get95service95nodes">get_service_nodes<a class="headerlink" href="#get95service95nodes" title="Permanent link">&para;</a></h4>
 <p>Get the metadata currently associated with the queried service node public keys such as, registration height and contributors, etc. If no public key is specified, this returns all the metadata for every service node the queried daemon currently knows about.</p>
 <h4 id="testnet-example_3">Testnet Example<a class="headerlink" href="#testnet-example_3" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_nodes&quot;, “params”: “service_node_pubkeys”: []}&#39; -H &#39;Content-Type: application/json&#39;
+<div class="codehilite"><pre><span></span>    curl -X POST http://127.0.0.1:38157/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;get_service_nodes&quot;, “params”: {“service_node_pubkeys”: []}}&#39; -H &#39;Content-Type: application/json&#39;
 </pre></div>
 
 
