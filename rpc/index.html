@@ -2177,9 +2177,21 @@
 <li><a href="#command_rpc_get_service_node_blacklisted_key_images">COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES</a></li>
 <li><a href="#command_rpc_get_output_blacklist">COMMAND_RPC_GET_OUTPUT_BLACKLIST</a></li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_height">COMMAND_RPC_GET_HEIGHT<a class="headerlink" href="#command_rpc_get_height" title="Permanent link">&para;</a></h3>
 <p>Get the node's current height.</p>
+<p>Endpoints: /get_height, /getheight</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_height -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;height&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2187,9 +2199,29 @@
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 <li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_blocks_fast">COMMAND_RPC_GET_BLOCKS_FAST<a class="headerlink" href="#command_rpc_get_blocks_fast" title="Permanent link">&para;</a></h3>
 <p>Get all blocks info. Binary request.</p>
+<p>Endpoints: /get_blocks.bin, /getblocks.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_blocks.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;blocks&quot;: [, ...],
+  &quot;start_height&quot;: 123,
+  &quot;current_height&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;output_indices&quot;: [{
+      &quot;indices&quot;: [{
+          &quot;indices&quot;: [123, ...]
+        }, ...]
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>block_ids - string[64][]</code>: First 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block</li>
@@ -2203,18 +2235,29 @@
 <li><code>start_height - uint64</code>: The starting block's height.</li>
 <li><code>current_height - uint64</code>: The current block height.</li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>output_indices - block_output_indices[]</code>: Array of indices.<ul>
+<li><code>output_indices - block_output_indices[]</code>: Array of indices.</li>
 <li><code>indices - tx_output_indices[]</code>: Array of TX output indices:<ul>
 <li><code>indices - uint64[]</code>: Array of unsigned int.</li>
 </ul>
 </li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_blocks_by_height">COMMAND_RPC_GET_BLOCKS_BY_HEIGHT<a class="headerlink" href="#command_rpc_get_blocks_by_height" title="Permanent link">&para;</a></h3>
 <p>Get blocks by height. Binary request.</p>
+<p>Endpoints: /get_blocks_by_height.bin, /getblocks_by_height.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_blocks_by_height.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;blocks&quot;: [, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>heights - uint64[]</code>: List of block heights</li>
@@ -2225,9 +2268,21 @@
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_alt_blocks_hashes">COMMAND_RPC_GET_ALT_BLOCKS_HASHES<a class="headerlink" href="#command_rpc_get_alt_blocks_hashes" title="Permanent link">&para;</a></h3>
 <p>Get the known blocks hashes which are not on the main chain.</p>
+<p>Endpoints: /get_alt_blocks_hashes</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_alt_blocks_hashes -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;blks_hashes&quot;: [&quot;default string&quot;, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2235,9 +2290,24 @@
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_hashes_fast">COMMAND_RPC_GET_HASHES_FAST<a class="headerlink" href="#command_rpc_get_hashes_fast" title="Permanent link">&para;</a></h3>
 <p>Get hashes. Binary request.</p>
+<p>Endpoints: /get_hashes.bin, /gethashes.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_hashes.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;m_block_ids&quot;: [&quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;, ...],
+  &quot;start_height&quot;: 123,
+  &quot;current_height&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>block_ids - string[64][]</code>: First 10 blocks id goes sequential, next goes in pow(2,n) offset, like 2, 4, 8, 16, 32, 64 and so on, and the last one is always genesis block */</li>
@@ -2251,9 +2321,37 @@
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_transactions">COMMAND_RPC_GET_TRANSACTIONS<a class="headerlink" href="#command_rpc_get_transactions" title="Permanent link">&para;</a></h3>
 <p>Look up one or more transactions by hash.</p>
+<p>Endpoints: /get_transactions, /gettransactions</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_transactions -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;txs_as_hex&quot;: [&quot;default string&quot;, ...],
+  &quot;txs_as_json&quot;: [&quot;default string&quot;, ...],
+  &quot;missed_tx&quot;: [&quot;default string&quot;, ...],
+  &quot;txs&quot;: [{
+      &quot;tx_hash&quot;: &quot;default string&quot;,
+      &quot;as_hex&quot;: &quot;default string&quot;,
+      &quot;pruned_as_hex&quot;: &quot;default string&quot;,
+      &quot;prunable_as_hex&quot;: &quot;default string&quot;,
+      &quot;prunable_hash&quot;: &quot;default string&quot;,
+      &quot;as_json&quot;: &quot;default string&quot;,
+      &quot;in_pool&quot;: true,
+      &quot;double_spend_seen&quot;: true,
+      &quot;block_height&quot;: 123,
+      &quot;block_timestamp&quot;: 123,
+      &quot;output_indices&quot;: [123, ...]
+    }, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>txs_hashes - string[]</code>: List of transaction hashes to look up.</li>
@@ -2266,7 +2364,7 @@
 <li><code>txs_as_hex - string[]</code>: Full transaction information as a hex string (old compatibility parameter)</li>
 <li><code>txs_as_json - string[]</code>: Transactions decoded as json (old compat)</li>
 <li><code>missed_tx - string[]</code>: (Optional - returned if not empty) Transaction hashes that could not be found.</li>
-<li><code>txs - entry[]</code>: Array of structure entry as follows:<ul>
+<li><code>txs - entry[]</code>: Array of structure entry as follows:</li>
 <li><code>tx_hash - string</code>: Transaction hash.</li>
 <li><code>as_hex - string</code>: Full transaction information as a hex string.</li>
 <li><code>pruned_as_hex - string</code></li>
@@ -2278,14 +2376,25 @@
 <li><code>block_height - uint64</code>: Block height including the transaction.</li>
 <li><code>block_timestamp - uint64</code>: Unix time at chich the block has been added to the blockchain.</li>
 <li><code>output_indices - uint64[]</code>: List of transaction indexes.</li>
-</ul>
-</li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_is_key_image_spent">COMMAND_RPC_IS_KEY_IMAGE_SPENT<a class="headerlink" href="#command_rpc_is_key_image_spent" title="Permanent link">&para;</a></h3>
 <p>Check if outputs have been spent using the key image associated with the output.</p>
+<p>Endpoints: /is_key_image_spent</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/is_key_image_spent -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;spent_status&quot;: [, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>key_images - string[]</code>: List of key image hex strings to check.</li>
@@ -2296,9 +2405,22 @@
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_tx_global_outputs_indexes">COMMAND_RPC_GET_TX_GLOBAL_OUTPUTS_INDEXES<a class="headerlink" href="#command_rpc_get_tx_global_outputs_indexes" title="Permanent link">&para;</a></h3>
 <p>Get global outputs of transactions. Binary request.</p>
+<p>Endpoints: /get_o_indexes.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_o_indexes.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;o_indexes&quot;: [123, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>txid - string[64]</code>: Binary txid.</li>
@@ -2309,57 +2431,102 @@
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_outputs_bin">COMMAND_RPC_GET_OUTPUTS_BIN<a class="headerlink" href="#command_rpc_get_outputs_bin" title="Permanent link">&para;</a></h3>
 <p>Get outputs. Binary request.</p>
+<p>Endpoints: /get_outs.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_outs.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;outs&quot;: [{
+      &quot;key&quot;: ,
+      &quot;mask&quot;: ,
+      &quot;unlocked&quot;: true,
+      &quot;height&quot;: 123,
+      &quot;txid&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;
+    }, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
-<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.<ul>
+<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.</li>
 <li><code>amount - uint64</code>: Amount of Loki in TXID.</li>
 <li><code>index - uint64</code></li>
-</ul>
-</li>
 <li><code>get_txid - bool</code>: TXID</li>
 </ul>
 <p><strong>Outputs:</strong></p>
 <ul>
-<li><code>outs - outkey[]</code>: List of outkey information.<ul>
+<li><code>outs - outkey[]</code>: List of outkey information.</li>
 <li><code>key - crypto::public_key</code>: The public key of the output.</li>
 <li><code>mask - rct::key</code></li>
 <li><code>unlocked - bool</code>: States if output is locked (<code>false</code>) or not (<code>true</code>).</li>
 <li><code>height - uint64</code>: Block height of the output.</li>
 <li><code>txid - string[64]</code>: Transaction id.</li>
-</ul>
-</li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_outputs">COMMAND_RPC_GET_OUTPUTS<a class="headerlink" href="#command_rpc_get_outputs" title="Permanent link">&para;</a></h3>
+<p>Endpoints: /get_outs</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_outs -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;outs&quot;: [{
+      &quot;key&quot;: &quot;default string&quot;,
+      &quot;mask&quot;: &quot;default string&quot;,
+      &quot;unlocked&quot;: true,
+      &quot;height&quot;: 123,
+      &quot;txid&quot;: &quot;default string&quot;
+    }, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
-<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.<ul>
+<li><code>outputs - get_outputs_out[]</code>: Array of structure <code>get_outputs_out</code>.</li>
 <li><code>amount - uint64</code>: Amount of Loki in TXID.</li>
 <li><code>index - uint64</code></li>
 </ul>
-</li>
-</ul>
 <p><strong>Outputs:</strong></p>
 <ul>
-<li><code>outs - outkey[]</code>: List of outkey information.<ul>
+<li><code>outs - outkey[]</code>: List of outkey information.</li>
 <li><code>key - string</code>: The public key of the output.</li>
 <li><code>mask - string</code></li>
 <li><code>unlocked - bool</code>: States if output is locked (<code>false</code>) or not (<code>true</code>).</li>
 <li><code>height - uint64</code>: Block height of the output.</li>
 <li><code>txid - string</code>: Transaction id.</li>
-</ul>
-</li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_send_raw_tx">COMMAND_RPC_SEND_RAW_TX<a class="headerlink" href="#command_rpc_send_raw_tx" title="Permanent link">&para;</a></h3>
 <p>Broadcast a raw transaction to the network.</p>
+<p>Endpoints: /send_raw_transaction, /sendrawtransaction</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/send_raw_transaction -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;reason&quot;: &quot;default string&quot;,
+  &quot;not_relayed&quot;: true,
+  &quot;untrusted&quot;: true,
+  &quot;tvc&quot;: 
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>tx_as_hex - string</code>: Full transaction information as hexidecimal string.</li>
@@ -2373,9 +2540,20 @@
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 <li><code>tvc - tx_verification_context</code></li>
 </ul>
-<hr />
 <h3 id="command_rpc_start_mining">COMMAND_RPC_START_MINING<a class="headerlink" href="#command_rpc_start_mining" title="Permanent link">&para;</a></h3>
 <p>Start mining on the daemon.</p>
+<p>Endpoints: /start_mining</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/start_mining -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>miner_address - string</code>: Account address to mine to.</li>
@@ -2387,9 +2565,51 @@
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_info">COMMAND_RPC_GET_INFO<a class="headerlink" href="#command_rpc_get_info" title="Permanent link">&para;</a></h3>
 <p>Retrieve general information about the state of your node and the network.</p>
+<p>Endpoints: /get_info, /getinfo, get_info</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_info -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;height&quot;: 123,
+  &quot;target_height&quot;: 123,
+  &quot;difficulty&quot;: 123,
+  &quot;target&quot;: 123,
+  &quot;tx_count&quot;: 123,
+  &quot;tx_pool_size&quot;: 123,
+  &quot;alt_blocks_count&quot;: 123,
+  &quot;outgoing_connections_count&quot;: 123,
+  &quot;incoming_connections_count&quot;: 123,
+  &quot;rpc_connections_count&quot;: 123,
+  &quot;white_peerlist_size&quot;: 123,
+  &quot;grey_peerlist_size&quot;: 123,
+  &quot;mainnet&quot;: true,
+  &quot;testnet&quot;: true,
+  &quot;stagenet&quot;: true,
+  &quot;nettype&quot;: &quot;default string&quot;,
+  &quot;top_block_hash&quot;: &quot;default string&quot;,
+  &quot;cumulative_difficulty&quot;: 123,
+  &quot;block_size_limit&quot;: 123,
+  &quot;block_weight_limit&quot;: 123,
+  &quot;block_size_median&quot;: 123,
+  &quot;block_weight_median&quot;: 123,
+  &quot;start_time&quot;: 123,
+  &quot;free_space&quot;: 123,
+  &quot;offline&quot;: true,
+  &quot;untrusted&quot;: true,
+  &quot;bootstrap_daemon_address&quot;: &quot;default string&quot;,
+  &quot;height_without_bootstrap&quot;: 123,
+  &quot;was_bootstrap_ever_used&quot;: true,
+  &quot;database_size&quot;: 123,
+  &quot;update_available&quot;: true,
+  &quot;version&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2427,9 +2647,25 @@
 <li><code>update_available - bool</code>: States if a update is available ('true') and if one is not available ('false').</li>
 <li><code>version - string</code>: Current version of software running.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_all_service_nodes_keys">COMMAND_RPC_GET_ALL_SERVICE_NODES_KEYS<a class="headerlink" href="#command_rpc_get_all_service_nodes_keys" title="Permanent link">&para;</a></h3>
 <p>Retrieve all Service Node Keys.</p>
+<p>Endpoints: get_all_service_nodes_keys</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_all_service_nodes_keys&quot;,
+  &quot;params&quot;: {
+    &quot;fully_funded_nodes_only&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;keys&quot;: [&quot;default string&quot;, ...]
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>fully_funded_nodes_only - bool</code>: Return keys for service nodes if they are funded and working on the network</li>
@@ -2438,17 +2674,42 @@
 <ul>
 <li><code>keys - string[]</code>: Returns as base32z of the hex key, for Lokinet internal usage</li>
 </ul>
-<hr />
 <h3 id="command_rpc_stop_mining">COMMAND_RPC_STOP_MINING<a class="headerlink" href="#command_rpc_stop_mining" title="Permanent link">&para;</a></h3>
 <p>Stop mining on the daemon.</p>
+<p>Endpoints: /stop_mining</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/stop_mining -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_mining_status">COMMAND_RPC_MINING_STATUS<a class="headerlink" href="#command_rpc_mining_status" title="Permanent link">&para;</a></h3>
 <p>Get the mining status of the daemon.</p>
+<p>Endpoints: /mining_status</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/mining_status -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;active&quot;: true,
+  &quot;speed&quot;: 123,
+  &quot;threads_count&quot;: 2130706433,
+  &quot;address&quot;: &quot;default string&quot;,
+  &quot;is_background_mining_enabled&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2459,18 +2720,45 @@
 <li><code>address - string</code>: Account address daemon is mining to. Empty if not mining.</li>
 <li><code>is_background_mining_enabled - bool</code>: States if the mining is running in background (<code>true</code>) or foreground (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_save_bc">COMMAND_RPC_SAVE_BC<a class="headerlink" href="#command_rpc_save_bc" title="Permanent link">&para;</a></h3>
-<p>Save the blockchain. The blockchain does not need saving and is always saved when modified, 
-however it does a sync to flush the filesystem cache onto the disk for safety purposes against Operating System or Hardware crashes.</p>
+<p>Save the blockchain. The blockchain does not need saving and is always saved when modified, </p>
+<p>however it does a sync to flush the filesystem cache onto the disk for safety purposes against Operating System or Hardware crashes.</p>
+<p>Endpoints: /save_bc</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/save_bc -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_getblockcount">COMMAND_RPC_GETBLOCKCOUNT<a class="headerlink" href="#command_rpc_getblockcount" title="Permanent link">&para;</a></h3>
 <p>Look up how many blocks are in the longest chain known to the node.</p>
+<p>Endpoints: get_block_count, getblockcount</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block_count&quot;,
+  &quot;params&quot;: {
+    &quot;request&quot;: [&quot;default string&quot;, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;count&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>request - string[]</code></li>
@@ -2480,9 +2768,25 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>count - uint64</code>: Number of blocks in longest chain seen by the node.</li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_getblockhash">COMMAND_RPC_GETBLOCKHASH<a class="headerlink" href="#command_rpc_getblockhash" title="Permanent link">&para;</a></h3>
 <p>Look up a block's hash by its height.</p>
+<p>Endpoints: on_get_block_hash, on_getblockhash</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;on_get_block_hash&quot;,
+  &quot;params&quot;: {
+    &quot;request&quot;: [123, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;response&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>request - uint64[]</code>: Block height (int array of length 1).</li>
@@ -2491,9 +2795,34 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <ul>
 <li><code>response - string</code>: Block hash (string).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_getblocktemplate">COMMAND_RPC_GETBLOCKTEMPLATE<a class="headerlink" href="#command_rpc_getblocktemplate" title="Permanent link">&para;</a></h3>
 <p>Get a block template on which mining a new block.</p>
+<p>Endpoints: get_block_template, getblocktemplate</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block_template&quot;,
+  &quot;params&quot;: {
+    &quot;reserve_size&quot;: 123,
+    &quot;wallet_address&quot;: &quot;L8KJf3nRQ53NTX1YLjtHryjegFRa3ZCEGLKmRxUfvkBWK19UteEacVpYqpYscSJ2q8WRuHPFdk7Q5W8pQB7Py5kvUs8vKSk&quot;
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;difficulty&quot;: 123,
+  &quot;height&quot;: 123,
+  &quot;reserved_offset&quot;: 123,
+  &quot;expected_reward&quot;: 123,
+  &quot;prev_hash&quot;: &quot;default string&quot;,
+  &quot;blocktemplate_blob&quot;: sd2b5f838e8cc7774d92f5a6ce0d72cb9bd8db2ef28948087f8a50ff46d188dd9,
+  &quot;blockhashing_blob&quot;: sd2b5f838e8cc7774d92f5a6ce0d72cb9bd8db2ef28948087f8a50ff46d188dd9,
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>reserve_size - uint64</code>: Max 255 bytes</li>
@@ -2511,9 +2840,25 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_submitblock">COMMAND_RPC_SUBMITBLOCK<a class="headerlink" href="#command_rpc_submitblock" title="Permanent link">&para;</a></h3>
 <p>Submit a mined block to the network.</p>
+<p>Endpoints: submit_block, submitblock</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;submit_block&quot;,
+  &quot;params&quot;: {
+    &quot;request&quot;: [&quot;default string&quot;, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>request - string[]</code>: Block blob data - array of strings; list of block blobs which have been mined. See get_block_template to get a blob on which to mine.</li>
@@ -2522,9 +2867,27 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <ul>
 <li><code>status - string</code>: Block submit status.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_generateblocks">COMMAND_RPC_GENERATEBLOCKS<a class="headerlink" href="#command_rpc_generateblocks" title="Permanent link">&para;</a></h3>
 <p>Developer only.</p>
+<p>Endpoints: generateblocks</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;generateblocks&quot;,
+  &quot;params&quot;: {
+    &quot;amount_of_blocks&quot;: 123,
+    &quot;wallet_address&quot;: &quot;L8KJf3nRQ53NTX1YLjtHryjegFRa3ZCEGLKmRxUfvkBWK19UteEacVpYqpYscSJ2q8WRuHPFdk7Q5W8pQB7Py5kvUs8vKSk&quot;
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;height&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>amount_of_blocks - uint64</code></li>
@@ -2535,9 +2898,46 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>height - uint64</code></li>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_last_block_header">COMMAND_RPC_GET_LAST_BLOCK_HEADER<a class="headerlink" href="#command_rpc_get_last_block_header" title="Permanent link">&para;</a></h3>
 <p>Block header information for the most recent block is easily retrieved with this method. No inputs are needed.</p>
+<p>Endpoints: get_last_block_header, getlastblockheader</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_last_block_header&quot;,
+  &quot;params&quot;: {
+    &quot;fill_pow_hash&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;block_header&quot;: {
+    &quot;major_version&quot;: 11,
+    &quot;minor_version&quot;: 11,
+    &quot;timestamp&quot;: 123,
+    &quot;prev_hash&quot;: &quot;default string&quot;,
+    &quot;nonce&quot;: 2130706433,
+    &quot;orphan_status&quot;: true,
+    &quot;height&quot;: 123,
+    &quot;depth&quot;: 123,
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;difficulty&quot;: 25179406071,
+    &quot;cumulative_difficulty&quot;: 25179406071,
+    &quot;reward&quot;: 123,
+    &quot;miner_reward&quot;: 123,
+    &quot;block_size&quot;: 123,
+    &quot;block_weight&quot;: 123,
+    &quot;num_txes&quot;: 123,
+    &quot;pow_hash&quot;: &quot;default string&quot;,
+    &quot;long_term_weight&quot;: 123
+  },
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>fill_pow_hash - bool</code>: Tell the daemon if it should fill out pow_hash field.</li>
@@ -2545,7 +2945,7 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.</li>
 <li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
 <li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
 <li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
@@ -2564,13 +2964,49 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
 <li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
 <li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_block_header_by_hash">COMMAND_RPC_GET_BLOCK_HEADER_BY_HASH<a class="headerlink" href="#command_rpc_get_block_header_by_hash" title="Permanent link">&para;</a></h3>
 <p>Block header information can be retrieved using either a block's hash or height. This method includes a block's hash as an input parameter to retrieve basic information about the block.</p>
+<p>Endpoints: get_block_header_by_hash, getblockheaderbyhash</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block_header_by_hash&quot;,
+  &quot;params&quot;: {
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;fill_pow_hash&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;block_header&quot;: {
+    &quot;major_version&quot;: 11,
+    &quot;minor_version&quot;: 11,
+    &quot;timestamp&quot;: 123,
+    &quot;prev_hash&quot;: &quot;default string&quot;,
+    &quot;nonce&quot;: 2130706433,
+    &quot;orphan_status&quot;: true,
+    &quot;height&quot;: 123,
+    &quot;depth&quot;: 123,
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;difficulty&quot;: 25179406071,
+    &quot;cumulative_difficulty&quot;: 25179406071,
+    &quot;reward&quot;: 123,
+    &quot;miner_reward&quot;: 123,
+    &quot;block_size&quot;: 123,
+    &quot;block_weight&quot;: 123,
+    &quot;num_txes&quot;: 123,
+    &quot;pow_hash&quot;: &quot;default string&quot;,
+    &quot;long_term_weight&quot;: 123
+  },
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>hash - string</code>: The block's SHA256 hash.</li>
@@ -2579,7 +3015,7 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.</li>
 <li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
 <li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
 <li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
@@ -2598,13 +3034,49 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
 <li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
 <li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_block_header_by_height">COMMAND_RPC_GET_BLOCK_HEADER_BY_HEIGHT<a class="headerlink" href="#command_rpc_get_block_header_by_height" title="Permanent link">&para;</a></h3>
 <p>Similar to get_block_header_by_hash above, this method includes a block's height as an input parameter to retrieve basic information about the block.</p>
+<p>Endpoints: get_block_header_by_height, getblockheaderbyheight</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block_header_by_height&quot;,
+  &quot;params&quot;: {
+    &quot;height&quot;: 123,
+    &quot;fill_pow_hash&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;block_header&quot;: {
+    &quot;major_version&quot;: 11,
+    &quot;minor_version&quot;: 11,
+    &quot;timestamp&quot;: 123,
+    &quot;prev_hash&quot;: &quot;default string&quot;,
+    &quot;nonce&quot;: 2130706433,
+    &quot;orphan_status&quot;: true,
+    &quot;height&quot;: 123,
+    &quot;depth&quot;: 123,
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;difficulty&quot;: 25179406071,
+    &quot;cumulative_difficulty&quot;: 25179406071,
+    &quot;reward&quot;: 123,
+    &quot;miner_reward&quot;: 123,
+    &quot;block_size&quot;: 123,
+    &quot;block_weight&quot;: 123,
+    &quot;num_txes&quot;: 123,
+    &quot;pow_hash&quot;: &quot;default string&quot;,
+    &quot;long_term_weight&quot;: 123
+  },
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>height - uint64</code>: The block's height.</li>
@@ -2613,7 +3085,7 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>block_header - block_header_response</code>: A structure containing block header information.<ul>
+<li><code>block_header - block_header_response</code>: A structure containing block header information.</li>
 <li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
 <li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
 <li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
@@ -2632,14 +3104,55 @@ however it does a sync to flush the filesystem cache onto the disk for safety pu
 <li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
 <li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
 <li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_block">COMMAND_RPC_GET_BLOCK<a class="headerlink" href="#command_rpc_get_block" title="Permanent link">&para;</a></h3>
-<p>Full block information can be retrieved by either block height or hash, like with the above block header calls. 
-For full block information, both lookups use the same method, but with different input parameters.</p>
+<p>Full block information can be retrieved by either block height or hash, like with the above block header calls. </p>
+<p>For full block information, both lookups use the same method, but with different input parameters.</p>
+<p>Endpoints: get_block, getblock</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block&quot;,
+  &quot;params&quot;: {
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;height&quot;: 123,
+    &quot;fill_pow_hash&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;block_header&quot;: {
+    &quot;major_version&quot;: 11,
+    &quot;minor_version&quot;: 11,
+    &quot;timestamp&quot;: 123,
+    &quot;prev_hash&quot;: &quot;default string&quot;,
+    &quot;nonce&quot;: 2130706433,
+    &quot;orphan_status&quot;: true,
+    &quot;height&quot;: 123,
+    &quot;depth&quot;: 123,
+    &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+    &quot;difficulty&quot;: 25179406071,
+    &quot;cumulative_difficulty&quot;: 25179406071,
+    &quot;reward&quot;: 123,
+    &quot;miner_reward&quot;: 123,
+    &quot;block_size&quot;: 123,
+    &quot;block_weight&quot;: 123,
+    &quot;num_txes&quot;: 123,
+    &quot;pow_hash&quot;: &quot;default string&quot;,
+    &quot;long_term_weight&quot;: 123
+  },
+  &quot;miner_tx_hash&quot;: &quot;default string&quot;,
+  &quot;tx_hashes&quot;: [&quot;default string&quot;, ...],
+  &quot;blob&quot;: &quot;default string&quot;,
+  &quot;json&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>hash - string</code>: The block's hash.</li>
@@ -2649,7 +3162,7 @@ For full block information, both lookups use the same method, but with different
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>block_header - block_header_response</code>: A structure containing block header information. See get_last_block_header.<ul>
+<li><code>block_header - block_header_response</code>: A structure containing block header information. See get_last_block_header.</li>
 <li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
 <li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
 <li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
@@ -2668,17 +3181,26 @@ For full block information, both lookups use the same method, but with different
 <li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
 <li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
 <li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
-</ul>
-</li>
 <li><code>miner_tx_hash - string</code>: Miner transaction information</li>
 <li><code>tx_hashes - string[]</code>: List of hashes of non-coinbase transactions in the block. If there are no other transactions, this will be an empty list.</li>
 <li><code>blob - string</code>: Hexadecimal blob of block information.</li>
 <li><code>json - string</code>: JSON formatted block details.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_set_log_hash_rate">COMMAND_RPC_SET_LOG_HASH_RATE<a class="headerlink" href="#command_rpc_set_log_hash_rate" title="Permanent link">&para;</a></h3>
 <p>Set the log hash rate display mode.</p>
+<p>Endpoints: /set_log_hash_rate</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/set_log_hash_rate -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>visible - bool</code>: States if hash rate logs should be visible (true) or hidden (false)</li>
@@ -2687,9 +3209,20 @@ For full block information, both lookups use the same method, but with different
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_set_log_level">COMMAND_RPC_SET_LOG_LEVEL<a class="headerlink" href="#command_rpc_set_log_level" title="Permanent link">&para;</a></h3>
 <p>Set the daemon log level. By default, log level is set to <code>0</code>.</p>
+<p>Endpoints: /set_log_level</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/set_log_level -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>level - int8_t</code>: Daemon log level to set from <code>0</code> (less verbose) to <code>4</code> (most verbose)</li>
@@ -2698,16 +3231,28 @@ For full block information, both lookups use the same method, but with different
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_set_log_categories">COMMAND_RPC_SET_LOG_CATEGORIES<a class="headerlink" href="#command_rpc_set_log_categories" title="Permanent link">&para;</a></h3>
-<p>Set the daemon log categories. Categories are represented as a comma separated list of <code>&lt;Category&gt;:&lt;level&gt;</code> (similarly to syslog standard <code>&lt;Facility&gt;:&lt;Severity-level&gt;</code>), where:
-Category is one of the following: * (all facilities), default, net, net.http, net.p2p, logging, net.trottle, blockchain.db, blockchain.db.lmdb, bcutil, checkpoints, net.dns, net.dl,
-i18n, perf,stacktrace, updates, account, cn ,difficulty, hardfork, miner, blockchain, txpool, cn.block_queue, net.cn, daemon, debugtools.deserialize, debugtools.objectsizes, device.ledger, 
-wallet.gen_multisig, multisig, bulletproofs, ringct, daemon.rpc, wallet.simplewallet, WalletAPI, wallet.ringdb, wallet.wallet2, wallet.rpc, tests.core.
-Level is one of the following: FATAL - higher level, ERROR, WARNING, INFO, DEBUG, TRACE.
-Lower level A level automatically includes higher level. By default, categories are set to:
-<code>*:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO,msgwriter:INFO</code>
-Setting the categories to "" prevent any logs to be outputed.</p>
+<p>Set the daemon log categories. Categories are represented as a comma separated list of <code>&lt;Category&gt;:&lt;level&gt;</code> (similarly to syslog standard <code>&lt;Facility&gt;:&lt;Severity-level&gt;</code>), where:</p>
+<p>Category is one of the following: * (all facilities), default, net, net.http, net.p2p, logging, net.trottle, blockchain.db, blockchain.db.lmdb, bcutil, checkpoints, net.dns, net.dl,</p>
+<p>i18n, perf,stacktrace, updates, account, cn ,difficulty, hardfork, miner, blockchain, txpool, cn.block_queue, net.cn, daemon, debugtools.deserialize, debugtools.objectsizes, device.ledger, </p>
+<p>wallet.gen_multisig, multisig, bulletproofs, ringct, daemon.rpc, wallet.simplewallet, WalletAPI, wallet.ringdb, wallet.wallet2, wallet.rpc, tests.core.</p>
+<p>Level is one of the following: FATAL - higher level, ERROR, WARNING, INFO, DEBUG, TRACE.</p>
+<p>Lower level A level automatically includes higher level. By default, categories are set to:</p>
+<p><code>*:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO,msgwriter:INFO</code></p>
+<p>Setting the categories to "" prevent any logs to be outputed.</p>
+<p>Endpoints: /set_log_categories</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/set_log_categories -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;categories&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>categories - string</code>: Optional, daemon log categories to enable</li>
@@ -2717,15 +3262,48 @@ Setting the categories to "" prevent any logs to be outputed.</p>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good. Any other value means that something went wrong.</li>
 <li><code>categories - string</code>: Daemon log enabled categories</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_transaction_pool">COMMAND_RPC_GET_TRANSACTION_POOL<a class="headerlink" href="#command_rpc_get_transaction_pool" title="Permanent link">&para;</a></h3>
-<p>Show information about valid transactions seen by the node but not yet mined into a block, 
-as well as spent key image information for the txpool in the node's memory.</p>
+<p>Show information about valid transactions seen by the node but not yet mined into a block, </p>
+<p>as well as spent key image information for the txpool in the node's memory.</p>
+<p>Endpoints: /get_transaction_pool</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_transaction_pool -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;transactions&quot;: [{
+      &quot;id_hash&quot;: &quot;default string&quot;,
+      &quot;tx_json&quot;: &quot;default string&quot;,
+      &quot;blob_size&quot;: 123,
+      &quot;weight&quot;: 123,
+      &quot;fee&quot;: 123,
+      &quot;max_used_block_id_hash&quot;: &quot;default string&quot;,
+      &quot;max_used_block_height&quot;: 123,
+      &quot;kept_by_block&quot;: true,
+      &quot;last_failed_height&quot;: 123,
+      &quot;last_failed_id_hash&quot;: &quot;default string&quot;,
+      &quot;receive_time&quot;: 123,
+      &quot;relayed&quot;: true,
+      &quot;last_relayed_time&quot;: 123,
+      &quot;do_not_relay&quot;: true,
+      &quot;double_spend_seen&quot;: true,
+      &quot;tx_blob&quot;: &quot;default string&quot;
+    }, ...],
+  &quot;spent_key_images&quot;: [{
+      &quot;id_hash&quot;: &quot;default string&quot;,
+      &quot;txs_hashes&quot;: [&quot;default string&quot;, ...]
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>transactions - tx_info[]</code>: List of transactions in the mempool are not in a block on the main chain at the moment:<ul>
+<li><code>transactions - tx_info[]</code>: List of transactions in the mempool are not in a block on the main chain at the moment:</li>
 <li><code>id_hash - string</code>: The transaction ID hash.</li>
 <li><code>tx_json - string</code>: JSON structure of all information in the transaction</li>
 <li><code>blob_size - uint64</code>: The size of the full transaction blob.</li>
@@ -2742,18 +3320,26 @@ as well as spent key image information for the txpool in the node's memory.</p>
 <li><code>do_not_relay - bool</code>: States if this transaction should not be relayed.</li>
 <li><code>double_spend_seen - bool</code>: States if this transaction has been seen as double spend.</li>
 <li><code>tx_blob - string</code>: Hexadecimal blob represnting the transaction.</li>
-</ul>
-</li>
-<li><code>spent_key_images - spent_key_image_info[]</code>: List of spent output key images:<ul>
+<li><code>spent_key_images - spent_key_image_info[]</code>: List of spent output key images:</li>
 <li><code>id_hash - string</code>: Key image.</li>
 <li><code>txs_hashes - string[]</code>: List of tx hashes of the txes (usually one) spending that key image.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_transaction_pool_hashes_bin">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES_BIN<a class="headerlink" href="#command_rpc_get_transaction_pool_hashes_bin" title="Permanent link">&para;</a></h3>
 <p>Get hashes from transaction pool. Binary request.</p>
+<p>Endpoints: /get_transaction_pool_hashes.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_transaction_pool_hashes.bin -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;tx_hashes&quot;: [&quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2761,9 +3347,21 @@ as well as spent key image information for the txpool in the node's memory.</p>
 <li><code>tx_hashes - string[64][]</code>: List of transaction hashes,</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_transaction_pool_hashes">COMMAND_RPC_GET_TRANSACTION_POOL_HASHES<a class="headerlink" href="#command_rpc_get_transaction_pool_hashes" title="Permanent link">&para;</a></h3>
 <p>Get hashes from transaction pool.</p>
+<p>Endpoints: /get_transaction_pool_hashes</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_transaction_pool_hashes -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;tx_hashes&quot;: [&quot;default string&quot;, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2771,35 +3369,99 @@ as well as spent key image information for the txpool in the node's memory.</p>
 <li><code>tx_hashes - string[]</code>: List of transaction hashes,</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_transaction_pool_backlog">COMMAND_RPC_GET_TRANSACTION_POOL_BACKLOG<a class="headerlink" href="#command_rpc_get_transaction_pool_backlog" title="Permanent link">&para;</a></h3>
 <p>Get all transaction pool backlog.</p>
+<p>Endpoints: get_txpool_backlog</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_txpool_backlog&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;backlog&quot;: [{
+      &quot;weight&quot;: 123,
+      &quot;fee&quot;: 123,
+      &quot;time_in_pool&quot;: 123
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>backlog - tx_backlog_entry[]</code>: Array of structures tx_backlog_entry (in binary form):<ul>
+<li><code>backlog - tx_backlog_entry[]</code>: Array of structures tx_backlog_entry (in binary form):</li>
 <li><code>weight - uint64</code></li>
 <li><code>fee - uint64</code>: Fee in Loki measured in atomic units.</li>
 <li><code>time_in_pool - uint64</code></li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_connections">COMMAND_RPC_GET_CONNECTIONS<a class="headerlink" href="#command_rpc_get_connections" title="Permanent link">&para;</a></h3>
 <p>Retrieve information about incoming and outgoing connections to your node.</p>
+<p>Endpoints: get_connections</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_connections&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;connections&quot;: [, ...]
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>connections - connection_info[]</code>: List of all connections and their info:</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_block_headers_range">COMMAND_RPC_GET_BLOCK_HEADERS_RANGE<a class="headerlink" href="#command_rpc_get_block_headers_range" title="Permanent link">&para;</a></h3>
-<p>Similar to get_block_header_by_height above, but for a range of blocks. 
-This method includes a starting block height and an ending block height as 
-parameters to retrieve basic information about the range of blocks.</p>
+<p>Similar to get_block_header_by_height above, but for a range of blocks. </p>
+<p>This method includes a starting block height and an ending block height as </p>
+<p>parameters to retrieve basic information about the range of blocks.</p>
+<p>Endpoints: get_block_headers_range, getblockheadersrange</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_block_headers_range&quot;,
+  &quot;params&quot;: {
+    &quot;start_height&quot;: 123,
+    &quot;end_height&quot;: 123,
+    &quot;fill_pow_hash&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;headers&quot;: [{
+      &quot;major_version&quot;: 11,
+      &quot;minor_version&quot;: 11,
+      &quot;timestamp&quot;: 123,
+      &quot;prev_hash&quot;: &quot;default string&quot;,
+      &quot;nonce&quot;: 2130706433,
+      &quot;orphan_status&quot;: true,
+      &quot;height&quot;: 123,
+      &quot;depth&quot;: 123,
+      &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+      &quot;difficulty&quot;: 25179406071,
+      &quot;cumulative_difficulty&quot;: 25179406071,
+      &quot;reward&quot;: 123,
+      &quot;miner_reward&quot;: 123,
+      &quot;block_size&quot;: 123,
+      &quot;block_weight&quot;: 123,
+      &quot;num_txes&quot;: 123,
+      &quot;pow_hash&quot;: &quot;default string&quot;,
+      &quot;long_term_weight&quot;: 123
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>start_height - uint64</code>: The starting block's height.</li>
@@ -2809,7 +3471,7 @@ parameters to retrieve basic information about the range of blocks.</p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>headers - block_header_response[]</code>: Array of block_header (a structure containing block header information. See get_last_block_header).<ul>
+<li><code>headers - block_header_response[]</code>: Array of block_header (a structure containing block header information. See get_last_block_header).</li>
 <li><code>major_version - uint8</code>: The major version of the loki protocol at this block height.</li>
 <li><code>minor_version - uint8</code>: The minor version of the loki protocol at this block height.</li>
 <li><code>timestamp - uint64</code>: The unix time at which the block was recorded into the blockchain.</li>
@@ -2828,21 +3490,42 @@ parameters to retrieve basic information about the range of blocks.</p>
 <li><code>num_txes - uint64</code>: Number of transactions in the block, not counting the coinbase tx.</li>
 <li><code>pow_hash - string</code>: The hash of the block's proof of work.</li>
 <li><code>long_term_weight - uint64</code>: Long term weight of the block.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_stop_daemon">COMMAND_RPC_STOP_DAEMON<a class="headerlink" href="#command_rpc_stop_daemon" title="Permanent link">&para;</a></h3>
 <p>Send a command to the daemon to safely disconnect and shut down.</p>
+<p>Endpoints: /stop_daemon</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/stop_daemon -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_limit">COMMAND_RPC_GET_LIMIT<a class="headerlink" href="#command_rpc_get_limit" title="Permanent link">&para;</a></h3>
 <p>Get daemon bandwidth limits.</p>
+<p>Endpoints: /get_limit</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_limit -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;limit_up&quot;: 123,
+  &quot;limit_down&quot;: 123,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2851,9 +3534,22 @@ parameters to retrieve basic information about the range of blocks.</p>
 <li><code>limit_down - uint64</code>: Download limit in kBytes per second.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_set_limit">COMMAND_RPC_SET_LIMIT<a class="headerlink" href="#command_rpc_set_limit" title="Permanent link">&para;</a></h3>
 <p>Set daemon bandwidth limits.</p>
+<p>Endpoints: /set_limit</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/set_limit -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;limit_up&quot;: ,
+  &quot;limit_down&quot;: 
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>limit_down - int64</code>: Download limit in kBytes per second (-1 reset to default, 0 don't change the current limit)</li>
@@ -2865,9 +3561,20 @@ parameters to retrieve basic information about the range of blocks.</p>
 <li><code>limit_up - int64</code>: Upload limit in kBytes per second.</li>
 <li><code>limit_down - int64</code>: Download limit in kBytes per second.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_out_peers">COMMAND_RPC_OUT_PEERS<a class="headerlink" href="#command_rpc_out_peers" title="Permanent link">&para;</a></h3>
 <p>Limit number of Outgoing peers.</p>
+<p>Endpoints: /out_peers</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/out_peers -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>out_peers - uint64</code>: Max number of outgoing peers</li>
@@ -2876,9 +3583,20 @@ parameters to retrieve basic information about the range of blocks.</p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_in_peers">COMMAND_RPC_IN_PEERS<a class="headerlink" href="#command_rpc_in_peers" title="Permanent link">&para;</a></h3>
 <p>Limit number of Incoming peers.</p>
+<p>Endpoints: /in_peers</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/in_peers -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>in_peers - uint64</code></li>
@@ -2887,25 +3605,70 @@ parameters to retrieve basic information about the range of blocks.</p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_start_save_graph">COMMAND_RPC_START_SAVE_GRAPH<a class="headerlink" href="#command_rpc_start_save_graph" title="Permanent link">&para;</a></h3>
 <p>Obsolete. Conserved here for reference.</p>
+<p>Endpoints: /start_save_graph</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/start_save_graph -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_stop_save_graph">COMMAND_RPC_STOP_SAVE_GRAPH<a class="headerlink" href="#command_rpc_stop_save_graph" title="Permanent link">&para;</a></h3>
 <p>Obsolete. Conserved here for reference.</p>
+<p>Endpoints: /stop_save_graph</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/stop_save_graph -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_hard_fork_info">COMMAND_RPC_HARD_FORK_INFO<a class="headerlink" href="#command_rpc_hard_fork_info" title="Permanent link">&para;</a></h3>
 <p>Look up information regarding hard fork voting and readiness.</p>
+<p>Endpoints: hard_fork_info</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;hard_fork_info&quot;,
+  &quot;params&quot;: {
+    &quot;version&quot;: 11
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;version&quot;: 11,
+  &quot;enabled&quot;: true,
+  &quot;window&quot;: 2130706433,
+  &quot;votes&quot;: 2130706433,
+  &quot;threshold&quot;: 2130706433,
+  &quot;voting&quot;: 11,
+  &quot;state&quot;: 2130706433,
+  &quot;earliest_height&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>version - uint8</code>: The major block version for the fork.</li>
@@ -2923,40 +3686,88 @@ parameters to retrieve basic information about the range of blocks.</p>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_getbans">COMMAND_RPC_GETBANS<a class="headerlink" href="#command_rpc_getbans" title="Permanent link">&para;</a></h3>
 <p>Get list of banned IPs.</p>
+<p>Endpoints: get_bans</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_bans&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;bans&quot;: [{
+      &quot;host&quot;: &quot;127.0.0.1&quot;,
+      &quot;ip&quot;: 2130706433,
+      &quot;seconds&quot;: 2130706433
+    }, ...]
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>bans - ban[]</code>: List of banned nodes:<ul>
+<li><code>bans - ban[]</code>: List of banned nodes:</li>
 <li><code>host - string</code>: Banned host (IP in A.B.C.D form).</li>
 <li><code>ip - uint32</code>: Banned IP address, in Int format.</li>
 <li><code>seconds - uint32</code>: Local Unix time that IP is banned until.</li>
 </ul>
-</li>
-</ul>
-<hr />
 <h3 id="command_rpc_setbans">COMMAND_RPC_SETBANS<a class="headerlink" href="#command_rpc_setbans" title="Permanent link">&para;</a></h3>
 <p>Ban another node by IP.</p>
+<p>Endpoints: set_bans</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;set_bans&quot;,
+  &quot;params&quot;: {
+    &quot;bans&quot;: [{
+        &quot;host&quot;: &quot;127.0.0.1&quot;,
+        &quot;ip&quot;: 2130706433,
+        &quot;ban&quot;: true,
+        &quot;seconds&quot;: 2130706433
+      }, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
-<li><code>bans - ban[]</code>: List of nodes to ban.<ul>
+<li><code>bans - ban[]</code>: List of nodes to ban.</li>
 <li><code>host - string</code>: Host to ban (IP in A.B.C.D form - will support I2P address in the future).</li>
 <li><code>ip - uint32</code>: IP address to ban, in Int format.</li>
 <li><code>ban - bool</code>: Set true to ban.</li>
 <li><code>seconds - uint32</code>: Number of seconds to ban node.</li>
 </ul>
-</li>
-</ul>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_flush_transaction_pool">COMMAND_RPC_FLUSH_TRANSACTION_POOL<a class="headerlink" href="#command_rpc_flush_transaction_pool" title="Permanent link">&para;</a></h3>
 <p>Flush tx ids from transaction pool..</p>
+<p>Endpoints: flush_txpool</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;flush_txpool&quot;,
+  &quot;params&quot;: {
+    &quot;txids&quot;: [&quot;b605cab7e3b9fe1f6d322e3167cd26e1e61c764afa9d733233ef716787786123&quot;, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>txids - string[]</code>: Optional, list of transactions IDs to flush from pool (all tx ids flushed if empty).</li>
@@ -2965,10 +3776,37 @@ parameters to retrieve basic information about the range of blocks.</p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_output_histogram">COMMAND_RPC_GET_OUTPUT_HISTOGRAM<a class="headerlink" href="#command_rpc_get_output_histogram" title="Permanent link">&para;</a></h3>
-<p>Get a histogram of output amounts. For all amounts (possibly filtered by parameters), 
-gives the number of outputs on the chain for that amount. RingCT outputs counts as 0 amount.</p>
+<p>Get a histogram of output amounts. For all amounts (possibly filtered by parameters), </p>
+<p>gives the number of outputs on the chain for that amount. RingCT outputs counts as 0 amount.</p>
+<p>Endpoints: get_output_histogram</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_output_histogram&quot;,
+  &quot;params&quot;: {
+    &quot;amounts&quot;: [123, ...],
+    &quot;min_count&quot;: 123,
+    &quot;max_count&quot;: 123,
+    &quot;unlocked&quot;: true,
+    &quot;recent_cutoff&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;histogram&quot;: [{
+      &quot;amount&quot;: 123,
+      &quot;total_instances&quot;: 123,
+      &quot;unlocked_instances&quot;: 123,
+      &quot;recent_instances&quot;: 123
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>amounts - uint64[]</code>: list of amounts in Atomic Units.</li>
@@ -2980,18 +3818,28 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>histogram - entry[]</code>: List of histogram entries:<ul>
+<li><code>histogram - entry[]</code>: List of histogram entries:</li>
 <li><code>amount - uint64</code>: Output amount in atomic units.</li>
 <li><code>total_instances - uint64</code></li>
 <li><code>unlocked_instances - uint64</code></li>
 <li><code>recent_instances - uint64</code></li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_version">COMMAND_RPC_GET_VERSION<a class="headerlink" href="#command_rpc_get_version" title="Permanent link">&para;</a></h3>
 <p>Get node current version.</p>
+<p>Endpoints: get_version</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_version&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;version&quot;: 2130706433,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -2999,9 +3847,28 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>version - uint32</code>: Node current version.</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_coinbase_tx_sum">COMMAND_RPC_GET_COINBASE_TX_SUM<a class="headerlink" href="#command_rpc_get_coinbase_tx_sum" title="Permanent link">&para;</a></h3>
-<p>Get the coinbase ammount and the fees ammount for n last blocks starting at particular height.</p>
+<p>Get the coinbase amount and the fees amount for n last blocks starting at particular height.</p>
+<p>Endpoints: get_coinbase_tx_sum</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_coinbase_tx_sum&quot;,
+  &quot;params&quot;: {
+    &quot;height&quot;: 123,
+    &quot;count&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;emission_amount&quot;: 123,
+  &quot;fee_amount&quot;: 123
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>height - uint64</code>: Block height from which getting the amounts.</li>
@@ -3013,9 +3880,28 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>emission_amount - uint64</code>: Amount of coinbase reward in atomic units.</li>
 <li><code>fee_amount - uint64</code>: Amount of fees in atomic units.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_base_fee_estimate">COMMAND_RPC_GET_BASE_FEE_ESTIMATE<a class="headerlink" href="#command_rpc_get_base_fee_estimate" title="Permanent link">&para;</a></h3>
 <p>Gives an estimation on fees per kB.</p>
+<p>Endpoints: get_fee_estimate</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_fee_estimate&quot;,
+  &quot;params&quot;: {
+    &quot;grace_blocks&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;fee&quot;: 123,
+  &quot;quantization_mask&quot;: 123,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>grace_blocks - uint64</code>: Optional</li>
@@ -3027,14 +3913,32 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>quantization_mask - uint64</code></li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_alternate_chains">COMMAND_RPC_GET_ALTERNATE_CHAINS<a class="headerlink" href="#command_rpc_get_alternate_chains" title="Permanent link">&para;</a></h3>
 <p>Display alternative chains seen by the node.</p>
+<p>Endpoints: get_alternate_chains</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_alternate_chains&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;chains&quot;: [{
+      &quot;block_hash&quot;: &quot;default string&quot;,
+      &quot;height&quot;: 123,
+      &quot;length&quot;: 123,
+      &quot;difficulty&quot;: 123,
+      &quot;block_hashes&quot;: [&quot;default string&quot;, ...],
+      &quot;main_chain_parent_block&quot;: &quot;default string&quot;
+    }, ...]
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>chains - chain_info[]</code>: Array of Chains.<ul>
+<li><code>chains - chain_info[]</code>: Array of Chains.</li>
 <li><code>block_hash - string</code>: The block hash of the first diverging block of this alternative chain.</li>
 <li><code>height - uint64</code>: The block height of the first diverging block of this alternative chain.</li>
 <li><code>length - uint64</code>: The length in blocks of this alternative chain, after divergence.</li>
@@ -3042,11 +3946,26 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>block_hashes - string[]</code></li>
 <li><code>main_chain_parent_block - string</code></li>
 </ul>
-</li>
-</ul>
-<hr />
 <h3 id="command_rpc_update">COMMAND_RPC_UPDATE<a class="headerlink" href="#command_rpc_update" title="Permanent link">&para;</a></h3>
 <p>Update daemon.</p>
+<p>Endpoints: /update</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/update -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;update&quot;: true,
+  &quot;version&quot;: &quot;default string&quot;,
+  &quot;user_uri&quot;: &quot;default string&quot;,
+  &quot;auto_uri&quot;: &quot;default string&quot;,
+  &quot;hash&quot;: &quot;bf430a3279f576ed8a814be25193e5a1ec61d3ee5729e64f47d8480ce5a2da70&quot;,
+  &quot;path&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>command - string</code>: Command to use, either check or download.</li>
@@ -3062,9 +3981,25 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>hash - string</code></li>
 <li><code>path - string</code>: Path to download the update.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_relay_tx">COMMAND_RPC_RELAY_TX<a class="headerlink" href="#command_rpc_relay_tx" title="Permanent link">&para;</a></h3>
 <p>Relay a list of transaction IDs.</p>
+<p>Endpoints: relay_tx</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;relay_tx&quot;,
+  &quot;params&quot;: {
+    &quot;txids&quot;: [&quot;b605cab7e3b9fe1f6d322e3167cd26e1e61c764afa9d733233ef716787786123&quot;, ...]
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>txids - string[]</code>: Optional, list of transactions IDs to flush from pool (all tx ids flushed if empty).</li>
@@ -3073,9 +4008,40 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_sync_info">COMMAND_RPC_SYNC_INFO<a class="headerlink" href="#command_rpc_sync_info" title="Permanent link">&para;</a></h3>
 <p>Get synchronisation information.</p>
+<p>Endpoints: sync_info</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;sync_info&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;height&quot;: 123,
+  &quot;target_height&quot;: 123,
+  &quot;next_needed_pruning_seed&quot;: 2130706433,
+  &quot;peers&quot;: [{
+      &quot;id&quot;: 123,
+      &quot;host&quot;: &quot;127.0.0.1&quot;,
+      &quot;ip&quot;: 2130706433,
+      &quot;port&quot;: ,
+      &quot;last_seen&quot;: 123,
+      &quot;pruning_seed&quot;: 2130706433
+    }, ...],
+  &quot;spans&quot;: [{
+      &quot;start_block_height&quot;: 123,
+      &quot;nblocks&quot;: 123,
+      &quot;connection_id&quot;: &quot;default string&quot;,
+      &quot;rate&quot;: 2130706433,
+      &quot;speed&quot;: 2130706433,
+      &quot;size&quot;: 123,
+      &quot;remote_address&quot;: &quot;default string&quot;
+    }, ...],
+  &quot;overview&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
@@ -3083,16 +4049,14 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>height - uint64</code>: Block height.</li>
 <li><code>target_height - uint64</code>: Target height the node is syncing from (optional, absent if node is fully synced).</li>
 <li><code>next_needed_pruning_seed - uint32</code></li>
-<li><code>peers - peer[]</code>: Array of Peer structure<ul>
+<li><code>peers - peer[]</code>: Array of Peer structure</li>
 <li><code>id - uint64</code>: Peer id.</li>
 <li><code>host - string</code>: IP address in string format.</li>
 <li><code>ip - uint32</code>: IP address in integer format.</li>
 <li><code>port - uint16</code>: TCP port the peer is using to connect to loki network.</li>
 <li><code>last_seen - uint64</code>: Unix time at which the peer has been seen for the last time</li>
 <li><code>pruning_seed - uint32</code></li>
-</ul>
-</li>
-<li><code>spans - span[]</code>: Array of Span Structure.<ul>
+<li><code>spans - span[]</code>: Array of Span Structure.</li>
 <li><code>start_block_height - uint64</code>: Block height of the first block in that span.</li>
 <li><code>nblocks - uint64</code>: Number of blocks in that span.</li>
 <li><code>connection_id - string</code>: Id of connection.</li>
@@ -3100,12 +4064,29 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>speed - uint32</code>: Connection speed.</li>
 <li><code>size - uint64</code>: Total number of bytes in that span's blocks (including txes).</li>
 <li><code>remote_address - string</code>: Peer address the node is downloading (or has downloaded) than span from.</li>
-</ul>
-</li>
 <li><code>overview - string</code></li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_output_distribution">COMMAND_RPC_GET_OUTPUT_DISTRIBUTION<a class="headerlink" href="#command_rpc_get_output_distribution" title="Permanent link">&para;</a></h3>
+<p>Endpoints: /get_output_distribution.bin, get_output_distribution</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_output_distribution.bin -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;distributions&quot;: [{
+      &quot;data&quot;: ,
+      &quot;amount&quot;: 123,
+      &quot;compressed_data&quot;: &quot;default string&quot;,
+      &quot;binary&quot;: true,
+      &quot;compress&quot;: true
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>amounts - uint64[]</code>: Amounts to look for in atomic units.</li>
@@ -3118,18 +4099,28 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
-<li><code>distributions - distribution[]</code><ul>
+<li><code>distributions - distribution[]</code></li>
 <li><code>data - rpc::output_distribution_data</code></li>
 <li><code>amount - uint64</code></li>
 <li><code>compressed_data - string</code></li>
 <li><code>binary - bool</code></li>
 <li><code>compress - bool</code></li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: States if the result is obtained using the bootstrap mode, and is therefore not trusted (<code>true</code>), or when the daemon is fully synced (<code>false</code>).</li>
 </ul>
-<hr />
 <h3 id="command_rpc_pop_blocks">COMMAND_RPC_POP_BLOCKS<a class="headerlink" href="#command_rpc_pop_blocks" title="Permanent link">&para;</a></h3>
+<p>Endpoints: /pop_blocks</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/pop_blocks -d &#39;{
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;height&quot;: 123
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>nblocks - uint64</code>: Number of blocks in that span.</li>
@@ -3139,8 +4130,25 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>status - string</code>: General RPC error code. "OK" means everything looks good.</li>
 <li><code>height - uint64</code></li>
 </ul>
-<hr />
 <h3 id="command_rpc_prune_blockchain">COMMAND_RPC_PRUNE_BLOCKCHAIN<a class="headerlink" href="#command_rpc_prune_blockchain" title="Permanent link">&para;</a></h3>
+<p>Endpoints: prune_blockchain</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;prune_blockchain&quot;,
+  &quot;params&quot;: {
+    &quot;check&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;pruning_seed&quot;: 2130706433,
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>check - bool</code></li>
@@ -3150,10 +4158,29 @@ gives the number of outputs on the chain for that amount. RingCT outputs counts 
 <li><code>pruning_seed - uint32</code></li>
 <li><code>status - string</code></li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_quorum_state">COMMAND_RPC_GET_QUORUM_STATE<a class="headerlink" href="#command_rpc_get_quorum_state" title="Permanent link">&para;</a></h3>
-<p>Get the quorum state which is the list of public keys of the nodes 
-who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p>Get the quorum state which is the list of public keys of the nodes </p>
+<p>who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p>Endpoints: get_quorum_state</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_quorum_state&quot;,
+  &quot;params&quot;: {
+    &quot;height&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;quorum_nodes&quot;: [&quot;default string&quot;, ...],
+  &quot;nodes_to_test&quot;: [&quot;default string&quot;, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>height - uint64</code>: The height to query the quorum state for.</li>
@@ -3165,10 +4192,33 @@ who are voting, and the list of public keys of the nodes who are being tested.</
 <li><code>nodes_to_test - string[]</code>: Array of public keys identifying service nodes which are responsible for voting on the queried height.</li>
 <li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_quorum_state_batched">COMMAND_RPC_GET_QUORUM_STATE_BATCHED<a class="headerlink" href="#command_rpc_get_quorum_state_batched" title="Permanent link">&para;</a></h3>
-<p>Get the quorum state which is the list of public keys of the nodes 
-who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p>Get the quorum state which is the list of public keys of the nodes </p>
+<p>who are voting, and the list of public keys of the nodes who are being tested.</p>
+<p>Endpoints: get_quorum_state_batched</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_quorum_state_batched&quot;,
+  &quot;params&quot;: {
+    &quot;height_begin&quot;: 123,
+    &quot;height_end&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;quorum_entries&quot;: [{
+      &quot;height&quot;: 123,
+      &quot;quorum_nodes&quot;: [&quot;default string&quot;, ...],
+      &quot;nodes_to_test&quot;: [&quot;default string&quot;, ...]
+    }, ...],
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>height_begin - uint64</code>: The starting height (inclusive) to query the quorum state for.</li>
@@ -3177,16 +4227,33 @@ who are voting, and the list of public keys of the nodes who are being tested.</
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
-<li><code>quorum_entries - response_entry[]</code>: Array of quorums that was requested.<ul>
+<li><code>quorum_entries - response_entry[]</code>: Array of quorums that was requested.</li>
 <li><code>height - uint64</code>: The height of this quorum state that was queried.</li>
 <li><code>quorum_nodes - string[]</code>: Array of public keys identifying service nodes which are being tested for the queried height.</li>
 <li><code>nodes_to_test - string[]</code>: Array of public keys identifying service nodes which are responsible for voting on the queried height.</li>
-</ul>
-</li>
 <li><code>untrusted - bool</code>: If the result is obtained using bootstrap mode, and therefore not trusted <code>true</code>, or otherwise <code>false</code>.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_service_node_registration_cmd_raw">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD_RAW<a class="headerlink" href="#command_rpc_get_service_node_registration_cmd_raw" title="Permanent link">&para;</a></h3>
+<p>Endpoints: get_service_node_registration_cmd_raw</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_service_node_registration_cmd_raw&quot;,
+  &quot;params&quot;: {
+    &quot;args&quot;: [&quot;default string&quot;, ...],
+    &quot;make_friendly&quot;: true,
+    &quot;staking_requirement&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;registration_cmd&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>args - string[]</code>: (Developer) The arguments used in raw registration, i.e. portions</li>
@@ -3198,16 +4265,36 @@ who are voting, and the list of public keys of the nodes who are being tested.</
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 <li><code>registration_cmd - string</code>: The command to execute in the wallet CLI to register the queried daemon as a Service Node.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_service_node_registration_cmd">COMMAND_RPC_GET_SERVICE_NODE_REGISTRATION_CMD<a class="headerlink" href="#command_rpc_get_service_node_registration_cmd" title="Permanent link">&para;</a></h3>
+<p>Endpoints: get_service_node_registration_cmd</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_service_node_registration_cmd&quot;,
+  &quot;params&quot;: {
+    &quot;operator_cut&quot;: &quot;1.1%&quot;,
+    &quot;contributions&quot;: [{
+        &quot;address&quot;: &quot;default string&quot;,
+        &quot;amount&quot;: 123
+      }, ...],
+    &quot;staking_requirement&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;registration_cmd&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>operator_cut - string</code>: The percentage of cut per reward the operator receives expressed as a string, i.e. "1.1%"</li>
-<li><code>contributions - contribution_t[]</code>: Array of contributors for this Service Node<ul>
+<li><code>contributions - contribution_t[]</code>: Array of contributors for this Service Node</li>
 <li><code>address - string</code>: The wallet address for the contributor</li>
 <li><code>amount - uint64</code>: The amount that the contributor will reserve in Loki atomic units towards the staking requirement</li>
-</ul>
-</li>
 <li><code>staking_requirement - uint64</code>: The staking requirement to become a Service Node the registration command will be generated upon</li>
 </ul>
 <p><strong>Outputs:</strong></p>
@@ -3215,19 +4302,49 @@ who are voting, and the list of public keys of the nodes who are being tested.</
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 <li><code>registration_cmd - string</code>: The command to execute in the wallet CLI to register the queried daemon as a Service Node.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_service_node_key">COMMAND_RPC_GET_SERVICE_NODE_KEY<a class="headerlink" href="#command_rpc_get_service_node_key" title="Permanent link">&para;</a></h3>
-<p>Get the service node public key of the queried daemon. 
-The daemon must be started in --service-node mode otherwise this RPC command will fail.</p>
+<p>Get the service node public key of the queried daemon. </p>
+<p>The daemon must be started in --service-node mode otherwise this RPC command will fail.</p>
+<p>Endpoints: get_service_node_key</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_service_node_key&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;service_node_pubkey&quot;: &quot;default string&quot;,
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
 <li><code>service_node_pubkey - string</code>: The queried daemon's service node key.</li>
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_service_nodes">COMMAND_RPC_GET_SERVICE_NODES<a class="headerlink" href="#command_rpc_get_service_nodes" title="Permanent link">&para;</a></h3>
 <p>Get information on Service Nodes.</p>
+<p>Endpoints: get_service_nodes, get_all_service_nodes</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_service_nodes&quot;,
+  &quot;params&quot;: {
+    &quot;service_node_pubkeys&quot;: [&quot;default string&quot;, ...],
+    &quot;include_json&quot;: true
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;service_node_states&quot;: [, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;as_json&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>service_node_pubkeys - string[]</code>: Array of public keys of active Service Nodes to get information about. Pass the empty array to query all Service Nodes.</li>
@@ -3239,11 +4356,28 @@ The daemon must be started in --service-node mode otherwise this RPC command wil
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 <li><code>as_json - string</code>: If <code>include_json</code> is set in the request, this contains the json representation of the <code>entry</code> data structure</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_staking_requirement">COMMAND_RPC_GET_STAKING_REQUIREMENT<a class="headerlink" href="#command_rpc_get_staking_requirement" title="Permanent link">&para;</a></h3>
-<p>Get the required amount of Loki to become a Service Node at the queried height. 
-For stagenet and testnet values, ensure the daemon is started with the 
-<code>--stagenet</code> or <code>--testnet</code> flags respectively.</p>
+<p>Get the required amount of Loki to become a Service Node at the queried height. </p>
+<p>For stagenet and testnet values, ensure the daemon is started with the </p>
+<p><code>--stagenet</code> or <code>--testnet</code> flags respectively.</p>
+<p>Endpoints: get_staking_requirement</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;
+{
+  &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_staking_requirement&quot;,
+  &quot;params&quot;: {
+    &quot;height&quot;: 123
+  }
+}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;staking_requirement&quot;: 123,
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <ul>
 <li><code>height - uint64</code>: The height to query the staking requirement for.</li>
@@ -3253,22 +4387,46 @@ For stagenet and testnet values, ensure the daemon is started with the
 <li><code>staking_requirement - uint64</code>: The staking requirement in Loki, in atomic units.</li>
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_service_node_blacklisted_key_images">COMMAND_RPC_GET_SERVICE_NODE_BLACKLISTED_KEY_IMAGES<a class="headerlink" href="#command_rpc_get_service_node_blacklisted_key_images" title="Permanent link">&para;</a></h3>
 <p>Get information on blacklisted Service Node key images.</p>
+<p>Endpoints: get_service_node_blacklisted_key_images</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/json_rpc -d &#39;{ &quot;jsonrpc&quot;:&quot;2.0&quot;, &quot;id&quot;:&quot;0&quot;, &quot;method&quot;:&quot;get_service_node_blacklisted_key_images&quot;}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;blacklist&quot;: [{
+      &quot;key_image&quot;: &quot;default string&quot;,
+      &quot;unlock_height&quot;: 123
+    }, ...],
+  &quot;status&quot;: &quot;default string&quot;
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
-<li><code>blacklist - entry[]</code>: Array of blacklisted key images, i.e. unspendable transactions<ul>
+<li><code>blacklist - entry[]</code>: Array of blacklisted key images, i.e. unspendable transactions</li>
 <li><code>key_image - string</code>: The key image of the transaction that is blacklisted on the network.</li>
 <li><code>unlock_height - uint64</code>: The height at which the key image is removed from the blacklist and becomes spendable.</li>
-</ul>
-</li>
 <li><code>status - string</code>: Generic RPC error code. "OK" is the success value.</li>
 </ul>
-<hr />
 <h3 id="command_rpc_get_output_blacklist">COMMAND_RPC_GET_OUTPUT_BLACKLIST<a class="headerlink" href="#command_rpc_get_output_blacklist" title="Permanent link">&para;</a></h3>
 <p>Get information on output blacklist.</p>
+<p>Endpoints: /get_output_blacklist.bin</p>
+<div class="codehilite"><pre><span></span>Example Request
+curl -X POST http://127.0.0.1:22023/get_output_blacklist.bin -d &#39;{}&#39; -H &#39;Content-Type: application/json&#39;
+
+Example Response
+{
+  &quot;blacklist&quot;: [123, ...],
+  &quot;status&quot;: &quot;default string&quot;,
+  &quot;untrusted&quot;: true
+}
+</pre></div>
+
+
 <p><strong>Inputs:</strong></p>
 <p><strong>Outputs:</strong></p>
 <ul>
