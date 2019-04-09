@@ -1025,11 +1025,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#minimum-contribution-rules" title="Minimum Contribution Rules" class="md-nav__link">
+    Minimum Contribution Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#621-operator" title="6.2.1 - Operator" class="md-nav__link">
     6.2.1 - Operator
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#reserved-pool" title="Reserved Pool" class="md-nav__link">
@@ -1042,6 +1050,11 @@
   <a href="#open-pool" title="Open Pool" class="md-nav__link">
     Open Pool
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1066,6 +1079,33 @@
   <a href="#step-7-service-node-check" title="Step 7 - Service Node Check" class="md-nav__link">
     Step 7 - Service Node Check
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-unlock-stake" title="Step 8 - Unlock Stake" class="md-nav__link">
+    Step 8 - Unlock Stake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-locked-stake-amount-and-duration" title="See Locked Stake Amount and Duration" class="md-nav__link">
+    See Locked Stake Amount and Duration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1976,11 +2016,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#minimum-contribution-rules" title="Minimum Contribution Rules" class="md-nav__link">
+    Minimum Contribution Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#621-operator" title="6.2.1 - Operator" class="md-nav__link">
     6.2.1 - Operator
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#reserved-pool" title="Reserved Pool" class="md-nav__link">
@@ -1993,6 +2041,11 @@
   <a href="#open-pool" title="Open Pool" class="md-nav__link">
     Open Pool
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2017,6 +2070,33 @@
   <a href="#step-7-service-node-check" title="Step 7 - Service Node Check" class="md-nav__link">
     Step 7 - Service Node Check
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-unlock-stake" title="Step 8 - Unlock Stake" class="md-nav__link">
+    Step 8 - Unlock Stake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-locked-stake-amount-and-duration" title="See Locked Stake Amount and Duration" class="md-nav__link">
+    See Locked Stake Amount and Duration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2114,10 +2194,10 @@
 <p>Service Nodes are full nodes on the Loki network</p>
 </li>
 <li>
-<p>Full nodes become Service Nodes when the owner <a href="../StakingRequirement/">locks the required amount of Loki</a> for 30 days (2 days on testnet) and submits a registration transaction</p>
+<p>Full nodes become Service Nodes when the owner <a href="../StakingRequirement/">locks the required amount of Loki</a> and submits a registration transaction.</p>
 </li>
 <li>
-<p>Once accepted by the network, the Service Node is eligible to win block rewards</p>
+<p>Once accepted by the network, the Service Node is eligible to win block rewards.</p>
 </li>
 <li>
 <p>Multiple participants can be involved in one Service Node and can have the reward automatically distributed</p>
@@ -2485,7 +2565,7 @@ When typing the password, the characters will not appear. It will seem as if you
 <blockquote>
 <p>If you are running a Service Node on the testnet you will only ever require 100 testnet Loki to run the Node. You can ask the Telegram @LokiSNBot for some testnet loki or ask someone in the Loki Discord Community for some.</p>
 </blockquote>
-<p><strong>If you are staking please do not use Subaddresses. They are currently unsupported by the Loki wallet</strong> </p>
+<p><strong>If you are staking please do not use Subaddresses. They are currently unsupported by the Loki wallet.</strong> </p>
 <p>We will need our address to register our Service Node later, to get your primary address type the following command:</p>
 <div class="codehilite"><pre><span></span>address
 </pre></div>
@@ -2521,7 +2601,6 @@ the registration process by running the following interactive command:</p>
 
 <p>The daemon will output the current staking requirement and prompt you with an input to clarify whether you are an individual staker or you will be running a pool. Type <code>y</code> and click enter as we will be the sole staker.</p>
 <p>The daemon will now prompt us for the Loki address of the operator. If you followed step 5 you should have this address saved in a notepad, if not run through step 5 again to find your Loki Address. Once we have the Loki Address copied to our clipboard we can then right click the terminal screen to paste the address. Double check the address matches the one of your wallet then click enter if it is the same.</p>
-<p>The daemon will now ask if you wish to enable automatic re-staking. Type <code>y</code> and click enter if you would like to have your Service Node re-stake automatically for you at the end of every 30 days. Type <code>n</code> if you would like to re-stake manually. </p>
 <p>The daemon will now ask for a final confirmation, if you agree to the information provided type <code>y</code> and click enter.</p>
 <p>The daemon will output a command for us to run looking similar to:</p>
 <div class="codehilite"><pre><span></span>register_service_node 4294967292 T6TCCyDgjjbddtzwNGryRJ5HntgGYvqZTagBb2mtHhn7WWz7i5JDeqhFiHqu7ret56411ZJS7Thfeis718bVteBZ2UA6Y7G2d 4294967292 100.000000000 1535677391 ec3895ea70a4a91b5ec4b5e1df96a45e07046f1fb0123c754d98fb2d70f4529d 5bb35d7b8ab1acb943bc47913ada8f9d2e6d6e22264e57484a04c1bbfd461f0ee2e5435454cd9b7059b221eb506ce9ea4537ddd9faf1f1757e0ef611a41c0609
@@ -2535,49 +2614,31 @@ the registration process by running the following interactive command:</p>
 If registering multiple nodes, it will likely be necessary to wait at least 10 blocks between Service Nodes before running the register Service Node command in the wallet.</p>
 <p>You have 2 weeks from the moment of preparing the registration command on the Service Node to actually run the <code>register_service_node</code> command in the wallet, however it is advised to do it as soon as possible.</p>
 <p>Run through step 5 once more to open our Loki wallet (if you don't already have it open). Once we are in our wallet run the command the daemon outputted for us when we prepared our Service Node registration.</p>
+<p>The wallet will prompt us to confirm our password, then the amount of Loki to stake. Confirm this by typing <code>y</code> and clicking enter. </p>
 <blockquote>
-<p>If you prepared a registration with automatic restaking the <code>register_service_node</code> command will contain an <code>auto</code> keyword.  Running this command will push the wallet process into the background. See additional information at the end of this guide to learn how to stop the auto command.</p>
+<p>Note: At this point you now have locked stakes! To unlock your stake run the following</p>
 </blockquote>
-<p>The wallet will prompt us to confirm our password, then the amount of Loki to stake. Confirm this by typing <code>y</code> and clicking enter. Well done! Let's continue to the next step <strong>"Step 7 - Service Node Check"</strong> to check if our Service Node is running.</p>
+<p>Well done! Let's continue to the next step <strong>"Step 7 - Service Node Check"</strong> to check if our Service Node is running.</p>
 <h4 id="62-pool-staking">6.2 - Pool Staking<a class="headerlink" href="#62-pool-staking" title="Permanent link">&para;</a></h4>
-<p>Service Nodes can be split between multiple parties. At a minimum, the operator must stake at least 25% of the total required amount. The operator can also reserve contribution slots for specific addresses to prevent random users from adding to the pool.</p>
-<p>In any given pool, there will be at most 4 contributors including the operator. Each participant, including the operator, must contribute 25% of the minimum, except the last one who completes the stake. So for example, valid splits might be:</p>
-<table>
-<thead>
-<tr>
-<th align="center">Operator</th>
-<th align="center">Contributor 1</th>
-<th align="center">Contributor 2</th>
-<th align="center">Contributor 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">25%</td>
-<td align="center">25%</td>
-<td align="center">40%</td>
-<td align="center">10%</td>
-</tr>
-<tr>
-<td align="center">65%</td>
-<td align="center">25%</td>
-<td align="center">10%</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">90%</td>
-<td align="center">10%</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">99%</td>
-<td align="center">1%</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<h5 id="minimum-contribution-rules">Minimum Contribution Rules<a class="headerlink" href="#minimum-contribution-rules" title="Permanent link">&para;</a></h5>
+<p>Infinite Staking introduces new limitations on the number of transactions that can be contributed to a Service Node, changing the minimum contribution rules for participating in the Service Node. </p>
+<p>Service Nodes accept at most 4 contributions, meaning the minimum contribution to a Service Node becomes:</p>
+<p><center><img alt="Contribution" src="../../assets/contribution.svg" /></center></p>
+<p>In a pooled Service Node with reserved spots, the Minimum Contribution must be either the Reserved Amount or the Contribution determined by the above equation, whichever is larger.</p>
+<p><center><img alt="Min Contribution" src="../../assets/mincontribution.svg" /></center></p>
+<p>A simplistic example being, if the staking requirement is 24,000 Loki then if,</p>
+<ul>
+<li>
+<p>Operator contributes 50% of the requirement (12,000 Loki)</p>
+</li>
+<li>
+<p>The next contributor must contribute at least (⅓ * 12,000) Loki i.e. 4000 Loki to become a participant.</p>
+</li>
+<li>
+<p>If this contributor had reserved a spot for more than 4000 Loki, their Minimum Contribution would be that amount.</p>
+</li>
+</ul>
+<p>There are rules in the client software in place to stop users from irreversibly funding a Service Node into an invalid state.</p>
 <p>Depending on the individual and their circumstance they will need to:</p>
 <ul>
 <li>
@@ -2623,7 +2684,7 @@ the registration process by running the following interactive command:</p>
 <p>The terminal will now display the minimum reserve the operator can contribute and request the operator to input the amount in Loki they wish to contribute. Type your desired <code>&lt;operator contribution&gt;</code> and click return.</p>
 <p>Once we have set the operators desired stake amount we have the option to either leave the pool open for anyone to contribute or lock a reserve for individuals that have agreed with us to stake within our Service Node. </p>
 <hr />
-<h5 id="reserved-pool">Reserved Pool<a class="headerlink" href="#reserved-pool" title="Permanent link">&para;</a></h5>
+<h6 id="reserved-pool">Reserved Pool<a class="headerlink" href="#reserved-pool" title="Permanent link">&para;</a></h6>
 <p>If the operator wishes to reserve spots for specific contributors they should type <code>y</code> and click return. </p>
 <p>The terminal will now prompt the operator for the number of additional contributors they have organised to be apart of this Service Node. Type in the number of reserved contributors, not including themselves, and click return.</p>
 <p>The daemon will now prompt us for the Loki address of the operator. If you followed step 5 you should have this address saved in a notepad, if not run through step 5 again to find your address. Once we have the Loki Address copied to our clipboard we can then right click the terminal screen to paste the address then click return to confirm your address.</p>
@@ -2631,10 +2692,9 @@ the registration process by running the following interactive command:</p>
 <blockquote>
 <p><em>NOTE: It is possible to reserve only some of the required stakes for specific contributors while leaving the remaining stake open.</em></p>
 </blockquote>
-<p>The daemon will now ask if you wish to enable automatic re-staking. Type <code>y</code> and hit return if you would like to have your Service Node  re-stake automatically at the end of every 30 days. Type <code>n</code> if you would like to re-stake manually.</p>
 <p>You will now be asked to confirm the information above is correct.</p>
 <hr />
-<h5 id="open-pool">Open Pool<a class="headerlink" href="#open-pool" title="Permanent link">&para;</a></h5>
+<h6 id="open-pool">Open Pool<a class="headerlink" href="#open-pool" title="Permanent link">&para;</a></h6>
 <p>If the operator wishes to leave their pool complete open to contributions they should type <code>n</code> and click return. The terminal will prompt the operator to input their address. Once the address has been inputted the terminal will display the remaining portion that needs to be contributed by others. If you agree click <code>y</code> and hit return.</p>
 <hr />
 <p>The daemon will display a summary of the information we entered. This is our chance for a final check over to make sure we entered in the right information. If you confirm the information is correct type <code>y</code> and click return.</p>
@@ -2654,9 +2714,6 @@ the registration process by running the following interactive command:</p>
 
 
 <p>Run through step 5 once more to open our Loki wallet. Once we are in our wallet run the command the daemon outputted for us when we prepared our Service Node. The wallet will prompt us to confirm our password, then the amount of Loki to stake. Confirm this by typing <code>y</code> and clicking enter.</p>
-<blockquote>
-<p>If you requested automatic restaking the registration command will cause the wallet to close pushing the process into the background. See additional information at the end of this guide to learn how to stop the auto command.</p>
-</blockquote>
 <p>Once this command completes your staking transaction will be sent to be included on the blockchain.
 It may take a few minutes for the transaction to be mined into a block; you can check the status
 using</p>
@@ -2685,15 +2742,6 @@ using</p>
 <p>If using the desktop GUI wallet, the Stake command can be found under the Advanced - Service Node
 menu.  Enter the service <code>&lt;Service Node Pubkey&gt;</code> and <code>&lt;contribution amount&gt;</code> and hit the Stake
 button.</p>
-<p>The Pool Contributor can also include the <code>auto</code> command in the CLI wallet, when staking this will create a wallet which runs as a background process and automatically signs a register transaction each 30 days, so the contributor need not sign a new transaction manually each registration period.</p>
-<div class="codehilite"><pre><span></span>stake auto &lt;Service Node Pubkey&gt; &lt;address&gt; &lt;contribution amount&gt;
-</pre></div>
-
-
-<blockquote>
-<p>If you run the <code>auto</code> command the wallet will close pushing the process into the background. See additional information at the end of this guide to learn how to stop autostaking.</p>
-<p>The <code>auto</code> command does not work with a multsig wallet as there is a requirement for the party who is staking to have the transaction signed by another signer. Thus is it advised if you are using a multisig wallet to maintain the staking once a month when the funds are unlocked.</p>
-</blockquote>
 <p>At this stage you will need to wait for the other contributors to provide their collateral. Once everyone has staked you can refer to <strong>“Step 7 - Service Node Check”</strong> to see where your Service Node Operator’s node is in the list.</p>
 <p>Congratulations, you are now staking.</p>
 <h3 id="step-7-service-node-check">Step 7 - Service Node Check<a class="headerlink" href="#step-7-service-node-check" title="Permanent link">&para;</a></h3>
@@ -2716,6 +2764,23 @@ button.</p>
 <p>To check this information directly with the service node itself, first get the current block height by running <code>~/loki/lokid status</code> into the terminal: it will output this information. Once we have the block height we can then check the current Service Nodes on the network at our specified block height.</p>
 <p>Run the command <code>~/loki/lokid print_quorum_state &lt;block height&gt;</code> replacing <code>&lt;block height&gt;</code> with the number minus 1 that was outputted when running <code>status</code> command.</p>
 <p>If your <code>&lt;Service Node Pubkey&gt;</code> is sitting in the list you know you are now staking.</p>
+<h3 id="step-8-unlock-stake">Step 8 - Unlock Stake<a class="headerlink" href="#step-8-unlock-stake" title="Permanent link">&para;</a></h3>
+<p>Service Nodes will continually receive block rewards indefinitely until a stake is unlocked or the Service Node becomes deregistered. Unlocking is available via the following command which needs to be run in the command line wallet:</p>
+<div class="codehilite"><pre><span></span>request_stake_unlock &lt;service node key&gt;
+</pre></div>
+
+
+<p>Once the unlock is requested and the request is included in a block in the blockchain, the Service Node will then expire in 15 days (10800 blocks) and the funds will become unlocked after expiry.</p>
+<p>In pooled nodes, any contributor that requests the stake to unlock will schedule the Service Node for expiration. All locked stakes in that Service Node will be unlocked in 15 days (10800 blocks). Once the unlock is requested, this process can not be undone or prolonged. Service Node participants will continue receiving rewards until expiration.</p>
+<p>Deregistrations can be issued at any point during the active lifecycle of the Service Node. This is inclusive of the time period during which the Service Node is scheduled for expiry. Getting deregistered removes your Service Node from the network and your stakes are placed into a list of blacklisted transactions. Blacklisted transactions are locked and unspendable for 30 days (21600 blocks) from the block in which the Service Node was deregistered.</p>
+<p>Receiving a deregistration after participants have already requested the stake to unlock overrides the 15 day (10800 blocks) unlock time, and resets the unlock time to 30 days (21600 blocks).</p>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<h4 id="see-locked-stake-amount-and-duration">See Locked Stake Amount and Duration<a class="headerlink" href="#see-locked-stake-amount-and-duration" title="Permanent link">&para;</a></h4>
+<p>We can also view our locked stake by running the following command from our <code>loki-wallet-cli</code> we staked from:</p>
+<div class="codehilite"><pre><span></span>print_locked_stakes
+</pre></div>
+
+
 <h2 id="express-setup-guide">Express Setup Guide<a class="headerlink" href="#express-setup-guide" title="Permanent link">&para;</a></h2>
 <p>This section is for power users who are more familiar with servers and the CLI interface. There's a couple of things your going to want to do before you commence.</p>
 <p><strong>1. Get a Server that meets requirements</strong></p>
