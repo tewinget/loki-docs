@@ -1289,8 +1289,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Lokinet/Guides/Install/" title="Installation" class="md-nav__link">
-      Installation
+    <a href="../../Lokinet/Guides/Install/" title="Lokinet Linux Guide" class="md-nav__link">
+      Lokinet Linux Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Lokinet/Guides/lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-nav__link">
+      Lokinet Windows Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Lokinet/Guides/lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
+      Lokinet Mac Guide
     </a>
   </li>
 
@@ -1363,30 +1387,6 @@
   <li class="md-nav__item">
     <a href="../../Lokinet/Guides/ExitNode/" title="Exit Nodes" class="md-nav__link">
       Exit Nodes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Lokinet/Guides/lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-nav__link">
-      Lokinet Windows Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Lokinet/Guides/lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
-      Lokinet Mac Guide
     </a>
   </li>
 
@@ -2168,7 +2168,7 @@
 <tbody>
 <tr>
 <td>Latest Binary</td>
-<td><a href="https://github.com/loki-project/loki/releases/latest">Loki Festive Freya</a></td>
+<td><a href="https://github.com/loki-project/loki/releases/latest">Summer Sign</a></td>
 </tr>
 <tr>
 <td>Software</td>
@@ -2418,49 +2418,49 @@ installed:</p>
 
 <p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
 <p>Your command should look something like:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.2/loki-linux-x64-v3.0.2.zip
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.6/loki-linux-x64-v3.0.6.zip
 </pre></div>
 
 
-<p>To unzip the downloaded zip file run the following command (changing 2.0.4 to whatever version you
+<p>To unzip the downloaded zip file run the following command (changing 3.0.6 to whatever version you
 downloaded above):</p>
-<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.2.zip
+<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.6.zip
 </pre></div>
 
 
 <p>You will see something like this:</p>
-<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.2.zip
-   creating: loki-linux-x64-v3.0.2/
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-ancestry  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-depth  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-export  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-import  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-mark-spent-outputs  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-stats  
-  inflating: loki-linux-x64-v3.0.2/loki-blockchain-usage  
-  inflating: loki-linux-x64-v3.0.2/loki-gen-trusted-multisig  
-  inflating: loki-linux-x64-v3.0.2/loki-wallet-cli  
-  inflating: loki-linux-x64-v3.0.2/loki-wallet-rpc  
-  inflating: loki-linux-x64-v3.0.2/lokid  
+<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.6.zip
+   creating: loki-linux-x64-v3.0.6/
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-ancestry  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-depth  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-export  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-import  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-mark-spent-outputs  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-stats  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-usage  
+  inflating: loki-linux-x64-v3.0.6/loki-gen-trusted-multisig  
+  inflating: loki-linux-x64-v3.0.6/loki-wallet-cli  
+  inflating: loki-linux-x64-v3.0.6/loki-wallet-rpc  
+  inflating: loki-linux-x64-v3.0.6/lokid  
 </pre></div>
 
 
-<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.2</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
-<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.2
+<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.6</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
+<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.6
 ls
 </pre></div>
 
 
-<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v3.0.2</code> folder:</p>
+<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v3.0.6</code> folder:</p>
 <div class="codehilite"><pre><span></span>cd
-ln -snf loki-linux-x64-v3.0.2 loki
+ln -snf loki-linux-x64-v3.0.6 loki
 </pre></div>
 
 
-<p>This creates a virtual <code>loki</code> folder that points to the <code>loki-linux-x64-v3.0.2</code> folder.  This isn't
+<p>This creates a virtual <code>loki</code> folder that points to the <code>loki-linux-x64-v3.0.6</code> folder.  This isn't
 strictly necessary, but will help with upgrades in the future: when you want to upgrade (for
-example, to a future 3.0.0 release) you can just repeat everything in this step again and the <code>loki</code>
-symlink will be updated to the new folder containing the 3.0.0 binaries.</p>
+example, to a future 3.0.6 release) you can just repeat everything in this step again and the <code>loki</code>
+symlink will be updated to the new folder containing the 3.0.6 binaries.</p>
 <p>Excellent! We now have all of the necessary files to get this show on the road!</p>
 <blockquote>
 <p><em>NOTE: If you’re nervous about trusting the binaries or the download link, you should build it from source yourself. Instructions for that can be found in the README of <a href="https://github.com/loki-project/loki">https://github.com/loki-project/loki</a></em></p>
@@ -2798,7 +2798,7 @@ button.</p>
 <p><strong>1. Get a Server that meets requirements</strong></p>
 <p><strong>2. Run the Daemon on a server from a non-root user account, then stake from a local wallet (or a wallet on a separate server).</strong></p>
 <blockquote>
-<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the <a href="https://github.com/loki-project/loki/releases/latest">latest version</a>, example <code>v3.0.2</code></p>
+<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the <a href="https://github.com/loki-project/loki/releases/latest">latest version</a>, example <code>v3.0.6</code></p>
 </blockquote>
 <p><strong>3. Connect via SSH to your server</strong></p>
 <p><strong>4. add new user</strong></p>
