@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://lokidocs.com/Wallets/WebWallet/TroubleshootWebWallet/">
+        <link rel="canonical" href="https://lokidocs.com/Wallets/GuiWallet/loki-electron-guide/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>TroubleshootWebWallet - Loki Docs</title>
+        <title>Electron Gui Setup - Loki Docs</title>
       
     
     
@@ -96,6 +96,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="../../../#setup-guide-on-the-loki-gui-wallet" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -118,7 +122,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                TroubleshootWebWallet
+                Electron Gui Setup
               </span>
             
           
@@ -190,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -215,7 +221,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../WalletsOverview/" title="Wallets" class="md-tabs__link">
+        <a href="../../WalletsOverview/" title="Wallets" class="md-tabs__link md-tabs__link--active">
           Wallets
         </a>
       
@@ -378,10 +384,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Wallets
@@ -493,10 +501,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5" checked>
     
     <label class="md-nav__link" for="nav-5-5">
       Guides
@@ -512,11 +522,116 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../GuiWallet/loki-electron-guide/" title="Electron Gui Setup" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Electron Gui Setup
+      </label>
+    
+    <a href="./" title="Electron Gui Setup" class="md-nav__link md-nav__link--active">
       Electron Gui Setup
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-electron-wallet-and-allow-defender-permissions" title="Install Electron wallet and allow Defender permissions." class="md-nav__link">
+    Install Electron wallet and allow Defender permissions.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-running-the-wallet-for-the-first-time" title="1: Running the Wallet for the first time." class="md-nav__link">
+    1: Running the Wallet for the first time.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-choose-your-language" title="1.1: Choose your language." class="md-nav__link">
+    1.1: Choose your language.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-configure-your-settings" title="1.2: Configure your settings." class="md-nav__link">
+    1.2: Configure your settings.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creatingimporting-wallet" title="2: Creating/importing Wallet." class="md-nav__link">
+    2: Creating/importing Wallet.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-creating-new-wallet" title="2.1: Creating new Wallet." class="md-nav__link">
+    2.1: Creating new Wallet.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-importing-wallet-from-seed" title="2.2: Importing Wallet from seed." class="md-nav__link">
+    2.2: Importing Wallet from seed.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -526,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../GuiWallet/loki-gui-guide/" title="Gui Setup" class="md-nav__link">
+    <a href="../loki-gui-guide/" title="Gui Setup" class="md-nav__link">
       Gui Setup
     </a>
   </li>
@@ -1653,21 +1768,173 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows" title="Windows" class="md-nav__link">
+    Windows
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-electron-wallet-and-allow-defender-permissions" title="Install Electron wallet and allow Defender permissions." class="md-nav__link">
+    Install Electron wallet and allow Defender permissions.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-running-the-wallet-for-the-first-time" title="1: Running the Wallet for the first time." class="md-nav__link">
+    1: Running the Wallet for the first time.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-choose-your-language" title="1.1: Choose your language." class="md-nav__link">
+    1.1: Choose your language.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-configure-your-settings" title="1.2: Configure your settings." class="md-nav__link">
+    1.2: Configure your settings.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creatingimporting-wallet" title="2: Creating/importing Wallet." class="md-nav__link">
+    2: Creating/importing Wallet.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-creating-new-wallet" title="2.1: Creating new Wallet." class="md-nav__link">
+    2.1: Creating new Wallet.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-importing-wallet-from-seed" title="2.2: Importing Wallet from seed." class="md-nav__link">
+    2.2: Importing Wallet from seed.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/Wallets/WebWallet/TroubleshootWebWallet.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/Wallets/GuiWallet/loki-electron-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>TroubleshootWebWallet</h1>
-                
-                <blockquote>
+                <h1 id="setup-guide-on-the-loki-gui-wallet">Setup Guide on the Loki GUI Wallet<a class="headerlink" href="#setup-guide-on-the-loki-gui-wallet" title="Permanent link">&para;</a></h1>
+<p>This document will tell you exactly how to set up and operate the Loki GUI wallet.
+The latest version of the wallet can be downloaded <a href="https://github.com/loki-project/loki-electron-gui-wallet/releases">here</a>.</p>
+<h2 id="windows"><strong>Windows</strong><a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>TO DO</p>
+<p><strong>Mac and Linux users skip to <a href="#1-running-the-wallet-for-the-first-time">step 1</a>.</strong></p>
 </blockquote>
+<h3 id="install-electron-wallet-and-allow-defender-permissions">Install Electron wallet and allow Defender permissions.<a class="headerlink" href="#install-electron-wallet-and-allow-defender-permissions" title="Permanent link">&para;</a></h3>
+<p>Open the executable file we downloaded from the Loki Github <code>Loki.Electron.Wallet.Setup.X.X.X-windows.exe</code> to start installion.</p>
+<p>When installing the wallet the Windows Defender SmartScreen will prevent you from opening it unless you give the file permission. </p>
+<p>Click <code>Run anyway</code> to give the executable permission.</p>
+<p><center><img alt="Defender" src="../../../assets/images/Defender.JPG" /></center></p>
+<p>Now run through the installion prompts and then click install.</p>
+<p>Once the installation has finalised open the Loki Wallet by clicking your "Windows" key or the start menu and searching for <code>loki electron wallet</code>.</p>
+<h2 id="1-running-the-wallet-for-the-first-time">1: Running the Wallet for the first time.<a class="headerlink" href="#1-running-the-wallet-for-the-first-time" title="Permanent link">&para;</a></h2>
+<p>Once the installation has finalised open the Loki Wallet by clicking your "Windows" key or the start menu and searching for <code>loki electron wallet</code>.</p>
+<p>Once opened the wallet will need to be configured. </p>
+<h3 id="11-choose-your-language">1.1: Choose your language.<a class="headerlink" href="#11-choose-your-language" title="Permanent link">&para;</a></h3>
+<p><center><img alt="Language selection" src="../../../assets/images/electron2.JPG" /></center></p>
+<h3 id="12-configure-your-settings">1.2: Configure your settings.<a class="headerlink" href="#12-configure-your-settings" title="Permanent link">&para;</a></h3>
+<p>Default settings are fine to use. </p>
+<blockquote>
+<p>This is not required but if you would like to run your own node and broadcast your own transactions check the <code>Local + Remote Daemon</code> or the <code>Local Daemon Only</code> option.</p>
 </blockquote>
+<p>Click <code>Next</code> when ready.</p>
+<p><center><img alt="Configure Settings" src="../../../assets/images/electron3.JPG" /></center></p>
+<h2 id="2-creatingimporting-wallet">2: Creating/importing Wallet.<a class="headerlink" href="#2-creatingimporting-wallet" title="Permanent link">&para;</a></h2>
+<p>Once your settings have been configured if you do not already have a wallet generated yet then your screen will look like the following:</p>
+<p><center><img alt="Create New Wallet" src="../../../assets/images/electron4.JPG" /></center></p>
+<h3 id="21-creating-new-wallet">2.1: Creating new Wallet.<a class="headerlink" href="#21-creating-new-wallet" title="Permanent link">&para;</a></h3>
+<p>To create a new wallet click the <code>Create new wallet</code> button.</p>
+<p>Next fill in the input fields that are required. It is recommended that you should consider encrypting your key with an optional password. </p>
+<p>Once input boxes are filled in click <code>CREATE WALLET</code> button.</p>
+<p><center><img alt="Create Wallet" src="../../../assets/images/electron5.JPG" /></center></p>
+<h3 id="22-importing-wallet-from-seed">2.2: Importing Wallet from seed.<a class="headerlink" href="#22-importing-wallet-from-seed" title="Permanent link">&para;</a></h3>
+<p>To import a wallet from seed click the <code>Restore wallet from seed</code> button.</p>
+<p>Next fill in the following input fields:</p>
+<ul>
+<li>
+<p>Wallet Name: <code>Enter a name for your wallet.</code></p>
+</li>
+<li>
+<p>Mnemonic Seed: <code>Enter the seed phrase that was generated when intially creating your wallet.</code></p>
+</li>
+<li>
+<p>Restore from Date: <code>Enter the date or blockheight in which you want to restore your wallet from.</code></p>
+</li>
+</ul>
+<blockquote>
+<p>It is quicker to restore from the date in which you generated the wallet.</p>
+</blockquote>
+<ul>
+<li>
+<p>Password: <code>Enter an optional password.</code></p>
+</li>
+<li>
+<p>Confirm Password: <code>Enter the same password to confirm spelling.</code></p>
+</li>
+</ul>
+<p>Once input boxes are filled in click <code>RESTORE WALLET</code> button.</p>
+<p><center><img alt="Restore from seed" src="../../../assets/images/electron6.JPG" /></center></p>
                 
                   
                 
@@ -1684,6 +1951,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../Multisignature/" title="Multsignature" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Multsignature
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../loki-gui-guide/" title="Gui Setup" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Gui Setup
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
