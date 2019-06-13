@@ -2005,7 +2005,7 @@
                 <h1 id="full-guide-on-service-nodes">Full Guide on Service Nodes<a class="headerlink" href="#full-guide-on-service-nodes" title="Permanent link">&para;</a></h1>
 <p>This document will tell you exactly how to set up and operate a Service Node for the Loki Project. This document was written with non-developers in mind, so people new to linux or command line operations should be able to follow along without any trouble. 
 If you feel confident around servers and the CLI, then skip to the <a href="#express-setup-guide">Express Setup Guide</a></p>
-<p>You can of course run the Loki software on any operating system that you can get it to build on, but for the purposes of this document, the instructions apply to running a Service Node on a remote Ubuntu 16.04 server. If that isn’t what you want to do, syntax and server set up will of course differ according to whatever OS you choose to run your Service Node from.</p>
+<p>You can of course run the Loki software on any operating system that you can get it to build on, but for the purposes of this document, the instructions apply to running a Service Node on a remote Ubuntu 18.04 server. If that isn’t what you want to do, syntax and server set up will of course differ according to whatever OS you choose to run your Service Node from.</p>
 <h3 id="summary-of-loki-service-node-requirements">Summary of Loki Service Node Requirements<a class="headerlink" href="#summary-of-loki-service-node-requirements" title="Permanent link">&para;</a></h3>
 <p>Full summary of Loki Service Node Requirements. This may change depending on Service Node functionality, so you should check here regularly, or follow our <a href="https://t.me/LokiCommunity">Telegram</a>/<a href="https://discord.gg/DN72VN">Discord</a> announcements channel.</p>
 <table>
@@ -2022,11 +2022,11 @@ If you feel confident around servers and the CLI, then skip to the <a href="#exp
 </tr>
 <tr>
 <td>Software</td>
-<td>Ubuntu 16.04, Ubuntu 18.04</td>
+<td>Ubuntu 18.04, Ubuntu 19.04</td>
 </tr>
 <tr>
 <td>Storage</td>
-<td>30-50gb</td>
+<td>18gb</td>
 </tr>
 <tr>
 <td>Ram</td>
@@ -2040,11 +2040,12 @@ If you feel confident around servers and the CLI, then skip to the <a href="#exp
 <li><a href="#new-user-guide">New User Guide</a><ul>
 <li>Step 1 <a href="#step-1-get-a-server">Server</a></li>
 <li>Step 2 <a href="#step-2-prepare-your-server">Server Prep</a></li>
-<li>Step 3 <a href="#step-3-download-the-loki-binaries">Download Binaries</a></li>
-<li>Step 4 <a href="#step-4-run-the-service-node-daemon">Run the Loki Daemon</a></li>
+<li>Step 3 <a href="#step-3-loki-launcher">Loki Launcher</a></li>
+<li>Step 4 <a href="#step-4-loki-launcher-as-a-system-service">Service File</a></li>
 <li>Step 5 <a href="#step-5-getopen-a-wallet">Open a Loki Wallet</a></li>
 <li>Step 6 <a href="#step-6-service-node-registration">Register Node</a></li>
 <li>Step 7 <a href="#step-7-service-node-check">Check Registration</a></li>
+<li>Step 8 <a href="#step-8-unlock-stake">Unlock Stake</a> (optional)</li>
 </ul>
 </li>
 <li><a href="#express-setup-guide">Express Setup Guide</a></li>
@@ -2184,7 +2185,7 @@ If you feel confident around servers and the CLI, then skip to the <a href="#exp
 <p>Note: We do not officially endorse any of these providers, this list is simply illustrative of some of the options currently available*</p>
 </blockquote>
 <p>Try not to pick the first one off the list. Do some digging and see which one looks the best to you, what your budget is, and what the latency is like for you based on the server location that you choose.</p>
-<p>When selecting your VPS’ operating system, choose Ubuntu 16.04 64 bit or Ubuntu 18.04 64 bit if you want to follow this guide. If you feel more confident or wish to run your server on another distribution or operating system, the Loki commands in this guide will still apply.</p>
+<p>When selecting your VPS’ operating system, choose Ubuntu 18.04 64 bit or Ubuntu 19.04 64 bit if you want to follow this guide. If you feel more confident or wish to run your server on another distribution or operating system, the Loki commands in this guide will still apply.</p>
 <h3 id="step-2-prepare-your-server">Step 2 - Prepare your Server<a class="headerlink" href="#step-2-prepare-your-server" title="Permanent link">&para;</a></h3>
 <p>Every provider has a slightly different way of issuing you access to your new VPS. Most will send an email with the IP address, root username, and a root password of the VPS.</p>
 <p>To access your server, you will need a SSH client for your operating system. Because we’re on Windows today, we’ll download PuTTY, Mac users can also use PuTTY. If you’re a Linux user, you probably don’t want us telling you where to get a SSH client from.</p>
