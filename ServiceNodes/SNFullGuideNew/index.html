@@ -1756,29 +1756,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-open-port-22023" title="3.2 - Open port 22023" class="md-nav__link">
-    3.2 - Open port 22023
+  <a href="#32-setting-up-your-loki-launcher-for-service-node" title="3.2 - Setting up your loki-launcher for Service Node" class="md-nav__link">
+    3.2 - Setting up your loki-launcher for Service Node
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-setting-up-your-loki-launcher-for-service-node" title="3.3 - Setting up your loki-launcher for Service Node" class="md-nav__link">
-    3.3 - Setting up your loki-launcher for Service Node
+  <a href="#33-download-lokid-binaries" title="3.3 - Download Lokid binaries" class="md-nav__link">
+    3.3 - Download Lokid binaries
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-download-lokid-binaries" title="3.4 - Download Lokid binaries" class="md-nav__link">
-    3.4 - Download Lokid binaries
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-start-the-loki-launcher" title="3.5 - Start the Loki Launcher" class="md-nav__link">
-    3.5 - Start the Loki Launcher
+  <a href="#34-start-the-loki-launcher" title="3.4 - Start the Loki Launcher" class="md-nav__link">
+    3.4 - Start the Loki Launcher
   </a>
   
 </li>
@@ -2273,32 +2266,20 @@ on our VPS by running the following command:</p>
 </pre></div>
 
 
-<h4 id="32-open-port-22023">3.2 - Open port 22023<a class="headerlink" href="#32-open-port-22023" title="Permanent link">&para;</a></h4>
-<p>We need to open port <code>22023</code> for the loki-launcher to work properly.</p>
-<p>Run the following command to open port <code>22023</code>.</p>
-<div class="codehilite"><pre><span></span>sudo iptables -A INPUT -p tcp --dport 22023 -j ACCEPT &amp; sudo iptables -A OUTPUT -p tcp --dport 22023 -j ACCEPT
-</pre></div>
-
-
-<p>Then run the following command to make this port remain open on reboot.</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install iptables-persistent
-</pre></div>
-
-
-<h4 id="33-setting-up-your-loki-launcher-for-service-node">3.3 - Setting up your loki-launcher for Service Node<a class="headerlink" href="#33-setting-up-your-loki-launcher-for-service-node" title="Permanent link">&para;</a></h4>
+<h4 id="32-setting-up-your-loki-launcher-for-service-node">3.2 - Setting up your loki-launcher for Service Node<a class="headerlink" href="#32-setting-up-your-loki-launcher-for-service-node" title="Permanent link">&para;</a></h4>
 <p>We now need to prequalify our server to be ready to run as a service node.</p>
 <p>To do so run the following command:</p>
 <div class="codehilite"><pre><span></span>loki-launcher prequal
 </pre></div>
 
 
-<h4 id="34-download-lokid-binaries">3.4 - Download Lokid binaries<a class="headerlink" href="#34-download-lokid-binaries" title="Permanent link">&para;</a></h4>
+<h4 id="33-download-lokid-binaries">3.3 - Download Lokid binaries<a class="headerlink" href="#33-download-lokid-binaries" title="Permanent link">&para;</a></h4>
 <p>We will download the Loki binaries by running the following command:</p>
 <div class="codehilite"><pre><span></span>sudo loki-launcher download-binaries
 </pre></div>
 
 
-<h4 id="35-start-the-loki-launcher">3.5 - Start the Loki Launcher<a class="headerlink" href="#35-start-the-loki-launcher" title="Permanent link">&para;</a></h4>
+<h4 id="34-start-the-loki-launcher">3.4 - Start the Loki Launcher<a class="headerlink" href="#34-start-the-loki-launcher" title="Permanent link">&para;</a></h4>
 <p>To start the loki launcher run the following command:</p>
 <div class="codehilite"><pre><span></span>sudo loki-launcher start
 </pre></div>
