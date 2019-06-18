@@ -975,19 +975,6 @@
     3.3 Fix loki-launcher permissions
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#34-setting-up-your-loki-launcher-for-service-node" title="3.4 - Setting up your loki-launcher for Service Node" class="md-nav__link">
-    3.4 - Setting up your loki-launcher for Service Node
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1008,25 +995,38 @@
     4.1: Stop existing lokid.service file
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42-setting-up-your-loki-launcher-for-service-node" title="4.2 - Setting up your loki-launcher for Service Node" class="md-nav__link">
+    4.2 - Setting up your loki-launcher for Service Node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-check-systemd" title="4.2: Check-systemd" class="md-nav__link">
-    4.2: Check-systemd
+  <a href="#43-check-systemd" title="4.3: Check-systemd" class="md-nav__link">
+    4.3: Check-systemd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-update-service-file" title="4.3 Update Service file" class="md-nav__link">
-    4.3 Update Service file
+  <a href="#44-update-service-file" title="4.4 Update Service file" class="md-nav__link">
+    4.4 Update Service file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#44-start-the-new-lokidservice-file" title="4.4 Start the new lokid.service file" class="md-nav__link">
-    4.4 Start the new lokid.service file
+  <a href="#45-start-the-new-lokidservice-file" title="4.5 Start the new lokid.service file" class="md-nav__link">
+    4.5 Start the new lokid.service file
   </a>
   
 </li>
@@ -1918,19 +1918,6 @@
     3.3 Fix loki-launcher permissions
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#34-setting-up-your-loki-launcher-for-service-node" title="3.4 - Setting up your loki-launcher for Service Node" class="md-nav__link">
-    3.4 - Setting up your loki-launcher for Service Node
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -1951,25 +1938,38 @@
     4.1: Stop existing lokid.service file
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#42-setting-up-your-loki-launcher-for-service-node" title="4.2 - Setting up your loki-launcher for Service Node" class="md-nav__link">
+    4.2 - Setting up your loki-launcher for Service Node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-check-systemd" title="4.2: Check-systemd" class="md-nav__link">
-    4.2: Check-systemd
+  <a href="#43-check-systemd" title="4.3: Check-systemd" class="md-nav__link">
+    4.3: Check-systemd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#43-update-service-file" title="4.3 Update Service file" class="md-nav__link">
-    4.3 Update Service file
+  <a href="#44-update-service-file" title="4.4 Update Service file" class="md-nav__link">
+    4.4 Update Service file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#44-start-the-new-lokidservice-file" title="4.4 Start the new lokid.service file" class="md-nav__link">
-    4.4 Start the new lokid.service file
+  <a href="#45-start-the-new-lokidservice-file" title="4.5 Start the new lokid.service file" class="md-nav__link">
+    4.5 Start the new lokid.service file
   </a>
   
 </li>
@@ -2081,13 +2081,6 @@
 </pre></div>
 
 
-<h4 id="34-setting-up-your-loki-launcher-for-service-node">3.4 - Setting up your loki-launcher for Service Node<a class="headerlink" href="#34-setting-up-your-loki-launcher-for-service-node" title="Permanent link">&para;</a></h4>
-<p>We now need to prequalify our server to be ready to run as a service node.</p>
-<p>To do so run the following command:</p>
-<div class="codehilite"><pre><span></span>loki-launcher prequal
-</pre></div>
-
-
 <h2 id="step-4-lokidservice-file">Step 4: lokid.service file<a class="headerlink" href="#step-4-lokidservice-file" title="Permanent link">&para;</a></h2>
 <p>Next we're going to have to stop our lokid.service file and update it to launch the launcher instead of lokid.</p>
 <h3 id="41-stop-existing-lokidservice-file">4.1: Stop existing lokid.service file<a class="headerlink" href="#41-stop-existing-lokidservice-file" title="Permanent link">&para;</a></h3>
@@ -2096,19 +2089,27 @@
 </pre></div>
 
 
-<h3 id="42-check-systemd">4.2: Check-systemd<a class="headerlink" href="#42-check-systemd" title="Permanent link">&para;</a></h3>
+<h4 id="42-setting-up-your-loki-launcher-for-service-node">4.2 - Setting up your loki-launcher for Service Node<a class="headerlink" href="#42-setting-up-your-loki-launcher-for-service-node" title="Permanent link">&para;</a></h4>
+<p>We now need to prequalify our server to be ready to run as a service node.</p>
+<p>To do so run the following command:</p>
+<div class="codehilite"><pre><span></span>loki-launcher prequal
+</pre></div>
+
+
+<p>In most cases this will let us know we are good to deploy our Service Node. Troubleshooting will be required at this point if an error message pops up.</p>
+<h3 id="43-check-systemd">4.3: Check-systemd<a class="headerlink" href="#43-check-systemd" title="Permanent link">&para;</a></h3>
 <p>Run the check-systemd to make systemd now launch the launcher instead of lokid:</p>
 <div class="codehilite"><pre><span></span>sudo loki-launcher check-systemd
 </pre></div>
 
 
-<h3 id="43-update-service-file">4.3 Update Service file<a class="headerlink" href="#43-update-service-file" title="Permanent link">&para;</a></h3>
+<h3 id="44-update-service-file">4.4 Update Service file<a class="headerlink" href="#44-update-service-file" title="Permanent link">&para;</a></h3>
 <p>Make sure the service is up to date:</p>
 <div class="codehilite"><pre><span></span>sudo systemctl daemon-reload
 </pre></div>
 
 
-<h3 id="44-start-the-new-lokidservice-file">4.4 Start the new lokid.service file<a class="headerlink" href="#44-start-the-new-lokidservice-file" title="Permanent link">&para;</a></h3>
+<h3 id="45-start-the-new-lokidservice-file">4.5 Start the new lokid.service file<a class="headerlink" href="#45-start-the-new-lokidservice-file" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>sudo systemctl start lokid.service
 </pre></div>
 
