@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://lokidocs.com/ServiceNodes/UpdateGuideLauncher/">
+        <link rel="canonical" href="https://lokidocs.com/ServiceNodes/UpdateGuideOld/">
       
       
       
@@ -902,8 +902,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../UpdateGuide/" title="Service Node Update Guide" class="md-nav__link">
-      Service Node Update Guide
+    <a href="../UpdateGuide/" title="Luncher Update Guide" class="md-nav__link">
+      Luncher Update Guide
     </a>
   </li>
 
@@ -928,6 +928,54 @@
   <li class="md-nav__item">
     <a href="../GUIStakingGuide/" title="Gui Staking Guide" class="md-nav__link">
       Gui Staking Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../launcherconfig/" title="Launcher Config File" class="md-nav__link">
+      Launcher Config File
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6">
+    
+    <label class="md-nav__link" for="nav-7-6">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-6">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../OpenPort22023/" title="Port 22023 Not Open" class="md-nav__link">
+      Port 22023 Not Open
     </a>
   </li>
 
@@ -1678,84 +1726,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-install-node-js" title="Step 2: Install Node JS" class="md-nav__link">
-    Step 2: Install Node JS
+  <a href="#step-2-download-the-new-loki-binaries" title="Step 2: Download the new Loki Binaries" class="md-nav__link">
+    Step 2: Download the new Loki Binaries
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-loki-launcher" title="Step 3: Loki Launcher" class="md-nav__link">
-    Step 3: Loki Launcher
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-install" title="3.1 Install" class="md-nav__link">
-    3.1 Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-download-lokid-binaries" title="3.2 Download lokid binaries" class="md-nav__link">
-    3.2 Download lokid binaries
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-fix-loki-launcher-permissions" title="3.3 Fix loki-launcher permissions" class="md-nav__link">
-    3.3 Fix loki-launcher permissions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-lokidservice-file" title="Step 4: lokid.service file" class="md-nav__link">
-    Step 4: lokid.service file
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-stop-existing-lokidservice-file" title="4.1: Stop existing lokid.service file" class="md-nav__link">
-    4.1: Stop existing lokid.service file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-check-systemd" title="4.2: Check-systemd" class="md-nav__link">
-    4.2: Check-systemd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-update-service-file" title="4.3 Update Service file" class="md-nav__link">
-    4.3 Update Service file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-start-the-new-lokidservice-file" title="4.4 Start the new lokid.service file" class="md-nav__link">
-    4.4 Start the new lokid.service file
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1775,16 +1748,17 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/ServiceNodes/UpdateGuideLauncher.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/loki-project/loki-docs/edit/master/docs/ServiceNodes/UpdateGuideOld.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="update-guide">Update Guide<a class="headerlink" href="#update-guide" title="Permanent link">&para;</a></h1>
-<p>This document is for Service Node Operators who have used the previous <a href="../SNFullGuide/">Service Node Full Guide</a> and wish to update to the Loki-launcher.</p>
+<p>This document is for Service Node Operators who have used the previous <a href="../SNFullGuide/">Service Node Full Guide</a> and wish to update the version of their Service Node.</p>
 <blockquote>
-<p>Note: This Guide is to help update a running lokid 3.0.6 Service Node to the loki-launcher.</p>
+<p>Note that this update guide is for individuals running their Service Node as a Service on linux. If you are using any <code>screen</code>'s you will need kill the screens and go back to the <a href="../SNFullGuide/">Service Node Full Guide</a> and follow it once more. </p>
+<p>It is highly recommended running your Service Node as a Service due to the ease of updating. </p>
 </blockquote>
 <h2 id="step-1-load-and-update-your-vps">Step 1: Load and Update your VPS.<a class="headerlink" href="#step-1-load-and-update-your-vps" title="Permanent link">&para;</a></h2>
-<p>If you are updating your Service Node you would by now have a good understanding of how to log in to your server. If you don't check out how you prepared your server in this guide <a href="../SNFullguide/#step-2-prepare-your-server">here</a>.</p>
+<p>If you are updating your VPS you would by now have a good understanding of how to log in to your server. If you don't check out how you prepared your server in this guide <a href="../SNFullguide/#step-2-prepare-your-server">here</a>.</p>
 <p>Once we have logged in to our VPS we should update our package lists, the below command downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies. It will do this for all repositories and PPAs.</p>
 <div class="codehilite"><pre><span></span>sudo apt update
 </pre></div>
@@ -1799,89 +1773,72 @@
 <p>If you are prompted during the upgrade that a new version of any file is available then click the up and down arrows until you are hovering over <code>install the package maintainer’s version</code> and click enter.</p>
 <p><center><img alt="Terminal window" src="../../assets/snode2.JPG" /></center></p>
 <p>Alright, good to go. Our server is now up to date. On to the fun part!</p>
-<h2 id="step-2-install-node-js">Step 2: Install Node JS<a class="headerlink" href="#step-2-install-node-js" title="Permanent link">&para;</a></h2>
-<p>In order to use the Loki Launcher we first need to install NodeJS.</p>
-<p>Run the following command:</p>
-<div class="codehilite"><pre><span></span>curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+<h2 id="step-2-download-the-new-loki-binaries">Step 2: Download the new Loki Binaries<a class="headerlink" href="#step-2-download-the-new-loki-binaries" title="Permanent link">&para;</a></h2>
+<p>To download the Linux binaries use the following command:</p>
+<div class="codehilite"><pre><span></span>wget &lt;link&gt;
 </pre></div>
 
 
-<p>then</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install -y nodejs
+<p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
+<p>Your command should look something like:</p>
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v3.0.6/loki-linux-x64-v3.0.6.zip
 </pre></div>
 
 
-<h2 id="step-3-loki-launcher">Step 3: Loki Launcher<a class="headerlink" href="#step-3-loki-launcher" title="Permanent link">&para;</a></h2>
-<h3 id="31-install">3.1 Install<a class="headerlink" href="#31-install" title="Permanent link">&para;</a></h3>
-<p>Run the following command to install loki-launcher</p>
-<div class="codehilite"><pre><span></span>sudo npm install -g loki-launcher
+<p>To unzip the downloaded zip file run the following command (changing 3.0.6 to whatever version you
+downloaded above):</p>
+<div class="codehilite"><pre><span></span>unzip loki-linux-x64-v3.0.6.zip
 </pre></div>
 
 
-<h3 id="32-download-lokid-binaries">3.2 Download lokid binaries<a class="headerlink" href="#32-download-lokid-binaries" title="Permanent link">&para;</a></h3>
-<p>Now loki-launcher is installed we should download the lokid binary:</p>
-<div class="codehilite"><pre><span></span>sudo loki-launcher download-binaries
+<p>You will see something like this:</p>
+<div class="codehilite"><pre><span></span>Archive:  loki-linux-x64-v3.0.6.zip
+   creating: loki-linux-x64-v3.0.6/
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-ancestry  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-depth  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-export  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-import  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-mark-spent-outputs  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-stats  
+  inflating: loki-linux-x64-v3.0.6/loki-blockchain-usage  
+  inflating: loki-linux-x64-v3.0.6/loki-gen-trusted-multisig  
+  inflating: loki-linux-x64-v3.0.6/loki-wallet-cli  
+  inflating: loki-linux-x64-v3.0.6/loki-wallet-rpc  
+  inflating: loki-linux-x64-v3.0.6/lokid  
 </pre></div>
 
 
-<h3 id="33-fix-loki-launcher-permissions">3.3 Fix loki-launcher permissions<a class="headerlink" href="#33-fix-loki-launcher-permissions" title="Permanent link">&para;</a></h3>
-<p>Let's change to root to make these changes:</p>
-<div class="codehilite"><pre><span></span>su - root
+<p>Note that they are unzipped into the <code>loki-linux-x64-v3.0.6</code> folder; you can check they are unzipped by running the following to change into the folder and then listing the files:</p>
+<div class="codehilite"><pre><span></span>cd loki-linux-x64-v3.0.6
+ls
 </pre></div>
 
 
-<p>Now while in root let's give our user <code>snode</code> the required permissions to run the loki-launcher.</p>
-<div class="codehilite"><pre><span></span>sudo loki-launcher fix-perms snode
+<p>We now want to replace our "symlink" to the new extracted <code>loki-linux-x64-v3.0.6</code> folder. If you are unfamiliar with what the "symlink" was doing previously have a look at the <a href="../SNFullGuide/#step-3-download-the-loki-binaries">Service Node Full Guide</a> where you first set it up.</p>
+<p>Otherwise, run the following command.:</p>
+<div class="codehilite"><pre><span></span>cd
+ln -snf &lt;folder_name&gt; loki
 </pre></div>
 
 
-<p>Now let's change back to user snode.</p>
-<div class="codehilite"><pre><span></span>su - snode
+<p>Where <code>&lt;folder_name&gt;</code> is the new folder we created when unziping the release. In this case if we were to update to <code>v3.0.6</code> the commands we would use would be:</p>
+<div class="codehilite"><pre><span></span>cd
+ln -snf loki-linux-x64-v3.0.6 loki
 </pre></div>
 
 
-<h2 id="step-4-lokidservice-file">Step 4: lokid.service file<a class="headerlink" href="#step-4-lokidservice-file" title="Permanent link">&para;</a></h2>
-<p>Next we're going to have to stop our service lokid.service file and update it to launch the launcher instead of lokid.</p>
-<h3 id="41-stop-existing-lokidservice-file">4.1: Stop existing lokid.service file<a class="headerlink" href="#41-stop-existing-lokidservice-file" title="Permanent link">&para;</a></h3>
-<p>Stop your existing service node:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl stop lokid.service
-</pre></div>
-
-
-<h3 id="42-check-systemd">4.2: Check-systemd<a class="headerlink" href="#42-check-systemd" title="Permanent link">&para;</a></h3>
-<p>Run the check-systemd to make systemd now launch the launcher instead of lokid:</p>
-<div class="codehilite"><pre><span></span>sudo loki-launcher check-systemd
-</pre></div>
-
-
-<h3 id="43-update-service-file">4.3 Update Service file<a class="headerlink" href="#43-update-service-file" title="Permanent link">&para;</a></h3>
-<p>Make sure the service is up to date:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl daemon-reload
-</pre></div>
-
-
-<h3 id="44-start-the-new-lokidservice-file">4.4 Start the new lokid.service file<a class="headerlink" href="#44-start-the-new-lokidservice-file" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>sudo systemctl start lokid.service
-</pre></div>
-
-
+<p>This replaces our virtual <code>loki</code> folder that pointed to an old folder to the <code>loki-linux-x64-v3.0.6</code> folder we created.</p>
 <p>At this point it is wise to restart your system with the following command:</p>
 <div class="codehilite"><pre><span></span>sudo reboot
 </pre></div>
 
 
-<p>Once the system has restarted it will reboot the new version of <code>lokid.service</code>.</p>
-<p>Log back in to your VPS and double check the new version of <code>lokid.service</code> is running smoothly by running the following command:</p>
+<p>Once the system has restarted it will reboot the new version of <code>lokid</code>.</p>
+<p>Log back in to your VPS and double check the new version of lokid is running smoothly by running the following command:</p>
 <div class="codehilite"><pre><span></span>sudo journalctl -u lokid.service -af
 </pre></div>
 
 
-<p>You can now access your <code>lokid</code> daemon by running the following command:</p>
-<div class="codehilite"><pre><span></span>loki-launcher client
-</pre></div>
-
-
-<p>This will allow you to parse commands into your daemon, for example: <code>print_sn_key</code> e.t.c.</p>
 <blockquote>
 <p><em>NOTE: If you’re nervous about trusting the binaries or the download link, you should build it from source yourself. Instructions for that can be found in the README of <a href="https://github.com/loki-project/loki">https://github.com/loki-project/loki</a></em></p>
 </blockquote>

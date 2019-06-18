@@ -38,7 +38,7 @@
     
     
       
-        <title>Launcher config files - Loki Docs</title>
+        <title>Launcher Config File - Loki Docs</title>
       
     
     
@@ -122,7 +122,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Launcher config files
+                Launcher Config File
               </span>
             
           
@@ -194,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -245,7 +247,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link">
+        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link md-tabs__link--active">
           Service Nodes
         </a>
       
@@ -802,10 +804,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Service Nodes
@@ -869,10 +873,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-5" type="checkbox" id="nav-7-5" checked>
     
     <label class="md-nav__link" for="nav-7-5">
       Guides
@@ -902,8 +908,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../UpdateGuide/" title="Service Node Update Guide" class="md-nav__link">
-      Service Node Update Guide
+    <a href="../UpdateGuide/" title="Luncher Update Guide" class="md-nav__link">
+      Luncher Update Guide
     </a>
   </li>
 
@@ -928,6 +934,133 @@
   <li class="md-nav__item">
     <a href="../GUIStakingGuide/" title="Gui Staking Guide" class="md-nav__link">
       Gui Staking Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Launcher Config File
+      </label>
+    
+    <a href="./" title="Launcher Config File" class="md-nav__link md-nav__link--active">
+      Launcher Config File
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" title="Table of contents:" class="md-nav__link">
+    Table of contents:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launcherini" title="launcher.ini" class="md-nav__link">
+    launcher.ini
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launcher" title="[launcher]" class="md-nav__link">
+    [launcher]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockchain" title="[blockchain]" class="md-nav__link">
+    [blockchain]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" title="[network]" class="md-nav__link">
+    [network]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" title="[storage]" class="md-nav__link">
+    [storage]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6">
+    
+    <label class="md-nav__link" for="nav-7-6">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-6">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../OpenPort22023/" title="Port 22023 Not Open" class="md-nav__link">
+      Port 22023 Not Open
     </a>
   </li>
 
@@ -1739,6 +1872,7 @@
                 
                 <h1 id="launcher-config-files">Launcher config files<a class="headerlink" href="#launcher-config-files" title="Permanent link">&para;</a></h1>
 <p>This guide shows the different config files and their associated sections, keys and values.</p>
+<p>First we check if there's a launcher.ini in the same directory as the loki-launcher script called (for non-global installations) Then we check for /etc/loki-launcher/launcher.ini (for global installations)</p>
 <h2 id="table-of-contents">Table of contents:<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#launcherini">launcher.ini</a><ul>
@@ -2116,6 +2250,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../GUIStakingGuide/" title="Gui Staking Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Gui Staking Guide
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../OpenPort22023/" title="Port 22023 Not Open" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Port 22023 Not Open
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
