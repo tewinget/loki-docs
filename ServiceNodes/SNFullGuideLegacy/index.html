@@ -38,7 +38,7 @@
     
     
       
-        <title>Full Guide on Service Nodes - Loki Docs</title>
+        <title>Service Node Legacy Guide - Loki Docs</title>
       
     
     
@@ -122,7 +122,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Full Guide on Service Nodes
+                Service Node Legacy Guide
               </span>
             
           
@@ -194,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -245,7 +247,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link">
+        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link md-tabs__link--active">
           Service Nodes
         </a>
       
@@ -802,10 +804,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Service Nodes
@@ -881,10 +885,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6" checked>
     
     <label class="md-nav__link" for="nav-7-6">
       Guides
@@ -960,11 +966,314 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../SNFullguideLegacy.md" title="Service Node Legacy Guide" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Service Node Legacy Guide
+      </label>
+    
+    <a href="./" title="Service Node Legacy Guide" class="md-nav__link md-nav__link--active">
       Service Node Legacy Guide
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-loki-service-node-requirements" title="Summary of Loki Service Node Requirements" class="md-nav__link">
+    Summary of Loki Service Node Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" title="Table of Contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-user-guide" title="New User Guide" class="md-nav__link">
+    New User Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-get-a-server" title="Step 1 - Get a Server" class="md-nav__link">
+    Step 1 - Get a Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-prepare-your-server" title="Step 2 - Prepare your Server" class="md-nav__link">
+    Step 2 - Prepare your Server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-non-root-user" title="Create a non-root User" class="md-nav__link">
+    Create a non-root User
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hot-tips-for-using-the-console" title="Hot Tips for using the Console" class="md-nav__link">
+    Hot Tips for using the Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-preparation-continued" title="Server Preparation Continued" class="md-nav__link">
+    Server Preparation Continued
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-download-the-loki-binaries" title="Step 3 - Download the Loki Binaries" class="md-nav__link">
+    Step 3 - Download the Loki Binaries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lokid-binaries" title="3.1 - Lokid Binaries" class="md-nav__link">
+    3.1 - Lokid Binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-storage-server-binaries" title="3.2 - Storage Server Binaries" class="md-nav__link">
+    3.2 - Storage Server Binaries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-untar-binaries" title="3.3 - Untar Binaries" class="md-nav__link">
+    3.3 - Untar Binaries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-service-node-as-a-service" title="Step 4 - Service Node as a Service" class="md-nav__link">
+    Step 4 - Service Node as a Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-lokidservice-file" title="4.1 lokid.service file" class="md-nav__link">
+    4.1 lokid.service file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-loki-ssservice-file" title="4.2 loki-ss.service file" class="md-nav__link">
+    4.2 loki-ss.service file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-enabling-service-files" title="4.3 Enabling Service Files" class="md-nav__link">
+    4.3 Enabling Service Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-getopen-a-wallet" title="Step 5 - Get/Open A Wallet" class="md-nav__link">
+    Step 5 - Get/Open A Wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-service-node-registration" title="Step 6 - Service Node Registration" class="md-nav__link">
+    Step 6 - Service Node Registration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-individual-staking" title="6.1 - Individual Staking" class="md-nav__link">
+    6.1 - Individual Staking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-pool-staking" title="6.2 - Pool Staking" class="md-nav__link">
+    6.2 - Pool Staking
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-contribution-rules" title="Minimum Contribution Rules" class="md-nav__link">
+    Minimum Contribution Rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#621-operator" title="6.2.1 - Operator" class="md-nav__link">
+    6.2.1 - Operator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reserved-pool" title="Reserved Pool" class="md-nav__link">
+    Reserved Pool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-pool" title="Open Pool" class="md-nav__link">
+    Open Pool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-pool-contributor" title="6.2.2 - Pool Contributor" class="md-nav__link">
+    6.2.2 - Pool Contributor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-service-node-check" title="Step 7 - Service Node Check" class="md-nav__link">
+    Step 7 - Service Node Check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-unlock-stake" title="Step 8 - Unlock Stake" class="md-nav__link">
+    Step 8 - Unlock Stake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-locked-stake-amount-and-duration" title="See Locked Stake Amount and Duration" class="md-nav__link">
+    See Locked Stake Amount and Duration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express-setup-guide" title="Express Setup Guide" class="md-nav__link">
+    Express Setup Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2915,6 +3224,41 @@ Windows - <code>loki-wallet-cli</code></p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../launcherconfig/" title="Launcher Config File" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Launcher Config File
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../StorageServerGuide-Testnet/" title="Service Node TESTNET Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Service Node TESTNET Guide
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
