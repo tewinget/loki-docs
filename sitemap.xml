@@ -166,11 +166,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://lokidocs.com/ServiceNodes/StorageServerGuide-Testnet/</loc>
-     <lastmod>2019-07-12</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://lokidocs.com/ServiceNodes/UpdateGuide/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
@@ -187,6 +182,16 @@
     </url>
     <url>
      <loc>https://lokidocs.com/ServiceNodes/launcherconfig/</loc>
+     <lastmod>2019-07-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://lokidocs.com/ServiceNodes/StorageServerGuide-Testnet/</loc>
      <lastmod>2019-07-12</lastmod>
      <changefreq>daily</changefreq>
     </url>

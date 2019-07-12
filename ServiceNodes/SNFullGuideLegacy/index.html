@@ -914,18 +914,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../StorageServerGuide-Testnet/" title="Storage Server Node Guide - Testnet" class="md-nav__link">
-      Storage Server Node Guide - Testnet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../UpdateGuide/" title="Launcher Update Guide" class="md-nav__link">
       Launcher Update Guide
     </a>
@@ -964,6 +952,30 @@
   <li class="md-nav__item">
     <a href="../launcherconfig/" title="Launcher Config File" class="md-nav__link">
       Launcher Config File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SNFullguideLegacy.md" title="Service Node Legacy Guide" class="md-nav__link">
+      Service Node Legacy Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../StorageServerGuide-Testnet/" title="Service Node TESTNET Guide" class="md-nav__link">
+      Service Node TESTNET Guide
     </a>
   </li>
 
@@ -2322,7 +2334,7 @@ on our VPS by running the following command:</p>
 
 
 <p>Replacing <code>&lt;filename&gt;</code> with the the filename we downloaded. For this example we would run 2 commands:</p>
-<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.2.tar.xz loki-linux-x64-v4.0.2
+<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.2.tar.xz
 tar -xvf loki-storage-linux-x64-v1.0.1.tar.xz
 </pre></div>
 
@@ -2361,7 +2373,7 @@ After=network-online.target
 [Service]
 Type=simple
 User=snode
-ExecStart=/home/snode/loki/lokid --non-interactive --service-node --service-node-public-ip SERVERIP --storage-server-port 8042
+ExecStart=/home/snode/loki/lokid --non-interactive --service-node --service-node-public-ip SERVERIP --storage-server-port 22023
 Restart=always
 RestartSec=30s
 
@@ -2408,7 +2420,7 @@ Type=simple
 WorkingDirectory=/home/snode
 Restart=always
 RestartSec=5s
-ExecStart=/home/snode/loki-storage 0.0.0.0 8042 --lokid-rpc-port 22023 --lokid-key  /home/snode/.loki/key
+ExecStart=/home/snode/loki-storage 0.0.0.0 23023 --lokid-rpc-port 22023 --lokid-key  /home/snode/.loki/key
 
 [Install]
 WantedBy=multi-user.target
@@ -2725,19 +2737,7 @@ button.</p>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>&lt;enter&gt;
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>Y
-</pre></div>
-
-
 <div class="codehilite"><pre><span></span>usermod -aG sudo snode
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>exit
 </pre></div>
 
 
@@ -2760,15 +2760,24 @@ button.</p>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v&lt;VERSION&gt;/loki-linux-x64-&lt;VERSION&gt;.zip
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v&lt;VERSION&gt;/loki-linux-x64-v&lt;VERSION&gt;.zip
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>unzip loki-linux-x64-&lt;VERSION&gt;.zip
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki-storage-server/releases/download/v&lt;VERSION&gt;-release/loki-storage-linux-x64-v&lt;VERSION&gt;.tar.xz
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.2.tar.xz
+tar -xvf loki-storage-linux-x64-v1.0.1.tar.xz
 </pre></div>
 
 
 <div class="codehilite"><pre><span></span>ln -snf loki-linux-x64-&lt;VERSION&gt; loki
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>ln -snf loki-storage-linux-x64-v&lt;VERSION&gt; loki-ss
 </pre></div>
 
 
@@ -2778,13 +2787,14 @@ button.</p>
 
 
 <p>Paste the following:</p>
-<div class="codehilite"><pre><span></span>Description=lokid service node
+<div class="codehilite"><pre><span></span>[Unit]
+Description=lokid service node
 After=network-online.target
 
 [Service]
 Type=simple
 User=snode
-ExecStart=/home/snode/loki/lokid --non-interactive --service-node
+ExecStart=/home/snode/loki/lokid --non-interactive --service-node --service-node-public-ip SERVERIP --storage-server-port 22023
 Restart=always
 RestartSec=30s
 
@@ -2793,12 +2803,36 @@ WantedBy=multi-user.target
 </pre></div>
 
 
+<p>Replacing <code>SERVERIP</code> in the line <code>ExecStart=</code> with your servers IP.</p>
 <p>Save and exit:
 <code>CTRL+X -&gt; Y -&gt; ENTER</code></p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/systemd/system/loki-ss.service
+</pre></div>
+
+
+<p>Paste the following:</p>
+<div class="codehilite"><pre><span></span>[Unit]
+Description=Loki storage server
+After=network-online.target
+Requires=lokid.service
+
+[Service]
+User=snode
+Type=simple
+WorkingDirectory=/home/snode
+Restart=always
+RestartSec=5s
+ExecStart=/home/snode/loki-storage 0.0.0.0 23023 --lokid-rpc-port 22023 --lokid-key  /home/snode/.loki/key
+
+[Install]
+WantedBy=multi-user.target
+</pre></div>
+
+
 <p>Enable and start the service:</p>
 <div class="codehilite"><pre><span></span>sudo systemctl daemon-reload
-sudo systemctl enable lokid.service
-sudo systemctl start lokid.service
+sudo systemctl enable lokid.service loki-ss.service
+sudo systemctl start lokid.service loki-ss.service
 </pre></div>
 
 
