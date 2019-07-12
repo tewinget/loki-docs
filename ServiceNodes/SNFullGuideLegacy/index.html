@@ -920,8 +920,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../UpdateGuide/" title="Launcher Update Guide" class="md-nav__link">
-      Launcher Update Guide
+    <a href="../UpdateGuide/" title="Legacy to Launcher Update Guide" class="md-nav__link">
+      Legacy to Launcher Update Guide
     </a>
   </li>
 
@@ -2393,7 +2393,7 @@
 <li>Step 1 <a href="#step-1-get-a-server">Server</a></li>
 <li>Step 2 <a href="#step-2-prepare-your-server">Server Prep</a></li>
 <li>Step 3 <a href="#step-3-download-the-loki-binaries">Download Binaries</a></li>
-<li>Step 4 <a href="#step-4-run-the-service-node-daemon">Run the Loki Daemon</a></li>
+<li>Step 4 <a href="/#step-4-service-node-as-a-service">Service Node as a Service</a></li>
 <li>Step 5 <a href="#step-5-getopen-a-wallet">Open a Loki Wallet</a></li>
 <li>Step 6 <a href="#step-6-service-node-registration">Register Node</a></li>
 <li>Step 7 <a href="#step-7-service-node-check">Check Registration</a></li>
@@ -2620,7 +2620,7 @@ on our VPS by running the following command:</p>
 <p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
 <h4 id="31-lokid-binaries">3.1 - Lokid Binaries<a class="headerlink" href="#31-lokid-binaries" title="Permanent link">&para;</a></h4>
 <p>To download the loki binaries run the following command:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v4.0.2/loki-linux-x64-v4.0.2.tar.xz
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v4.0.3/loki-linux-x64-v4.0.3.tar.xz
 </pre></div>
 
 
@@ -2643,13 +2643,13 @@ on our VPS by running the following command:</p>
 
 
 <p>Replacing <code>&lt;filename&gt;</code> with the the filename we downloaded. For this example we would run 2 commands:</p>
-<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.2.tar.xz
+<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.3.tar.xz
 tar -xvf loki-storage-linux-x64-v1.0.1.tar.xz
 </pre></div>
 
 
 <p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v4.0.2</code> folder:</p>
-<div class="codehilite"><pre><span></span>ln -snf loki-linux-x64-v4.0.2 loki
+<div class="codehilite"><pre><span></span>ln -snf loki-linux-x64-v4.0.3 loki
 </pre></div>
 
 
