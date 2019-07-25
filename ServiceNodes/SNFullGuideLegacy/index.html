@@ -1033,6 +1033,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#34-create-symlink" title="3.4 - Create Symlink" class="md-nav__link">
+    3.4 - Create Symlink
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2102,6 +2109,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#34-create-symlink" title="3.4 - Create Symlink" class="md-nav__link">
+    3.4 - Create Symlink
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2559,22 +2573,22 @@ on our VPS by running the following command:</p>
 
 <p>Where <code>&lt;link&gt;</code> is the download link of the latest linux release. To find the link go to <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>, right click the latest linux release and click <code>Copy Link Location</code>.</p>
 <h4 id="31-lokid-binaries">3.1 - Lokid Binaries<a class="headerlink" href="#31-lokid-binaries" title="Permanent link">&para;</a></h4>
-<p>To download the loki binaries run the following command:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/v4.0.3/loki-linux-x64-v4.0.3.tar.xz
+<p>To download the lokid binaries run the following command:</p>
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki/releases/download/vX.X.X/loki-linux-x64-vX.X.X.tar.xz
 </pre></div>
 
 
 <blockquote>
-<p>Note the above binaries might not be the latest, please check out https://github.com/loki-project/loki/releases/latest for the latest binaries.</p>
+<p>Replacing <code>X.X.X</code> with the latest binary version number from <a href="https://github.com/loki-project/loki/releases/latest">https://github.com/loki-project/loki/releases/latest</a>.</p>
 </blockquote>
 <h4 id="32-storage-server-binaries">3.2 - Storage Server Binaries<a class="headerlink" href="#32-storage-server-binaries" title="Permanent link">&para;</a></h4>
-<p>To download the loki binaries run the following command:</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki-storage-server/releases/download/v1.0.1-release/loki-storage-linux-x64-v1.0.1.tar.xz
+<p>To download the loki storage server binaries run the following command:</p>
+<div class="codehilite"><pre><span></span>wget https://github.com/loki-project/loki-storage-server/releases/download/vX.X.X-release/loki-storage-linux-x64-vX.X.X.tar.xz
 </pre></div>
 
 
 <blockquote>
-<p>Note the above binaries might not be the latest, please check out https://github.com/loki-project/loki/releases/latest for the latest binaries.</p>
+<p>Replacing <code>X.X.X</code> with the latest binary version number from <a href="https://github.com/loki-project/loki-storage-server/releases">https://github.com/loki-project/loki-storage-server/releases</a>.</p>
 </blockquote>
 <h4 id="33-untar-binaries">3.3 - Untar Binaries<a class="headerlink" href="#33-untar-binaries" title="Permanent link">&para;</a></h4>
 <p>To untar the downloaded files run the following command:</p>
@@ -2583,23 +2597,26 @@ on our VPS by running the following command:</p>
 
 
 <p>Replacing <code>&lt;filename&gt;</code> with the the filename we downloaded. For this example we would run 2 commands:</p>
-<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.3.tar.xz
-tar -xvf loki-storage-linux-x64-v1.0.1.tar.xz
+<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-vX.X.X.tar.xz
+tar -xvf loki-storage-linux-x64-vX.X.X.tar.xz
 </pre></div>
 
 
-<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-v4.0.2</code> folder:</p>
-<div class="codehilite"><pre><span></span>ln -snf loki-linux-x64-v4.0.3 loki
+<h4 id="34-create-symlink">3.4 - Create Symlink<a class="headerlink" href="#34-create-symlink" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Note you need to replace the <code>vX.X.X</code> with the version you downloaded previous otherwise the symlink will not work.</p>
+</blockquote>
+<p>We now want to create a "symlink" to the extracted <code>loki-linux-x64-vX.X.X</code> folder:</p>
+<div class="codehilite"><pre><span></span>ln -snf loki-linux-x64-vX.X.X loki
 </pre></div>
 
 
-<p>and a "symlink" to the extracted <code>loki-storage-linux-x64-v1.0.1</code> folder:</p>
-<div class="codehilite"><pre><span></span>ln -snf loki-storage-linux-x64-v1.0.1 loki-ss
+<p>and a "symlink" to the extracted <code>loki-storage-linux-x64-vX.X.X</code> folder:</p>
+<div class="codehilite"><pre><span></span>ln -snf loki-storage-linux-x64-vX.X.X loki-ss
 </pre></div>
 
 
-<p>This creates a virtual folder that points to the binary folders.  This isn't
-strictly necessary, but will help with upgrades in the future: when you want to upgrade you can just repeat everything in this step again with the new binaries.</p>
+<p>This creates a virtual folder that points to the binary folders. This isn't strictly necessary, but will help with upgrades in the future: when you want to upgrade you can just repeat everything in this step again with the new binaries.</p>
 <p>Excellent! We now have all of the necessary files to get this show on the road!</p>
 <blockquote>
 <p><em>NOTE: If you’re nervous about trusting the binaries or the download link, you should build it from source yourself. Instructions for that can be found in the README of <a href="https://github.com/loki-project/loki">https://github.com/loki-project/loki</a></em></p>
@@ -2978,7 +2995,7 @@ button.</p>
 <p><strong>1. Get a Server that meets requirements</strong></p>
 <p><strong>2. Run the Daemon on a server from a non-root user account, then stake from a local wallet (or a wallet on a separate server).</strong></p>
 <blockquote>
-<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the <a href="https://github.com/loki-project/loki/releases/latest">latest version</a>, example <code>v3.0.6</code></p>
+<p>Where <code>&lt;VERSION&gt;</code> is mentioned replace with the latest version for <a href="https://github.com/loki-project/loki/releases/latest">lokid</a> and <a href="https://github.com/loki-project/loki-storage-server/releases/latest">Storage Server</a>, example <code>v3.0.6</code>.</p>
 </blockquote>
 <p><strong>3. Connect via SSH to your server</strong></p>
 <p><strong>4. add new user</strong></p>
@@ -3017,8 +3034,8 @@ button.</p>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v4.0.2.tar.xz
-tar -xvf loki-storage-linux-x64-v1.0.1.tar.xz
+<div class="codehilite"><pre><span></span>tar -xvf loki-linux-x64-v&lt;VERSION&gt;.tar.xz
+tar -xvf loki-storage-linux-x64-v&lt;VERSION&gt;.tar.xz
 </pre></div>
 
 
