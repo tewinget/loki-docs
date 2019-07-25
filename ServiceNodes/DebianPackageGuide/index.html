@@ -38,7 +38,7 @@
     
     
       
-        <title>Debian Package Guide - Loki Docs</title>
+        <title>Installing via Debian Package Guide - Loki Docs</title>
       
     
     
@@ -122,7 +122,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Debian Package Guide
+                Installing via Debian Package Guide
               </span>
             
           
@@ -194,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -245,7 +247,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link">
+        <a href="../SNOverview/" title="Service Nodes" class="md-tabs__link md-tabs__link--active">
           Service Nodes
         </a>
       
@@ -730,10 +732,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Service Nodes
@@ -809,10 +813,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-6" type="checkbox" id="nav-7-6" checked>
     
     <label class="md-nav__link" for="nav-7-6">
       Guides
@@ -881,6 +887,191 @@
     <a href="../launcherconfig/" title="Launcher Config File" class="md-nav__link">
       Launcher Config File
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installing via Debian Package Guide
+      </label>
+    
+    <a href="./" title="Installing via Debian Package Guide" class="md-nav__link md-nav__link--active">
+      Installing via Debian Package Guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express-guide" title="Express Guide" class="md-nav__link">
+    Express Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-guide" title="Full Guide" class="md-nav__link">
+    Full Guide
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initial-repository-setup" title="1: Initial Repository Setup" class="md-nav__link">
+    1: Initial Repository Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-a-package" title="Installing a Package" class="md-nav__link">
+    Installing a Package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-loki-service-node-operation" title="2. Loki Service Node Operation" class="md-nav__link">
+    2. Loki Service Node Operation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic" title="Automatic:" class="md-nav__link">
+    Automatic:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manually" title="Manually:" class="md-nav__link">
+    Manually:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-flags-to-config-file" title="Adding flags to config file." class="md-nav__link">
+    Adding flags to config file.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-interacting-with-the-running-lokid" title="3. Interacting with the running lokid" class="md-nav__link">
+    3. Interacting with the running lokid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additionaloptional" title="Additional/Optional:" class="md-nav__link">
+    Additional/Optional:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading" title="Upgrading" class="md-nav__link">
+    Upgrading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-a-non-service-node-lokid-and-cli-wallet" title="Installing a non-service-node lokid and cli wallet." class="md-nav__link">
+    Installing a non-service-node lokid and cli wallet.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-service-node-loki-operation" title="Non-service-node Loki operation" class="md-nav__link">
+    Non-service-node Loki operation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-testnet-node" title="Running a Testnet Node" class="md-nav__link">
+    Running a Testnet Node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues" title="Reporting issues" class="md-nav__link">
+    Reporting issues
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1733,6 +1924,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#automatic" title="Automatic:" class="md-nav__link">
+    Automatic:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manually" title="Manually:" class="md-nav__link">
     Manually:
   </a>
@@ -1740,8 +1938,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#automatic" title="Automatic:" class="md-nav__link">
-    Automatic:
+  <a href="#adding-flags-to-config-file" title="Adding flags to config file." class="md-nav__link">
+    Adding flags to config file.
   </a>
   
 </li>
@@ -1837,7 +2035,7 @@
                 
                 
                 <h1 id="debian-package-guide">Debian Package Guide<a class="headerlink" href="#debian-package-guide" title="Permanent link">&para;</a></h1>
-<p>Author: Jagerman </p>
+<p>Author: Jason (jagerman) </p>
 <p>Source: <a href="https://deb.imaginary.stream/">https://deb.imaginary.stream/</a></p>
 <p>This repository contains debian/ubuntu builds of the core loki tools (lokid, cli/rpc wallets,
 blockchain tools) for Debian and Ubuntu.</p>
@@ -1948,6 +2146,13 @@ headers, but it's highly unlikely that you will need that for common use.</p>
 <h3 id="2-loki-service-node-operation">2. Loki Service Node Operation<a class="headerlink" href="#2-loki-service-node-operation" title="Permanent link">&para;</a></h3>
 <p>Running a service node requires multiple packages (lokid and loki-storage-server) with synchronized
 configuration between them.  There are two ways to approach this:</p>
+<h4 id="automatic"><strong>Automatic</strong>:<a class="headerlink" href="#automatic" title="Permanent link">&para;</a></h4>
+<p>Install the <code>loki-service-node</code> package.</p>
+<div class="codehilite"><pre><span></span>sudo apt install loki-service-node
+</pre></div>
+
+
+<p>This will detect your public IP (or allow you to enter it yourself) and automatically update the loki.conf configuration file with the necessary additional settings to run a service node.</p>
 <h4 id="manually"><strong>Manually</strong>:<a class="headerlink" href="#manually" title="Permanent link">&para;</a></h4>
 <p>Install both <code>lokid</code> and <code>loki-storage-server</code> packages</p>
 <div class="codehilite"><pre><span></span>sudo apt install lokid
@@ -1959,18 +2164,29 @@ configuration between them.  There are two ways to approach this:</p>
 
 
 <p>Then edit the configuration in <code>/etc/loki/loki.conf</code> and <code>/etc/loki/storage.conf</code>.  </p>
+<p>If you want to change some of the lokid settings you can add the settings to <code>/etc/loki/loki.conf</code>.</p>
 <p>Restart both after configuration updates using:</p>
 <div class="codehilite"><pre><span></span>systemctl restart loki-node loki-storage-server
 </pre></div>
 
 
-<h4 id="automatic"><strong>Automatic</strong>:<a class="headerlink" href="#automatic" title="Permanent link">&para;</a></h4>
-<p>Install the <code>loki-service-node</code> package.</p>
-<div class="codehilite"><pre><span></span>sudo apt install loki-service-node
+<hr />
+<h4 id="adding-flags-to-config-file">Adding flags to config file.<a class="headerlink" href="#adding-flags-to-config-file" title="Permanent link">&para;</a></h4>
+<p>Note that you can add any of lokid's command-line arguments as settings in this file rather than
+needing to change the service file.  For example, if you wanted to run lokid as
+<code>lokid --p2p-bind-ip 1.2.3.4 --p2p-bind-port=22222 --restricted-rpc</code> then you would add:</p>
+<div class="codehilite"><pre><span></span>p2p-bind-ip=1.2.3.4
+p2p-bind-port=22222
+restricted-rpc=1
 </pre></div>
 
 
-<p>This will detect your public IP (or allow you to enter it yourself) and automatically update the loki.conf configuration file with the necessary additional settings to run a service node.</p>
+<p>into <code>/etc/loki/loki.conf</code> and then restart lokid using:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl restart loki-node
+</pre></div>
+
+
+<hr />
 <h3 id="3-interacting-with-the-running-lokid">3. Interacting with the running lokid<a class="headerlink" href="#3-interacting-with-the-running-lokid" title="Permanent link">&para;</a></h3>
 <p>If you run the lokid binary with a command, it forwards this command to the running lokid. So, for example, to get the current lokid status you can run (note that sudo is not required!):</p>
 <div class="codehilite"><pre><span></span>lokid status
@@ -2054,21 +2270,6 @@ don't want the node to run you can stop it after installation using:</p>
 <blockquote>
 <p>Remove the <code>--now</code> if you want to reenable it but not actually try starting it.</p>
 </blockquote>
-<p>If you want to change some of the lokid settings you can add the settings to <code>/etc/loki/loki.conf</code>.</p>
-<p>Note that you can add any of lokid's command-line arguments as settings in this file rather than
-needing to change the service file.  For example, if you wanted to run lokid as
-<code>lokid --p2p-bind-ip 1.2.3.4 --p2p-bind-port=22222 --restricted-rpc</code> then you would add:</p>
-<div class="codehilite"><pre><span></span>p2p-bind-ip=1.2.3.4
-p2p-bind-port=22222
-restricted-rpc=1
-</pre></div>
-
-
-<p>into <code>/etc/loki/loki.conf</code> and then restart lokid using:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl restart loki-node
-</pre></div>
-
-
 <p>For advanced users, lokid creates a <code>_loki</code> user and stores all the files (blockchain, service node
 key, etc.) owned by this user in <code>/var/lib/loki</code>.</p>
 <hr />
@@ -2106,6 +2307,41 @@ sudo systemctl enable --now loki-testnet-storage-server
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../launcherconfig/" title="Launcher Config File" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Launcher Config File
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../SNFullGuideLegacy/" title="Service Node Legacy Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Service Node Legacy Guide
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

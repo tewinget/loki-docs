@@ -166,6 +166,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://lokidocs.com/ServiceNodes/DebianPackageGuide/</loc>
+     <lastmod>2019-07-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://lokidocs.com/ServiceNodes/SNFullGuideLegacy/</loc>
      <lastmod>2019-07-25</lastmod>
      <changefreq>daily</changefreq>
