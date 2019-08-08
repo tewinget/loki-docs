@@ -782,6 +782,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#methods-to-setup-a-service-node" title="Methods to Setup a Service Node" class="md-nav__link">
+    Methods to Setup a Service Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#service-node-activities" title="Service Node Activities" class="md-nav__link">
     Service Node Activities
   </a>
@@ -1744,6 +1751,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#methods-to-setup-a-service-node" title="Methods to Setup a Service Node" class="md-nav__link">
+    Methods to Setup a Service Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#service-node-activities" title="Service Node Activities" class="md-nav__link">
     Service Node Activities
   </a>
@@ -1781,6 +1795,30 @@
 <p>The resulting network provides <a href="../../Advanced/SybilResistance/">market-based resistance to Sybil attacks</a>, addressing a range of problems with existing mixnets and privacy-centric services. This resistance is based on supply and demand interactions which help prevent single actors from having a large enough stake in Loki to have a significant negative impact on the second-layer privacy services Loki provides. <a href="https://github.com/dashpay/dash/wiki/Whitepaper">DASH</a> first theorised that Sybil attack resistant networks can be derived from cryptoeconomics. As an attacker accumulates Loki, the  circulating supply decreases, in turn applying demand-side pressure, driving the price of Loki up. As this continues, it
 becomes increasingly costly for additional Loki to be purchased, making the attack prohibitively expensive.</p>
 <p>To achieve this economic protection, Loki encourages the active suppression of the circulating supply. In particular, the <a href="../../Advanced/Cryptoeconomics/">emissions curve</a> and <a href="../StakingRequirement/">collateral requirements</a> must be designed to ensure enough circulating supply is locked and reasonable returns are provided for operators to ensure <a href="../../Advanced/SybilResistance/">Sybil attack resistance</a>.</p>
+<h2 id="methods-to-setup-a-service-node">Methods to Setup a Service Node<a class="headerlink" href="#methods-to-setup-a-service-node" title="Permanent link">&para;</a></h2>
+<p>We support three different mechanisms of managing the loki service node suite:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../SNFullGuide/">Loki Launcher</a></td>
+<td>Using loki-launcher to download, start, monitor, and manage service node components.  Has built-in updating capabilities for new releases.  Requires nodejs.</td>
+</tr>
+<tr>
+<td><a href="../SNFullGuideLegacy/">Legacy - Apt Repository</a></td>
+<td>Installing debs via apt repository which installs and runs the components via systemd.  Updates via the system package manager(apt).  Requires Ubuntu or Debian.</td>
+</tr>
+<tr>
+<td>Installing and Configuring Manually</td>
+<td>Installing and configuring manually.  This is more involved than the above, and requires manual configurating and updating of each component.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="service-node-activities">Service Node Activities<a class="headerlink" href="#service-node-activities" title="Permanent link">&para;</a></h2>
 <p>Right now Service Nodes are full nodes on the Loki network. Full nodes become Service Nodes when the owner <a href="../StakingRequirement/">locks the required amount of Loki</a> and submits a registration transaction. Once accepted by the network, the Service Node is eligible to win <a href="../../Advanced/Cryptoeconomics/">block rewards</a>. Multiple participants can be involved in one Service Node and can have the reward automatically distributed.</p>
 <p>It is also worth noting that Service Nodes are quite basic at the moment, and operators will need to stay up to date with new updates to keep in line with software and hardware requirements. Once all of the updates are out, Service Nodes will also offer the following <a href="../../LokiServices/LokiServicesOverview/">Loki Services</a>:</p>
