@@ -1207,6 +1207,33 @@
     5. Set up Routes
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done" title="Done" class="md-nav__link">
+    Done
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1806,6 +1833,33 @@
     5. Set up Routes
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" title="Linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" title="macOS" class="md-nav__link">
+    macOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#done" title="Done" class="md-nav__link">
+    Done
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1842,14 +1896,14 @@
 <p>To setup and run Lokinet, see the accessing SNApps guide <a href="../AccessingSNApps/">here</a>.</p>
 <p>After the above guide is finished you should be able to run <code>lokinet</code> and be able to access SNApps.</p>
 <h2 id="3-route-configuration">3. Route Configuration<a class="headerlink" href="#3-route-configuration" title="Permanent link">&para;</a></h2>
-<p>To use an exit node as a client, you need to change the <code>[network]</code> section in <code>~/.lokinet/lokinet.ini</code> </p>
+<p>To use an exit node as a client, you need to change the <code>[network]</code> section in <code>~/.lokinet/lokinet.ini</code></p>
 <p>Use the following command to access your <code>lokinet.ini</code> file.</p>
 <div class="codehilite"><pre><span></span>nano ~/.lokinet/lokinet.ini
 </pre></div>
 
 
 <p>Use your arrow keys to to scroll down to the network settings.</p>
-<div class="codehilite"><pre><span></span># network settings 
+<div class="codehilite"><pre><span></span># network settings
 [network]
 profiles=/home/modeify/.lokinet/profiles.dat
 # uncomment next line to add router with pubkey to list of routers we connect directly to
@@ -1877,7 +1931,7 @@ enabled=true
 <li><code>b61df944b8547af56201c6c7528ed86289566dcf73358c5ef8e3b4e628671399</code></li>
 </ul>
 <p>Your network settings section should now look like the following:</p>
-<div class="codehilite"><pre><span></span># network settings 
+<div class="codehilite"><pre><span></span># network settings
 [network]
 profiles=/home/modeify/.lokinet/profiles.dat
 # uncomment next line to add router with pubkey to list of routers we connect d$
@@ -1895,10 +1949,13 @@ enabled=true
 <h2 id="4-finding-your-default-gateway">4. Finding your Default Gateway<a class="headerlink" href="#4-finding-your-default-gateway" title="Permanent link">&para;</a></h2>
 <p>On linux, run the following command:</p>
 <p><code>ip route | grep default</code></p>
+<p>On macOS, run the following command:</p>
+<p><code>route get default | grep gateway</code></p>
 <p>The IP address shown is your default gateway, for our example our IP is <code>10.0.2.2</code>.</p>
 <h2 id="5-set-up-routes">5. Set up Routes<a class="headerlink" href="#5-set-up-routes" title="Permanent link">&para;</a></h2>
-<p>In the following example the first hop is <code>162.243.164.223</code> which is connected to the pubkey <code>3dcb5a34d015a7bbb4636be83991e00cbeff13fe7834e0d5452ffe9a5af5a5be</code>. </p>
+<p>In the following example the first hop is <code>162.243.164.223</code> which is connected to the pubkey <code>3dcb5a34d015a7bbb4636be83991e00cbeff13fe7834e0d5452ffe9a5af5a5be</code>.</p>
 <p>If you used a different pubkey as your first hop you must replace the IP address in the example with the one associated with it.</p>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>To route everything through a Lokinet Exit Node run the following command. Replacing <code>&lt;first hop&gt;</code> with your first hop IP address and <code>&lt;default gateway&gt;</code> with your default gateway.</p>
 <div class="codehilite"><pre><span></span>sudo ip route add &lt;first hop&gt; via &lt;default gateway&gt;
 </pre></div>
@@ -1925,6 +1982,36 @@ enabled=true
 <p><code>sudo ip route del default</code></p>
 <p><code>sudo ip route add default via &lt;default gateway&gt;</code></p>
 <hr />
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>To route everything through a Lokinet Exit Node run the following command. Replacing <code>&lt;first hop&gt;</code> with your first hop IP address and <code>&lt;default gateway&gt;</code> with your default gateway.</p>
+<div class="codehilite"><pre><span></span>sudo route add &lt;first hop&gt; &lt;default gateway&gt;
+</pre></div>
+
+
+<p>For this example the command is:</p>
+<div class="codehilite"><pre><span></span>sudo route add 162.243.164.223 10.0.2.2
+</pre></div>
+
+
+<p>Next run the following command to remove your default:</p>
+<div class="codehilite"><pre><span></span>sudo route delete default
+</pre></div>
+
+
+<p>At this point make sure you are running <code>lokinet</code>, you should have <code>lokinet</code> running from <a href="#2-lokinet-setup">section 2</a>.</p>
+<p>While <code>lokinet</code> is running open up a new terminal and run the following command:</p>
+<div class="codehilite"><pre><span></span>sudo route add default -interface lokitun0
+</pre></div>
+
+
+<hr />
+<p>If you want to unset the route everything over lokinet route do the following as root:</p>
+<div class="codehilite"><pre><span></span>sudo route delete default
+sudo route add default &lt;default gateway&gt;
+</pre></div>
+
+
+<h3 id="done">Done<a class="headerlink" href="#done" title="Permanent link">&para;</a></h3>
 <p>Now when you browse the internet your IP address will be obfuscated. Go to a "where is my location" website to see if your IP appears to be in Romania.</p>
 <h2 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h2>
 <p>Well done, you have finished the guide. Jump back into the <a href="../PublicTestingGuide/#1-lokinet-installation">Lokinet Public Testing Guide here</a>.</p>
