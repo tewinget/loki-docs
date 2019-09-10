@@ -1089,7 +1089,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Install/" title="Lokinet Linux Guide" class="md-nav__link">
+    <a href="../lokinet-linux-guide/" title="Lokinet Linux Guide" class="md-nav__link">
       Lokinet Linux Guide
     </a>
   </li>
@@ -1115,6 +1115,18 @@
   <li class="md-nav__item">
     <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
       Lokinet Mac Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Install/" title="Linux - Build-It-Yourself" class="md-nav__link">
+      Linux - Build-It-Yourself
     </a>
   </li>
 
@@ -1159,22 +1171,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-setting-your-dns-only-for-linux" title="2. Setting your DNS (Only for Linux)" class="md-nav__link">
-    2. Setting your DNS (Only for Linux)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-setup" title="3. Setup" class="md-nav__link">
-    3. Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-test-services" title="4. Test services" class="md-nav__link">
-    4. Test services
+  <a href="#2-test-services" title="2. Test services" class="md-nav__link">
+    2. Test services
   </a>
   
 </li>
@@ -1182,20 +1180,6 @@
         <li class="md-nav__item">
   <a href="#finish" title="Finish" class="md-nav__link">
     Finish
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" title="Best Practices" class="md-nav__link">
-    Best Practices
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
   </a>
   
 </li>
@@ -1837,22 +1821,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-setting-your-dns-only-for-linux" title="2. Setting your DNS (Only for Linux)" class="md-nav__link">
-    2. Setting your DNS (Only for Linux)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-setup" title="3. Setup" class="md-nav__link">
-    3. Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-test-services" title="4. Test services" class="md-nav__link">
-    4. Test services
+  <a href="#2-test-services" title="2. Test services" class="md-nav__link">
+    2. Test services
   </a>
   
 </li>
@@ -1860,20 +1830,6 @@
         <li class="md-nav__item">
   <a href="#finish" title="Finish" class="md-nav__link">
     Finish
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" title="Best Practices" class="md-nav__link">
-    Best Practices
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
   </a>
   
 </li>
@@ -1902,38 +1858,17 @@
 <p>SNApp operators use the traditional server-client model with the key difference being that <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> will be intermediaries in a users connection through Lokinet. When a SNApp wishes to register on the network, it must update the DHT with its descriptor. This descriptor contains various introducers, which are specific Service Nodes that users can contact to form a path to the SNApp. When these paths are set up, users can connect to the SNApp without either party knowing where the other is located in the network.</p>
 <h2 id="1-installing">1. Installing<a class="headerlink" href="#1-installing" title="Permanent link">&para;</a></h2>
 <p>To install lokinet, see the install guide <a href="../Install/">here</a>.</p>
-<h2 id="2-setting-your-dns-only-for-linux">2. Setting your DNS (Only for Linux)<a class="headerlink" href="#2-setting-your-dns-only-for-linux" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Skip to <a href="#3-setup">step 3</a> if you are running on Windows or Mac.</p>
-</blockquote>
-<p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
-<p>Run the following command: </p>
-<p><code>sudo nano /etc/resolvconf/resolv.conf.d/head</code></p>
-<p>Add the following at the bottom of this file:</p>
-<p><code>nameserver 127.3.2.1</code></p>
-<p>Once that line is added hold CTRL and click x. 
-Click enter to confirm the file changes.</p>
-<p>Next we need to update our /etc/resolv.conf file by running the command:</p>
-<p><code>sudo resolvconf -u</code></p>
-<h2 id="3-setup">3. Setup<a class="headerlink" href="#3-setup" title="Permanent link">&para;</a></h2>
-<p><strong>DO NOT RUN LOKINET AS ROOT</strong></p>
-<p>For the first time setup, you need to generate a config and obtain bootstrap information.</p>
-<p><code>lokinet -g &amp;&amp; lokinet-bootstrap</code></p>
-<blockquote>
-<p>The default configuration for lokinet is <code>lokinet.ini</code> located at <code>~/.lokinet/lokinet.ini</code> (<code>%APPDATA%\.lokinet\lokinet.ini</code> on windows).</p>
-<p>To enable a SNApps with a long term address, add <code>keyfile=/path/to/keyfile.private</code> to <code>[network]</code> section in <code>lokinet.ini</code> .</p>
-</blockquote>
-<p>Then run lokinet in foreground:</p>
-<p><code>lokinet</code></p>
-<p>For future reference, after generating initial configuration you just need to run <code>lokinet</code> and start browsing.</p>
-<h2 id="4-test-services">4. Test services<a class="headerlink" href="#4-test-services" title="Permanent link">&para;</a></h2>
-<p>Jump onto a browser such as google chrome or firefox and try and go to one of the following urls:</p>
+<h2 id="2-test-services">2. Test services<a class="headerlink" href="#2-test-services" title="Permanent link">&para;</a></h2>
+<p>Jump onto a browser such as google chrome or firefox and try and go to one of the following SNApps:</p>
 <ul>
 <li>
-<p>http://icxqqcpd3sfkjbqifn53h7rmusqa1fyxwqyfrrcgkd37xcikwa7y.loki</p>
+<p>http://ybdrstzpucny6q7pxqs3ft7df5tiyxkay6i8jmkcj5imr1hied6y.loki/</p>
 </li>
 <li>
-<p>http://3xoafu6kuc6wd51iqcdca99jkqzcrh35qjjj9sfquqg4s3b8fb1y.loki</p>
+<p>http://icxqqcpd3sfkjbqifn53h7rmusqa1fyxwqyfrrcgkd37xcikwa7y.loki/</p>
+</li>
+<li>
+<p>http://3xoafu6kuc6wd51iqcdca99jkqzcrh35qjjj9sfquqg4s3b8fb1y.loki/</p>
 </li>
 <li>
 <p>http://rxudcygaj7gzqgigyrtti97g4wwaftqe9rd3s6pmu3wby7gxwcbo.loki/</p>
@@ -1942,11 +1877,6 @@ Click enter to confirm the file changes.</p>
 <p>Congratulations, you now have access to the Lokinet.</p>
 <h2 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h2>
 <p>Well done, you have finished the guide. Jump back into the <a href="../PublicTestingGuide/#3-joining-a-lokinet-irc-chat">Lokinet Public Testing Guide here</a>.</p>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<p>// TODO: talk about binding to all interfaces being bad</p>
-<p>// TODO: talk about networking namespaces options for linux</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>// TODO: insert secure example here</p>
                 
                   
                 
@@ -1967,7 +1897,7 @@ Click enter to confirm the file changes.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Install/" title="Linux - Build-It-Yourself" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1976,7 +1906,7 @@ Click enter to confirm the file changes.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lokinet Mac Guide
+                Linux - Build-It-Yourself
               </span>
             </div>
           </a>

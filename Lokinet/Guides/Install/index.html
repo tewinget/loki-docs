@@ -38,7 +38,7 @@
     
     
       
-        <title>Lokinet Linux Guide - Loki Docs</title>
+        <title>Linux - Build-It-Yourself - Loki Docs</title>
       
     
     
@@ -122,7 +122,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Lokinet Linux Guide
+                Linux - Build-It-Yourself
               </span>
             
           
@@ -1087,6 +1087,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../lokinet-linux-guide/" title="Lokinet Linux Guide" class="md-nav__link">
+      Lokinet Linux Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-nav__link">
+      Lokinet Windows Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
+      Lokinet Mac Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1098,11 +1134,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lokinet Linux Guide
+        Linux - Build-It-Yourself
       </label>
     
-    <a href="./" title="Lokinet Linux Guide" class="md-nav__link md-nav__link--active">
-      Lokinet Linux Guide
+    <a href="./" title="Linux - Build-It-Yourself" class="md-nav__link md-nav__link--active">
+      Linux - Build-It-Yourself
     </a>
     
       
@@ -1152,6 +1188,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#5-setting-your-dns" title="5. Setting your DNS" class="md-nav__link">
+    5. Setting your DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optional-building-a-debian-package" title="Optional: Building a debian package" class="md-nav__link">
     Optional: Building a debian package
   </a>
@@ -1178,30 +1221,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-nav__link">
-      Lokinet Windows Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
-      Lokinet Mac Guide
-    </a>
   </li>
 
         
@@ -1872,6 +1891,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#5-setting-your-dns" title="5. Setting your DNS" class="md-nav__link">
+    5. Setting your DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optional-building-a-debian-package" title="Optional: Building a debian package" class="md-nav__link">
     Optional: Building a debian package
   </a>
@@ -1916,10 +1942,16 @@
 <h2 id="initial-setup-for-linux">Initial Setup for Linux<a class="headerlink" href="#initial-setup-for-linux" title="Permanent link">&para;</a></h2>
 <h3 id="1-set-up-non-root-user">1. Set up Non-root User<a class="headerlink" href="#1-set-up-non-root-user" title="Permanent link">&para;</a></h3>
 <p>Best practice when running a public server is to not run your software as the root user. We will create a non-root user to our server by running the following command.</p>
-<p><code>sudo adduser &lt;username&gt;</code></p>
+<div class="codehilite"><pre><span></span>sudo adduser &lt;username&gt;
+</pre></div>
+
+
 <p>Replacing <code>&lt;username&gt;</code> with a name you will log-in with. For this user-guide we will use <code>lokitestnet</code> as our username.</p>
 <p>If you use the same username the command will look like:</p>
-<p><code>sudo adduser lokitestnet</code></p>
+<div class="codehilite"><pre><span></span>sudo adduser lokitestnet
+</pre></div>
+
+
 <p>Once ran the terminal will prompt you for a new password for your newly created user. Use a different password to the root password.</p>
 <p>Once the password has been set, the terminal will prompt for a few details about the individual running the user. You can hit enter through each of the inputs as the details are not important for the purposes of accessing Lokinet.</p>
 <p>Once that’s done, run the following two commands to give our new account admin privileges and to change to such account.</p>
@@ -1931,16 +1963,25 @@ su - lokitestnet
 <h3 id="2-computer-preparation">2. Computer Preparation<a class="headerlink" href="#2-computer-preparation" title="Permanent link">&para;</a></h3>
 <p>We should update our package lists, the below command downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies. It will do this for all repositories and PPAs.</p>
 <p>Run the following command:</p>
-<p><code>sudo apt-get update</code></p>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+
+
 <p>You will notice a bunch of package lists were downloaded, once this is complete run the below command to fetch new versions of any packages we currently have installed on the system.</p>
-<p><code>sudo apt-get upgrade</code></p>
+<div class="codehilite"><pre><span></span>sudo apt-get upgrade
+</pre></div>
+
+
 <p>You will be prompted to authorise the use of disk space, type <code>y</code> and enter to authorise.</p>
 <blockquote>
 <p>Note: If you are prompted at any time that a version of any file is available then click the up and down arrows until you are hovering over install the package maintainer’s version and click enter.</p>
 </blockquote>
 <h3 id="3-dependencies">3.  Dependencies<a class="headerlink" href="#3-dependencies" title="Permanent link">&para;</a></h3>
 <p>You will need to install some build dependencies, run the following command to install all the build dependencies required for Lokinet:</p>
-<p><code>sudo apt install build-essential cmake libcap-dev wget git resolvconf curl libuv1-dev</code></p>
+<div class="codehilite"><pre><span></span>sudo apt install build-essential cmake libcap-dev wget git resolvconf curl libuv1-dev
+</pre></div>
+
+
 <p>Once you’ve installed the dependencies we will now clone the loki-network repository:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/loki-project/loki-network
 cd loki-network
@@ -1951,6 +1992,25 @@ cd loki-network
 <p>Run the following two commands to build for operation:</p>
 <div class="codehilite"><pre><span></span>make
 sudo make install
+</pre></div>
+
+
+<h3 id="5-setting-your-dns">5. Setting your DNS<a class="headerlink" href="#5-setting-your-dns" title="Permanent link">&para;</a></h3>
+<p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
+<p>Run the following command: </p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/resolvconf/resolv.conf.d/head
+</pre></div>
+
+
+<p>Add the following at the bottom of this file:</p>
+<div class="codehilite"><pre><span></span>nameserver 127.3.2.1
+</pre></div>
+
+
+<p>Once that line is added hold CTRL and click x. 
+Click enter to confirm the file changes.</p>
+<p>Next we need to update our /etc/resolv.conf file by running the command:</p>
+<div class="codehilite"><pre><span></span>sudo resolvconf -u
 </pre></div>
 
 
@@ -1989,7 +2049,7 @@ sudo make install
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../DeveloperInfo/" title="Developers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1998,19 +2058,19 @@ sudo make install
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Developers
+                Lokinet Mac Guide
               </span>
             </div>
           </a>
         
         
-          <a href="../lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../AccessingSNApps/" title="Accessing SNApps" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lokinet Windows Guide
+                Accessing SNApps
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
