@@ -1124,36 +1124,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-set-up-non-root-user" title="1. Set up Non-root User" class="md-nav__link">
-    1. Set up Non-root User
+  <a href="#1-computer-preparation" title="1. Computer Preparation" class="md-nav__link">
+    1. Computer Preparation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-computer-preparation" title="2. Computer Preparation" class="md-nav__link">
-    2. Computer Preparation
+  <a href="#2-installation" title="2. Installation" class="md-nav__link">
+    2. Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-and-stopping-lokinet" title="Starting and Stopping lokinet." class="md-nav__link">
+    Starting and Stopping lokinet.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
+    Setting your DNS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-installation" title="3. Installation" class="md-nav__link">
-    3. Installation
+  <a href="#method-1" title="Method 1:" class="md-nav__link">
+    Method 1:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-setting-your-dns" title="4. Setting your DNS" class="md-nav__link">
-    4. Setting your DNS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-starting-and-stopping-lokinet" title="5. Starting and Stopping lokinet." class="md-nav__link">
-    5. Starting and Stopping lokinet.
+  <a href="#method-2" title="Method 2:" class="md-nav__link">
+    Method 2:
   </a>
   
 </li>
@@ -1856,36 +1876,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-set-up-non-root-user" title="1. Set up Non-root User" class="md-nav__link">
-    1. Set up Non-root User
+  <a href="#1-computer-preparation" title="1. Computer Preparation" class="md-nav__link">
+    1. Computer Preparation
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-computer-preparation" title="2. Computer Preparation" class="md-nav__link">
-    2. Computer Preparation
+  <a href="#2-installation" title="2. Installation" class="md-nav__link">
+    2. Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-and-stopping-lokinet" title="Starting and Stopping lokinet." class="md-nav__link">
+    Starting and Stopping lokinet.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
+    Setting your DNS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-installation" title="3. Installation" class="md-nav__link">
-    3. Installation
+  <a href="#method-1" title="Method 1:" class="md-nav__link">
+    Method 1:
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-setting-your-dns" title="4. Setting your DNS" class="md-nav__link">
-    4. Setting your DNS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-starting-and-stopping-lokinet" title="5. Starting and Stopping lokinet." class="md-nav__link">
-    5. Starting and Stopping lokinet.
+  <a href="#method-2" title="Method 2:" class="md-nav__link">
+    Method 2:
   </a>
   
 </li>
@@ -1925,21 +1965,7 @@
 <p>Author: Jason (jagerman), Johnathan (SonOfOtis)</p>
 <p>Source: <a href="https://deb.imaginary.stream/">https://deb.imaginary.stream/</a></p>
 <h2 id="initial-setup-for-linux">Initial Setup for Linux<a class="headerlink" href="#initial-setup-for-linux" title="Permanent link">&para;</a></h2>
-<h3 id="1-set-up-non-root-user">1. Set up Non-root User<a class="headerlink" href="#1-set-up-non-root-user" title="Permanent link">&para;</a></h3>
-<p>Best practice when running a public server is to not run your software as the root user. We will create a non-root user to our server by running the following command.</p>
-<p><code>sudo adduser &lt;username&gt;</code></p>
-<p>Replacing <code>&lt;username&gt;</code> with a name you will log-in with. For this user-guide we will use <code>lokitestnet</code> as our username.</p>
-<p>If you use the same username the command will look like:</p>
-<p><code>sudo adduser lokitestnet</code></p>
-<p>Once ran the terminal will prompt you for a new password for your newly created user. Use a different password to the root password.</p>
-<p>Once the password has been set, the terminal will prompt for a few details about the individual running the user. You can hit enter through each of the inputs as the details are not important for the purposes of accessing Lokinet.</p>
-<p>Once that’s done, run the following two commands to give our new account admin privileges and to change to such account.</p>
-<div class="codehilite"><pre><span></span>sudo usermod -aG sudo lokitestnet
-su - lokitestnet
-</pre></div>
-
-
-<h3 id="2-computer-preparation">2. Computer Preparation<a class="headerlink" href="#2-computer-preparation" title="Permanent link">&para;</a></h3>
+<h3 id="1-computer-preparation">1. Computer Preparation<a class="headerlink" href="#1-computer-preparation" title="Permanent link">&para;</a></h3>
 <p>We should update our package lists, the below command downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies. It will do this for all repositories and PPAs.</p>
 <p>Run the following command:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get update
@@ -1955,7 +1981,7 @@ su - lokitestnet
 <blockquote>
 <p>Note: If you are prompted at any time that a version of any file is available then click the up and down arrows until you are hovering over install the package maintainer’s version and click enter.</p>
 </blockquote>
-<h3 id="3-installation">3. Installation<a class="headerlink" href="#3-installation" title="Permanent link">&para;</a></h3>
+<h3 id="2-installation">2. Installation<a class="headerlink" href="#2-installation" title="Permanent link">&para;</a></h3>
 <p>You only need to do this step the first time you want to set up the repository; when you've done it once, the repository will automatically update whenever you fetch new system updates.</p>
 <p>To add the <code>apt</code> repository run the following commands:</p>
 <p>The following command installed Jagermans public key used to sign the Binaries.</p>
@@ -1978,8 +2004,35 @@ su - lokitestnet
 </pre></div>
 
 
-<h3 id="4-setting-your-dns">4. Setting your DNS<a class="headerlink" href="#4-setting-your-dns" title="Permanent link">&para;</a></h3>
-<p>Next we need to edit our resolv.conf files and add our dns resolver.</p>
+<hr />
+<h2 id="starting-and-stopping-lokinet">Starting and Stopping lokinet.<a class="headerlink" href="#starting-and-stopping-lokinet" title="Permanent link">&para;</a></h2>
+<p>To start lokinet manually run the following command:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl stop lokinet
+</pre></div>
+
+
+<p>and to stop lokinet manually run the following command:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl stop lokinet
+</pre></div>
+
+
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="setting-your-dns">Setting your DNS<a class="headerlink" href="#setting-your-dns" title="Permanent link">&para;</a></h3>
+<p>If you are having issues with resolving .loki addresses then we need to edit your resolv.conf files and add your dns resolver.</p>
+<h3 id="method-1">Method 1:<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h3>
+<p>Run the following command:</p>
+<div class="codehilite"><pre><span></span>apt install resolvconf
+</pre></div>
+
+
+<p>Then restart lokinet:</p>
+<div class="codehilite"><pre><span></span>systemctl restart lokinet
+</pre></div>
+
+
+<h3 id="method-2">Method 2:<a class="headerlink" href="#method-2" title="Permanent link">&para;</a></h3>
+<p>If Method 1 does not work we will need to add our nameserver manually.</p>
 <p>Run the following command: </p>
 <div class="codehilite"><pre><span></span>sudo nano /etc/resolvconf/resolv.conf.d/head
 </pre></div>
@@ -1997,14 +2050,8 @@ Click enter to confirm the file changes.</p>
 </pre></div>
 
 
-<h3 id="5-starting-and-stopping-lokinet">5. Starting and Stopping lokinet.<a class="headerlink" href="#5-starting-and-stopping-lokinet" title="Permanent link">&para;</a></h3>
-<p>To start lokinet manually run the following command:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl stop lokinet
-</pre></div>
-
-
-<p>and to stop lokinet manually run the following command:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl stop lokinet
+<p>Then restart lokinet:</p>
+<div class="codehilite"><pre><span></span>systemctl restart lokinet
 </pre></div>
 
 
