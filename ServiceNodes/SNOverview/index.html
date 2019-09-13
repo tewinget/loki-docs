@@ -96,7 +96,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#service-nodes-overview" tabindex="1" class="md-skip">
+      <a href="../../#service-nodes" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -793,6 +793,20 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-navigation" title="Quick Navigation" class="md-nav__link">
+    Quick Navigation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-nodes-overview" title="Service Nodes Overview" class="md-nav__link">
+    Service Nodes Overview
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#methods-to-setup-a-service-node" title="Methods to Setup a Service Node" class="md-nav__link">
@@ -1800,6 +1814,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-navigation" title="Quick Navigation" class="md-nav__link">
+    Quick Navigation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-nodes-overview" title="Service Nodes Overview" class="md-nav__link">
+    Service Nodes Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#methods-to-setup-a-service-node" title="Methods to Setup a Service Node" class="md-nav__link">
     Methods to Setup a Service Node
   </a>
@@ -1839,8 +1867,34 @@
                   <a href="https://github.com/loki-project/loki-docs/edit/master/docs/ServiceNodes/SNOverview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="service-nodes-overview">Service Nodes Overview<a class="headerlink" href="#service-nodes-overview" title="Permanent link">&para;</a></h1>
-<p>Although Loki implements novel changes on top of the <a href="../../Advanced/CryptoNoteElements/">CryptoNote protocol</a> (<a href="../../Mining/ASICResistance/">ASIC Resistance</a>, <a href="../../Advanced/DynamicBlockSize/">Dynamic Block Size</a> &amp; <a href="/Advanced/CryptoNoteElements/#ring-signatures">Static Ring Signatures</a>), much of Loki’s networking functionality and scalability is enabled by a set of incentivised nodes called Service Nodes.  To operate a Service Node, an operator <a href="../StakingRequirement/">time-locks a significant amount of Loki</a> and provides a minimum level of bandwidth and storage to the network. In return for their services, Loki Service Node operators receive a portion of the block reward from each block.</p>
+                <h1 id="service-nodes">Service Nodes<a class="headerlink" href="#service-nodes" title="Permanent link">&para;</a></h1>
+<h2 id="quick-navigation">Quick Navigation<a class="headerlink" href="#quick-navigation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Service Node Setup</strong></th>
+<th align="center"><strong>Service Node Setup</strong></th>
+<th align="center"><strong>Staking to Open Pool Service Node</strong></th>
+<th align="center"><strong>Updating your Service Node</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="../SNFullGuide/">Service Node Launcher Setup</a></td>
+<td align="center"><a href="../DebianPackageGuide/">Service Node Apt Repo Setup</a></td>
+<td align="center"><a href="../GUIStakingGuide/">GUI Staking</a></td>
+<td align="center"><a href="../ServiceNodes/SNFullGuide/#updating-your-binaries">Update your Binaries and Launcher</a></td>
+</tr>
+<tr>
+<td align="center">Set up a Service Node with the Loki Launcher by following this guide.</td>
+<td align="center">Set up a Service Node with debs via an apt repository by following this guide.</td>
+<td align="center">Want to stake without operating a Service Node, or want to stake to an open pool Service Node?</td>
+<td align="center">Need to download the latest releases for your Service Node and run the Loki Launcher?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="service-nodes-overview">Service Nodes Overview<a class="headerlink" href="#service-nodes-overview" title="Permanent link">&para;</a></h2>
+<p>Much of Loki’s networking functionality and scalability is enabled by a set of incentivised nodes called Service Nodes.  To operate a Service Node, an operator <a href="../StakingRequirement/">time-locks a significant amount of Loki</a> and provides a minimum level of bandwidth and storage to the network. In return for their services, Loki Service Node operators receive a portion of the block reward from each block.</p>
 <p>The resulting network provides <a href="../../Advanced/SybilResistance/">market-based resistance to Sybil attacks</a>, addressing a range of problems with existing mixnets and privacy-centric services. This resistance is based on supply and demand interactions which help prevent single actors from having a large enough stake in Loki to have a significant negative impact on the second-layer privacy services Loki provides. <a href="https://github.com/dashpay/dash/wiki/Whitepaper">DASH</a> first theorised that Sybil attack resistant networks can be derived from cryptoeconomics. As an attacker accumulates Loki, the  circulating supply decreases, in turn applying demand-side pressure, driving the price of Loki up. As this continues, it
 becomes increasingly costly for additional Loki to be purchased, making the attack prohibitively expensive.</p>
 <p>To achieve this economic protection, Loki encourages the active suppression of the circulating supply. In particular, the <a href="../../Advanced/Cryptoeconomics/">emissions curve</a> and <a href="../StakingRequirement/">collateral requirements</a> must be designed to ensure enough circulating supply is locked and reasonable returns are provided for operators to ensure <a href="../../Advanced/SybilResistance/">Sybil attack resistance</a>.</p>
@@ -1905,6 +1959,10 @@ becomes increasingly costly for additional Loki to be purchased, making the atta
 <tr>
 <td><strong><a href="../SNFullGuideLegacy/">Service Node Setup - Advanced</a></strong></td>
 <td>How to host and maintain a Service Node using the <a href="/Wallets/WalletsOverview/#command-line-interface-wallet-cli">CLI wallet</a>.</td>
+</tr>
+<tr>
+<td><strong><a href="../GUIStakingGuide/">Staking to a Service Node as a Contributor</a></strong></td>
+<td>How to Stake to a Service Node when you are not operating one but contributing.</td>
 </tr>
 <tr>
 <td><strong><a href="../UpdateGuide/">Updating your Service Node</a></strong></td>
