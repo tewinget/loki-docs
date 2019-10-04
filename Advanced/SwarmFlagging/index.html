@@ -10,6 +10,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="When nodes operate in a trustless environment without a centralised leader enforcing over arching rules, maintaining proper node behaviour on the network becomes difficult, a system of distributed flagging must be proposed to remove underperforming nodes. Swarm flagging works by using existing swarms to choose members that will participate in each testing round.">
+      
       
         <link rel="canonical" href="https://docs.loki.network/Advanced/SwarmFlagging/">
       
@@ -38,7 +40,7 @@
     
     
       
-        <title>Swarm Flagging - Loki Docs</title>
+        <title>Loki.network Documentation | Swarms | Swarm Flagging</title>
       
     
     
@@ -1882,11 +1884,6 @@
                 
                 
                 <h1 id="swarm-flagging">Swarm Flagging<a class="headerlink" href="#swarm-flagging" title="Permanent link">&para;</a></h1>
-<blockquote>
-<blockquote>
-<p>Define Swarm Flagging</p>
-</blockquote>
-</blockquote>
 <p>When nodes operate in a trustless environment without a centralised leader enforcing over arching rules, maintaining proper node behaviour on the network becomes difficult. Although <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> in Loki must hold the correct <a href="../../ServiceNodes/StakingRequirement/">collateral requirement</a>, they may choose to not <a href="../../Lokinet/LLARP/">route traffic</a> or <a href="../../LokiServices/Messenger/">store data</a> in their memory pools.  Because this option is financially beneficial (using less bandwidth/CPU cycles/storage), a system of distributed flagging must be proposed to remove underperforming nodes.</p>
 <p>For Loki, such distributed flagging faces major implementation issues. Fundamentally, every <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> is financially incentivised to flag every other Service Node as a bad actor. This is because when a Service Node is flagged it will face removal from the staking pool and thereby increase the flaggers chance at winning a reward. One potential method of  distributed flagging is one in which evidence is provided when a flagging event occurs, however, this solution falls prey to nodes fabricating evidence in their favour.  Conversely, flagging without restrictions allows either single nodes or groups of collaborating nodes to intentionally flag honest nodes in order to improve their chances of winning <a href="../Cryptoeconomics/">block  rewards</a>. To circumvent these issues, Loki proposes swarm flagging.</p>
 <p>Swarm flagging works by using existing swarms to choose members that will participate in each testing round. Each Service Node holds a copy of the blockchain, and each block created by a miner will deterministically select a number of test swarms. Every block, 1% of the networks swarms are selected for participation in a testing swarm. To calculate participating swarms, the hash of the five previous blocks is used to seed a Mersenne Twister function which then selects swarms by order of their position in the deterministic list.</p>
