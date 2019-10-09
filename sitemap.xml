@@ -261,6 +261,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.loki.network/Advanced/CheckpointingLip3/</loc>
+     <lastmod>2019-10-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.loki.network/Advanced/PulseLip5/</loc>
+     <lastmod>2019-10-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.loki.network/Developer/SNRPCGuide/</loc>
      <lastmod>2019-10-09</lastmod>
      <changefreq>daily</changefreq>
