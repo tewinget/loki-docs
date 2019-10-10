@@ -56,11 +56,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.loki.network/Wallets/GuiWallet/loki-gui-guide/</loc>
-     <lastmod>2019-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://docs.loki.network/ServiceNodes/GUIStakingGuide/</loc>
      <lastmod>2019-10-10</lastmod>
      <changefreq>daily</changefreq>
@@ -202,11 +197,6 @@
     </url>
     <url>
      <loc>https://docs.loki.network/Lokinet/LLARP/</loc>
-     <lastmod>2019-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.loki.network/Lokinet/DeveloperInfo/</loc>
      <lastmod>2019-10-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
