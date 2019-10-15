@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="What do Loki Service Nodes do? Loki Service Nodes begin as a Remote Node, you might be familiar with the Monero Remote Nodes. Loki remote nodes help people send transactions on the private blockchain without having to download the entire ledger of Loki. Service Nodes also do Exit Node duties, similar to Tor or I2P.">
+        <meta name="description" content="What do Loki Service Nodes do? Loki Service Nodes begin as a Remote Node, you might be familiar with the Monero Remote Nodes.">
       
       
         <link rel="canonical" href="https://docs.loki.network/ServiceNodes/ServiceNodeFunctions/">
@@ -810,8 +810,6 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Service Node Functions
@@ -825,16 +823,47 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#service-node-functions" title="Service Node Functions" class="md-nav__link">
+    Service Node Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#remote-nodes" title="Remote Nodes" class="md-nav__link">
     Remote Nodes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-service-node-functions" title="Future Service Node Functions" class="md-nav__link">
+    Future Service Node Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exit-nodes" title="Exit Nodes" class="md-nav__link">
+    Exit Nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1900,16 +1929,47 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#service-node-functions" title="Service Node Functions" class="md-nav__link">
+    Service Node Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#remote-nodes" title="Remote Nodes" class="md-nav__link">
     Remote Nodes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-service-node-functions" title="Future Service Node Functions" class="md-nav__link">
+    Future Service Node Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exit-nodes" title="Exit Nodes" class="md-nav__link">
+    Exit Nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1932,14 +1992,16 @@
                   <a href="https://github.com/loki-project/loki-docs/edit/master/docs/ServiceNodes/ServiceNodeFunctions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="service-node-functions">Service Node Functions<a class="headerlink" href="#service-node-functions" title="Permanent link">&para;</a></h1>
-<h2 id="remote-nodes">Remote Nodes<a class="headerlink" href="#remote-nodes" title="Permanent link">&para;</a></h2>
+                  <h1>Service Node Functions</h1>
+                
+                <h2 id="service-node-functions">Service Node Functions<a class="headerlink" href="#service-node-functions" title="Permanent link">&para;</a></h2>
+<h3 id="remote-nodes">Remote Nodes<a class="headerlink" href="#remote-nodes" title="Permanent link">&para;</a></h3>
 <p>On any given cryptocurrency network, storing a full copy of the blockchain is not possible or practical for many users.   In Bitcoin and Ethereum, users can choose to connect to a public full node that holds a copy of the blockchain and can query and submit transactions to the network. This works because Bitcoin and Ethereum full nodes can efficiently search the blockchain for transactions that have the users public key as the target.</p>
 <p>Due to the construction of CryptoNote currencies, public full nodes (called remote nodes) are put under much more stress.  When a user connects to a remote node, they must temporarily download every block (upon wallet creation or since last checked block) to their local machine and check each transaction for a public transaction key which can be generated from the users private view key. This process can cause a significant performance impact on remote nodes. Considering that there is no reward for this service, it can dissuade users from operating syncing services for light clients. CryptoNote mobile wallets are often unreliable and sometimes have to switch between remote nodes multiple times before establishing a reliable connection to either scan the blockchain or to submit a transaction.</p>
 <p>Additionally, malicious remote node operators running one of the few popular nodes can record the IP address of users as they broadcast specific transactions.  Although no information about the actual transaction is revealed by this attack, specific IP addresses can be linked with transactions which can then be used to establish a link to a real-world identity, compromising privacy.</p>
 <p>Loki circumvents these issues by requiring each <a href="../SNOverview/">Service Node</a> to act as a remote node that can be used by general users. Service Nodes naturally lend themselves to this work as they already hold a full copy of the  blockchain and form a widely distributed network of high bandwidth nodes. By using Service Nodes as remote nodes, there is an inherent financial limitation as to how much of the remote node network any given party can own, and therefore, how much data a malicious node operator can collect.</p>
-<h1 id="future-service-node-functions">Future Service Node Functions<a class="headerlink" href="#future-service-node-functions" title="Permanent link">&para;</a></h1>
-<h2 id="exit-nodes">Exit Nodes<a class="headerlink" href="#exit-nodes" title="Permanent link">&para;</a></h2>
+<h2 id="future-service-node-functions">Future Service Node Functions<a class="headerlink" href="#future-service-node-functions" title="Permanent link">&para;</a></h2>
+<h3 id="exit-nodes">Exit Nodes<a class="headerlink" href="#exit-nodes" title="Permanent link">&para;</a></h3>
 <p>Exit nodes allow users to make requests to the wider internet and return those requests through a <a href="../../Lokinet/LLARP/">mixnet</a>. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
 <p>Although the operation of exit nodes is essential to Loki’s extended utility, forcing all <a href="../SNOverview/">Service Node</a> operators to act as exit nodes could be detrimental. Acting as an exit node may expose the operator to legal risks, as users of the exit node may perform malicious activity whilst using it as a proxy. As exit nodes simply relay traffic from the internet to the end user, exit nodes often receive Digital Millennium Copyright Act (DMCA) requests or are often assumed to be the source of hacking attempts. Although in most jurisdictions safe harboring laws may protect exit node operators, internet service providers that carry Service Node traffic on their servers may fear legal risks and often cut off service to the exit node.</p>
 <p>Upon startup, a Service Node is assigned a relay flag and is restricted to routing packets within Lokinet, but never makes requests to the wider internet. An operator must opt-in if they wish to become an exit node, in doing so they demonstrate an understanding of the additional risks while also submitting to additional <a href="../../Advanced/SwarmFlagging/">Swarm tests</a>.</p>
