@@ -3,7 +3,6 @@
 var favicon = document.getElementsByClassName("md-logo")[0];
 favicon.id="Home";
 
-
 /* Adds link to ID Home */
 var faviconlink = document.getElementById('Home');
 faviconlink.href = 'https://www.loki.network';
