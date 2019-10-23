@@ -1358,20 +1358,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#immutable_height" title="immutable_height" class="md-nav__link">
-    immutable_height
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checkpointed-uint64" title="checkpointed - uint64" class="md-nav__link">
-    checkpointed - uint64
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#command-line-interface" title="Command Line Interface" class="md-nav__link">
     Command Line Interface
   </a>
@@ -1956,20 +1942,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#immutable_height" title="immutable_height" class="md-nav__link">
-    immutable_height
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checkpointed-uint64" title="checkpointed - uint64" class="md-nav__link">
-    checkpointed - uint64
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#command-line-interface" title="Command Line Interface" class="md-nav__link">
     Command Line Interface
   </a>
@@ -2007,7 +1979,6 @@ atleast 2 consecutive Service Node checkpoints proceeding it, meaning,
 effectively the transaction can not be reorganised and hence can not be double
 spent - once checkpointed.</p>
 <h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
-<h3 id="immutable_height">immutable_height<a class="headerlink" href="#immutable_height" title="Permanent link">&para;</a></h3>
 <p>For lokid in <code>get_info</code> we return a new field:
 - <code>immutable_height - uint64</code>: The latest height in the blockchain that can not
   be reorganized from (backed by atleast 2 Service Node, or 1 hardcoded
@@ -2022,7 +1993,6 @@ spent - once checkpointed.</p>
 </pre></div>
 
 
-<h3 id="checkpointed-uint64">checkpointed - uint64<a class="headerlink" href="#checkpointed-uint64" title="Permanent link">&para;</a></h3>
 <p>For <code>loki-wallet-rpc</code> in <code>get_transfers</code> we return a new field:
 - <code>checkpointed - uint64</code>: If transfer is backed by atleast 2 Service Node
   Checkpoints, 0 if it is not, see <code>immutable_height</code> in the daemon rpc call
