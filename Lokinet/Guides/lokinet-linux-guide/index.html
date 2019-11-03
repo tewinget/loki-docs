@@ -1178,6 +1178,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-mint-does-not-work-with-lsb-release" title="Linux Mint does not work with (lsb-release)" class="md-nav__link">
+    Linux Mint does not work with (lsb-release)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
     Setting your DNS
   </a>
@@ -2070,6 +2077,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-mint-does-not-work-with-lsb-release" title="Linux Mint does not work with (lsb-release)" class="md-nav__link">
+    Linux Mint does not work with (lsb-release)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
     Setting your DNS
   </a>
@@ -2172,6 +2186,9 @@
 </pre></div>
 
 
+<blockquote>
+<p>If you're deb is not recognised then check out <a href="#troubleshooting">troubleshooting</a>.</p>
+</blockquote>
 <p>Then resync your package repositories with:</p>
 <div class="codehilite"><pre><span></span>sudo apt update
 </pre></div>
@@ -2207,6 +2224,12 @@
 
 <p>and then restart your lokinet</p>
 <div class="codehilite"><pre><span></span>sudo systemctl restart lokinet
+</pre></div>
+
+
+<h3 id="linux-mint-does-not-work-with-lsb-release">Linux Mint does not work with (lsb-release)<a class="headerlink" href="#linux-mint-does-not-work-with-lsb-release" title="Permanent link">&para;</a></h3>
+<p>It has been reported that Linux Mint users can use the following command instead of the second command in <a href="#2-installation">2. Installation</a>:</p>
+<div class="codehilite"><pre><span></span>echo &quot;deb https://deb.imaginary.stream bionic main&quot; | sudo tee /etc/apt/sources.list.d/imaginary.stream.list
 </pre></div>
 
 
