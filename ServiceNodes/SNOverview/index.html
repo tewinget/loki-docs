@@ -471,8 +471,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Wallets/WhatWalletToUse/" title="What wallet to use?" class="md-nav__link">
-      What wallet to use?
+    <a href="../../Wallets/WhatWalletToUse/" title="Which wallet should I use?" class="md-nav__link">
+      Which wallet should I use?
     </a>
   </li>
 
@@ -2044,7 +2044,7 @@
 </table>
 <h2 id="service-nodes-overview">Service Nodes Overview<a class="headerlink" href="#service-nodes-overview" title="Permanent link">&para;</a></h2>
 <p>Much of Loki’s networking functionality and scalability is enabled by a set of incentivised nodes called Service Nodes.  To operate a Service Node, an operator <a href="../StakingRequirement/">time-locks a significant amount of Loki</a> and provides a minimum level of bandwidth and storage to the network. In return for their services, Loki Service Node operators receive a portion of the block reward from each block.</p>
-<p>The resulting network provides <a href="../../Advanced/SybilResistance/">market-based resistance to Sybil attacks</a>, addressing a range of problems with existing mixnets and privacy-centric services. This resistance is based on supply and demand interactions which help prevent single actors from having a large enough stake in Loki to have a significant negative impact on the second-layer privacy services Loki provides. <a href="https://github.com/dashpay/dash/wiki/Whitepaper">DASH</a> first theorised that Sybil attack resistant networks can be derived from cryptoeconomics. As an attacker accumulates Loki, the  circulating supply decreases, in turn applying demand-side pressure, driving the price of Loki up. As this continues, it
+<p>The resulting network provides <a href="../../Advanced/SybilResistance/">market-based resistance to Sybil attacks</a>, addressing a range of problems with existing onion routers and privacy-centric services. This resistance is based on supply and demand interactions which help prevent single actors from having a large enough stake in Loki to have a significant negative impact on the second-layer privacy services Loki provides. <a href="https://github.com/dashpay/dash/wiki/Whitepaper">DASH</a> first theorised that Sybil attack resistant networks can be derived from cryptoeconomics. As an attacker accumulates Loki, the  circulating supply decreases, in turn applying demand-side pressure, driving the price of Loki up. As this continues, it
 becomes increasingly costly for additional Loki to be purchased, making the attack prohibitively expensive.</p>
 <p>To achieve this economic protection, Loki encourages the active suppression of the circulating supply. In particular, the <a href="../../Advanced/Cryptoeconomics/">emissions curve</a> and <a href="../StakingRequirement/">collateral requirements</a> must be designed to ensure enough circulating supply is locked and reasonable returns are provided for operators to ensure <a href="../../Advanced/SybilResistance/">Sybil attack resistance</a>.</p>
 <h2 id="methods-to-setup-a-loki-service-node">Methods to Setup a Loki Service Node<a class="headerlink" href="#methods-to-setup-a-loki-service-node" title="Permanent link">&para;</a></h2>
@@ -2076,7 +2076,7 @@ becomes increasingly costly for additional Loki to be purchased, making the atta
 <p>It is also worth noting that Service Nodes are quite basic at the moment, and operators will need to stay up to date with new updates to keep in line with software and hardware requirements. Once all of the updates are out, Service Nodes will also offer the following <a href="../../LokiServices/LokiServicesOverview/">Loki Services</a>:</p>
 <ul>
 <li>
-<p>Route end user’s internet traffic, either as an <a href="/ServiceNodes/ServiceNodeFunctions/#exit-nodes">exit node</a> or relay in a novel mixnet</p>
+<p>Route end user’s internet traffic, either as an <a href="/ServiceNodes/ServiceNodeFunctions/#exit-nodes">exit node</a> or relay</p>
 </li>
 <li>
 <p>Receive, store and forward <a href="../../LokiServices/Messenger/">encrypted user messages</a></p>

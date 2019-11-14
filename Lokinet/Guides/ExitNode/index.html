@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Exit nodes allow users to make requests to the wider internet and return those requests through a mixnet. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.">
+        <meta name="description" content="Exit nodes allow users to make requests to the wider internet and return those requests through a mixnet or onion routing protocol. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.">
       
       
         <link rel="canonical" href="https://docs.loki.network/Lokinet/Guides/ExitNode/">
@@ -471,8 +471,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Wallets/WhatWalletToUse/" title="What wallet to use?" class="md-nav__link">
-      What wallet to use?
+    <a href="../../../Wallets/WhatWalletToUse/" title="Which wallet should I use?" class="md-nav__link">
+      Which wallet should I use?
     </a>
   </li>
 
@@ -2273,7 +2273,7 @@
                 
                 
                 <h1 id="lokinet-exit-node-guide">LokiNET Exit Node Guide<a class="headerlink" href="#lokinet-exit-node-guide" title="Permanent link">&para;</a></h1>
-<p>Exit nodes allow users to make requests to the wider internet and return those requests through a mixnet. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
+<p>Exit nodes allow users to make requests to the wider internet and return those requests through a mixnet or onion router. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
 <h2 id="client">Client<a class="headerlink" href="#client" title="Permanent link">&para;</a></h2>
 <p>Lokinet clients can use exit nodes without the need to host a service node.</p>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
@@ -2329,7 +2329,7 @@ We set a strict first hope so that we can easily set up the routing table.</p>
 <p>// TODO: talk about OS level limits for IPv4 exits</p>
 <p>// TODO: talk about ipv6 exit requirements, i.e. a /120 to /64</p>
 <h2 id="legal">Legal<a class="headerlink" href="#legal" title="Permanent link">&para;</a></h2>
-<p>Running a Lokinet Exit node simply means that you are requesting and relaying packets of data on someone else's behalf, a vast majority of the traffic in mixnets comprised of legal and non malicious traffic. Statically over the course of running a <a href="../../../ServiceNodes/SNOverview/">Service Node</a> you are likely to run into a few users who abuse their anonymity to send or receive information that may be explicitly malicious, therefor it is important that we discuss the legal implications of this malicious traffic.</p>
+<p>Running a Lokinet Exit node simply means that you are requesting and relaying packets of data on someone else's behalf, a vast majority of the traffic in mixnets and onion routers comprised of legal and non malicious traffic. Statically over the course of running a <a href="../../../ServiceNodes/SNOverview/">Service Node</a> you are likely to run into a few users who abuse their anonymity to send or receive information that may be explicitly malicious, therefor it is important that we discuss the legal implications of this malicious traffic.</p>
 <p>In most countries Exit nodes are viewed in much the same way as ISP's are, that is that they are usually classed as data transmitters, which makes them exempt from criminal or civil liability based on the data they transmit. This means they are also covered by exceptions in the EUCD and DMCA laws which stipulate content regulation on the internet in the US and Europe respectively.</p>
 <p>Despite this its important to consider that unlike ISP's exit node operators usually do not have large legal teams and a budget to fight prosecutions in court. Although a legal suit has never been brought against a Tor exit node operator, these are risks that each operator must control for.</p>
 <p>For this reason you should always check the laws of the relevant country you are operating your Service Node out of. If you run into legal challenges we recommend contacting the EFF who may be interested in hearing a case of Exit Node prosecution.</p>

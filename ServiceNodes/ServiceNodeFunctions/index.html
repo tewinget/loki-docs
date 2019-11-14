@@ -471,8 +471,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Wallets/WhatWalletToUse/" title="What wallet to use?" class="md-nav__link">
-      What wallet to use?
+    <a href="../../Wallets/WhatWalletToUse/" title="Which wallet should I use?" class="md-nav__link">
+      Which wallet should I use?
     </a>
   </li>
 
@@ -2030,7 +2030,7 @@
 <p>Loki circumvents these issues by requiring each <a href="../SNOverview/">Service Node</a> to act as a remote node that can be used by general users. Service Nodes naturally lend themselves to this work as they already hold a full copy of the  blockchain and form a widely distributed network of high bandwidth nodes. By using Service Nodes as remote nodes, there is an inherent financial limitation as to how much of the remote node network any given party can own, and therefore, how much data a malicious node operator can collect.</p>
 <h2 id="future-service-node-functions">Future Service Node Functions<a class="headerlink" href="#future-service-node-functions" title="Permanent link">&para;</a></h2>
 <h3 id="exit-nodes">Exit Nodes<a class="headerlink" href="#exit-nodes" title="Permanent link">&para;</a></h3>
-<p>Exit nodes allow users to make requests to the wider internet and return those requests through a <a href="../../Lokinet/LLARP/">mixnet</a>. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
+<p>Exit nodes allow users to make requests to the wider internet and return those requests through an <a href="../../Lokinet/LLARP/">onion routing protocol</a>. If used correctly, exit nodes allow users to browse the internet privately and without the users IP address being exposed to the server.</p>
 <p>Although the operation of exit nodes is essential to Loki’s extended utility, forcing all <a href="../SNOverview/">Service Node</a> operators to act as exit nodes could be detrimental. Acting as an exit node may expose the operator to legal risks, as users of the exit node may perform malicious activity whilst using it as a proxy. As exit nodes simply relay traffic from the internet to the end user, exit nodes often receive Digital Millennium Copyright Act (DMCA) requests or are often assumed to be the source of hacking attempts. Although in most jurisdictions safe harboring laws may protect exit node operators, internet service providers that carry Service Node traffic on their servers may fear legal risks and often cut off service to the exit node.</p>
 <p>Upon startup, a Service Node is assigned a relay flag and is restricted to routing packets within Lokinet, but never makes requests to the wider internet. An operator must opt-in if they wish to become an exit node, in doing so they demonstrate an understanding of the additional risks while also submitting to additional <a href="../../Advanced/SwarmFlagging/">Swarm tests</a>.</p>
 <p>Opting-in as an exit node affords an operator double the reward of a normal relay when selected for a <a href="../../Advanced/Cryptoeconomics/">block reward</a>. This incentive is provided to ensure that exit node operators have sufficient financial  incentives to operate exit nodes, helping to protect against <a href="../../Advanced/SybilResistance/">Sybil attacks</a> specifically  targeted to take over the exit node network. This is a vulnerability which Tor suffers from due to its low ratio of exit nodes to relays.</p>
