@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="The first Loki service to has been developed and deployed on the Loki network is a decentralised, end-to-end encrypted private messaging application called Loki Messenger.">
+        <meta name="description" content="The first Loki service to has been developed and deployed on the Loki network is a decentralised, end-to-end encrypted private messaging application called Session.">
       
       
         <link rel="canonical" href="https://docs.loki.network/LokiServices/Messenger/Messenger/">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Loki Docs | Decentralised end-to-end encrypted Private Messenger</title>
+        <title>Loki Docs | Session | Decentralised end-to-end encrypted Private Messenger</title>
       
     
     
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#loki-messenger" tabindex="1" class="md-skip">
+      <a href="../../../#session" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -124,7 +124,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Messenger
+                Session
               </span>
             
           
@@ -275,8 +275,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Messenger" class="md-tabs__link md-tabs__link--active">
-          Messenger
+        <a href="./" title="Session" class="md-tabs__link md-tabs__link--active">
+          Session
         </a>
       
     </li>
@@ -1238,11 +1238,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
-      Messenger
+      Session
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        Messenger
+        Session
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1262,11 +1262,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Messenger
+        Session
       </label>
     
-    <a href="./" title="Messenger" class="md-nav__link md-nav__link--active">
-      Messenger
+    <a href="./" title="Session" class="md-nav__link md-nav__link--active">
+      Session
     </a>
     
       
@@ -2066,12 +2066,13 @@
                   <a href="https://github.com/loki-project/loki-docs/edit/master/docs/LokiServices/Messenger/Messenger.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="loki-messenger">Loki Messenger<a class="headerlink" href="#loki-messenger" title="Permanent link">&para;</a></h1>
-<p>The first Loki service to has been developed and deployed on the Loki network is a decentralised, end-to-end encrypted private messaging application called Loki Messenger.</p>
+                <h1 id="session">Session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h1>
+<p>The first Loki service which has been developed and deployed on the Loki network is a decentralised, end-to-end encrypted private messaging application called <a href="https://getsession.org">Session</a>.</p>
 <p>End-to-end encrypted messaging applications that provide a platform for users to send messages without revealing their contents already exist, however they rely on centralised servers that can be targeted, blocked and shut down.  These  centralised  service  models present a high-risk for the anonymity of communicating parties, as they often require the user to register a phone number or other identifying information and connect directly via the IP address of the user. This information could be extracted from servers through data leaks or legal processes and used against the user. Leveraging the <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> architecture on the Loki network, we can deliver a service similar to popular centralised encrypted messaging apps, such as Signal, with a higher degree of privacy and censorship resistance.</p>
+<p><img alt="OnlineMessaging" src="../../../assets/sessionmockup.png" /></p>
 <h2 id="download-links">Download Links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
-<p>Head over to the Loki Get Started Page to get your Loki Messenger download Links:<br>
-<a href="https://loki.network/getstarted/">Loki Get Started</a></p>
+<p>Head over to the Session website to get your Session download Links:<br>
+<a href="https://getsession.org">Download</a></p>
 <h2 id="messenger-routing">Messenger Routing<a class="headerlink" href="#messenger-routing" title="Permanent link">&para;</a></h2>
 <p>Message routing on the Loki network changes depending on whether the receiving user is online or offline.  When both users are online, higher bandwidth communications can take place due to the fact that messages do not need to be stored on the <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a>.</p>
 <p>In Loki, a public key acts both as long-term encryption key and a routing address. In the most simple case, this key should be exchanged out-of-band to ensure protection against a man-in-the-middle attack. Such an exchange should take place either in person or through another secure mode of exchange.</p>
@@ -2082,13 +2083,13 @@
 <p>If Alice fails to receive a response from Bob, she can then initiate the offline messaging process.  Offline routing uses a modified version of <a href="https://github.com/ethersphere/go-ethereum/blob/ddfc0a2a02ce574f4c252068ce81f0f5ada1c1ff/swarm/pss/README.md">Postal Services over Swarm (PSS)</a>. <a href="../../../Advanced/SwarmFlagging/">Swarms</a> are logical groupings of <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a>, based both on their public keys and the hash of the block that their staking transaction first appeared in. Each swarm has a swarmID and consists of nine nodes. To send a message to Bob, Alice can use his public key to calculate which swarm Bob belongs to. With this information, Alice can anonymously route a message through the network to a random <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> in that swarm.  When a <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> receives a unique message destined for its swarm, it must distribute that message to the other eight nodes in the swarm.  All nodes are additionally required to store messages for their allocated Time-to-live (TTL).  When Bob comes online, he can query any two nodes in his swarm for messages he can decrypt. Offline messaging is protected from spamming with a small proof-of-work that is attached to each message.</p>
 <p><img alt="OfflineMessaging" src="../../../assets/OfflineMessaging.PNG" /></p>
 <h2 id="messenger-encryption-and-authentication">Messenger Encryption and Authentication<a class="headerlink" href="#messenger-encryption-and-authentication" title="Permanent link">&para;</a></h2>
-<p>Once a message chain is established, Loki Messenger enforces Perfect Forward Secrecy (PFS) and Deniable Authentication (DA). PFS and DA are key concepts of the Off The Record (OTR)  messaging  protocol.  Centralised  services,  such  as Signal and WhatsApp, use off the existing Tox protocol, which is a distributed, peer-to-peer instant messaging protocol that uses the highly audited <a href="https://nacl.cr.yp.to/">NaCl library</a>. </p>
-<p>PFS enables resistance from attacks where a long-term key is exposed.  A new shared encryption key is used for each session, so if a single session key is revealed, the whole message chain  is  not  compromised. If a third-party wanted  to  break  the  encryption  of  a  message chain they would need to obtain the keys for every individual session. PFS ensures that Loki Messenger is extremely difficult to compromise when compared to existing methods, such as
+<p>Once a message chain is established, Session enforces Perfect Forward Secrecy (PFS) and Deniable Authentication (DA). PFS and DA are key concepts of the Off The Record (OTR)  messaging  protocol.  Centralised  services,  such  as Signal and WhatsApp, use off the existing Tox protocol, which is a distributed, peer-to-peer instant messaging protocol that uses the highly audited <a href="https://nacl.cr.yp.to/">NaCl library</a>. </p>
+<p>PFS enables resistance from attacks where a long-term key is exposed.  A new shared encryption key is used for each session, so if a single session key is revealed, the whole message chain  is  not  compromised. If a third-party wanted  to  break  the  encryption  of  a  message chain they would need to obtain the keys for every individual session. PFS ensures that Session is extremely difficult to compromise when compared to existing methods, such as
 Pretty Good Privacy (PGP) encryption, where only one long-term key pair is required to compromise the whole message chain.</p>
 <p>DA refers to the ability for two parties to prove to each other that they are the sender of each new message. However, a third-party cannot ascertain who the true sender of any message is. When using DA, Message Authentication Codes (MACs) are published after each session, allowing third-parties to plausibly create messages that appear as if they originate from the senders public address. When correctly implemented, it is impossible for any third-party to prove that a sender of a specific message was the actual sender.</p>
 <h3 id="user-authentication">User Authentication<a class="headerlink" href="#user-authentication" title="Permanent link">&para;</a></h3>
 <p>Authentication of users is important to ensure protection against man-in-the-middle attacks. For example, if Bob is expecting a message from Alice but does not yet know what her public key is, then a third-party (Eve), could send a message to Bob pretending to be Alice. This is why users should authenticate each other before sharing personal information.</p>
-<p>Like Pidgin and other OTR messaging services, Loki Messenger uses Pre-Shared Key (PSK) authentication. Users have  multiple options for the establishment of a PSK. They can establish a key out-of-band, or alternatively, they can agree on a PSK over Loki Messenger by 9 asking the other a question which no third-party would know the answer. Loki will implement PSK  authentication based on a modified version of the <a href="http://pidgin-encrypt.sourceforge.net/">Pidgin encryption</a> authentication plugin.</p>
+<p>Like Pidgin and other OTR messaging services, Session uses Pre-Shared Key (PSK) authentication. Users have  multiple options for the establishment of a PSK. They can establish a key out-of-band, or alternatively, they can agree on a PSK over Session by 9 asking the other a question which no third-party would know the answer. Loki will implement PSK  authentication based on a modified version of the <a href="http://pidgin-encrypt.sourceforge.net/">Pidgin encryption</a> authentication plugin.</p>
                 
                   
                 

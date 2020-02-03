@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Loki Messenger now features cross-platform multidevice support, allowing you to use the same private key across your devices while maintaining security and privacy.">
+        <meta name="description" content="Session now features cross-platform multidevice support, allowing you to use the same private key across your devices while maintaining security and privacy.">
       
       
         <link rel="canonical" href="https://docs.loki.network/LokiServices/Messenger/multi_device_setup/">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Loki Docs | Multi-Device Support for Loki Messenger | Decentralised Messenger</title>
+        <title>Loki Docs | Multi-Device Support for Session | Decentralised Messenger</title>
       
     
     
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#loki-messenger-multi-device-setup" tabindex="1" class="md-skip">
+      <a href="../../../#session-multi-device-setup" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -275,8 +275,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Messenger/" title="Messenger" class="md-tabs__link md-tabs__link--active">
-          Messenger
+        <a href="../Messenger/" title="Session" class="md-tabs__link md-tabs__link--active">
+          Session
         </a>
       
     </li>
@@ -1238,11 +1238,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
-      Messenger
+      Session
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        Messenger
+        Session
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1253,8 +1253,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Messenger/" title="Messenger" class="md-nav__link">
-      Messenger
+    <a href="../Messenger/" title="Session" class="md-nav__link">
+      Session
     </a>
   </li>
 
@@ -1389,8 +1389,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#youve-successfully-set-up-a-multi-device-account-on-loki-messenger" title="You've successfully set up a multi-device account on Loki Messenger." class="md-nav__link">
-    You've successfully set up a multi-device account on Loki Messenger.
+  <a href="#youve-successfully-set-up-a-multi-device-account-on-session" title="You've successfully set up a multi-device account on Session." class="md-nav__link">
+    You've successfully set up a multi-device account on Session.
   </a>
   
 </li>
@@ -2146,8 +2146,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#youve-successfully-set-up-a-multi-device-account-on-loki-messenger" title="You've successfully set up a multi-device account on Loki Messenger." class="md-nav__link">
-    You've successfully set up a multi-device account on Loki Messenger.
+  <a href="#youve-successfully-set-up-a-multi-device-account-on-session" title="You've successfully set up a multi-device account on Session." class="md-nav__link">
+    You've successfully set up a multi-device account on Session.
   </a>
   
 </li>
@@ -2176,22 +2176,22 @@
                   <a href="https://github.com/loki-project/loki-docs/edit/master/docs/LokiServices/Messenger/multi_device_setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="loki-messenger-multi-device-setup">Loki Messenger multi-device setup<a class="headerlink" href="#loki-messenger-multi-device-setup" title="Permanent link">&para;</a></h1>
-<p>Loki Messenger now features cross-platform multidevice support, allowing you to use the same private key across your devices while maintaining security and privacy. Multidevice support is currently in early alpha, and the setup process is less streamlined than it will be when the feature moves out of alpha. The steps outlined in this guide will help you avoid data loss or other adverse effects when setting up multidevice for your Loki Messenger.</p>
+                <h1 id="session-multi-device-setup">Session multi-device setup<a class="headerlink" href="#session-multi-device-setup" title="Permanent link">&para;</a></h1>
+<p>Session now features cross-platform multidevice support, allowing you to use the same private key across your devices while maintaining security and privacy. Multidevice support is currently in early alpha, and the setup process is less streamlined than it will be when the feature moves out of alpha. The steps outlined in this guide will help you avoid data loss or other adverse effects when setting up multidevice for your Session.</p>
 <h2 id="primary-and-secondary-device">Primary and secondary device<a class="headerlink" href="#primary-and-secondary-device" title="Permanent link">&para;</a></h2>
-<p>Currently Loki Messenger only supports two devices per account: a primary and secondary device. This is only a temporary limitation; in future more than two devices will be able to be connected to the same account. To get started with multi-device, you'll need to start by deciding which device you want to be your primary device, and which will be your secondary.</p>
+<p>Currently Session only supports two devices per account: a primary and secondary device. This is only a temporary limitation; in future more than two devices will be able to be connected to the same account. To get started with multi-device, you'll need to start by deciding which device you want to be your primary device, and which will be your secondary.</p>
 <h2 id="requirements">Requirements:<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Primary Device: A device with Loki Messenger downloaded, installed and set up.</li>
-<li>Primary Public Key: The public key from your primary device generated by the Loki Messenger.</li>
-<li>Secondary Device: A device with the Loki Messenger installed but not initialised to a key.</li>
+<li>Primary Device: A device with Session downloaded, installed and set up.</li>
+<li>Primary Public Key: The public key from your primary device generated by the Session.</li>
+<li>Secondary Device: A device with the Session installed but not initialised to a key.</li>
 </ul>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>If you have Loki Messenger installed on both devices and they both have their own public keys already, you'll need to delete one public key (effectively deleting one of your Loki Messenger accounts). This device will become your secondary device.</p>
+<p>If you have Session installed on both devices and they both have their own public keys already, you'll need to delete one public key (effectively deleting one of your Session accounts). This device will become your secondary device.</p>
 <h3 id="mobile-as-secondary-device">Mobile as secondary device<a class="headerlink" href="#mobile-as-secondary-device" title="Permanent link">&para;</a></h3>
-<p>If you want your mobile (i.e. smartphone or tablet) to be your secondary device and your mobile copy of Loki Messenger already has its own public key, delete the Loki Messenger application and redownload it from the Apple App Store or Google Play Store.</p>
+<p>If you want your mobile (i.e. smartphone or tablet) to be your secondary device and your mobile copy of Session already has its own public key, delete the Session application and redownload it from the Apple App Store or Google Play Store.</p>
 <h3 id="desktop-as-secondary-device">Desktop as secondary device<a class="headerlink" href="#desktop-as-secondary-device" title="Permanent link">&para;</a></h3>
-<p>If you want your desktop (or laptop) messenger as your secondary device and it already has its own public key, open Loki Messenger on your desktop or laptop and go to <code>File</code> &gt; <code>Preferences</code> &gt; <code>Clear Data</code>.</p>
+<p>If you want your desktop (or laptop) messenger as your secondary device and it already has its own public key, open Session on your desktop or laptop and go to <code>File</code> &gt; <code>Preferences</code> &gt; <code>Clear Data</code>.</p>
 <p><center><img alt="Multi1" src="../../../assets/multi1.png" /></center></p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>For this demonstration we are going to have our mobile device as our primary device and a desktop as our secondary.</p>
@@ -2203,8 +2203,8 @@
 <blockquote>
 <p>WARNING: Do NOT skip past this step. If you click the <code>Link</code> button on your secondary device before the primary device is ready and waiting you may lose the chance to sync the devices.</p>
 </blockquote>
-<p>Your desktop copy of Loki Messenger should not yet have a public key attached to it. If you already have an account set up on your desktop messenger, jump back to <a href="#desktop-as-secondary-device">Desktop as a secondary device</a> and clear your data.</p>
-<p>Upon opening the Loki Messenger desktop client, you will be prompted with 3 options:</p>
+<p>Your desktop copy of Session should not yet have a public key attached to it. If you already have an account set up on your desktop messenger, jump back to <a href="#desktop-as-secondary-device">Desktop as a secondary device</a> and clear your data.</p>
+<p>Upon opening the Session desktop client, you will be prompted with 3 options:</p>
 <ul>
 <li>
 <p>Register a new account</p>
@@ -2224,16 +2224,16 @@
 <h3 id="step-3-prepare-primary-device">Step 3: Prepare primary device<a class="headerlink" href="#step-3-prepare-primary-device" title="Permanent link">&para;</a></h3>
 <p>To prepare the primary device, we need to go back into the Settings menu and click the <code>Link Device</code> button.</p>
 <p><center><img alt="Multi4" src="../../../assets/multi4.png" /></center></p>
-<p>Once the button has been clicked, Loki Messenger on your primary device will show a new popup saying "Waiting for Device".</p>
+<p>Once the button has been clicked, Session on your primary device will show a new popup saying "Waiting for Device".</p>
 <p><center><img alt="Multi5" src="../../../assets/multi5.png" /></center></p>
 <h3 id="step-4-click-link-button-on-secondary-device">Step 4: Click <code>Link</code> button on secondary device<a class="headerlink" href="#step-4-click-link-button-on-secondary-device" title="Permanent link">&para;</a></h3>
-<p>Now you can click the <code>Link</code> button on your desktop copy of Loki Messenger.</p>
+<p>Now you can click the <code>Link</code> button on your desktop copy of Session.</p>
 <p><center><img alt="Multi3" src="../../../assets/multi3.png" /></center></p>
 <h3 id="step-5-authorise-connection-on-your-primary-device">Step 5: Authorise connection on your primary device<a class="headerlink" href="#step-5-authorise-connection-on-your-primary-device" title="Permanent link">&para;</a></h3>
 <p>Once you've clicked <code>Link</code> on your secondary device, you will be prompted to authorise the link request on your primary device. Check that the 3 words match between devices, and authorise the request.</p>
 <p><center><img alt="Multi6" src="../../../assets/multi6.png" /></center></p>
 <h2 id="congratulations">Congratulations!<a class="headerlink" href="#congratulations" title="Permanent link">&para;</a></h2>
-<h3 id="youve-successfully-set-up-a-multi-device-account-on-loki-messenger">You've successfully set up a multi-device account on Loki Messenger.<a class="headerlink" href="#youve-successfully-set-up-a-multi-device-account-on-loki-messenger" title="Permanent link">&para;</a></h3>
+<h3 id="youve-successfully-set-up-a-multi-device-account-on-session">You've successfully set up a multi-device account on Session.<a class="headerlink" href="#youve-successfully-set-up-a-multi-device-account-on-session" title="Permanent link">&para;</a></h3>
                 
                   
                 
@@ -2254,7 +2254,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Messenger/" title="Messenger" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Messenger/" title="Session" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2263,7 +2263,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Messenger
+                Session
               </span>
             </div>
           </a>

@@ -275,8 +275,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../LokiServices/Messenger/Messenger/" title="Messenger" class="md-tabs__link">
-          Messenger
+        <a href="../../LokiServices/Messenger/Messenger/" title="Session" class="md-tabs__link">
+          Session
         </a>
       
     </li>
@@ -1236,11 +1236,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Messenger
+      Session
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        Messenger
+        Session
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1251,8 +1251,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../LokiServices/Messenger/Messenger/" title="Messenger" class="md-nav__link">
-      Messenger
+    <a href="../../LokiServices/Messenger/Messenger/" title="Session" class="md-nav__link">
+      Session
     </a>
   </li>
 
@@ -2058,7 +2058,7 @@
 <p>Each time a node interacts with another Service Node, it will make and retain a record of the incoming bandwidth provided.  Over time, nodes will be included in thousands of paths and route millions of <a href="../../LokiServices/Messenger/Messenger/">messages</a>. These interactions will form the basis of each nodes bandwidth tables. From this table, a node can respond to bandwidth tests about Service Nodes inside its swarm.</p>
 <p>All nodes are also expected to respond to queries of their own bandwidth tables from other nodes. This means that even  nodes who have recently joined the network can query the wider network for information about any specific node in their swarm.</p>
 <h3 id="message-storage-test">Message Storage Test<a class="headerlink" href="#message-storage-test" title="Permanent link">&para;</a></h3>
-<p>Message storage is essential for offline messaging functionality for users of <a href="../../LokiServices/Messenger/Messenger/">Loki Messenger</a>. <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> must be tested for their ability to cache messages and serve them to users over the course of the message’s Time-to-live (TTL).</p>
+<p>Message storage is essential for offline messaging functionality for users of <a href="../../LokiServices/Messenger/Messenger/">Session</a>. <a href="../../ServiceNodes/SNOverview/">Service Nodes</a> must be tested for their ability to cache messages and serve them to users over the course of the message’s Time-to-live (TTL).</p>
 <p>Users sending offline messages randomly select a Service Node within the destination users swarm. This node must distribute a copy of the message amongst the rest of the swarm. Depending on the proof-of-work attached to the header of the message, Service Nodes that receive a copy will store the data for the TTL. As the TTL on the original message reaches finality, the distributing node sends a nonce to all other members of the swarm. The swarm uses the nonce adding it to the message then  hashing  the result  and  then finally  sending it back to the distributing node. This test ensures that Service Nodes hold messages until TTL finality, and face eviction if they are unable to produce the correct message digest. As the sampling of the distributing node is random, over time each Service Node will be able to collect performance data on their swarm peers.</p>
 <h3 id="blockchain-storage-test">Blockchain Storage Test<a class="headerlink" href="#blockchain-storage-test" title="Permanent link">&para;</a></h3>
 <p><a href="../../ServiceNodes/SNOverview/">Service Nodes</a> are expected to hold a full copy of the Loki blockchain. By holding a full copy of the blockchain, Service Nodes can perform a number of tasks that are essential to users of the network including acting as a <a href="/ServiceNodes/ServiceNodeFunctions/#remote-nodes">remote node</a>, validating transactions, and locking transactions in <a href="../../LokiServices/Blink/">Blink</a>.</p>
