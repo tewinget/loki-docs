@@ -266,6 +266,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.loki.network/LokiServices/Messenger/message_routing/</loc>
+     <lastmod>2020-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.loki.network/LokiServices/Messenger/multi_device_setup/</loc>
      <lastmod>2020-02-28</lastmod>
      <changefreq>daily</changefreq>
