@@ -1287,49 +1287,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#messenger-routing" title="Messenger Routing" class="md-nav__link">
-    Messenger Routing
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#online-messaging" title="Online Messaging" class="md-nav__link">
-    Online Messaging
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline-messaging" title="Offline Messaging" class="md-nav__link">
-    Offline Messaging
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#messenger-encryption-and-authentication" title="Messenger Encryption and Authentication" class="md-nav__link">
-    Messenger Encryption and Authentication
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-authentication" title="User Authentication" class="md-nav__link">
-    User Authentication
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1349,15 +1309,39 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../threat_model/" title="Threat Models" class="md-nav__link">
+      Threat Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../infrastructure/" title="Infrastructure" class="md-nav__link">
+      Infrastructure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-4" type="checkbox" id="nav-9-4">
     
-    <label class="md-nav__link" for="nav-9-2">
+    <label class="md-nav__link" for="nav-9-4">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-2">
+      <label class="md-nav__title" for="nav-9-4">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1381,7 +1365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../public_channel_setup/" title="Public Channel Setup" class="md-nav__link">
+    <a href="../opengroup_setup/" title="Public Channel Setup" class="md-nav__link">
       Public Channel Setup
     </a>
   </li>
@@ -2049,49 +2033,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#messenger-routing" title="Messenger Routing" class="md-nav__link">
-    Messenger Routing
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#online-messaging" title="Online Messaging" class="md-nav__link">
-    Online Messaging
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline-messaging" title="Offline Messaging" class="md-nav__link">
-    Offline Messaging
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#messenger-encryption-and-authentication" title="Messenger Encryption and Authentication" class="md-nav__link">
-    Messenger Encryption and Authentication
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-authentication" title="User Authentication" class="md-nav__link">
-    User Authentication
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2115,29 +2059,19 @@
                 
                 
                 <h1 id="session">Session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h1>
-<p>The first Loki service which has been developed and deployed on the Loki network is a decentralised, end-to-end encrypted private messaging application called <a href="https://getsession.org">Session</a>.</p>
-<p>End-to-end encrypted messaging applications that provide a platform for users to send messages without revealing their contents already exist, however they rely on centralised servers that can be targeted, blocked and shut down.  These  centralised  service  models present a high-risk for the anonymity of communicating parties, as they often require the user to register a phone number or other identifying information and connect directly via the IP address of the user. This information could be extracted from servers through data leaks or legal processes and used against the user. Leveraging the <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> architecture on the Loki network, we can deliver a service similar to popular centralised encrypted messaging apps, such as Signal, with a higher degree of privacy and censorship resistance.</p>
-<p><img alt="OnlineMessaging" src="../../../assets/sessionmockup.png" /></p>
+<p>Session is an open-source, public-key-based secure messaging application which uses a set of decentralised storage servers and an onion routing protocol to send end-to-end encrypted messages with minimal exposure of user metadata. It does this while also providing common features of mainstream messaging applications. </p>
 <h2 id="download-links">Download Links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 <p>Head over to the Session website to get your Session download Links:<br>
 <a href="https://getsession.org">Download</a></p>
-<h2 id="messenger-routing">Messenger Routing<a class="headerlink" href="#messenger-routing" title="Permanent link">&para;</a></h2>
-<p>Message routing on the Loki network changes depending on whether the receiving user is online or offline.  When both users are online, higher bandwidth communications can take place due to the fact that messages do not need to be stored on the <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a>.</p>
-<p>In Loki, a public key acts both as long-term encryption key and a routing address. In the most simple case, this key should be exchanged out-of-band to ensure protection against a man-in-the-middle attack. Such an exchange should take place either in person or through another secure mode of exchange.</p>
-<h3 id="online-messaging">Online Messaging<a class="headerlink" href="#online-messaging" title="Permanent link">&para;</a></h3>
-<p>Once Alice knows Bobs public key, she assumes he is online and tries to create a path to him. Alice does this by querying the DHT of any Service Node and obtains any introduction set that corresponds with Bobs public key.  In LLARP, introduction sets list the introducers that each user maintains.  It is through these introducers that paths can be established. With Bobs introducer, Alice now chooses three random Service Nodes to act as intermediary hops between her origin and her destination (Bobs introducer).  A path has now been established, through which Alice and Bob can transmit messages.  If correctly authenticated, and using <a href="#messenger-encryption-and-authentication">OTR</a>,  Alice  and  Bob  can  now  communicate  while  maintaining  a  high-level of privacy.</p>
-<p><img alt="OnlineMessaging" src="../../../assets/OnlineMessaging.PNG" /></p>
-<h3 id="offline-messaging">Offline Messaging<a class="headerlink" href="#offline-messaging" title="Permanent link">&para;</a></h3>
-<p>If Alice fails to receive a response from Bob, she can then initiate the offline messaging process.  Offline routing uses a modified version of <a href="https://github.com/ethersphere/go-ethereum/blob/ddfc0a2a02ce574f4c252068ce81f0f5ada1c1ff/swarm/pss/README.md">Postal Services over Swarm (PSS)</a>. <a href="../../../Advanced/SwarmFlagging/">Swarms</a> are logical groupings of <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a>, based both on their public keys and the hash of the block that their staking transaction first appeared in. Each swarm has a swarmID and consists of nine nodes. To send a message to Bob, Alice can use his public key to calculate which swarm Bob belongs to. With this information, Alice can anonymously route a message through the network to a random <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> in that swarm.  When a <a href="../../../ServiceNodes/SNOverview/">Service Nodes</a> receives a unique message destined for its swarm, it must distribute that message to the other eight nodes in the swarm.  All nodes are additionally required to store messages for their allocated Time-to-live (TTL).  When Bob comes online, he can query any two nodes in his swarm for messages he can decrypt. Offline messaging is protected from spamming with a small proof-of-work that is attached to each message.</p>
-<p><img alt="OfflineMessaging" src="../../../assets/OfflineMessaging.PNG" /></p>
-<h2 id="messenger-encryption-and-authentication">Messenger Encryption and Authentication<a class="headerlink" href="#messenger-encryption-and-authentication" title="Permanent link">&para;</a></h2>
-<p>Once a message chain is established, Session enforces Perfect Forward Secrecy (PFS) and Deniable Authentication (DA). PFS and DA are key concepts of the Off The Record (OTR)  messaging  protocol.  Centralised  services,  such  as Signal and WhatsApp, use off the existing Tox protocol, which is a distributed, peer-to-peer instant messaging protocol that uses the highly audited <a href="https://nacl.cr.yp.to/">NaCl library</a>. </p>
-<p>PFS enables resistance from attacks where a long-term key is exposed.  A new shared encryption key is used for each session, so if a single session key is revealed, the whole message chain  is  not  compromised. If a third-party wanted  to  break  the  encryption  of  a  message chain they would need to obtain the keys for every individual session. PFS ensures that Session is extremely difficult to compromise when compared to existing methods, such as
-Pretty Good Privacy (PGP) encryption, where only one long-term key pair is required to compromise the whole message chain.</p>
-<p>DA refers to the ability for two parties to prove to each other that they are the sender of each new message. However, a third-party cannot ascertain who the true sender of any message is. When using DA, Message Authentication Codes (MACs) are published after each session, allowing third-parties to plausibly create messages that appear as if they originate from the senders public address. When correctly implemented, it is impossible for any third-party to prove that a sender of a specific message was the actual sender.</p>
-<h3 id="user-authentication">User Authentication<a class="headerlink" href="#user-authentication" title="Permanent link">&para;</a></h3>
-<p>Authentication of users is important to ensure protection against man-in-the-middle attacks. For example, if Bob is expecting a message from Alice but does not yet know what her public key is, then a third-party (Eve), could send a message to Bob pretending to be Alice. This is why users should authenticate each other before sharing personal information.</p>
-<p>Like Pidgin and other OTR messaging services, Session uses Pre-Shared Key (PSK) authentication. Users have  multiple options for the establishment of a PSK. They can establish a key out-of-band, or alternatively, they can agree on a PSK over Session by 9 asking the other a question which no third-party would know the answer. Loki will implement PSK  authentication based on a modified version of the <a href="http://pidgin-encrypt.sourceforge.net/">Pidgin encryption</a> authentication plugin.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Over the past 10 years, there has been a significant increase in the usage of instant messengers, with the most widely-used messengers each having amassed over 1 billion users. The potential privacy and security shortfalls of many popular messaging applications have been widely discussed. Most current methods of protecting user data privacy are focused on encrypting the contents of messages, an approach which has been relatively successful. </p>
+<p>This wide deployment of end-to-end encryption (E2EE) does increase user privacy; however, it largely fails to address the growing use of metadata by corporate and state-level actors as a method of tracking user activity. In the context of private messaging, metadata includes the IP addresses and phone numbers of the participants, the time and quantity of sent messages, and the relationship each account has with other accounts. Increasingly, it is the existence and analysis of this metadata that poses a significant privacy risk to journalists, demonstrators and human rights activists.</p>
+<p>Session is, in large part, a response to this growing risk; it attempts to build robust metadata protection on top of existing protocols, including the Signal protocol, which have already been proven to be effective in providing secure communication channels. </p>
+<p>Session works to reduce metadata collection in several ways:</p>
+<p>Firstly, Session does not rely on central servers, instead using a decentralised network of thousands of economically incentivised nodes to perform all core messaging functionality. For those services where decentralisation is impractical, like storage of attachments and hosting of large group chat channels, Session allows users to self-host infrastructure, or rely on built-in encryption and metadata protection to mitigate trust concerns.</p>
+<p>Secondly, Session ensures that IP addresses cannot be linked to messages sent or received by users. This is accomplished by using an onion routing protocol called onion requests. </p>
+<p>Thirdly, Session does not ask or require users to provide a phone number or email address when registering a new account. Instead, it uses pseudonymous public-private key pairs as the basis of an account’s identity.</p>
+<p><img alt="OnlineMessaging" src="../../../assets/sessionmockup.png" /></p>
                 
                   
                 
@@ -2173,13 +2107,13 @@ Pretty Good Privacy (PGP) encryption, where only one long-term key pair is requi
           </a>
         
         
-          <a href="../multi_device_setup/" title="Multi-Device Setup" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../threat_model/" title="Threat Models" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Multi-Device Setup
+                Threat Models
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
