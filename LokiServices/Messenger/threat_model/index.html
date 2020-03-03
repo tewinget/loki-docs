@@ -1251,8 +1251,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Session/" title="Session" class="md-nav__link">
-      Session
+    <a href="../Session/" title="Overview" class="md-nav__link">
+      Overview
     </a>
   </li>
 
@@ -1397,15 +1397,75 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../group_chats/" title="Group Chats" class="md-nav__link">
+      Group Chats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multidevice/" title="Multi-Device" class="md-nav__link">
+      Multi-Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../client_side_protection/" title="Client Side Protection" class="md-nav__link">
+      Client Side Protection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../attachments/" title="Attachments" class="md-nav__link">
+      Attachments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-10" type="checkbox" id="nav-9-10">
     
-    <label class="md-nav__link" for="nav-9-5">
+    <label class="md-nav__link" for="nav-9-10">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-5">
+      <label class="md-nav__title" for="nav-9-10">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2187,8 +2247,8 @@
 <p><strong>End-to-end encryption</strong>: Messages (with the exception of friend requests) maintain the properties of the Off the Record (OTR) messaging protocol, namely Perfect Forward Secrecy and Deniable Authentication.</p>
 <h2 id="in-scope">In Scope<a class="headerlink" href="#in-scope" title="Permanent link">&para;</a></h2>
 <h3 id="service-node-operators-passiveaction-attacks">Service Node Operators - Passive/Action attacks<a class="headerlink" href="#service-node-operators-passiveaction-attacks" title="Permanent link">&para;</a></h3>
-<p>Storage of messages in Session is handled by Service Node operators. Since the Service Node network is permissionless (only sufficient stake is required to join), our threat model considers a highly resourced attacker that has limited financial resources and can only run a fraction of the storage network. A dishonest Service Node operator would be able to perform a range of active or passive attacks. Such passive attacks could include passively reading message headers, logging timestamps of when messages were relayed/received, saving the encrypted contents of a message, and assessing the size of a message. Active attacks could include failing to relay messages, failing to store messages, providing clients with modified messages, and refusing to respond to requests for messages belonging to public keys. </p>
-<p>Service Nodes also operate the onion request system and thus could also attack it. Active attacks on the onion request system could include dropping arbitrary packets, modifying latency between hops, and modifying packets. Malicious Service Nodes would be able to continue performing these active attacks for as long as they continued to pass inter-Service Node tests. Passive attacks may involve a malicious Service Node collecting and storing all data that passes through it and logging all connections with other Service Nodes. </p>
+<p>Storage of messages in Session is handled by <a href="../../../ServiceNodes/SNOverview/">Service Node</a> operators. Since the Service Node network is permissionless (only <a href="../../../ServiceNodes/StakingRequirement/">sufficient stake</a> is required to join), our threat model considers a highly resourced attacker that has limited financial resources and can only run a fraction of the storage network. A dishonest Service Node operator would be able to perform a range of active or passive attacks. Such passive attacks could include passively reading message headers, logging timestamps of when messages were relayed/received, saving the encrypted contents of a message, and assessing the size of a message. Active attacks could include failing to relay messages, failing to store messages, providing clients with modified messages, and refusing to respond to requests for messages belonging to public keys. </p>
+<p>Service Nodes also operate the onion request system and thus could also attack it. Active attacks on the <a href="../infrastructure/#onion-requests">onion request</a> system could include dropping arbitrary packets, modifying latency between hops, and modifying packets. Malicious Service Nodes would be able to continue performing these active attacks for as long as they continued to pass inter-Service Node tests. Passive attacks may involve a malicious Service Node collecting and storing all data that passes through it and logging all connections with other Service Nodes. </p>
 <h3 id="network-adversary-passive-attacks">Network adversary - Passive attacks<a class="headerlink" href="#network-adversary-passive-attacks" title="Permanent link">&para;</a></h3>
 <p>Session’s threat model also considers a local network adversary such as an ISP or local network provider. This adversary can perform passive attacks such as monitoring all traffic it relays, conducting deep packet inspection, or saving relayed packets for later inspection.</p>
 <h2 id="out-of-scope">Out of Scope<a class="headerlink" href="#out-of-scope" title="Permanent link">&para;</a></h2>
@@ -2219,7 +2279,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Session/" title="Session" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Session/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2228,7 +2288,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Session
+                Overview
               </span>
             </div>
           </a>

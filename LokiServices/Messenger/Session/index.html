@@ -124,7 +124,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Session
+                Overview
               </span>
             
           
@@ -1262,11 +1262,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Session
+        Overview
       </label>
     
-    <a href="./" title="Session" class="md-nav__link md-nav__link--active">
-      Session
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
     </a>
     
       
@@ -1345,15 +1345,75 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../group_chats/" title="Group Chats" class="md-nav__link">
+      Group Chats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multidevice/" title="Multi-Device" class="md-nav__link">
+      Multi-Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../client_side_protection/" title="Client Side Protection" class="md-nav__link">
+      Client Side Protection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../attachments/" title="Attachments" class="md-nav__link">
+      Attachments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-10" type="checkbox" id="nav-9-10">
     
-    <label class="md-nav__link" for="nav-9-5">
+    <label class="md-nav__link" for="nav-9-10">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-5">
+      <label class="md-nav__title" for="nav-9-10">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2071,7 +2131,7 @@
                 
                 
                 <h1 id="session">Session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h1>
-<p>Session is an open-source, public-key-based secure messaging application which uses a set of decentralised storage servers and an onion routing protocol to send end-to-end encrypted messages with minimal exposure of user metadata. It does this while also providing common features of mainstream messaging applications. </p>
+<p>Session is an open-source, public-key-based secure messaging application which uses a set of decentralised storage servers and an <a href="../infrastructure/#onion-requests">onion routing protocol</a> to send end-to-end encrypted messages with minimal exposure of user metadata. It does this while also providing common features of mainstream messaging applications. </p>
 <h2 id="download-links">Download Links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 <p>Head over to the Session website to get your Session download Links:<br>
 <a href="https://getsession.org">Download</a></p>
@@ -2080,9 +2140,9 @@
 <p>This wide deployment of end-to-end encryption (E2EE) does increase user privacy; however, it largely fails to address the growing use of metadata by corporate and state-level actors as a method of tracking user activity. In the context of private messaging, metadata includes the IP addresses and phone numbers of the participants, the time and quantity of sent messages, and the relationship each account has with other accounts. Increasingly, it is the existence and analysis of this metadata that poses a significant privacy risk to journalists, demonstrators and human rights activists.</p>
 <p>Session is, in large part, a response to this growing risk; it attempts to build robust metadata protection on top of existing protocols, including the Signal protocol, which have already been proven to be effective in providing secure communication channels. </p>
 <p>Session works to reduce metadata collection in several ways:</p>
-<p>Firstly, Session does not rely on central servers, instead using a decentralised network of thousands of economically incentivised nodes to perform all core messaging functionality. For those services where decentralisation is impractical, like storage of attachments and hosting of large group chat channels, Session allows users to self-host infrastructure, or rely on built-in encryption and metadata protection to mitigate trust concerns.</p>
-<p>Secondly, Session ensures that IP addresses cannot be linked to messages sent or received by users. This is accomplished by using an onion routing protocol called onion requests. </p>
-<p>Thirdly, Session does not ask or require users to provide a phone number or email address when registering a new account. Instead, it uses pseudonymous public-private key pairs as the basis of an account’s identity.</p>
+<p>Firstly, Session does not rely on central servers, instead using a decentralised network of thousands of economically <a href="../../../ServiceNodes/SNOverview/">incentivised nodes</a> to perform all <a href="../message_routing/">core messaging functionality</a>. For those services where decentralisation is impractical, like storage of attachments and hosting of <a href="../group_chats/">large group chat channels</a>, Session allows users to self-host infrastructure, or rely on built-in encryption and metadata protection to mitigate trust concerns.</p>
+<p>Secondly, Session ensures that IP addresses cannot be linked to messages sent or received by users. This is accomplished by using an onion routing protocol called <a href="../infrastructure/#onion-requests">onion requests</a>. </p>
+<p>Thirdly, Session does not ask or require users to provide a phone number or email address when registering a new account. Instead, it uses <a href="../infrastructure/#identity-and-long-term-keys">pseudonymous public-private key pairs</a> as the basis of an account’s identity.</p>
 <p><img alt="OnlineMessaging" src="../../../assets/sessionmockup.png" /></p>
                 
                   
