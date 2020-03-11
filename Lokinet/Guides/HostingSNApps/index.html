@@ -2257,32 +2257,16 @@
 
 
 <h2 id="2-finding-your-snapps-lokinet-address">2. Finding your SNApps lokinet address.<a class="headerlink" href="#2-finding-your-snapps-lokinet-address" title="Permanent link">&para;</a></h2>
-<p>First we need to find the IP that our private tunnel adapter is connected to:</p>
-<div class="codehilite"><pre><span></span>nslookup localhost.loki
+<p>You can find your current snapp address using a host lookup tool:</p>
+<div class="codehilite"><pre><span></span>nslookup -type=cname localhost.loki 127.0.0.1
 </pre></div>
 
 
-<p>We should have an output similar to the below:</p>
-<div class="codehilite"><pre><span></span>Server:     127.0.0.53
-Address:    127.0.0.53#53
-
-Non-authoritative answer:
-Name:   localhost.loki
-Address: 10.0.0.1
+<p>on linux you can use <code>dig</code>, the loki address to query is the same but the resolver uses the address <code>127.3.2.1</code> as to not conflict with other resolvers you may have installed.</p>
+<div class="codehilite"><pre><span></span>dig @127.3.2.1 -t cname localhost.loki
 </pre></div>
 
 
-<p>We want to use the IP Address that is shown under <code>Name: localhost.loki</code> in the next command:</p>
-<div class="codehilite"><pre><span></span>nslookup 10.0.0.1
-</pre></div>
-
-
-<p>Which will output our lokinet public key:</p>
-<div class="codehilite"><pre><span></span>1.0.0.10.in-addr.arpa   name = jnzd4izeja5p7cf81bsy4t97szxpye5sewch88hontpwj6jdfqby.loki.
-</pre></div>
-
-
-<p>The public key is the url to your SNApp. Anyone running lokinet software will be able to access your hidden server using this public key.</p>
 <h2 id="3-creating-your-snapp">3. Creating your SNApp<a class="headerlink" href="#3-creating-your-snapp" title="Permanent link">&para;</a></h2>
 <p>Create a new directory within your home folder by running the following command in a terminal:</p>
 <div class="codehilite"><pre><span></span>mkdir ~/snapp/
