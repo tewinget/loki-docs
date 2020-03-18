@@ -2401,8 +2401,12 @@ blockchain tools) for Debian and Ubuntu.</p>
 <li>Debian unstable ("sid")</li>
 <li>Ubuntu 16.04 ("xenial")</li>
 <li>Ubuntu 18.04 ("bionic")</li>
-<li>Ubuntu 19.04 ("disco")</li>
+<li>Ubuntu 19.10 ("eoan")</li>
+<li>Ubuntu 20.04 ("focal")</li>
 </ul>
+<blockquote>
+<p>Note: Debian 9 and Ubuntu 16.04 are not recommended for new installations as support for them is likely to be deprecated soon.</p>
+</blockquote>
 <h2 id="express-guide">Express Guide<a class="headerlink" href="#express-guide" title="Permanent link">&para;</a></h2>
 <p>Start a new service node by running these four commands:</p>
 <div class="codehilite"><pre><span></span>curl -s https://deb.imaginary.stream/public.gpg | sudo apt-key add -
@@ -2415,7 +2419,8 @@ apt install loki-service-node
 </pre></div>
 
 
-<p>The services will run via systemd as <code>loki-node.service</code> and <code>loki-storage-server.service</code>.</p>
+<p>The services will run via systemd as <code>loki-node.service</code>, <code>loki-storage-server.service</code>, and
+<code>lokinet-router.service</code>.</p>
 <h2 id="full-guide">Full Guide<a class="headerlink" href="#full-guide" title="Permanent link">&para;</a></h2>
 <h3 id="1-initial-repository-setup">1: Initial Repository Setup<a class="headerlink" href="#1-initial-repository-setup" title="Permanent link">&para;</a></h3>
 <p>You only need to do this step the first time you want to set up the repository; when you've done it
@@ -2436,7 +2441,8 @@ appropriate value (see below).</p>
 <li>buster   (Debian 10)</li>
 <li>xenial   (Ubuntu 16.04)</li>
 <li>bionic   (Ubuntu 18.04)</li>
-<li>disco    (Ubuntu 19.04)</li>
+<li>eoan     (Ubuntu 19.10)</li>
+<li>focal    (Ubuntu 20.04)</li>
 </ul>
 <div class="codehilite"><pre><span></span>echo &quot;deb https://deb.imaginary.stream &lt;DISTRO&gt; main&quot; | sudo tee /etc/apt/sources.list.d/imaginary.stream.list
 </pre></div>
@@ -2469,6 +2475,10 @@ appropriate value (see below).</p>
 <td>The loki storage server, required for a service node (automatically pulled in by <code>loki-service-node</code>).</td>
 </tr>
 <tr>
+<td><code>lokinet-router</code></td>
+<td>The lokinet package configured to run as a router (automatically pulled in by <code>loki-service-node</code>).</td>
+</tr>
+<tr>
 <td><code>loki-wallet-cli</code></td>
 <td>The command-line wallet.</td>
 </tr>
@@ -2480,10 +2490,15 @@ appropriate value (see below).</p>
 <td><code>loki-blockchain-tools</code></td>
 <td>the various loki-blockchain-* commands for advanced blockchain management.</td>
 </tr>
+<tr>
+<td><code>lokinet-client</code></td>
+<td>The lokinet package configured to run as a client to access lokinet. (Not for service nodes).</td>
+</tr>
 </tbody>
 </table>
-<p>There are also a couple of <code>libloki-core*</code> packages containing the shared library code, but these will
-be installed automatically as needed.  </p>
+<p>There are also a few library packages such as <code>libloki-core*</code> containing the shared library code, as
+well as some backports of updated software for the older distributions; these can typically be
+ignored and will be installed automatically as needed.</p>
 <p>There is also a <code>libloki-core-dev</code> package containing the loki
 headers, but it's highly unlikely that you will need that for common use.</p>
 <h4 id="installing-a-package">Installing a Package<a class="headerlink" href="#installing-a-package" title="Permanent link">&para;</a></h4>
@@ -2508,19 +2523,17 @@ configuration between them.  There are two ways to approach this:</p>
 
 <p>This will detect your public IP (or allow you to enter it yourself) and automatically update the loki.conf configuration file with the necessary additional settings to run a service node.</p>
 <h4 id="manually"><strong>Manually</strong>:<a class="headerlink" href="#manually" title="Permanent link">&para;</a></h4>
-<p>Install both <code>lokid</code> and <code>loki-storage-server</code> packages</p>
-<div class="codehilite"><pre><span></span>sudo apt install lokid
+<p>Install the <code>lokid</code>, <code>loki-storage-server</code>, and <code>lokinet-router</code> packages:</p>
+<div class="codehilite"><pre><span></span>sudo apt install lokid loki-storage-server lokinet-router
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>sudo apt install loki-storage-server
-</pre></div>
-
-
-<p>Then edit the configuration in <code>/etc/loki/loki.conf</code> and <code>/etc/loki/storage.conf</code>.  </p>
-<p>If you want to change some of the lokid settings you can add the settings to <code>/etc/loki/loki.conf</code>.</p>
-<p>Restart both after configuration updates using:</p>
-<div class="codehilite"><pre><span></span>systemctl restart loki-node loki-storage-server
+<p>Then edit the configuration as desired in <code>/etc/loki/loki.conf</code>, <code>/etc/loki/storage.conf</code>, and
+<code>/etc/loki/lokinet-router.ini</code>.  (See the next section for details).</p>
+<p>Restart any of these after configuration updates using one or more of:</p>
+<div class="codehilite"><pre><span></span>systemctl restart loki-node
+systemctl restart loki-storage-server
+systemctl restart lokinet-router
 </pre></div>
 
 
@@ -2560,7 +2573,8 @@ lokid print_sn_status
 </pre></div>
 
 
-<p>This is useful to see if your node is syncing with the blockchain.</p>
+<p>This is useful to see if your node is syncing with the blockchain.  (Press Ctrl-C to stop watching
+the log).</p>
 <p>For a full list of supported commands run:</p>
 <div class="codehilite"><pre><span></span>lokid help
 </pre></div>
@@ -2570,6 +2584,14 @@ lokid print_sn_status
 <div class="codehilite"><pre><span></span>lokid --testnet status
 lokid --testnet print_sn_status
 lokid --testnet prepare_registration
+</pre></div>
+
+
+<p>You can also get basic statistics (such as uptime proof and ping times) on the running daemons from
+the <code>systemctl status</code> commands:</p>
+<div class="codehilite"><pre><span></span>systemctl status loki-node
+systemctl status loki-storage-server
+systemctl status lokinet-router
 </pre></div>
 
 
@@ -2590,10 +2612,11 @@ lokid --testnet prepare_registration
 </blockquote>
 <p>During the upgrade, lokid (both mainnet and testnet) will be restarted if they are currently running to switch to the updated lokid.</p>
 <p>If for some reason you want to install <em>only</em> updated loki package upgrades but not other system packages then instead of the <code>sudo apt upgrade</code> you can use:</p>
-<div class="codehilite"><pre><span></span>sudo apt install loki-storage-server lokid loki-wallet-cli
+<div class="codehilite"><pre><span></span>sudo apt install loki-storage-server lokid lokinet-router
 </pre></div>
 
 
+<p>(and change the above to whatever packages you want to install updates for).</p>
 <hr />
 <h3 id="installing-a-non-service-node-lokid-and-cli-wallet">Installing a non-service-node lokid and cli wallet.<a class="headerlink" href="#installing-a-non-service-node-lokid-and-cli-wallet" title="Permanent link">&para;</a></h3>
 <p>To install a non-service-node lokid and the cli wallet:</p>
@@ -2635,10 +2658,9 @@ key, etc.) owned by this user in <code>/var/lib/loki</code>.</p>
 
 <p>This will start it and configure systemd to automatically start it when the system boots.</p>
 <p>The <code>loki-service-node</code> package also updates the testnet.conf file to run as a (testnet) service
-node; in order to actually run it you need to activate and start both the loki-testnet-node.service
-(as above) and also the loki-testnet-storage-server.service:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl enable --now loki-testnet-node
-sudo systemctl enable --now loki-testnet-storage-server
+node; in order to actually run it you need to activate and start the loki-testnet-node.service
+(as above) and also the testnet storage server and lokinet routers:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl enable --now loki-testnet-node loki-testnet-storage-server lokinet-testnet-router
 </pre></div>
 
 
