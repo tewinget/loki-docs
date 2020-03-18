@@ -919,6 +919,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#important-changes" title="Important Changes" class="md-nav__link">
+    Important Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1012loki-7x-series" title="1.0.12(Loki 7.x series)" class="md-nav__link">
+    1.0.12(Loki 7.x series)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
     Overview
   </a>
@@ -1197,6 +1217,19 @@
   <a href="#updating-your-binaries" title="Updating your Binaries" class="md-nav__link">
     Updating your Binaries
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-for-1012-loki-7x-series" title="Updating for 1.0.12 (loki 7.x series)" class="md-nav__link">
+    Updating for 1.0.12 (loki 7.x series)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2427,6 +2460,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#important-changes" title="Important Changes" class="md-nav__link">
+    Important Changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1012loki-7x-series" title="1.0.12(Loki 7.x series)" class="md-nav__link">
+    1.0.12(Loki 7.x series)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
     Overview
   </a>
@@ -2706,6 +2759,19 @@
     Updating your Binaries
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updating-for-1012-loki-7x-series" title="Updating for 1.0.12 (loki 7.x series)" class="md-nav__link">
+    Updating for 1.0.12 (loki 7.x series)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2808,6 +2874,16 @@ If you feel confident around servers and the CLI, then skip to the <a href="#exp
 <li><a href="#express-setup-guide">Express Setup Guide</a></li>
 </ul>
 <hr />
+<h2 id="important-changes">Important Changes<a class="headerlink" href="#important-changes" title="Permanent link">&para;</a></h2>
+<h3 id="1012loki-7x-series">1.0.12(Loki 7.x series)<a class="headerlink" href="#1012loki-7x-series" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>New port 22020 for loki-storage's new LMQ port</p>
+</li>
+<li>
+<p>loki-storage 2.x won't start unless your file descriptors available are over 16k</p>
+</li>
+</ul>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>To understand what a <a href="../SNOverview/">Service Node</a> is, you can refer to the <a href="https://loki.network/whitepaper">whitepaper</a> to get an in depth understanding. For now, all you need to know is that:</p>
 <ul>
@@ -3493,7 +3569,12 @@ button.</p>
 
 
 <p>Then run the following command to download the new binaries:</p>
-<div class="codehilite"><pre><span></span>loki-launcher download-binaries
+<div class="codehilite"><pre><span></span>sudo loki-launcher download-binaries
+</pre></div>
+
+
+<p>Next we'll need to run check-systemd now to upgrade your nofile (file descriptor limit):</p>
+<div class="codehilite"><pre><span></span>check-systemd
 </pre></div>
 
 
@@ -3513,6 +3594,7 @@ button.</p>
 </pre></div>
 
 
+<h5 id="updating-for-1012-loki-7x-series">Updating for 1.0.12 (loki 7.x series)<a class="headerlink" href="#updating-for-1012-loki-7x-series" title="Permanent link">&para;</a></h5>
 <hr />
 <h3 id="default-directories-for-loki-files">Default Directories for Loki Files<a class="headerlink" href="#default-directories-for-loki-files" title="Permanent link">&para;</a></h3>
 <table>
