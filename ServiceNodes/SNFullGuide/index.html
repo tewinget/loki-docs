@@ -3216,11 +3216,6 @@ WantedBy=multi-user.target
 <p>If you chose a username other than <code>snode</code> then change snode in the <code>User=</code> line to the alternative username.</p>
 <p>Once completed, save the file and quit nano: <code>CTRL+X -&gt; Y -&gt; ENTER</code>.</p>
 <h4 id="43-enabling-the-service-file">4.3 - Enabling the Service File<a class="headerlink" href="#43-enabling-the-service-file" title="Permanent link">&para;</a></h4>
-<p>Reload systemd manager configuration (to make it re-read the new service file):</p>
-<div class="codehilite"><pre><span></span>sudo systemctl daemon-reload
-</pre></div>
-
-
 <p>Enable lokid.service so that it starts automatically upon boot:</p>
 <div class="codehilite"><pre><span></span>sudo systemctl enable lokid.service
 </pre></div>
