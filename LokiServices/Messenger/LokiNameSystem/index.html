@@ -2337,10 +2337,10 @@
 <h2 id="how-to-register-a-sessionwallet-name">How to register a Session/Wallet name.<a class="headerlink" href="#how-to-register-a-sessionwallet-name" title="Permanent link">&para;</a></h2>
 <p>Go to the <a href="../HowToRegisterSessionNames/">How to register Session/Wallet name guide</a>.</p>
 <h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
-<p>The LNS namespace is broken up into two distinct sections, one section is responsible for all lokinet names, referred to as .loki names and the other section is responsible for wallet and Session usernames. </p>
+<p>The LNS namespace is broken up into two distinct sections, one section is responsible for all lokinet names, referred to as <code>.loki</code> names and the other section is responsible for Wallet and Session usernames. </p>
 <p>On the initial release we will only be allowing the registration of Wallet and Session usernames.</p>
 <h2 id="names">Names<a class="headerlink" href="#names" title="Permanent link">&para;</a></h2>
-<p>Each LNS name can resolve to a Session public key, wallet address or .loki address. Session and Wallet names are within the same namespace. When purchasing a Session record, the Wallet record is automatically added to your possession. Lokinet names are in their own namespaces. For example, when purchasing ‘KeeJef’ in the Session namespace, you can assign a Session public key. Additionally you can update the wallet record under a 2nd transaction.</p>
+<p>Each LNS name can resolve to a Session public key, Wallet address or <code>.loki</code> address. Session and Wallet names are within the same namespace. When purchasing a Session record, the Wallet record is automatically added to your possession. Lokinet names are in their own namespaces. For example, when purchasing ‘KeeJef’ in the Session namespace, you can assign a Session public key. Additionally you can update the wallet record under a 2nd transaction.</p>
 <p>So when a user looks up ‘KeeJef’ they are returned both a Session ID and Wallet address, </p>
 <div class="codehilite"><pre><span></span>SessionID: 053b6b764388cd6c4d38ae0b3e7492a8ecf0076e270c013bb5693d973045f45254 
 Wallet Address: LBMTVEK8WRiC9rmfoKEjyrZSRje6PdiTU6926LjMkGMUdzyApMvXUbH4LswHnLjMjMPLUbDKiL3RCRQe5XFiobWb8jQrApR
@@ -2352,19 +2352,19 @@ Wallet Address: LBMTVEK8WRiC9rmfoKEjyrZSRje6PdiTU6926LjMkGMUdzyApMvXUbH4LswHnLjM
 <h2 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h2>
 <p>Each namespace, (Session and Wallet) (Lokinet) have restrictions on the characters allowed in the name. All names are case-insensitive.</p>
 <p>For Session, the name has to start with a (alphanumeric or underscore), and can have (alphanumeric, hyphens or underscores) in between and must end with a (alphanumeric or underscore). Users may register names with special characters or emojis by using the equivalent Punycode representation. The name must be at least 1 character, and at most- 64 characters long.</p>
-<p>For Lokinet, the domain has to start with an alphanumeric, and can have (alphanumeric or hyphens) in between. The character before the domain suffix <char>'.loki' must be alphanumeric followed by the suffix '.loki'. Users may register names with special characters or emojis by using the equivalent Punycode representation. The domain name must be at most 253 characters long, including the <code>.loki</code> suffix.</p>
+<p>For Lokinet, the domain has to start with an alphanumeric, and can have (alphanumeric or hyphens) in between. The character before the domain suffix <char><code>.loki</code> must be alphanumeric followed by the suffix <code>.loki</code>. Users may register names with special characters or emojis by using the equivalent Punycode representation. The domain name must be at most 253 characters long, including the <code>.loki</code> suffix.</p>
 <h2 id="time">Time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h2>
-<p>By default all mappings in the Session/Wallet namespace will be preserved forever, this is important to ensure that wallet mappings don't change when a user wants to send money to a name. The .loki namespace will have reregistration periods to deter domain squatting and release names if the keys that registered them are lost.</p>
+<p>By default all mappings in the Session/Wallet namespace will be preserved forever, this is important to ensure that wallet mappings don't change when a user wants to send money to a name. The <code>.loki</code> namespace will have reregistration periods to deter domain squatting and release names if the keys that registered them are lost.</p>
 <h2 id="ownership-transfer-updates-and-management">Ownership, Transfer, Updates and management<a class="headerlink" href="#ownership-transfer-updates-and-management" title="Permanent link">&para;</a></h2>
 <p>By default names are owned by the wallet address that purchased the name. However names can also be purchased on behalf of another user. Up to 2 wallet addresses may be specified as the owners of a name. This means up to 2 wallets to update and or transfer ownership of the record.</p>
 <p>Once a domain is owned it can be transferred to another user's Loki wallet by specifying the address of that wallet and paying the standard transaction fee to transfer the ownership. </p>
-<p>Updates to mappings can be made at any time by the owner, at the cost of the standard transaction fee to include the new mapping in the blockchain. </p>
+<p>Updates to mappings can be made at any time by the owner, at the cost of the standard transaction fee to include the new mapping in the blockchain.</p>
 <p>Management of all owned names will be possible through the Loki Desktop Wallet initially however we aim to add functionality to register and manage names to the Session software in the future. </p>
 <h2 id="cost">Cost<a class="headerlink" href="#cost" title="Permanent link">&para;</a></h2>
-<p>Names in the Session/Wallet namespace cost 20 Loki to register, We will try to update this cost per hardfork to target the $5-10 USD range. </p>
+<p>Names in the Session/Wallet namespace cost 20 Loki to register, We will try to update this cost per hardfork to target the $5-10 USD range.</p>
 <h2 id="privacy">Privacy<a class="headerlink" href="#privacy" title="Permanent link">&para;</a></h2>
-<p>It is up to each user to choose what information they map publicly, if you don’t want to map your Session ID or wallet address to your real world identity you might want to choose a different alias instead of something related to your name. Basic encryption is employed to mask publicity of data on the surface level, however please do not rely on this for critical privacy requirements. See the Loki Name Service technical document for more information.</p>
-<p>All wallet sub-addresses generated via account new are supported as owners. In future addresses generated by address new are in consideration but as of the initial release are unsupported.</p>
+<p>It is up to each user to choose what information they map publicly, if you don’t want to map your Session ID or Wallet address to your real world identity you might want to choose a different alias instead of something related to your name. Basic encryption is employed to mask publicity of data on the surface level, however please do not rely on this for critical privacy requirements. See the Loki Name Service technical document for more information.</p>
+<p>All wallet sub-addresses generated via account new are supported as owners.</p>
 <h2 id="technical-documentation">Technical Documentation<a class="headerlink" href="#technical-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="record-encryptiondecryption">Record Encryption/Decryption<a class="headerlink" href="#record-encryptiondecryption" title="Permanent link">&para;</a></h3>
 <p>LNS records stored in the blockchain undergo basic encryption and decryption to deter monitoring of the chain. It does not provide strong guarantees for privacy and should not be relied on for critical privacy usage.</p>
@@ -2383,52 +2383,85 @@ Wallet Address: LBMTVEK8WRiC9rmfoKEjyrZSRje6PdiTU6926LjMkGMUdzyApMvXUbH4LswHnLjM
 <p>Of which, <code>name_hashed</code> and <code>encrypted_value</code> use some form of encryption or decryption.</p>
 <h3 id="name_hashed"><code>name_hashed</code><a class="headerlink" href="#name_hashed" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Take the human readable name and hash it using Libsodium’s <code>crypto_generichash_blake2b</code> into a 32 byte hash and a <code>null key</code>.</li>
-<li>Convert the hash to base64 for storage into the sqlite3 database. It is hashed to provide optimal lexicographic lookup as a key</li>
+<li>
+<p>Human readable name is hashed with <code>blake2b</code> with the following parameters</p>
+<ul>
+<li>Key Length: 0 bytes</li>
+<li>Hash Length: 32 bytes</li>
 </ul>
+</li>
+<li>
+<p>Name hash converted to base64 for storage into the <code>sqlite3</code> database (this provides optimal lexicographic lookup as a key).</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span>    hash32 = Blake2B(name, key=0)
+    name_hash = Base64Encode(hash32)
+</pre></div>
+
+
 <h3 id="encrypted_value"><code>encrypted_value</code><a class="headerlink" href="#encrypted_value" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Take the human readable name and turns it into a <code>secretbox_secret_key</code> using <code>crypto_pwhash</code> with the hashing parameters (as of <a href="https://github.com/loki-project/loki-core/blob/242ea17606138075cd209421c70992c4fb2e407c/src/cryptonote_core/loki_name_system.cpp#L954">Validant Vidar v7.1.0</a>). </li>
-</ul>
-<p>This may be subject to change in the future</p>
+<li>
+<p>Generate the secret key for decryption/encryption using the unhashed name with <code>Argon2ID v1.3</code> and the following parameters as of Valiant Vidar v7.1.X</p>
 <ul>
-<li><code>crypto_pwhash_OPSLIMIT_MODERATE</code></li>
-<li><code>crypto_pwhash_MEMLIMIT_MODERATE</code></li>
-<li><code>crypto_pwhash_ALG_ARGON2ID13</code></li>
-<li>
-<p><code>null salt (crypto_pwhash_SALTBYTES buffer of 0)</code></p>
-</li>
-<li>
-<p>Take the human readable value, convert it to a binary value</p>
-</li>
-<li>
-<p>Encrypt the binary value with the <code>secretbox_secret_key</code> derived earlier using <code>crypto_secretbox_easy</code> with the parameters to create the <code>encrypted_value</code>.</p>
-</li>
-<li><code>encryption nonce (crypto_secretbox_NONCEBYTES buffer of 0)</code></li>
-<li><code>Binary Value</code></li>
+<li>Iterations: 3</li>
+<li>Memory: 268_435_456 bytes</li>
+<li>Salt Length: 0 bytes</li>
+<li>Key Length: 32 bytes</li>
 </ul>
-<blockquote>
-<p>Note we do not use any particular <code>encryption nonce</code>, <code>hashing key</code> or <code>salt</code> as we require the parameters to be publicly available and readily encrypted and decrypted by clients to use LNS.</p>
-</blockquote>
+</li>
+<li>
+<p>Decrypt/encrypt the value represented in binary with <code>XSalsa20Poly1305</code> and the following parameters as of Valiant Vidar v7.1.X</p>
+<ul>
+<li>Nonce: 0 bytes</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span>    key32 = Argon2ID(iterations=3, memory=268435436, salt=0)
+    encrypted_value = XSalsa20Poly1305Encrypt(value, key32, nonce=0)
+    decrypted_value = XSalsa20Poly1305Decrypt(encrypted_value, key32, nonce=0)
+</pre></div>
+
+
 <h3 id="owners">Owners<a class="headerlink" href="#owners" title="Permanent link">&para;</a></h3>
 <p>In the Loki Name System (LNS), an owner of a record has the ability to update information about the record by making a transaction on the Loki blockchain. Owners are specified when buying a record and in LNS we support 2 types. A standard Ed25519 keypair and a Loki Wallet address.</p>
 <p>By default, the wallet is configured to assign itself as the owner of the mapping when purchased.</p>
 <h3 id="record-updating">Record Updating<a class="headerlink" href="#record-updating" title="Permanent link">&para;</a></h3>
 <p>LNS records can be updated by getting the owner of the record to generate a signature that authorises the protocol to update fields in the record.</p>
 <p>The following fields can be updated in the record</p>
-<ul>
-<li><code>Name</code></li>
-<li><code>Value</code></li>
-<li><code>Owner</code></li>
-<li><code>Backup Owner</code></li>
-</ul>
-<p>Depending on the fields chosen to update, they must be copied into a buffer and also the TXID that last updated the record (which can be retrieved by querying the mapping). In summary the buffer to hash is as follows,</p>
-<div class="codehilite"><pre><span></span>Buffer[] = {*binary_value, *owner, *backup_owner, prev_txid}
-*If value is specified, copy the value to the buffer, otherwise skip.
+<div class="codehilite"><pre><span></span>Value
+Owner
+Backup Owner
 </pre></div>
 
 
-<p>The buffer is then hashed with Libsodium’s crypto_generichash with a null key into a 32 byte hash.</p>
+<ul>
+<li>Copy the fields to update into a buffer</li>
+<li>Copy the TXID into the buffer that last updated the record (which can be retrieved by querying the mapping).</li>
+<li>
+<p>Hash the buffer with <code>blake2b</code> with the following parameters</p>
+<ul>
+<li>Key Length: 0 bytes</li>
+<li>Hash Length: 32 bytes</li>
+</ul>
+</li>
+<li>
+<p>Sign the hashed buffer</p>
+<ul>
+<li>If the current owner (or backup owner) is a wallet address, it must be signed with the current owner's (or backup owner's) wallet secret spend key.</li>
+<li>If the current owner (or backup owner) is a ed25519 key, it must be signed with the current owner's (or backup owner's) ed25519 secret key.</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span>    // *If value is specified, copy the value to the buffer, otherwise skip.
+    buffer[] = {*binary_value, *owner, *backup_owner, prev_txid}
+    hash32 = Blake2B(buffer, key=0)
+
+    if (monero)
+        signature = generate_signature(hash32, spend_pkey, spend_skey)
+    else
+        signature = ed25519_signature(hash32, ed25519_skey)
+</pre></div>
                 
                   
                 
