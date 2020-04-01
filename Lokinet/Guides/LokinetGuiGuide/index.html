@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="The function of SNApps is similar to so-called hidden services in Tor which have flourished. They provide users with a way to interact fully within the onion router environment, providing an even higher-degree of anonymity than can be achieved when accessing externally hosted content.">
+        <meta name="description" content="This guide walks you through the steps to get Lokinet, a new onion router with sybil resistance properties, working on Linux.">
       
       
         <link rel="canonical" href="https://docs.loki.network/Lokinet/Guides/LokinetGuiGuide/">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Loki Documentation | How to access hidden services or Lokinet SNApps using the GUI.</title>
+        <title>Loki Documentation | Lokinet Linux GUI Install Guide | Onion Routing</title>
       
     
     
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#lokinet-gui-guide" tabindex="1" class="md-skip">
+      <a href="../../../#lokinet-gui-install-guide-linux" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -124,7 +124,7 @@
                 Loki Docs
               </span>
               <span class="md-header-nav__topic">
-                Lokinet GUI Guide
+                Linux GUI Guide
               </span>
             
           
@@ -1115,11 +1115,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lokinet GUI Guide
+        Linux GUI Guide
       </label>
     
-    <a href="./" title="Lokinet GUI Guide" class="md-nav__link md-nav__link--active">
-      Lokinet GUI Guide
+    <a href="./" title="Linux GUI Guide" class="md-nav__link md-nav__link--active">
+      Linux GUI Guide
     </a>
     
       
@@ -1133,22 +1133,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-installing" title="1. Installing" class="md-nav__link">
-    1. Installing
+  <a href="#initial-setup-for-linux" title="Initial Setup for Linux" class="md-nav__link">
+    Initial Setup for Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-computer-preparation" title="1. Computer Preparation" class="md-nav__link">
+    1. Computer Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation" title="2. Installation" class="md-nav__link">
+    2. Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-lokinet-off-and-on" title="Turn Lokinet off and on" class="md-nav__link">
+    Turn Lokinet off and on
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-starting-lokinet-gui" title="2. Starting Lokinet Gui" class="md-nav__link">
-    2. Starting Lokinet Gui
+  <a href="#browse-lokinet-stay-private" title="Browse Lokinet - Stay Private" class="md-nav__link">
+    Browse Lokinet - Stay Private
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-browse-lokinet-stay-private" title="3. Browse Lokinet - Stay Private" class="md-nav__link">
-    3. Browse Lokinet - Stay Private
+  <a href="#finish" title="Finish" class="md-nav__link">
+    Finish
   </a>
   
 </li>
@@ -1170,32 +1197,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../lokinet-linux-guide/" title="Lokinet Linux Guide" class="md-nav__link">
-      Lokinet Linux Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../lokinet-windows-guide/" title="Lokinet Windows Guide" class="md-nav__link">
-      Lokinet Windows Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../lokinet-mac-guide/" title="Lokinet Mac Guide" class="md-nav__link">
-      Lokinet Mac Guide
+    <a href="../lokinet-linux-guide/" title="Linux Command-line Guide" class="md-nav__link">
+      Linux Command-line Guide
     </a>
   </li>
 
@@ -2143,22 +2146,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-installing" title="1. Installing" class="md-nav__link">
-    1. Installing
+  <a href="#initial-setup-for-linux" title="Initial Setup for Linux" class="md-nav__link">
+    Initial Setup for Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-computer-preparation" title="1. Computer Preparation" class="md-nav__link">
+    1. Computer Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation" title="2. Installation" class="md-nav__link">
+    2. Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-lokinet-off-and-on" title="Turn Lokinet off and on" class="md-nav__link">
+    Turn Lokinet off and on
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-starting-lokinet-gui" title="2. Starting Lokinet Gui" class="md-nav__link">
-    2. Starting Lokinet Gui
+  <a href="#browse-lokinet-stay-private" title="Browse Lokinet - Stay Private" class="md-nav__link">
+    Browse Lokinet - Stay Private
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-browse-lokinet-stay-private" title="3. Browse Lokinet - Stay Private" class="md-nav__link">
-    3. Browse Lokinet - Stay Private
+  <a href="#finish" title="Finish" class="md-nav__link">
+    Finish
   </a>
   
 </li>
@@ -2182,29 +2212,68 @@
                   <a href="https://github.com/loki-project/loki-docs/edit/master/docs/Lokinet/Guides/LokinetGuiGuide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lokinet-gui-guide">Lokinet GUI guide<a class="headerlink" href="#lokinet-gui-guide" title="Permanent link">&para;</a></h1>
-<p>The function of <a href="../../SNApps/">SNApps</a> is similar to so-called hidden services in Tor which have flourished. They provide users with a way to interact fully within the onion router environment, providing an even higher-degree of anonymity than can be achieved when accessing externally hosted content. SNApps allow for users to setup and host marketplaces, forums, whistle-blowing websites, social media, and most other internet applications on their own machines or servers while maintaining full-server and user-side anonymity. This greatly expands the scope of the network and allows users to build meaningful communities within <a href="../../LokinetOverview/">Lokinet</a>.</p>
-<h2 id="1-installing">1. Installing<a class="headerlink" href="#1-installing" title="Permanent link">&para;</a></h2>
-<p>Got to the Lokinet github and download the latest release for your operating system:<a href="https://github.com/loki-project/loki-network/releases">https://github.com/loki-project/loki-network/releases</a>.</p>
-<p>Alternatively you can download it through the below redirects:</p>
-<ul>
-<li><a href="https://loki.network/lokinetWindows/">Windows</a></li>
-<li><a href="https://loki.network/lokinetLinux/">Linux</a></li>
-</ul>
-<p>Once downloaded, run through the installation and launch Lokinet.</p>
-<h2 id="2-starting-lokinet-gui">2. Starting Lokinet Gui<a class="headerlink" href="#2-starting-lokinet-gui" title="Permanent link">&para;</a></h2>
-<p>Once Lokinet has been installed you will need to turn the daemon on. </p>
-<p>We can do this by clicking the red power button on the application.</p>
-<p><img alt="Lokinet Gui 1" src="../../../assets/lokinetGui.PNG" /></p>
-<p>To confirm we are connected to Lokinet all we have to see is the green power button.</p>
-<p><img alt="Lokinet Gui 2" src="../../../assets/lokinetGui2.PNG" /></p>
-<h2 id="3-browse-lokinet-stay-private">3. Browse Lokinet - Stay Private<a class="headerlink" href="#3-browse-lokinet-stay-private" title="Permanent link">&para;</a></h2>
-<p>Jump onto a browser such as brave or firefox and try and go to the following SNApp:</p>
+                <h1 id="lokinet-gui-install-guide-linux">Lokinet GUI install guide - Linux<a class="headerlink" href="#lokinet-gui-install-guide-linux" title="Permanent link">&para;</a></h1>
+<p>Author: Jason (jagerman), Johnathan (SonOfOtis)</p>
+<p>Source: <a href="https://deb.imaginary.stream/">https://deb.imaginary.stream/</a></p>
+<h2 id="initial-setup-for-linux">Initial Setup for Linux<a class="headerlink" href="#initial-setup-for-linux" title="Permanent link">&para;</a></h2>
+<h3 id="1-computer-preparation">1. Computer Preparation<a class="headerlink" href="#1-computer-preparation" title="Permanent link">&para;</a></h3>
+<p>We should update our package lists, the below command downloads the package lists from the repositories and "updates" them to get information on the newest versions of packages and their dependencies. It will do this for all repositories and PPAs.</p>
+<p>Run the following command:</p>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+
+
+<p>You will notice a bunch of package lists were downloaded, once this is complete run the below command to fetch new versions of any packages we currently have installed on the system.</p>
+<div class="codehilite"><pre><span></span>sudo apt-get upgrade
+</pre></div>
+
+
+<p>You will be prompted to authorise the use of disk space, type <code>y</code> and enter to authorise.</p>
+<blockquote>
+<p>Note: If you are prompted at any time that a version of any file is available then click the up and down arrows until you are hovering over install the package maintainer’s version and click enter.</p>
+</blockquote>
+<p>If you do not have curl installed on your computer then let's install it as we will use it later:</p>
+<div class="codehilite"><pre><span></span>sudo apt install curl
+</pre></div>
+
+
+<h3 id="2-installation">2. Installation<a class="headerlink" href="#2-installation" title="Permanent link">&para;</a></h3>
+<p>You only need to do this step the first time you want to set up the repository; when you've done it once, the repository will automatically update whenever you fetch new system updates.</p>
+<p>To add the Loki <code>apt</code> repository run the following commands:</p>
+<p>The following command installed Jagermans public key used to sign the Binaries.</p>
+<div class="codehilite"><pre><span></span>curl -s https://deb.imaginary.stream/public.gpg | sudo apt-key add -
+</pre></div>
+
+
+<p>The next command tells <code>apt</code> where to find the packages:</p>
+<div class="codehilite"><pre><span></span>echo &quot;deb https://deb.imaginary.stream $(lsb_release -sc) main&quot; | sudo tee /etc/apt/sources.list.d/imaginary.stream.list
+</pre></div>
+
+
+<p>Then resync your package repositories with:</p>
+<div class="codehilite"><pre><span></span>sudo apt update
+</pre></div>
+
+
+<p>Now install lokinet:</p>
+<div class="codehilite"><pre><span></span>sudo apt install lokinet-gui
+</pre></div>
+
+
+<p>Congratulations, Lokinet is now installed and running in the background. </p>
+<p>To access the GUI client all you need to do is open up the lokinet-gui application.</p>
+<h2 id="turn-lokinet-off-and-on">Turn Lokinet off and on<a class="headerlink" href="#turn-lokinet-off-and-on" title="Permanent link">&para;</a></h2>
+<p>Simply jump into the lokinet-gui client and click the power button.</p>
+<p><img alt="lokinet-gui" src="../../../assets/LokinetGui.PNG" /></p>
+<h2 id="browse-lokinet-stay-private">Browse Lokinet - Stay Private<a class="headerlink" href="#browse-lokinet-stay-private" title="Permanent link">&para;</a></h2>
+<p>Jump onto a browser and head over to the Lokinet wiki SNApp:</p>
 <ul>
 <li>Lokinet Wiki <a href="http://dw68y1xhptqbhcm5s8aaaip6dbopykagig5q5u1za4c7pzxto77y.loki/wiki/">http://dw68y1xhptqbhcm5s8aaaip6dbopykagig5q5u1za4c7pzxto77y.loki/wiki/</a></li>
 </ul>
-<p>The Lokinet Wiki has a list of other SNApp links you can go to.</p>
-<p>Congratulations, you now have access to the Lokinet.</p>
+<p>Congratulations, you're browsing Lokinet.</p>
+<hr />
+<h2 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h2>
+<p>Well done, you have finished the guide. Jump into the <a href="../AccessingSNApps/">Accessing SNApps guide</a>.</p>
                 
                   
                 
@@ -2240,13 +2309,13 @@
           </a>
         
         
-          <a href="../lokinet-linux-guide/" title="Lokinet Linux Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../lokinet-linux-guide/" title="Linux Command-line Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Lokinet Linux Guide
+                Linux Command-line Guide
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

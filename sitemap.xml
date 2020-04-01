@@ -211,16 +211,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.loki.network/Lokinet/Guides/lokinet-windows-guide/</loc>
-     <lastmod>2020-04-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.loki.network/Lokinet/Guides/lokinet-mac-guide/</loc>
-     <lastmod>2020-04-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://docs.loki.network/Lokinet/Guides/Install/</loc>
      <lastmod>2020-04-01</lastmod>
      <changefreq>daily</changefreq>
