@@ -1174,6 +1174,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
+    Setting your DNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1" title="Method 1" class="md-nav__link">
+    Method 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2" title="Method 2" class="md-nav__link">
+    Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finish" title="Finish" class="md-nav__link">
     Finish
   </a>
@@ -2187,6 +2227,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-your-dns" title="Setting your DNS" class="md-nav__link">
+    Setting your DNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1" title="Method 1" class="md-nav__link">
+    Method 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2" title="Method 2" class="md-nav__link">
+    Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#finish" title="Finish" class="md-nav__link">
     Finish
   </a>
@@ -2272,6 +2352,45 @@
 <li>Lokinet Wiki <a href="http://dw68y1xhptqbhcm5s8aaaip6dbopykagig5q5u1za4c7pzxto77y.loki/wiki/">http://dw68y1xhptqbhcm5s8aaaip6dbopykagig5q5u1za4c7pzxto77y.loki/wiki/</a></li>
 </ul>
 <p>Congratulations, you're browsing Lokinet.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="setting-your-dns">Setting your DNS<a class="headerlink" href="#setting-your-dns" title="Permanent link">&para;</a></h3>
+<p>If you are having issues with resolving .loki addresses then we need to edit your resolv.conf files and add your dns resolver.</p>
+<h4 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h4>
+<p>Run the following command:</p>
+<div class="codehilite"><pre><span></span>apt install resolvconf
+</pre></div>
+
+
+<p>Then restart lokinet:</p>
+<div class="codehilite"><pre><span></span>systemctl restart lokinet
+</pre></div>
+
+
+<h4 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">&para;</a></h4>
+<p>If Method 1 does not work we will need to add our nameserver manually.</p>
+<p>Run the following command: </p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/resolvconf/resolv.conf.d/head
+</pre></div>
+
+
+<p>Add the following at the bottom of this file:</p>
+<div class="codehilite"><pre><span></span>nameserver 127.3.2.1
+</pre></div>
+
+
+<p>Once that line is added hold CTRL and click x. 
+Click enter to confirm the file changes.</p>
+<p>Next we need to update our /etc/resolv.conf file by running the command:</p>
+<div class="codehilite"><pre><span></span>sudo resolvconf -u
+</pre></div>
+
+
+<p>Then restart lokinet:</p>
+<div class="codehilite"><pre><span></span>systemctl restart lokinet
+</pre></div>
+
+
 <hr />
 <h2 id="finish">Finish<a class="headerlink" href="#finish" title="Permanent link">&para;</a></h2>
 <p>Well done, you have finished the guide. Jump into the <a href="../AccessingSNApps/">Accessing SNApps guide</a>.</p>
