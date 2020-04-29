@@ -2272,7 +2272,7 @@
 <h3 id="12-persistent-snapp">1.2 Persistent SNApp<a class="headerlink" href="#12-persistent-snapp" title="Permanent link">&para;</a></h3>
 <p>Open up your <code>lokinet.ini</code> file and add a path to where your SNApp key files will be stored.</p>
 <p>If you have built Lokinet from the Deb packages you will find your lokinet.ini file with the following command:</p>
-<div class="codehilite"><pre><span></span>sudo nano ~/etc/loki/lokinet.ini
+<div class="codehilite"><pre><span></span>sudo nano /etc/loki/lokinet.ini
 </pre></div>
 
 
@@ -2298,8 +2298,8 @@
 </pre></div>
 
 
-<p>on linux you can use <code>dig</code>, the loki address to query is the same but the resolver uses the address <code>127.3.2.1</code> as to not conflict with other resolvers you may have installed.</p>
-<div class="codehilite"><pre><span></span>dig @127.3.2.1 -t cname localhost.loki
+<p>on linux you can use <code>host</code>, the loki address to query is the same but the resolver uses the address <code>127.3.2.1</code> as to not conflict with other resolvers you may have installed.</p>
+<div class="codehilite"><pre><span></span>host -t cname localhost.loki 127.3.2.1
 </pre></div>
 
 
