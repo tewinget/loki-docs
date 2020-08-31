@@ -109,11 +109,17 @@ Under the section heading `[network]` add one or more entries with the following
 srv=_service._protocol priority weight port [target]
 ```
 
-For example:  
+An example:  
 ```
 srv=_xmpp._tcp 10 10 1234 mylokiaddress.loki
 ```  
 will be an entry for the XMPP protocol pointing to `mylokiaddress.loki` at port 1234.
+
+Another example:
+```
+srv=_mumble._tcp 10 10 64738
+```
+will be an entry for Mumble pointing to the SNApp you are configuring at port 64738
 
 The target in this entry MUST be one of the following:  
 - empty, which means "just use the .loki for this SNApp"
